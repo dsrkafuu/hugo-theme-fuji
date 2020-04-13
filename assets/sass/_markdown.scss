@@ -29,4 +29,6 @@
     hr {
         background-color: $color-spliter;
     }
+
+    @include link-secondary();
 }
