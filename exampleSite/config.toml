@@ -10,7 +10,7 @@ summaryLength = 100 # Custom cummary length, add <!--more--> in post file to cus
 paginate = 10
 
 [permalinks]
-  post = "/:title/" # Custom post links, e.g. "/:year/:month/:title/"
+  post = "/:filename/" # Custom post links, e.g. "/:year/:month/:title/"
 
 [params]
   subTitle = "This is a Sub Title"
