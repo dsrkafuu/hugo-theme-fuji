@@ -1,3 +1,6 @@
+// Cover
+@import "_primer.scss";
+
 // Only used part of @primer/css/core
 // Include .octicon base styles
 @import "@primer/octicons/index.scss";
@@ -13,8 +16,6 @@
 @import "@primer/css/utilities/index.scss";
 
 @import "_var";
-
-@import "_font";
 
 @import "_header";
 

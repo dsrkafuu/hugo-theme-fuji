@@ -8,44 +8,6 @@ $color-spliter: #E5E2E4 !default; // https://irocore.com/komachinezu/
 // spliter css
 $spliter: 1px solid $color-spliter;
 
-// custom web fonts
-@font-face {
-    font-family: 'Product Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Product Sans'), local('ProductSans-Regular'),
-        url('https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.0.0/product-sans/product-sans.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Product Sans';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Product Sans Bold'), local('ProductSans-Bold'),
-        url('https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.0.0/product-sans/product-sans-bold.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Cascadia Code';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Cascadia Code'), local('Cascadia Mono'),
-        url('https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.0.0/cascadia-code/cascadia.woff2') format('woff2'),
-}
-
-// adjust weight to use with Product Sans
-@font-face {
-    font-family: 'PingFang SC Web';
-    font-style: normal;
-    font-weight: 400;
-    src: local('PingFang SC Medium'),
-        /* Modern Browsers */
-        url('https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.0.0/pingfang/pingfang-medium.woff2') format('woff2'),
-}
-
-$font-pdsans: 'Product Sans', -apple-system, BlinkMacSystemFont, Arial, monospace;
-$font-normal: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', 'Source Han Sans SC', 'Source Han Sans CN', 'Source Han Sans', 'Microsoft YaHei', sans-serif;
-
 // font size list
 $font-size-logo: 2.5em; // Logo Only
 $font-size-l1: 1.75em; // Primer CSS H1
@@ -78,7 +40,7 @@ $font-size-l4: 1em; // Primer CSS H4 & Normal Text
 
 // title css which also used in 404
 @mixin pdsans-title {
-    font-family: $font-pdsans;
+    font-family: 'Product Sans', -apple-system, BlinkMacSystemFont, Arial, monospace;
     font-weight: 700;
     font-display: swap;
     font-size: $font-size-logo;
