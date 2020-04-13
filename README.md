@@ -6,12 +6,13 @@ A minimal Hugo theme inspired by [printempw](https://github.com/printempw/)'s He
 
 ## Live demos
 
-[Netlify]() | [My own blog]()
+[Netlify]() | [My own blog](https://blog.amzrk2.cc/)
 
 ![Screenshot of the theme](images/screenshot.png)
 
 ## Todo
 
+- [ ] Custom pagination
 - [ ] Archive page
 - [ ] Analytics
 - [ ] SEO optimization
