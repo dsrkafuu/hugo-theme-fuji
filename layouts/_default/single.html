@@ -1,0 +1,24 @@
+{{ define "main" }}
+<main>
+    <div class="container-md clearfix">
+        <!-- list -->
+        <div class="col-md-9 col-12 float-left" id="content">
+            <article>
+                <h4 id="post-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h4>
+                <div id="post-meta">
+                    {{ partial "post-meta.html" . }}
+                </div>
+                <div class="markdown-body" id="post-content">
+                    {{ .Content }}
+                </div>
+            </article>
+        </div>
+        <!-- sidebar -->
+        <div class="col-md-3 col-12 float-left" id="sidebar">
+            {{ partial "sidebar.html" . }}
+        </div>
+    </div>
+</main>
+{{ end }}

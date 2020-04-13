@@ -1,0 +1,37 @@
+<div id="widget-pages">
+    <h5>页面</h5>
+    <ul>
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.nav }}
+        <li>
+            <a href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+    </ul>
+</div>
+<div id="widget-tags">
+    <h5>标签</h5>
+    <div>
+        {{ range .Site.Taxonomies.tags }}
+        <span>
+            <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+        </span>
+        {{ end }}
+    </div>
+</div>
+<div id="widget-links">
+    <h5>链接</h5>
+    <ul>
+        {{ range .Site.Menus.link }}
+        <li>
+            <a href="{{ .URL }}" target="_blank"><span>{{ .Name }}</span></a>
+        </li>
+        {{ end }}
+    </ul>
+</div>
+{{ with .Site.Params.bgmImageChart }}
+<div id="widget-bgm">
+    <h5>番剧</h5>
+    <img class="lazy" src="{{ $.Site.Params.cdnLazyloadSRC }}" data-src="http://bgm.tv/chart/img/{{ . }}" />
+</div>
+{{ end }}

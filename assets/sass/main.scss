@@ -1,0 +1,34 @@
+// Only used part of @primer/css/core
+// Include .octicon base styles
+@import "@primer/octicons/index.scss";
+// Global requirements
+@import "@primer/css/support/index.scss";
+
+// Modules
+@import "@primer/css/base/index.scss";
+@import "@primer/css/layout/index.scss";
+@import "@primer/css/markdown/index.scss";
+
+// Utilities always go last so that they can override components
+@import "@primer/css/utilities/index.scss";
+
+@import "_var";
+
+@import "_font";
+
+@import "_header";
+
+@import "_list";
+
+@import "_sidebar";
+
+@import "_markdown";
+
+@import "_pagination";
+
+@import "_footer";
+
+#not-found {
+    @include pdsans-title();
+    padding-top: 1em;
+}

@@ -1,0 +1,394 @@
+{
+  "versions": {
+    "14.2.0": [
+      {
+        "selectors": [
+          ".subnav-item.selected:hover",
+          ".subnav-item.selected:focus",
+          ".autocomplete-item[aria-selected=\"true\"]",
+          ".autocomplete-item[aria-selected=\"true\"] *"
+        ],
+        "message": "These selectors are not needed anymore."
+      }
+    ],
+    "14.0.0": [
+      {
+        "selectors": [
+          ".SelectMenu-item+.SelectMenu-item",
+          ".SelectMenu-divider:first-child",
+          ".SelectMenu-divider:last-child",
+          ".SelectMenu--hasFilter .SelectMenu-item:last-child",
+          ".SelectMenu-item[aria-checked=\"true\"] .SelectMenu-icon"
+        ],
+        "message": "These selectors are deprecated and not used anymore."
+      },
+      {
+        "selectors": [
+          ".flex-item-equal",
+          ".flex-sm-item-equal",
+          ".flex-md-item-equal",
+          ".flex-lg-item-equal",
+          ".flex-xl-item-equal"
+        ],
+        "message": "This variable is deprecated. Use \"flex-1\" instead."
+      },
+      {
+        "selectors": [
+          ".UnderlineNav-item.selected",
+          ".UnderlineNav-item.selected .UnderlineNav-octicon"
+        ],
+        "message": "Please use aria-selected=\"true\" to indicate the selected state of an UnderlineNav item."
+      },
+      {
+        "variables": [
+          "$status-pending"
+        ],
+        "message": "This variable is deprecated."
+      },
+      {
+        "variables": [
+          "$highlight-yellow"
+        ],
+        "message": "This variable is deprecated."
+      },
+      {
+        "variables": [
+          "$repo-private-text",
+          "$repo-private-bg",
+          "$repo-private-icon"
+        ],
+        "message": "These variables are deprecated."
+      },
+      {
+        "variables": [
+          "$marketingSpacers",
+          "$allSpacers"
+        ],
+        "message": "Please use the $marketing-spacers and $marketing-all-spacers variables."
+      },
+      {
+        "variables": [
+          "$exploregrid-item-border-radius"
+        ],
+        "message": "This variable is deprecated. Use \"4px\" instead."
+      },
+      {
+        "variables": [
+          "$stats-switcher-py",
+          "$stats-viewport-height"
+        ],
+        "message": "These variables are deprecated."
+      },
+      {
+        "variables": [
+          "$min_tab_size",
+          "$max_tab_size"
+        ],
+        "message": "These variables are deprecated."
+      }
+    ],
+    "13.0.0": [
+      {
+        "selectors": [
+          ".btn-purple",
+          ".btn-purple:focus",
+          ".btn-purple.focus",
+          ".btn-purple:hover",
+          ".btn-purple.hover",
+          ".btn-purple:active",
+          ".btn-purple.selected",
+          "[open]>.btn-purple",
+          ".btn-purple:disabled",
+          ".btn-purple.disabled",
+          ".btn-purple .Counter"
+        ],
+        "message": "Please don't make purple buttons."
+      },
+      {
+        "selectors": [
+          ".text-pending"
+        ],
+        "message": "Please use the \"text-yellow\" class instead of \"text-pending\"."
+      },
+      {
+        "selectors": [
+          ".bg-pending"
+        ],
+        "message": "Please use the \"bg-yellow-dark\" class instead of \"bg-pending\"."
+      },
+      {
+        "selectors": [
+          ".container",
+          ".container::before",
+          ".container::after",
+          ".columns",
+          ".columns::before",
+          ".columns::after",
+          ".column",
+          ".one-third",
+          ".two-thirds",
+          ".one-fourth",
+          ".one-half",
+          ".three-fourths",
+          ".one-fifth",
+          ".four-fifths"
+        ],
+        "message": "Please use [grid classes](https://primer.style/css/objects/grid)."
+      },
+      {
+        "selectors": [
+          ".centered"
+        ],
+        "message": "You can use the \"mx-auto\" class to center any element."
+      },
+      {
+        "selectors": [
+          ".dropdown-menu-content",
+          ".dropdown.active .dropdown-menu-content",
+          ".dropdown-menu-content.anim-scale-in"
+        ],
+        "message": "The \"dropdown-menu-content\" class is unnecessary."
+      }
+    ]
+  },
+  "selectors": {
+    ".subnav-item.selected:hover": {
+      "version": "14.2.0",
+      "message": "These selectors are not needed anymore."
+    },
+    ".subnav-item.selected:focus": {
+      "version": "14.2.0",
+      "message": "These selectors are not needed anymore."
+    },
+    ".autocomplete-item[aria-selected=\"true\"]": {
+      "version": "14.2.0",
+      "message": "These selectors are not needed anymore."
+    },
+    ".autocomplete-item[aria-selected=\"true\"] *": {
+      "version": "14.2.0",
+      "message": "These selectors are not needed anymore."
+    },
+    ".SelectMenu-item+.SelectMenu-item": {
+      "version": "14.0.0",
+      "message": "These selectors are deprecated and not used anymore."
+    },
+    ".SelectMenu-divider:first-child": {
+      "version": "14.0.0",
+      "message": "These selectors are deprecated and not used anymore."
+    },
+    ".SelectMenu-divider:last-child": {
+      "version": "14.0.0",
+      "message": "These selectors are deprecated and not used anymore."
+    },
+    ".SelectMenu--hasFilter .SelectMenu-item:last-child": {
+      "version": "14.0.0",
+      "message": "These selectors are deprecated and not used anymore."
+    },
+    ".SelectMenu-item[aria-checked=\"true\"] .SelectMenu-icon": {
+      "version": "14.0.0",
+      "message": "These selectors are deprecated and not used anymore."
+    },
+    ".flex-item-equal": {
+      "version": "14.0.0",
+      "message": "This variable is deprecated. Use \"flex-1\" instead."
+    },
+    ".flex-sm-item-equal": {
+      "version": "14.0.0",
+      "message": "This variable is deprecated. Use \"flex-1\" instead."
+    },
+    ".flex-md-item-equal": {
+      "version": "14.0.0",
+      "message": "This variable is deprecated. Use \"flex-1\" instead."
+    },
+    ".flex-lg-item-equal": {
+      "version": "14.0.0",
+      "message": "This variable is deprecated. Use \"flex-1\" instead."
+    },
+    ".flex-xl-item-equal": {
+      "version": "14.0.0",
+      "message": "This variable is deprecated. Use \"flex-1\" instead."
+    },
+    ".UnderlineNav-item.selected": {
+      "version": "14.0.0",
+      "message": "Please use aria-selected=\"true\" to indicate the selected state of an UnderlineNav item."
+    },
+    ".UnderlineNav-item.selected .UnderlineNav-octicon": {
+      "version": "14.0.0",
+      "message": "Please use aria-selected=\"true\" to indicate the selected state of an UnderlineNav item."
+    },
+    ".btn-purple": {
+      "version": "13.0.0",
+      "message": "Please don't make purple buttons."
+    },
+    ".btn-purple:focus": {
+      "version": "13.0.0",
+      "message": "Please don't make purple buttons."
+    },
+    ".btn-purple.focus": {
+      "version": "13.0.0",
+      "message": "Please don't make purple buttons."
+    },
+    ".btn-purple:hover": {
+      "version": "13.0.0",
+      "message": "Please don't make purple buttons."
+    },
+    ".btn-purple.hover": {
+      "version": "13.0.0",
+      "message": "Please don't make purple buttons."
+    },
+    ".btn-purple:active": {
+      "version": "13.0.0",
+      "message": "Please don't make purple buttons."
+    },
+    ".btn-purple.selected": {
+      "version": "13.0.0",
+      "message": "Please don't make purple buttons."
+    },
+    "[open]>.btn-purple": {
+      "version": "13.0.0",
+      "message": "Please don't make purple buttons."
+    },
+    ".btn-purple:disabled": {
+      "version": "13.0.0",
+      "message": "Please don't make purple buttons."
+    },
+    ".btn-purple.disabled": {
+      "version": "13.0.0",
+      "message": "Please don't make purple buttons."
+    },
+    ".btn-purple .Counter": {
+      "version": "13.0.0",
+      "message": "Please don't make purple buttons."
+    },
+    ".text-pending": {
+      "version": "13.0.0",
+      "message": "Please use the \"text-yellow\" class instead of \"text-pending\"."
+    },
+    ".bg-pending": {
+      "version": "13.0.0",
+      "message": "Please use the \"bg-yellow-dark\" class instead of \"bg-pending\"."
+    },
+    ".container": {
+      "version": "13.0.0",
+      "message": "Please use [grid classes](https://primer.style/css/objects/grid)."
+    },
+    ".container::before": {
+      "version": "13.0.0",
+      "message": "Please use [grid classes](https://primer.style/css/objects/grid)."
+    },
+    ".container::after": {
+      "version": "13.0.0",
+      "message": "Please use [grid classes](https://primer.style/css/objects/grid)."
+    },
+    ".columns": {
+      "version": "13.0.0",
+      "message": "Please use [grid classes](https://primer.style/css/objects/grid)."
+    },
+    ".columns::before": {
+      "version": "13.0.0",
+      "message": "Please use [grid classes](https://primer.style/css/objects/grid)."
+    },
+    ".columns::after": {
+      "version": "13.0.0",
+      "message": "Please use [grid classes](https://primer.style/css/objects/grid)."
+    },
+    ".column": {
+      "version": "13.0.0",
+      "message": "Please use [grid classes](https://primer.style/css/objects/grid)."
+    },
+    ".one-third": {
+      "version": "13.0.0",
+      "message": "Please use [grid classes](https://primer.style/css/objects/grid)."
+    },
+    ".two-thirds": {
+      "version": "13.0.0",
+      "message": "Please use [grid classes](https://primer.style/css/objects/grid)."
+    },
+    ".one-fourth": {
+      "version": "13.0.0",
+      "message": "Please use [grid classes](https://primer.style/css/objects/grid)."
+    },
+    ".one-half": {
+      "version": "13.0.0",
+      "message": "Please use [grid classes](https://primer.style/css/objects/grid)."
+    },
+    ".three-fourths": {
+      "version": "13.0.0",
+      "message": "Please use [grid classes](https://primer.style/css/objects/grid)."
+    },
+    ".one-fifth": {
+      "version": "13.0.0",
+      "message": "Please use [grid classes](https://primer.style/css/objects/grid)."
+    },
+    ".four-fifths": {
+      "version": "13.0.0",
+      "message": "Please use [grid classes](https://primer.style/css/objects/grid)."
+    },
+    ".centered": {
+      "version": "13.0.0",
+      "message": "You can use the \"mx-auto\" class to center any element."
+    },
+    ".dropdown-menu-content": {
+      "version": "13.0.0",
+      "message": "The \"dropdown-menu-content\" class is unnecessary."
+    },
+    ".dropdown.active .dropdown-menu-content": {
+      "version": "13.0.0",
+      "message": "The \"dropdown-menu-content\" class is unnecessary."
+    },
+    ".dropdown-menu-content.anim-scale-in": {
+      "version": "13.0.0",
+      "message": "The \"dropdown-menu-content\" class is unnecessary."
+    }
+  },
+  "variables": {
+    "$status-pending": {
+      "version": "14.0.0",
+      "message": "This variable is deprecated."
+    },
+    "$highlight-yellow": {
+      "version": "14.0.0",
+      "message": "This variable is deprecated."
+    },
+    "$repo-private-text": {
+      "version": "14.0.0",
+      "message": "These variables are deprecated."
+    },
+    "$repo-private-bg": {
+      "version": "14.0.0",
+      "message": "These variables are deprecated."
+    },
+    "$repo-private-icon": {
+      "version": "14.0.0",
+      "message": "These variables are deprecated."
+    },
+    "$marketingSpacers": {
+      "version": "14.0.0",
+      "message": "Please use the $marketing-spacers and $marketing-all-spacers variables."
+    },
+    "$allSpacers": {
+      "version": "14.0.0",
+      "message": "Please use the $marketing-spacers and $marketing-all-spacers variables."
+    },
+    "$exploregrid-item-border-radius": {
+      "version": "14.0.0",
+      "message": "This variable is deprecated. Use \"4px\" instead."
+    },
+    "$stats-switcher-py": {
+      "version": "14.0.0",
+      "message": "These variables are deprecated."
+    },
+    "$stats-viewport-height": {
+      "version": "14.0.0",
+      "message": "These variables are deprecated."
+    },
+    "$min_tab_size": {
+      "version": "14.0.0",
+      "message": "These variables are deprecated."
+    },
+    "$max_tab_size": {
+      "version": "14.0.0",
+      "message": "These variables are deprecated."
+    }
+  }
+}

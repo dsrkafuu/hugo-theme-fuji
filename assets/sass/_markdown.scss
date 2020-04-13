@@ -1,0 +1,32 @@
+// primer CSS markdown color remap
+#post-content {
+    &.markdown-body {
+        font-family: inherit !important;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $color-primary;
+    }
+
+    h1 {
+        font-size: $font-size-l1;
+        border-bottom: $spliter;
+    }
+
+    h2 {
+        font-size: $font-size-l2;
+        border-bottom: $spliter;
+    }
+
+    h3 {
+        font-size: $font-size-l3;
+    }
+
+    h4, h5, h6 {
+        font-size: $font-size-l4;
+    }
+
+    hr {
+        background-color: $color-spliter;
+    }
+}

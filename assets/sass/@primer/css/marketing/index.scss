@@ -1,0 +1,14 @@
+/*!
+ * @primer/css/marketing
+ * http://primer.style/css
+ *
+ * Released under MIT license. Copyright (c) 2019 GitHub Inc.
+ */
+
+// Global requirements
+@import "./support/index.scss";
+
+// marketing specific css modules
+@import "./type/index.scss";
+@import "./buttons/index.scss";
+@import "./utilities/index.scss";

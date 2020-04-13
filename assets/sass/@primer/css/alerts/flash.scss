@@ -1,0 +1,103 @@
+// Default flash
+// stylelint-disable selector-max-type
+.flash {
+  position: relative;
+  padding: $spacer-3;
+  // stylelint-disable-next-line primer/colors
+  color: $blue-800;
+  // stylelint-disable-next-line primer/colors
+  background-color: $blue-100;
+  border: $border-width $border-style $border-black-fade;
+  border-radius: $border-radius;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Contain the flash messages
+.flash-messages {
+  margin-bottom: $spacer-4;
+}
+
+// Close button
+.flash-close {
+  float: right;
+  padding: $spacer-3;
+  margin: -$spacer-3;
+  color: inherit;
+  text-align: center;
+  cursor: pointer;
+  // Undo `<button>` styles
+  background: none;
+  border: 0;
+  appearance: none;
+  opacity: 0.6;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// Action button
+.flash-action {
+  float: right;
+  // stylelint-disable-next-line primer/spacing
+  margin-top: -3px;
+  margin-left: $spacer-4;
+}
+
+//
+// Variations
+//
+
+.flash-warn {
+  // stylelint-disable-next-line primer/colors
+  color: $yellow-900;
+  // stylelint-disable-next-line primer/colors
+  background-color: $yellow-100;
+  border-color: $border-black-fade;
+}
+
+.flash-error {
+  // stylelint-disable-next-line primer/colors
+  color: $red-900;
+  background-color: $bg-red-light;
+  border-color: $border-black-fade;
+}
+
+.flash-success {
+  // stylelint-disable-next-line primer/colors
+  color: $green-800;
+  background-color: $bg-green-light;
+  border-color: $border-black-fade;
+}
+
+.flash-full {
+  // stylelint-disable-next-line primer/spacing
+  margin-top: -1px;
+  border-width: $border-width 0;
+  border-radius: 0;
+}
+
+// A banner rendered at the top of the page.
+.flash-banner {
+  position: fixed;
+  top: 0;
+  z-index: 90;
+  width: 100%;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+}
+
+// FIXME deprecate this
+.warning {
+  padding: $em-spacer-5;
+  // stylelint-disable-next-line primer/spacing
+  margin-bottom: 0.8em;
+  font-weight: $font-weight-bold;
+  // stylelint-disable-next-line primer/colors
+  background-color: $yellow-100;
+}

@@ -1,0 +1,42 @@
+{{ define "main" }}
+<main>
+    <div class="container-md clearfix">
+        <!-- list -->
+        <div class="col-md-9 col-12 float-left" id="content">
+            <!-- tags page range in posts -->
+            {{ if eq .RelPermalink "/tags/" }}
+            <span id="not-found">404 NOT FOUND</span>
+            {{ else }}
+            <div id="page-tag">
+                <span>拥有标签 {{ .Title }} 的文章：</span>
+            </div>
+            {{ range .Paginator.Pages }}
+            <div id="post">
+                <h2 id="post-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h2>
+                <div id="post-meta">
+                    {{ partial "post-meta.html" . }}
+                </div>
+                <div id="post-summary">
+                    {{ .Summary }}
+                </div>
+                <div id="post-exlink">
+                    <a href="{{ .Permalink }}#">&gt; READ MORE ...</a>
+                </div>
+            </div>
+            {{ end }}
+            {{ end }}
+            {{ if gt .Paginator.TotalPages 1 }}
+            <div id="pagination">
+                {{ template "_internal/pagination.html" . }}
+            </div>
+            {{ end }}
+        </div>
+        <!-- sidebar -->
+        <div class="col-md-3 col-12 float-left" id="sidebar">
+            {{ partial "sidebar.html" . }}
+        </div>
+    </div>
+</main>
+{{ end }}

@@ -1,0 +1,9 @@
+public/
+resources/
+node_modules/
+
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store

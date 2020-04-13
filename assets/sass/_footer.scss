@@ -1,0 +1,10 @@
+footer {
+    border-top: $spliter;
+    margin-top: auto;
+
+    p {
+        margin: 2em 0 2em 0;
+    }
+
+    @include link-secondary();
+}

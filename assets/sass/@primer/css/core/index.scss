@@ -1,0 +1,28 @@
+/*!
+ * @primer/css/core
+ * http://primer.style/css
+ *
+ * Released under MIT license. Copyright (c) 2019 GitHub Inc.
+ */
+
+// Include .octicon base styles
+@import "@primer/octicons/index.scss";
+
+// Global requirements
+@import "../support/index.scss";
+
+// Core modules
+@import "../base/index.scss";
+@import "../box/index.scss";
+@import "../breadcrumb/index.scss";
+@import "../buttons/index.scss";
+@import "../table-object/index.scss";
+@import "../forms/index.scss";
+@import "../layout/index.scss";
+@import "../navigation/index.scss";
+@import "../pagination/index.scss";
+@import "../tooltips/index.scss";
+@import "../truncate/index.scss";
+
+// Utilities always go last so that they can override components
+@import "../utilities/index.scss";

@@ -1,0 +1,12 @@
+<span class="post-meta-item post-meta-date">
+    <time datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }} | </time>
+</span>
+<span class="post-meta-item post-meta-tags">
+    {{ if .Params.tags }}
+    {{ range .Params.tags }}
+    <a href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}/">{{ . }}</a>
+    {{ end }}
+    {{ else }}
+    <span>无标签</span>
+    {{ end }}
+</span>

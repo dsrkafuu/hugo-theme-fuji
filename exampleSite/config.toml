@@ -1,0 +1,54 @@
+baseURL = "https://example.com"
+title = "Fuji Demo"
+languageCode = "zh-Hans"
+theme = "fuji"
+
+hasCJKLanguage = true
+disableKinds = ["RSS"]
+
+summaryLength = 100 # Custom cummary length, add <!--more--> in post file to custom split point
+paginate = 10
+
+[permalinks]
+  post = "/:title/" # Custom post links, e.g. "/:year/:month/:title/"
+
+[params]
+  subTitle = "This is a Sub Title"
+
+  # Bangumi image chart id
+  # bgmImageChart = "000000"
+
+  # Custom lazyload thumbnail
+  cdnLazyloadSRC = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr/lazyload/dsr_loading.svg"
+  # Custom css & js CDN
+  cdnVanillaLazyloadJS = "https://cdn.jsdelivr.net/npm/vanilla-lazyload@15.1.1/dist/lazyload.min.js"
+
+[markup]
+  [markup.highlight]
+    style = "monokailight"
+
+[taxonomies]
+  tag = "tags"
+
+[menu]
+  [[menu.nav]]
+    name = "主页"
+    url = "/"
+    weight = 1
+  [[menu.nav]]
+    name = "存档"
+    url = "/archive/"
+    weight = 2
+  [[menu.nav]]
+    name = "关于"
+    url = "/about/"
+    weight = 3
+
+  [[menu.link]]
+    name = "GitHub"
+    url = "https://github.com/amzrk2"
+    weight = 1
+  [[menu.link]]
+    name = "哔哩哔哩"
+    url = "https://space.bilibili.com/19767474"
+    weight = 2
