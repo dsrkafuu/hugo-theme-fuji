@@ -1,8 +1,6 @@
 // primer CSS markdown color remap
-#post-content {
-    &.markdown-body {
-        font-family: inherit !important;
-    }
+@mixin markdown-remap {
+    font-family: inherit !important;
 
     h1, h2, h3, h4, h5, h6 {
         color: $color-primary;
@@ -35,4 +33,21 @@
     }
 
     @include link-secondary();
+}
+
+#post-content {
+    &.markdown-body {
+        @include markdown-remap();
+    }
+}
+
+#post-summary {
+    &.markdown-body {
+        @include markdown-remap();
+
+        // do not show heads in summary
+        h1, h2, h3, h4, h5, h6 {
+            display: none;
+        }
+    }
 }
