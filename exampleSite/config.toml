@@ -52,7 +52,7 @@ paginate = 10
     url = "/"
     weight = 1
   [[menu.nav]]
-    name = "存档"
+    name = "归档"
     url = "/archive/"
     weight = 2
   [[menu.nav]]
