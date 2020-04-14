@@ -6,7 +6,8 @@
     padding: 1.5em 1em 1.5em 1em;
 
     // different padding when screen size below width-md(768px)
-    @media screen and (max-width: $width-md){
+    @media screen and (max-width: $width-md) {
+        border-top: $spliter;
         padding: 1.5em 1.5em 1.5em 1.5em;
     }
 
@@ -27,8 +28,8 @@
         width: 100%;
         border-radius: 2px;
         filter: grayscale(50%);
-        
-        @media screen and (max-width: $width-md){
+
+        @media screen and (max-width: $width-md) {
             width: 50%;
         }
     }
