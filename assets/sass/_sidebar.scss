@@ -25,7 +25,11 @@
     #widget-bgm img {
         margin: 0.5em 0em 0.5em 0em;
         width: 100%;
-        border-radius: 1px;
+        border-radius: 2px;
         filter: grayscale(50%);
+        
+        @media screen and (max-width: $width-md){
+            width: 50%;
+        }
     }
 }
