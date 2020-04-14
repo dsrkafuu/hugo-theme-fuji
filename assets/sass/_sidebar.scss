@@ -5,6 +5,11 @@
 
     padding: 1.5em 1em 1.5em 1em;
 
+    // different padding when screen size below width-md(768px)
+    @media screen and (max-width: $width-md){
+        padding: 1.5em 1.5em 1.5em 1.5em;
+    }
+
     h5 {
         font-size: $font-size-l3;
     }

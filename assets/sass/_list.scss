@@ -1,5 +1,10 @@
 #content {
     padding: 0 1em 0 1em;
+
+    // different padding when screen size below width-md(768px)
+    @media screen and (max-width: $width-md){
+        padding: 0 1.5em 0 1.5em;
+    }
 }
 
 #post {
