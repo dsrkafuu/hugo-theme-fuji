@@ -6,7 +6,9 @@ A minimal Hugo theme inspired by [printempw](https://github.com/printempw/)'s He
 
 ## Live demos
 
-[Netlify]() | [My own blog](https://blog.amzrk2.cc/)
+[Netlify](https://hugo-theme-fuji.netlify.com/) | [My own blog](https://blog.amzrk2.cc/)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ea9b281a-1df7-4312-8361-35b1ac3a70bd/deploy-status)](https://app.netlify.com/sites/hugo-theme-fuji/deploys)
 
 ![Screenshot of the theme](images/screenshot.png)
 
