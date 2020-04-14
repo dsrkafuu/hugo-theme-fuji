@@ -13,8 +13,8 @@
 <title>{{ .Title }} - {{ .Site.Title }}</title>
 {{ end }}
 
-{{ $sass := resources.Get "sass/main.scss" }}
-{{ $style := $sass | resources.ToCSS }}
+{{ $options := (dict "targetPath" "css/main.min.css" "outputStyle" "compressed") }}
+{{ $style := resources.Get "sass/main.scss" | resources.ToCSS $options }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
 <script src="{{ .Site.Params.cdnVanillaLazyloadJS }}"></script>
 <script src="{{ .Site.Params.cdnJQueryJS }}"></script>
