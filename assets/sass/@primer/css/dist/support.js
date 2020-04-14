@@ -1,1 +1,0 @@
-module.exports = {cssstats: require('./stats/support.json')}

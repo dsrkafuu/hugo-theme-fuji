@@ -1,5 +1,0 @@
-.*.sw?
-.changelog/
-dist/
-docs/dist
-docs/public/
