@@ -55,6 +55,13 @@ article {
     padding-bottom: 1.5em;
 }
 
-#post-comment {
+#license {
+    @include link-primary();
+
+    margin-bottom: 1.5em;
+}
+
+// not show while iframe not loaded
+#post-comment .utterances-frame {
     border-top: $spliter;
 }

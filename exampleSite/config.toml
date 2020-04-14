@@ -18,12 +18,16 @@ paginate = 10
   # Bangumi image chart id
   # bgmImageChart = "000000"
 
+  # License
+  license = "知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议 (CC BY-NC-SA 4.0)"
+  licenseLink = "http://creativecommons.org/licenses/by-nc-sa/4.0/"
+
   # Comments
   # utterances, see: https://utteranc.es/
-  cdnUtterancesJS = "https://utteranc.es/client.js"
-  utterancesRepo = "[ENTER REPO HERE]"
-  utterancesIssueTerm = "pathname"
-  utterancesTheme = "github-light"
+  # cdnUtterancesJS = "https://utteranc.es/client.js"
+  # utterancesRepo = "[ENTER REPO HERE]"
+  # utterancesIssueTerm = "pathname"
+  # utterancesTheme = "github-light"
 
   # Custom lazyload thumbnail
   cdnLazyloadSRC = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr/lazyload/dsr_loading.svg"
