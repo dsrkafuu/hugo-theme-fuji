@@ -18,6 +18,9 @@ paginate = 10
   # Bangumi image chart id
   # bgmImageChart = "000000"
 
+  # Show scroll to top button
+  scrollTop = true
+
   # License
   license = "知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议 (CC BY-NC-SA 4.0)"
   licenseLink = "http://creativecommons.org/licenses/by-nc-sa/4.0/"
@@ -34,6 +37,7 @@ paginate = 10
   # Custom css & js CDN
   cdnVanillaLazyloadJS = "https://cdn.jsdelivr.net/npm/vanilla-lazyload@15.1.1/dist/lazyload.min.js"
   cdnJQueryJS = "https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"
+  cdnProgessJS = "https://cdn.jsdelivr.net/npm/progressbar.js@1.1.0/dist/progressbar.min.js"
 
 [markup]
   [markup.highlight]

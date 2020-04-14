@@ -44,4 +44,18 @@
     width: 3em;
     right: 1em;
     bottom: 1em;
+
+    @include link-primary();
+
+    .progressbar-text {
+        svg {
+            width: 24px;
+            vertical-align: middle;
+        }
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
