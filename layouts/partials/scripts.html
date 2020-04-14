@@ -1,4 +1,37 @@
 <script>
+    $(function () {
+        var bar = new ProgressBar.Circle('#progress', {
+            color: '#8AA2D3',
+            strokeWidth: 15,
+            trailColor: '#E5E2E4',
+            trailWidth: 15,
+            text: {
+                autoStyleContainer: false
+            },
+            fill: '#E5E2E4',
+            step: function (state, circle) {
+                var value = Math.round(circle.value() * 100);
+                if (value == 0 || value == 100) {
+                    circle.setText('');
+                } else {
+                    circle.setText(value);
+                }
+            }
+        });
+        var scrolled = ($(window).scrollTop() / ($(document).height() - $(window).height() - 1));
+        bar.animate(scrolled);
+        $(window).scroll(function () {
+            scrolled = ($(window).scrollTop() / ($(document).height() - $(window).height() - 1));
+            if (scrolled < 0.0005) {
+                scrolled = 0;
+            } else if (scrolled > 1) {
+                scrolled = 1;
+            }
+            bar.set(scrolled);
+        });
+    });
+</script>
+<script>
     var lazyLoadInstance = new LazyLoad({
         elements_selector: ".lazy"
     });

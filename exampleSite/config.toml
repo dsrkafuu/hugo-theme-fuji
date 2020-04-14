@@ -33,6 +33,7 @@ paginate = 10
   cdnLazyloadSRC = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr/lazyload/dsr_loading.svg"
   # Custom css & js CDN
   cdnVanillaLazyloadJS = "https://cdn.jsdelivr.net/npm/vanilla-lazyload@15.1.1/dist/lazyload.min.js"
+  cdnJQueryJS = "https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"
 
 [markup]
   [markup.highlight]

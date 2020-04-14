@@ -17,7 +17,8 @@
 {{ $style := $sass | resources.ToCSS }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
 <script src="{{ .Site.Params.cdnVanillaLazyloadJS }}"></script>
-
+<script src="{{ .Site.Params.cdnJQueryJS }}"></script>
+<script src="{{ .Site.Params.cdnProgessJS }}"></script>
 {{ if or .Params.math .Site.Params.math }}
 {{ partial "math.html" . }}
 {{ end }}

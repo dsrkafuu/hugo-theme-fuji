@@ -17,8 +17,12 @@
 
     @include link-secondary();
 
-    #widget-pages, #widget-tags, #widget-links {
-        div, ul {
+    #widget-pages,
+    #widget-tags,
+    #widget-links {
+
+        div,
+        ul {
             margin: 0.5em 0em 0.5em 0em;
         }
     }
@@ -33,4 +37,11 @@
             width: 50%;
         }
     }
+}
+
+#container-progress {
+    position: fixed;
+    width: 3em;
+    right: 1em;
+    bottom: 1em;
 }
