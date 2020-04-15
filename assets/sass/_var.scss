@@ -42,7 +42,6 @@ $font-size-l4: 1em; // Primer CSS H4 & Normal Text
 @mixin pdsans-title {
     font-family: 'Product Sans', -apple-system, BlinkMacSystemFont, Arial, monospace;
     font-weight: 700;
-    font-display: swap;
     font-size: $font-size-logo;
     white-space: nowrap;
     display: block;
