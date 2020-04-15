@@ -21,10 +21,10 @@
                 </blockquote>
             </div>
             {{ end }}
-            {{ if .Site.Params.cdnUtterancesJS }}
+            {{ if .Site.Params.utterancesComment }}
             {{ partial "comment-utterances.html" . }}
             {{ end }}
-            {{ if .Site.Params.disqusShortname }}
+            {{ if .Site.Params.disqusComment }}
             {{ partial "comment-disqus.html" . }}
             {{ end }}
         </div>

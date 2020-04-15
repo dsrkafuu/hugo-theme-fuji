@@ -1,3 +1,45 @@
+<!-- Comment loading indicator -->
+{{ if and (.IsPage) (.Site.Params.utterancesComment) }}
+<script>
+    $(function () {
+        var loadingBar = new ProgressBar.Circle('#loading-bar', {
+            color: '#8AA2D3',
+            strokeWidth: 15,
+            trailColor: '#E5E2E4',
+            trailWidth: 15,
+            fill: '#E5E2E4'
+        });
+        loadingBar.animate(1.0, {
+            duration: 10000
+        });
+
+        var commentStatus;
+        var commentLoadingTime = 0;
+        var commentCheckInterval = self.setInterval(checkUtterances, 500);
+
+        function checkUtterances() {
+            commentStatus = $('#post-comment .utterances').attr('style');
+            if (commentStatus === undefined) {
+                commentLoadingTime += 1;
+                if (commentLoadingTime > 16) {
+                    clearInterval(commentCheckInterval);
+                    $('#post-comment').hide();
+                    $('#post-loading p').text('评论区加载失败');
+                }
+                return;
+            } else {
+                clearInterval(commentCheckInterval);
+                loadingBar.animate(1.0, {
+                    duration: 500
+                }, function () {
+                    $('#post-loading').hide();
+                });
+            }
+        }
+    });
+</script>
+{{ end }}
+<!-- Scroll to top button -->
 {{ if .Site.Params.scrollTop }}
 <script>
     $(function () {
@@ -7,11 +49,11 @@
             trailColor: '#E5E2E4',
             trailWidth: 12,
             text: {
-                value: '<svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"></path></svg>',
+                value: '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-up" class="svg-inline--fa fa-angle-up fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"></path></svg>',
                 autoStyleContainer: false,
                 style: null
             },
-            fill: '#E5E2E4',
+            fill: '#E5E2E4'
         });
         var scrolled = ($(window).scrollTop() / ($(document).height() - $(window).height() - 1));
         bar.animate(scrolled);
@@ -35,7 +77,9 @@
 {{ end }}
 <!-- Vanilla LazyLoad -->
 <script>
-    var lazyLoadInstance = new LazyLoad({
-        elements_selector: ".lazy"
+    $(function () {
+        var lazyLoadInstance = new LazyLoad({
+            elements_selector: ".lazy"
+        });
     });
 </script>

@@ -61,6 +61,23 @@ article {
     margin-bottom: 1.5em;
 }
 
+#post-loading {
+    border-top: $spliter;
+    margin: 0 0 1.5em 0;
+    padding-top: 1.5em;
+
+    #container-loading-bar {
+        width: 2em;
+        margin: 0 auto;
+    }
+
+    p {
+        text-align: center;
+        margin: 0.5em 0 0 0;
+    }
+}
+
+
 // not show while iframe not loaded
 #post-comment .utterances-frame {
     border-top: $spliter;
