@@ -35,6 +35,9 @@ paginate = 10
   # utterancesIssueTerm = "pathname"
   # utterancesTheme = "github-light"
 
+  # Disqus, see: https://disqus.com/admin/install/platforms/universalcode/
+  # disqusShortname = "[ENTER YOUR DISQUS SHORTNAME HERE]"
+
   # Custom lazyload thumbnail
   cdnLazyloadSRC = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr/lazyload/dsr_loading.svg"
   # Custom css & js CDN

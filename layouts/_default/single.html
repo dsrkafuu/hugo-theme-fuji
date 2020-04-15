@@ -24,6 +24,9 @@
             {{ if .Site.Params.cdnUtterancesJS }}
             {{ partial "comment-utterances.html" . }}
             {{ end }}
+            {{ if .Site.Params.disqusShortname }}
+            {{ partial "comment-disqus.html" . }}
+            {{ end }}
         </div>
         <!-- sidebar -->
         <div class="col-md-3 col-12 float-left" id="sidebar">

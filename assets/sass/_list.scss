@@ -2,7 +2,7 @@
     padding: 0 1em 0 1em;
 
     // different padding when screen size below width-md(768px)
-    @media screen and (max-width: $width-md){
+    @media screen and (max-width: $width-md) {
         padding: 0 1.5em 0 1.5em;
     }
 }
@@ -63,5 +63,9 @@ article {
 
 // not show while iframe not loaded
 #post-comment .utterances-frame {
+    border-top: $spliter;
+}
+
+#post-comment #disqus_thread {
     border-top: $spliter;
 }
