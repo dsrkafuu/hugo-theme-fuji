@@ -3,21 +3,18 @@
     <div class="container-lg clearfix">
         <!-- list -->
         <div class="col-md-9 col-12 float-left" id="content">
-            <!-- homepage range in posts -->
-            {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+            <div id="page-tag">
+                <span>文章总数：{{ len (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}</span>
+            </div>
+            <!-- archives range in posts -->
+            {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) 50 }}
             {{ range $paginator.Pages }}
-            <div id="post">
-                <h2 id="post-title">
+            <div id="post-archive">
+                <h2 id="post-title-archive">
                     <a href="{{ .Permalink }}">{{ .Title }}</a>
                 </h2>
-                <div id="post-meta">
+                <div id="post-meta-archive">
                     {{ partial "post-meta.html" . }}
-                </div>
-                <div class="markdown-body" id="post-summary">
-                    {{ .Summary }}
-                </div>
-                <div id="post-exlink">
-                    <a href="{{ .Permalink }}#">&gt; READ MORE ...</a>
                 </div>
             </div>
             {{ end }}

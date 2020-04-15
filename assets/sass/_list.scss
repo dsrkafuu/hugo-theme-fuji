@@ -11,8 +11,23 @@
     padding: 1.5em 0 1.5em 0;
 }
 
+#post-archive {
+    &:not(:first-child):not(:last-child) {
+        padding: 0.5em 0 0.5em 0;
+    }
+
+    &:first-child {
+        padding: 1.5em 0 0.5em 0;
+    }
+
+    &:last-child {
+        padding: 0.5em 0 1.5em 0;
+    }
+}
+
 // spliter between two posts
-#post+#post {
+#post+#post,
+#post-archive+#post-archive {
     border-top: $spliter;
 }
 
@@ -22,9 +37,31 @@
     @include link-primary();
 }
 
+#post-title-archive {
+    font-size: $font-size-l2;
+
+    @include link-primary();
+}
+
 #post-meta {
     color: $color-mute;
     padding: 0.5em 0 1em 0;
+    white-space: nowrap;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+        display: none; // WebKit
+    }
+
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // Microsoft
+
+    @include link-secondary();
+}
+
+#post-meta-archive {
+    color: $color-mute;
+    padding: 0;
     white-space: nowrap;
     overflow-x: scroll;
 
@@ -76,7 +113,6 @@ article {
         margin: 0.5em 0 0 0;
     }
 }
-
 
 // not show while iframe not loaded
 #post-comment .utterances-frame {
