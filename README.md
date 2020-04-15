@@ -1,14 +1,10 @@
 # Fuji
 
-// ! THE THEME IS STILL IN EARLY DEV STAGE ! //
-
 A minimal Hugo theme inspired by [printempw](https://github.com/printempw/)'s Hexo theme [Murasaki](https://github.com/printempw/hexo-theme-murasaki/), with responsive grid system and markdown style, powered by GitHub Primer CSS.
 
 ## Live demos
 
-[Netlify](https://hugo-theme-fuji.netlify.com/) | [My own blog](https://blog.amzrk2.cc/)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ea9b281a-1df7-4312-8361-35b1ac3a70bd/deploy-status)](https://app.netlify.com/sites/hugo-theme-fuji/deploys)
+[GitHub Pages Demo](https://amzrk2.cc/hugo-theme-fuji-demo/) | [My Blog](https://blog.amzrk2.cc/)
 
 ![Screenshot of the theme](images/screenshot.png)
 
