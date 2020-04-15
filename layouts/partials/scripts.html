@@ -21,7 +21,7 @@
             commentStatus = $('#post-comment .utterances').attr('style');
             if (commentStatus === undefined) {
                 commentLoadingTime += 1;
-                if (commentLoadingTime > 16) {
+                if (commentLoadingTime > 20) {
                     clearInterval(commentCheckInterval);
                     $('#post-comment').hide();
                     $('#post-loading p').text('评论区加载失败');
