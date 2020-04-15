@@ -13,7 +13,13 @@ paginate = 10
   post = "/:filename/" # Custom post links, e.g. "/:year/:month/:title/"
 
 [params]
+  author = "DSRKafuU" # You can also set author in post front matter individually
   subTitle = "This is a Sub Title"
+
+  # Open Graph & Twitter Card variables
+  # You can also set description and images in post front matter individually
+  description = "A minimal hugo theme powered by Primer CSS."
+  images = ["img/og.png"] # This will use the image called og.png in static/img folder
 
   # Posts shown in homepage
   mainSections = ["post"]

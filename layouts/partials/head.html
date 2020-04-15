@@ -12,6 +12,15 @@
 {{ else }}
 <title>{{ .Title }} - {{ .Site.Title }}</title>
 {{ end }}
+<meta name="author" content="{{if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}">
+<meta name="description" content="{{if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+{{ if .Params.tags }}
+<meta name="keywords" content="{{ delimit .Params.tags ", " }}">
+{{ end }}
+
+
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}
 
 {{ partial "analytic-google.html" . }}
 
