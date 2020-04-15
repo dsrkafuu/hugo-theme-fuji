@@ -13,6 +13,8 @@
 <title>{{ .Title }} - {{ .Site.Title }}</title>
 {{ end }}
 
+{{ partial "analytic-google.html" . }}
+
 {{ $options := (dict "targetPath" "css/main.min.css" "outputStyle" "compressed") }}
 {{ $style := resources.Get "sass/main.scss" | resources.ToCSS $options }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">

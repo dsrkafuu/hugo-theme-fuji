@@ -15,6 +15,9 @@ paginate = 10
 [params]
   subTitle = "This is a Sub Title"
 
+  # Google Analytics
+  googleAnalyticsUA = "UA-000000000-0"
+
   # Bangumi image chart id
   # bgmImageChart = "000000"
 
