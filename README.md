@@ -16,7 +16,7 @@ A minimal Hugo theme inspired by [printempw](https://github.com/printempw/)'s He
 
 - [ ] Custom pagination
 - [ ] Archive page
-- [ ] Analytics
+- [x] Analytics
 - [ ] SEO optimization
 - [ ] Better mobile devices support
 - [ ] Multilingual

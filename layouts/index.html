@@ -4,7 +4,7 @@
         <!-- list -->
         <div class="col-md-9 col-12 float-left" id="content">
             <!-- homepage range in posts -->
-            {{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
+            {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
             {{ range $paginator.Pages }}
             <div id="post">
                 <h2 id="post-title">

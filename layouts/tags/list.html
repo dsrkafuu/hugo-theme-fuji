@@ -4,9 +4,6 @@
         <!-- list -->
         <div class="col-md-9 col-12 float-left" id="content">
             <!-- tags page range in posts -->
-            {{ if eq .RelPermalink "/tags/" }}
-            <span id="not-found">404 NOT FOUND</span>
-            {{ else }}
             <div id="page-tag">
                 <span>拥有标签 {{ .Title }} 的文章：</span>
             </div>
@@ -25,7 +22,6 @@
                     <a href="{{ .Permalink }}#">&gt; READ MORE ...</a>
                 </div>
             </div>
-            {{ end }}
             {{ end }}
             {{ if gt .Paginator.TotalPages 1 }}
             <div id="pagination">

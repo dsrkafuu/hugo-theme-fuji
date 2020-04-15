@@ -4,7 +4,7 @@ languageCode = "zh-Hans"
 theme = "fuji"
 
 hasCJKLanguage = true
-disableKinds = ["RSS"]
+disableKinds = ["RSS", "taxonomyTerm"]
 
 summaryLength = 100 # Custom cummary length, add <!--more--> in post file to custom split point
 paginate = 10
@@ -14,6 +14,9 @@ paginate = 10
 
 [params]
   subTitle = "This is a Sub Title"
+
+  # Posts shown in homepage
+  mainSections = ["post"]
 
   # Google Analytics
   googleAnalyticsUA = "UA-000000000-0"
