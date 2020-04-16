@@ -2,8 +2,8 @@
     <div class="container-lg text-center">
         <p>
             &copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> |
-            Powered by <a href="https://github.com/amzrk2/hugo-theme-fuji/" target="_blank">Fuji</a>
-            & <a href="https://gohugo.io/" target="_blank">Hugo</a>
+            {{ i18n "footerPoweredFront" }}<a href="https://github.com/amzrk2/hugo-theme-fuji/" target="_blank">Fuji</a>
+            & <a href="https://gohugo.io/" target="_blank">Hugo</a>{{ i18n "footerPoweredEnd" }}
         </p>
     </div>
 </footer>

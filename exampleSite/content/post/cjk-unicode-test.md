@@ -1,15 +1,14 @@
 +++
-title = "CJK Unicode 测试"
+title = "CJK Unicode Test"
 date = 2020-01-01T00:00:00+08:00
-description = "CJK Unicode 字符测试用页面"
+description = "CJK Unicode Testpage"
 tags = [
     "test",
     "cjk"
 ]
 +++
 
-以下为部分 CJK 文字内容，本页面仅测试使用。
-<!--more-->
+The following is part of the CJK text, this page is for test use only.<!--more-->
 
 ## CJK Radicals Supplement
 

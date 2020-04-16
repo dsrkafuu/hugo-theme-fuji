@@ -1,0 +1,32 @@
+[sidebarPages]
+    other = "ページ"
+
+[sidebarTags]
+    other = "タグ"
+
+[sidebarLinks]
+    other = "リンク"
+
+[sidebarBangumiChart]
+    other = "番組"
+
+[footerPoweredFront]
+    other = "Powered by "
+
+[footerPoweredEnd]
+    other = " "
+
+[postMetaNoTag]
+    other = "タグはありません"
+
+[postCopyrightFront]
+    other = "特定のセクションを除いて、このサイトは "
+
+[postCopyrightEnd]
+    other = " の下に提供されています。"
+
+[postCommentLoading]
+    other = "読み込み中..."
+
+[postCommentLoadingFailed]
+    other = "読み込みエラー"

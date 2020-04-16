@@ -7,6 +7,6 @@
     <a href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}/">{{ . }}</a>
     {{ end }}
     {{ else }}
-    <span>无标签</span>
+    <span>{{ i18n "postMetaNoTag" }}</span>
     {{ end }}
 </span>

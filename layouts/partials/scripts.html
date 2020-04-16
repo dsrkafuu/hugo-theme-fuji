@@ -24,7 +24,7 @@
                 if (commentLoadingTime > 20) {
                     clearInterval(commentCheckInterval);
                     $('#post-comment').hide();
-                    $('#post-loading p').text('评论区加载失败');
+                    $('#post-loading p').text('{{ i18n "postCommentLoadingFailed" }}');
                 }
                 return;
             } else {

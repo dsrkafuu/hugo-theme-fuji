@@ -1,5 +1,5 @@
 <div id="widget-pages">
-    <h5>页面</h5>
+    <h5>{{ i18n "sidebarPages" }}</h5>
     <ul>
         {{ $currentPage := . }}
         {{ range .Site.Menus.nav }}
@@ -10,7 +10,7 @@
     </ul>
 </div>
 <div id="widget-tags">
-    <h5>标签</h5>
+    <h5>{{ i18n "sidebarTags" }}</h5>
     <div>
         {{ range .Site.Taxonomies.tags }}
         <span>
@@ -20,7 +20,7 @@
     </div>
 </div>
 <div id="widget-links">
-    <h5>链接</h5>
+    <h5>{{ i18n "sidebarLinks" }}</h5>
     <ul>
         {{ range .Site.Menus.link }}
         <li>
@@ -31,7 +31,7 @@
 </div>
 {{ with .Site.Params.bgmImageChart }}
 <div id="widget-bgm">
-    <h5>番剧</h5>
+    <h5>{{ i18n "sidebarBangumiChart" }}</h5>
     <img class="lazy" src="{{ $.Site.Params.cdnLazyloadSRC }}" data-src="https://bgm.tv/chart/img/{{ . }}" />
 </div>
 {{ end }}
