@@ -11,10 +11,10 @@
     other = "番剧"
 
 [footerPoweredFront]
-    other = "基于"
+    other = "基于 "
 
 [footerPoweredEnd]
-    other = "构建"
+    other = " 构建"
 
 [postMetaNoTag]
     other = "无标签"

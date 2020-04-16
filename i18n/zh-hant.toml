@@ -11,10 +11,10 @@
     other = "番劇"
 
 [footerPoweredFront]
-    other = "基於"
+    other = "基於 "
 
 [footerPoweredEnd]
-    other = "構建"
+    other = " 構建"
 
 [postMetaNoTag]
     other = "無標籤"
