@@ -27,6 +27,8 @@
 {{ $options := (dict "targetPath" "css/main.min.css" "outputStyle" "compressed") }}
 {{ $style := resources.Get "sass/main.scss" | resources.ToCSS $options }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
+{{ with .Site.Params.cdnIntersectionObserverJS }}
+<script src="{{ . }}"></script>{{ end }}
 <script src="{{ .Site.Params.cdnVanillaLazyloadJS }}"></script>
 <script src="{{ .Site.Params.cdnJQueryJS }}"></script>
 <script src="{{ .Site.Params.cdnProgessJS }}"></script>

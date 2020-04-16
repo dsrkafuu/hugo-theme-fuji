@@ -56,6 +56,7 @@ paginate = 10
   # Custom lazyload thumbnail
   cdnLazyloadSRC = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr/lazyload/dsr_loading.svg"
   # Custom css & js CDN
+  # cdnIntersectionObserverJS = "https://cdn.jsdelivr.net/npm/intersection-observer@0.7.0/intersection-observer.min.js" # Optional
   cdnVanillaLazyloadJS = "https://cdn.jsdelivr.net/npm/vanilla-lazyload@15.1.1/dist/lazyload.min.js"
   cdnJQueryJS = "https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"
   cdnProgessJS = "https://cdn.jsdelivr.net/npm/progressbar.js@1.1.0/dist/progressbar.min.js"
