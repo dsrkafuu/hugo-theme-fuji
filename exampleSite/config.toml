@@ -13,6 +13,9 @@ languageCode = "en"
 summaryLength = 100 # Custom cummary length, add <!--more--> in post file to custom split point
 paginate = 10
 
+# Set your Google Analytics UA here, or comment out to disable
+# googleAnalytics = "UA-000000000-0"
+
 [permalinks]
   post = "/:filename/" # Custom post links, e.g. "/:year/:month/:title/"
 
@@ -27,9 +30,6 @@ paginate = 10
 
   # Posts shown in homepage
   mainSections = ["post"]
-
-  # Google Analytics
-  googleAnalyticsUA = "UA-000000000-0"
 
   # Bangumi image chart id
   # bgmImageChart = "000000"

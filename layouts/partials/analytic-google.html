@@ -1,5 +1,6 @@
+{{ with .Site.GoogleAnalytics }}
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.googleAnalyticsUA }}"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -7,5 +8,6 @@
         dataLayer.push(arguments);
     }
     gtag('js', new Date());
-    gtag('config', '{{ .Site.Params.googleAnalyticsUA }}');
+    gtag('config', '{{ . }}');
 </script>
+{{ end }}
