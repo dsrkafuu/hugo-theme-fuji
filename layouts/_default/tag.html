@@ -1,7 +1,9 @@
 {{ define "main" }}
-<!-- homepage range in posts -->
-{{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
-{{ range $paginator.Pages }}
+<div id="page-tag">
+    <span>拥有标签 {{ .Title }} 的文章：</span>
+</div>
+<!-- tags page range in posts -->
+{{ range .Paginator.Pages }}
 <div id="post">
     <h2 id="post-title">
         <a href="{{ .Permalink }}">{{ .Title }}</a>
@@ -9,7 +11,7 @@
     <div id="post-meta">
         {{ partial "post-meta.html" . }}
     </div>
-    <div class="markdown-body" id="post-summary">
+    <div id="post-summary">
         {{ .Summary }}
     </div>
     <div id="post-exlink">
@@ -17,7 +19,7 @@
     </div>
 </div>
 {{ end }}
-{{ if gt $paginator.TotalPages 1 }}
+{{ if gt .Paginator.TotalPages 1 }}
 <div id="pagination">
     {{ template "_internal/pagination.html" . }}
 </div>

@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div id="page-tag">
+    <span>文章总数：{{ len (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}</span>
+</div>
+<!-- archives range in posts -->
+{{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) 50 }}
+{{ range $paginator.Pages }}
+<div id="post-archive">
+    <h2 id="post-title-archive">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h2>
+    <div id="post-meta-archive">
+        {{ partial "post-meta.html" . }}
+    </div>
+</div>
+{{ end }}
+{{ if gt $paginator.TotalPages 1 }}
+<div id="pagination">
+    {{ template "_internal/pagination.html" . }}
+</div>
+{{ end }}
+{{ end }}
