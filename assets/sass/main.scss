@@ -1,9 +1,10 @@
+//variables
 @import "_var";
 
-// Cover
+// cover primer variables
 @import "_primer.scss";
 
-// Only used part of @primer/css/core
+// include only used part of @primer/css/core
 // Include .octicon base styles
 @import "@primer/octicons/index.scss";
 // Global requirements
@@ -19,16 +20,20 @@
 
 @import "_header";
 
-@import "_list";
+// list page & single page content part style
+@import "_content";
 
+// sidebar & progress indicator style
 @import "_sidebar";
 
+// markdown style cover in summary & in-post content
 @import "_markdown";
 
 @import "_pagination";
 
 @import "_footer";
 
+// for 404 page
 #not-found {
     @include pdsans-title();
     padding-top: 1em;
