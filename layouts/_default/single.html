@@ -1,40 +1,26 @@
 {{ define "main" }}
-<main>
-    <div class="container-lg clearfix">
-        <!-- list -->
-        <div class="col-md-9 col-12 float-left" id="content">
-            <article>
-                <h4 id="post-title">
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
-                </h4>
-                <div id="post-meta">
-                    {{ partial "post-meta.html" . }}
-                </div>
-                <div class="markdown-body" id="post-content">
-                    {{ .Content }}
-                </div>
-            </article>
-            {{ if ne .Params.noLicense true }}
-            <div class="markdown-body" id="license">
-                <blockquote>
-                    <p>{{ i18n "postCopyrightFront" }}<a rel="license" href="{{ .Site.Params.licenseLink }}" target="_blank">{{ .Site.Params.license }}</a>{{ i18n "postCopyrightEnd" }}</p>
-                </blockquote>
-            </div>
-            {{ end }}
-            {{ if .Site.Params.utterancesComment }}
-            {{ partial "comment-utterances.html" . }}
-            {{ end }}
-            {{ if .Site.Params.disqusComment }}
-            {{ partial "comment-disqus.html" . }}
-            {{ end }}
-        </div>
-        <!-- sidebar -->
-        <div class="col-md-3 col-12 float-left" id="sidebar">
-            {{ partial "sidebar.html" . }}
-        </div>
-        <div id="container-progress">
-            <div id="progress"></div>
-        </div>
+<article>
+    <h4 id="post-title">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h4>
+    <div id="post-meta">
+        {{ partial "post-meta.html" . }}
     </div>
-</main>
+    <div class="markdown-body" id="post-content">
+        {{ .Content }}
+    </div>
+</article>
+{{ if ne .Params.noLicense true }}
+<div class="markdown-body" id="license">
+    <blockquote>
+        <p>{{ i18n "postCopyrightFront" }}<a rel="license" href="{{ .Site.Params.licenseLink }}" target="_blank">{{ .Site.Params.license }}</a>{{ i18n "postCopyrightEnd" }}</p>
+    </blockquote>
+</div>
+{{ end }}
+{{ if .Site.Params.utterancesComment }}
+{{ partial "comment-utterances.html" . }}
+{{ end }}
+{{ if .Site.Params.disqusComment }}
+{{ partial "comment-disqus.html" . }}
+{{ end }}
 {{ end }}
