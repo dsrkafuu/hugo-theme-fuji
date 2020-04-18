@@ -1,28 +1,26 @@
 #pagination {
-    font-size: $font-size-l3;
     text-align: center;
     // spliter between pagination and last post block
     border-top: $spliter;
     padding: 1em 0 1em 0;
 
-    ul li {
+    li {
         display: inline;
         @include link-primary();
 
+        &.pag-item a {
+            vertical-align: middle;
+        }
+
         // darker number when active
-        &.active a {
-            color: $color-primary-dark;
+        &.pag-current a {
+            color: $color-secondary;
         }
+    }
 
-        // remove prev page at first page, next page at last page
-        &.disabled {
-            display: none;
-        }
-
-        // remove first page link and last page link
-        &:first-child,
-        &:last-child {
-            display: none;
-        }
+    svg {
+        height: 1em;
+        width: 1em;
+        vertical-align: middle;
     }
 }

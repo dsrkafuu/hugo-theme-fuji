@@ -30,3 +30,9 @@
 
 [postCommentLoadingFailed]
     other = "評論區讀取失敗"
+
+[archivesTotalPages]
+    other = "文章總數："
+
+[tagsCurrentTag]
+    other = "擁有標籤 {{ .Title }} 的文章："

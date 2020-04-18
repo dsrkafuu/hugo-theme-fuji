@@ -30,3 +30,9 @@
 
 [postCommentLoadingFailed]
     other = "评论区加载失败"
+
+[archivesTotalPages]
+    other = "文章总数："
+
+[tagsCurrentTag]
+    other = "拥有标签 {{ .Title }} 的文章："

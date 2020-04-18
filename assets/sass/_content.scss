@@ -11,6 +11,7 @@
     padding: 1.5em 0 1.5em 0;
 }
 
+// different padding of first & last child in archives page
 #post-archive {
     &:not(:first-child):not(:last-child) {
         padding: 0.5em 0 0.5em 0;
@@ -31,6 +32,7 @@
     border-top: $spliter;
 }
 
+// post title font & color
 #post-title {
     font-size: $font-size-l1;
 
@@ -43,6 +45,7 @@
     @include link-primary();
 }
 
+// post meta data style
 #post-meta {
     color: $color-mute;
     padding: 0.5em 0 1em 0;
@@ -75,29 +78,34 @@
     @include link-secondary();
 }
 
+// read more link style
 #post-exlink {
     margin: 0.5em 0 0 0;
 
     @include link-secondary();
 }
 
+// current tag indicator style in tags page
 #page-tag {
     padding: 1.5em 0 1.5em 0;
     font-size: $font-size-l3;
     border-bottom: $spliter;
 }
 
+// markdown article style
 article {
     padding-top: 1.5em;
     padding-bottom: 1.5em;
 }
 
+// in-post license style
 #license {
     @include link-primary();
 
     margin-bottom: 1.5em;
 }
 
+// comment loading indicator style
 #post-loading {
     border-top: $spliter;
     margin: 0 0 1.5em 0;
@@ -114,7 +122,7 @@ article {
     }
 }
 
-// not show while iframe not loaded
+// spliter between comment & post will not show while iframe not loaded
 #post-comment .utterances-frame {
     border-top: $spliter;
 }
