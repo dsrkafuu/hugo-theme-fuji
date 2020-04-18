@@ -30,3 +30,9 @@
 
 [postCommentLoadingFailed]
     other = "Comments failed to load."
+
+[archivesTotalPages]
+    other = "Total posts: "
+
+[tagsCurrentTag]
+    other = "Posts with the tag {{ .Title }}: "

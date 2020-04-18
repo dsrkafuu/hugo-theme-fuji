@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div id="page-tag">
-    <span>拥有标签 {{ .Title }} 的文章：</span>
+    <span>{{ i18n "tagsCurrentTag" . }}</span>
 </div>
 <!-- tags page range in posts -->
 {{ range .Paginator.Pages }}

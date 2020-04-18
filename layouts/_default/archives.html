@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div id="page-tag">
-    <span>文章总数：{{ len (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}</span>
+    <span>{{ i18n "archivesTotalPages" }}{{ len (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}</span>
 </div>
 <!-- archives range in posts -->
 {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) 50 }}

@@ -30,3 +30,9 @@
 
 [postCommentLoadingFailed]
     other = "読み込みエラー"
+
+[archivesTotalPages]
+    other = "総記事数："
+
+[tagsCurrentTag]
+    other = "タグ {{ .Title }} を持つ記事："
