@@ -1,20 +1,20 @@
 # Fuji
 
-A minimal Hugo theme inspired by [printempw](https://github.com/printempw/)'s Hexo theme [Murasaki](https://github.com/printempw/hexo-theme-murasaki/), with responsive grid system and markdown style, powered by GitHub Primer CSS.
+A minimal Hugo theme inspired by Hexo theme [Murasaki](https://github.com/printempw/hexo-theme-murasaki/), with responsive grid system and markdown style, powered by GitHub Primer CSS.
 
 ## Live demos
 
 [GitHub Pages Demo](https://amzrk2.cc/hugo-theme-fuji-demo/) | [My Blog](https://blog.amzrk2.cc/)
 
-![Screenshot of the theme](images/screenshot.png)
+![Screenshot of the theme](https://raw.githubusercontent.com/amzrk2/hugo-theme-fuji/master/images/screenshot.png)
 
 ## Todo
 
-- [ ] Custom pagination
+- [x] Custom pagination
 - [x] Archive page
 - [x] Analytics
 - [x] SEO optimization
-- [ ] Better mobile devices support
+- [x] Better mobile devices support
 - [ ] Multilingual
 
 ## Installation
@@ -59,9 +59,11 @@ Did you found a bug or got an idea for a new feature? Feel free to use the [issu
 
 ## License
 
-The theme is released under the ```GNU General Public License v3.0-only```, for more information read the [License](https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE).
+The theme is released under the ```GNU General Public License v3.0```, for more information read the [License](https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE).
 
 ## Annotations
+
+Thanks to [ress](https://github.com/ress997/) for some great help.
 
 Thanks to [printempw](https://github.com/printempw/) for the idea of theme.
 
