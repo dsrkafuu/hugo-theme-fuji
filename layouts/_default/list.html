@@ -17,9 +17,61 @@
     </div>
 </div>
 {{ end }}
+<!-- custom smart pagination -->
+{{ $offsetLinks := 2 }}
+{{ $maxLinks := (add (mul $offsetLinks 2) 1) }}
+{{ $lowerLimit := (add $offsetLinks 1) }}
+{{ $upperLimit := (sub $paginator.TotalPages $offsetLinks) }}
 {{ if gt $paginator.TotalPages 1 }}
-<div id="pagination">
-    {{ template "_internal/pagination.html" . }}
-</div>
+<ul id="pagination">
+    {{ if ne $paginator.PageNumber 1 }}
+    <li class="pag-first">
+        <a href="{{ $paginator.First.URL }}">{{ partial "fas/fa-angle-double-left" . }}</a>
+    </li>
+    {{ end }}
+    {{ if $paginator.HasPrev }}
+    <li class="pag-previous">
+        <a href="{{ $paginator.Prev.URL }}">{{ partial "fas/fa-angle-left" . }}</a>
+    </li>
+    {{ end }}
+
+    {{ range $paginator.Pagers }}
+    {{ $.Scratch.Set "pageNumFlag" false }}
+    {{ if gt $paginator.TotalPages $maxLinks }}
+    {{ if le $paginator.PageNumber $lowerLimit }}
+    {{ if le .PageNumber $maxLinks }}
+    {{ $.Scratch.Set "pageNumFlag" true }}
+    {{ end }}
+    {{ else if ge $paginator.PageNumber $upperLimit }}
+    {{ if gt .PageNumber (sub $paginator.TotalPages $maxLinks) }}
+    {{ $.Scratch.Set "pageNumFlag" true }}
+    {{ end }}
+    {{ else }}
+    {{ if and ( ge .PageNumber (sub $paginator.PageNumber $offsetLinks) ) ( le .PageNumber (add $paginator.PageNumber $offsetLinks) ) }}
+    {{ $.Scratch.Set "pageNumFlag" true }}
+    {{ end }}
+    {{ end }}
+    {{ else }}
+    {{ $.Scratch.Set "pageNumFlag" true }}
+    {{ end }}
+    {{ if eq ($.Scratch.Get "pageNumFlag") true }}
+    <li class="pag-item{{ if eq . $paginator }} pag-current{{ end }}">
+        <a href="{{ .URL }}">{{ .PageNumber }}</a>
+    </li>
+    {{ end }}
+    {{ end }}
+
+    {{ if $paginator.HasNext }}
+    <li class="pag-next">
+        <a href="{{ $paginator.Next.URL }}">{{ partial "fas/fa-angle-right" . }}</a>
+    </li>
+    {{ end }}
+    {{ if ne $paginator.PageNumber $paginator.TotalPages }}
+    <li class="pag-last">
+        <a href="{{ $paginator.Last.URL }}">{{ partial "fas/fa-angle-double-right" . }}</a>
+    </li>
+    {{ end }}
+</ul>
 {{ end }}
+
 {{ end }}
