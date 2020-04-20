@@ -3,6 +3,7 @@ title = "Fuji Demo"
 theme = "fuji"
 hasCJKLanguage = true
 enableEmoji = true
+enableRobotsTXT = true
 disableKinds = ["RSS", "taxonomyTerm"]
 
 ## Change this two to switch between different language
