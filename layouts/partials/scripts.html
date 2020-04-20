@@ -1,13 +1,13 @@
-<!-- Comment loading indicator -->
 {{ if and (.IsPage) (.Site.Params.utterancesComment) }}
+<!-- comment loading indicator -->
 <script>
     $(function () {
-        var loadingBar = new ProgressBar.Circle('#loading-bar', {
-            color: '#8AA2D3',
+        var loadingBar = new ProgressBar.Circle("#loading-bar", {
+            color: "#8AA2D3",
             strokeWidth: 15,
-            trailColor: '#E5E2E4',
+            trailColor: "#E5E2E4",
             trailWidth: 15,
-            fill: '#E5E2E4'
+            fill: "#E5E2E4"
         });
         loadingBar.animate(1.0, {
             duration: 10000
@@ -18,13 +18,13 @@
         var commentCheckInterval = self.setInterval(checkUtterances, 500);
 
         function checkUtterances() {
-            commentStatus = $('#post-comment .utterances').attr('style');
+            commentStatus = $("#post-comment .utterances").attr("style");
             if (commentStatus === undefined) {
                 commentLoadingTime += 1;
                 if (commentLoadingTime > 20) {
                     clearInterval(commentCheckInterval);
-                    $('#post-comment').hide();
-                    $('#post-loading p').text('{{ i18n "postCommentLoadingFailed" }}');
+                    $("#post-comment").hide();
+                    $("#post-loading p").text('{{ i18n "postCommentLoadingFailed" }}');
                 }
                 return;
             } else {
@@ -32,28 +32,28 @@
                 loadingBar.animate(1.0, {
                     duration: 500
                 }, function () {
-                    $('#post-loading').hide();
+                    $("#post-loading").hide();
                 });
             }
         }
     });
 </script>
 {{ end }}
-<!-- Scroll to top button -->
 {{ if .Site.Params.scrollTop }}
+<!-- scroll to top button -->
 <script>
     $(function () {
-        var bar = new ProgressBar.Circle('#progress', {
-            color: '#8AA2D3',
+        var bar = new ProgressBar.Circle("#progress", {
+            color: "#8AA2D3",
             strokeWidth: 12,
-            trailColor: '#E5E2E4',
+            trailColor: "#E5E2E4",
             trailWidth: 12,
             text: {
                 value: '{{ partial "fas/fa-angle-up" . }}',
                 autoStyleContainer: false,
                 style: null
             },
-            fill: '#E5E2E4'
+            fill: "#E5E2E4"
         });
         var scrolled = ($(window).scrollTop() / ($(document).height() - $(window).height() - 1));
         bar.animate(scrolled);
@@ -67,15 +67,27 @@
             bar.set(scrolled);
         });
     });
-    $('#container-progress').click(function () {
-        $('html, body').animate({
+    $("#container-progress").click(function () {
+        $("html, body").animate({
             scrollTop: 0
-        }, 'slow');
-        return false;
+        }, "slow");
     });
 </script>
 {{ end }}
-<!-- Vanilla LazyLoad -->
+{{ if .Site.Params.webpChecker }}
+<!-- webp checker -->
+<script>
+    $(function () {
+        Modernizr.on("webp", function (result) {
+            if (!result) {
+                $('<blockquote><p>{{ i18n "webpCheckerFront" }}<a href="https://caniuse.com/#feat=webp" target="_blank">WebP</a>{{ i18n "webpCheckerEnd" }}</p></blockquote>')
+                    .replaceAll("#content img");
+            }
+        });
+    });
+</script>
+{{ end }}
+<!-- vanilla lazyload -->
 <script>
     $(function () {
         var lazyLoadInstance = new LazyLoad({

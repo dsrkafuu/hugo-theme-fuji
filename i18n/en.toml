@@ -36,3 +36,9 @@
 
 [tagsCurrentTag]
     other = "Posts with the tag {{ .Title }}: "
+
+[webpCheckerFront]
+    other = "Your browser does not currently support "
+
+[webpCheckerEnd]
+    other = " images"

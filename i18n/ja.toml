@@ -36,3 +36,9 @@
 
 [tagsCurrentTag]
     other = "タグ {{ .Title }} を持つ記事："
+
+[webpCheckerFront]
+    other = "お使いのブラウザは現在 "
+
+[webpCheckerEnd]
+    other = " 画像の表示に対応していません"

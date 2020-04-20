@@ -45,6 +45,12 @@ $ hugo server
 
 Now enter [```localhost:1313```](http://localhost:1313) in the address bar of your browser.
 
+If you want to generate your site, just run:
+
+```bash
+$ hugo --minify
+```
+
 ## Update the theme
 
 Inside the folder of your Hugo site run:

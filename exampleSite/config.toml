@@ -61,6 +61,9 @@ paginate = 10
   cdnJQueryJS = "https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"
   cdnProgessJS = "https://cdn.jsdelivr.net/npm/progressbar.js@1.1.0/dist/progressbar.min.js"
 
+  # Replace all webp img if there are no fallback set (DEVELOPMENT USE ONLY)
+  # webpChecker = true
+
 [markup]
   [markup.highlight]
     style = "monokailight"

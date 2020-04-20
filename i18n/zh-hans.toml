@@ -36,3 +36,9 @@
 
 [tagsCurrentTag]
     other = "拥有标签 {{ .Title }} 的文章："
+
+[webpCheckerFront]
+    other = "您的浏览器暂未支持显示 "
+
+[webpCheckerEnd]
+    other = " 图片"

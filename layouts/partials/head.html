@@ -5,6 +5,7 @@
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
 {{ hugo.Generator }}
+
 {{ partial "favicon.html" . }}
 
 {{ if .IsHome }}
@@ -18,20 +19,29 @@
 <meta name="keywords" content="{{ delimit .Params.tags ", " }}">
 {{ end }}
 
-
 {{ template "_internal/opengraph.html" . }}
 {{ template "_internal/twitter_cards.html" . }}
 
 {{ partial "analytic-google.html" . }}
 
+<!-- global css -->
 {{ $options := (dict "targetPath" "css/main.min.css" "outputStyle" "compressed") }}
 {{ $style := resources.Get "sass/main.scss" | resources.ToCSS $options }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
+
+<!-- global js -->
+{{ if .Site.Params.webpChecker }}
+{{ $webp := resources.Get "js/modernizr-webp.min.js" }}
+<script src="{{ $webp.Permalink }}"></script>
+{{ end }}
 {{ with .Site.Params.cdnIntersectionObserverJS }}
-<script src="{{ . }}"></script>{{ end }}
+<script src="{{ . }}"></script>
+{{ end }}
 <script src="{{ .Site.Params.cdnVanillaLazyloadJS }}"></script>
 <script src="{{ .Site.Params.cdnJQueryJS }}"></script>
 <script src="{{ .Site.Params.cdnProgessJS }}"></script>
+
+<!-- optional katex math cdnjs -->
 {{ if or .Params.math .Site.Params.math }}
 {{ partial "math.html" . }}
 {{ end }}
