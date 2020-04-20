@@ -5,16 +5,12 @@
 @import "_primer.scss";
 
 // include only used part of @primer/css/core
-// Include .octicon base styles
-@import "@primer/octicons/index.scss";
 // Global requirements
 @import "@primer/css/support/index.scss";
-
 // Modules
 @import "@primer/css/base/index.scss";
 @import "@primer/css/layout/index.scss";
 @import "@primer/css/markdown/index.scss";
-
 // Utilities always go last so that they can override components
 @import "@primer/css/utilities/index.scss";
 
