@@ -54,8 +54,14 @@ paginate = 10
   disqusComment = false
   disqusShortname = "[ENTER YOUR DISQUS SHORTNAME HERE]"
 
-  # Custom lazyload thumbnail
-  cdnLazyloadSRC = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.0.0/lazyload/dsr_loading.svg"
+  # Custom lazyload placeholder
+  # 16:9
+  cdnLazyPlaceholder = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.1.0/lazyload/dsrca_loading_480x270.svg"
+  # 32:9
+  cdnLazyPlaceholderRow = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.1.0/lazyload/dsrca_loading_960x270.svg"
+  # 8:9
+  cdnLazyPlaceholderCol = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.1.0/lazyload/dsrca_loading_480x540.svg"
+
   # Custom css & js CDN
   # cdnIntersectionObserverJS = "https://cdn.jsdelivr.net/npm/intersection-observer@0.7.0/intersection-observer.min.js" # Optional
   cdnVanillaLazyloadJS = "https://cdn.jsdelivr.net/npm/vanilla-lazyload@15.1.1/dist/lazyload.min.js"

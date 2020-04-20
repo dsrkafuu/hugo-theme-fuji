@@ -53,18 +53,28 @@ $ hugo --minify
 
 ## Advance configration
 
+### Lazyload images
+
+Lazyload images in posts, for example in ```content/post/test.md```:
+
+```go-html-template
+{{< lazyimg "This is alt text" "/img/sample.png" >}}
+{{< lazyimg-row "This is alt text" "/img/sample.png" >}}
+{{< lazyimg-col "This is alt text" "/img/sample.png" >}}
+```
+
+```lazyimg``` will show a 16x9 placeholder before image is loaded, so ```lazyimg-row``` will show a 32x9 placeholder and ```lazyimg-col``` will show a 8x9 placeholder. You can choose different aspect ratios you want for different images. The placeholder image can be set in site's ```config.toml```.
+
+Note that if you use the origin markdown syntax to add images such as ```![This is alt text](/img/sample.png)```, it will not become a lazy image.
+
+### Markdown render hook
+
 You can create the files below in your site to adjust the markdown render hook, see [Hugo's Official Docs](https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks).
 
 You can use ```layouts/_default/_markup/render-link.html``` to decide whether or not links in the markdown content will open in new tab:
 
 ```html
 <a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank"{{ end }}>{{ .Text | safeHTML }}</a>
-```
-
-You can use ```layouts/_default/_markup/render-image.html``` to change the lazyload placeholder:
-
-```html
-<p><img class="lazy" src="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.0.0/lazyload/dsr_loading.svg" data-src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title }} title="{{ . }}"{{ end }} /></p>
 ```
 
 ## Update the theme
