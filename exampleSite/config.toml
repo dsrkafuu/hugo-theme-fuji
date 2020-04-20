@@ -54,7 +54,7 @@ paginate = 10
   disqusShortname = "[ENTER YOUR DISQUS SHORTNAME HERE]"
 
   # Custom lazyload thumbnail
-  cdnLazyloadSRC = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr/lazyload/dsr_loading.svg"
+  cdnLazyloadSRC = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.0.0/lazyload/dsr_loading.svg"
   # Custom css & js CDN
   # cdnIntersectionObserverJS = "https://cdn.jsdelivr.net/npm/intersection-observer@0.7.0/intersection-observer.min.js" # Optional
   cdnVanillaLazyloadJS = "https://cdn.jsdelivr.net/npm/vanilla-lazyload@15.1.1/dist/lazyload.min.js"

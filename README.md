@@ -51,6 +51,22 @@ If you want to generate your site, just run:
 $ hugo --minify
 ```
 
+## Advance configration
+
+You can create the files below in your site to adjust the markdown render hook, see [Hugo's Official Docs](https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks).
+
+You can use ```layouts/_default/_markup/render-link.html``` to decide whether or not links in the markdown content will open in new tab:
+
+```html
+<a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank"{{ end }}>{{ .Text | safeHTML }}</a>
+```
+
+You can use ```layouts/_default/_markup/render-image.html``` to change the lazyload placeholder:
+
+```html
+<p><img class="lazy" src="https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.0.0/lazyload/dsr_loading.svg" data-src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title }} title="{{ . }}"{{ end }} /></p>
+```
+
 ## Update the theme
 
 Inside the folder of your Hugo site run:
