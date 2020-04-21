@@ -75,6 +75,10 @@ paginate = 10
   [markup.highlight]
     style = "monokailight"
 
+  [markup.tableOfContents]
+    startLevel = 2 # Start level of TOC, 2 means h2 or ##
+    endLevel = 2 # End level of TOC, 3 means h3 or ###
+
 [taxonomies]
   tag = "tags"
 
