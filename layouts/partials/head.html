@@ -30,16 +30,13 @@
 <link rel="stylesheet" href="{{ $style.Permalink }}">
 
 <!-- global js -->
+<script src="{{ .Site.Params.cdnJQueryJS }}"></script>
+<script src="{{ .Site.Params.cdnProgessJS }}"></script>
+<script src="{{ .Site.Params.cdnLazysizesAsyncJS }}" async></script>
 {{ if .Site.Params.webpChecker }}
 {{ $webp := resources.Get "js/modernizr-webp.min.js" }}
 <script src="{{ $webp.Permalink }}"></script>
 {{ end }}
-{{ with .Site.Params.cdnIntersectionObserverJS }}
-<script src="{{ . }}"></script>
-{{ end }}
-<script src="{{ .Site.Params.cdnVanillaLazyloadJS }}"></script>
-<script src="{{ .Site.Params.cdnJQueryJS }}"></script>
-<script src="{{ .Site.Params.cdnProgessJS }}"></script>
 
 <!-- optional katex math cdnjs -->
 {{ if or .Params.math .Site.Params.math }}
