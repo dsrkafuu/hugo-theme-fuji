@@ -19,6 +19,9 @@
 [postMetaNoTag]
     other = "タグはありません"
 
+[postMetaWordCount]
+    other = " 文字"
+
 [postCopyrightFront]
     other = "特定のセクションを除いて、このサイトは "
 

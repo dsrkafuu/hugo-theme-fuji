@@ -19,6 +19,9 @@
 [postMetaNoTag]
     other = "No tag"
 
+[postMetaWordCount]
+    other = " words"
+
 [postCopyrightFront]
     other = "Unless otherwise noted, the content of this site is licensed under "
 

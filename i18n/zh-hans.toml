@@ -19,6 +19,9 @@
 [postMetaNoTag]
     other = "无标签"
 
+[postMetaWordCount]
+    other = " 字"
+
 [postCopyrightFront]
     other = "除特殊注明部分，本站内容采用 "
 

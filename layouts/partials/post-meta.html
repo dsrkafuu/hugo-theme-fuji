@@ -1,6 +1,9 @@
 <span class="post-meta-item post-meta-date">
     <time datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }} | </time>
 </span>
+<span class="post-meta-item post-meta-count">
+    <span>{{ .WordCount }}{{ i18n "postMetaWordCount" }} | </span>
+</span>
 <span class="post-meta-item post-meta-tags">
     {{ if .Params.tags }}
     {{ range .Params.tags }}
