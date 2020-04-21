@@ -1,3 +1,9 @@
+{{ if in .Site.Params.mainSections .Type }}
+<div id="widget-toc">
+    <h5>{{ i18n "sidebarToc" }}</h5>
+    {{.TableOfContents}}
+</div>
+{{ end }}
 <div id="widget-pages">
     <h5>{{ i18n "sidebarPages" }}</h5>
     <ul>
