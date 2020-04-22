@@ -43,7 +43,7 @@
 #container-progress {
     cursor: pointer;
     position: fixed;
-    width: 3em;
+    width: 2.5em;
     right: 1em;
     bottom: 1em;
     color: $color-primary;
@@ -54,7 +54,7 @@
 
     .progressbar-text {
         svg {
-            width: 24px;
+            width: 1em;
             vertical-align: middle;
         }
 
