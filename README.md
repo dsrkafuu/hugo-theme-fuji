@@ -29,29 +29,36 @@ For more information read the official [setup guide](https://gohugo.io/overview/
 
 ## Getting started
 
-After installing the theme successfully it requires a just a few more steps to get your site running.
-
-### The config file
-
 Copy the ```config.toml``` in the ```exampleSite```to the root of your Hugo site. Change strings as you like.
 
-### Local preview
-
-In order to see your site in action, run Hugo's built-in local server:
+Run Hugo's built-in local server:
 
 ```bash
 $ hugo server
 ```
 
-Now enter [```localhost:1313```](http://localhost:1313) in the address bar of your browser.
-
-If you want to generate your site, just run:
-
-```bash
-$ hugo --minify
-```
+If you want to generate your site, just run ```hugo``` or ```hugo --minify```.
 
 ## Advance configration
+
+### In-post license
+
+You can set variables below in post's front matter to disable it:
+
+```toml
+noLicense = true # Do not show license in this post
+```
+
+### APlayer
+
+APlayer support both global left-bottom-fixed or in-post, you can set these variables in site's ```config.toml``` or in post's front matter:
+
+```toml
+playerName = "..." # Audio title or name
+playerArtist = "..." # Audio artist
+playerURL = "..." # Audio URL, support aac, mp3, wav and ogg
+playerCover = "..." # Audio cover
+```
 
 ### Lazyload images
 
@@ -95,8 +102,6 @@ The theme is released under the ```GNU General Public License v3.0```, for more 
 
 ## Annotations
 
-Thanks to [ress](https://github.com/ress997/) for some great help.
+Thanks to [ress](https://github.com/ress997/) for some great help and [printempw](https://github.com/printempw/) for the origin idea of theme.
 
-Thanks to [printempw](https://github.com/printempw/) for the idea of theme.
-
-Thanks to developers for creating Hugo and the awesome community around the project.
+Thanks to developers for creating Hugo, Primer CSS, Font Awesome, APlayer and Lazysizes with the awesome community around these project.

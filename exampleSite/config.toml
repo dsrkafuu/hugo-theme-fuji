@@ -43,15 +43,13 @@ paginate = 10
 
   # Comments
   # utterances, see: https://utteranc.es/
-  utterancesComment = false
-  cdnUtterancesJS = "https://utteranc.es/client.js"
-  utterancesRepo = "[ENTER REPO HERE]"
-  utterancesIssueTerm = "pathname"
-  utterancesTheme = "github-light"
+  # utterancesRepo = "[ENTER REPO HERE]"
+  # utterancesIssueTerm = "pathname"
+  # utterancesTheme = "github-light"
 
   # Disqus, see: https://disqus.com/admin/install/platforms/universalcode/
-  disqusComment = false
-  disqusShortname = "[ENTER YOUR DISQUS SHORTNAME HERE]"
+  # disqusComment = false
+  # disqusShortname = "[ENTER YOUR DISQUS SHORTNAME HERE]"
 
   # Custom lazyload placeholder
   # 16:9
