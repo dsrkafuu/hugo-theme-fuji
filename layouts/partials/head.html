@@ -14,7 +14,7 @@
 <title>{{ .Title }} - {{ .Site.Title }}</title>
 {{ end }}
 <meta name="author" content="{{if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}" />
-<meta name="description" content="{{if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+<meta name="description" content="{{if .Params.description }}{{ .Params.description }}{{ else if .Summary }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
 {{ if .Params.tags }}
 <meta name="keywords" content="{{ delimit .Params.tags ", " }}" />
 {{ end }}
