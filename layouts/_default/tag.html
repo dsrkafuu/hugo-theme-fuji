@@ -16,7 +16,7 @@
         {{ .Summary }}
     </div>
     <div id="post-exlink">
-        <a href="{{ .Permalink }}"><i class="fas fa-chevron-right"></i> READ MORE ...</a>
+        <a href="{{ .Permalink }}"><i class="fas fa-angle-right"></i>&nbsp;READ MORE&nbsp;<i class="fas fa-angle-left"></i></a>
     </div>
 </div>
 {{ end }}
@@ -71,7 +71,7 @@
     {{ end }}
     {{ if ne $paginator.PageNumber $paginator.TotalPages }}
     <li class="pag-last">
-        <a href="{{ .Permalink }}"><i class="fas fa-angle-right"></i> READ MORE <i class="fas fa-angle-left"></i></a>
+        <a href="{{ $paginator.Last.URL }}"><i class="fas fa-angle-double-right"></i></a>
     </li>
     {{ end }}
 </ul>
