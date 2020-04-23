@@ -14,8 +14,7 @@ languageCode = "en"
 summaryLength = 100 # Custom cummary length, add <!--more--> in post file to custom split point
 paginate = 10
 
-# Set your Google Analytics UA here, or comment out to disable
-# googleAnalytics = "UA-000000000-0"
+# googleAnalytics = "UA-000000000-0" # Set your Google Analytics UA here, or comment out to disable
 
 [permalinks]
   post = "/:filename/" # Custom post links, e.g. "/:year/:month/:title/"
@@ -62,21 +61,16 @@ paginate = 10
   # 8:9
   cdnLazyPlaceholderCol = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.1.0/lazyload/dsrca_loading_480x540.svg"
 
-  # Custom css & js CDN
-  cdnLazysizesAsyncJS = "https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js"
-  cdnJQueryJS = "https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"
-  cdnProgessJS = "https://cdn.jsdelivr.net/npm/progressbar.js@1.1.0/dist/progressbar.min.js"
-
-  # Replace all webp img if there are no fallback set (DEVELOPMENT USE ONLY)
-  # webpChecker = true
+  # enable this to fetch css & js from jsDelivr CDN
+  useCDN = false
 
 [markup]
   [markup.highlight]
     style = "monokailight"
 
   [markup.tableOfContents]
-    startLevel = 2 # Start level of TOC, 2 means h2 or ##
-    endLevel = 2 # End level of TOC, 3 means h3 or ###
+    startLevel = 2
+    endLevel = 2
 
 [taxonomies]
   tag = "tags"
@@ -100,6 +94,10 @@ paginate = 10
     url = "https://github.com/amzrk2"
     weight = 1
   [[menu.link]]
+    name = "Twitter"
+    url = "https://twitter.com/amzrk2"
+    weight = 2
+  [[menu.link]]
     name = "bilibili"
     url = "https://space.bilibili.com/19767474"
-    weight = 2
+    weight = 3

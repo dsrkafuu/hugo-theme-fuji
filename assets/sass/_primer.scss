@@ -43,8 +43,8 @@ $width-lg: 932px;
 
 // @primer/css/support/variables/typography.scss
 // Font stacks
-$body-font: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', 'Source Han Sans SC', 'Source Han Sans CN', 'Source Han Sans', 'Microsoft YaHei', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+$body-font: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', 'Source Han Sans SC', 'Source Han Sans CN', 'Source Han Sans', 'Microsoft YaHei', sans-serif;
 // Monospace font stack
-$mono-font: 'Cascadia Code', 'SFMono-Regular', Consolas, $body-font;
+$mono-font: 'Cascadia Code', 'SFMono-Regular', 'Consolas', $body-font;
 // The base body size
 $body-font-size: 16px;
