@@ -64,6 +64,12 @@ paginate = 10
   # enable this to fetch css & js from jsDelivr CDN
   useCDN = true
 
+  # site global fixed mode aplayer 
+  # playerName = "..." # Audio title or name
+  # playerArtist = "..." # Audio artist
+  # playerURL = "..." # Audio URL, support aac, mp3, wav and ogg
+  # playerCover = "..." # Audio cover
+
 [markup]
   [markup.highlight]
     style = "monokailight"

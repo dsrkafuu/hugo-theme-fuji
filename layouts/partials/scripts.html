@@ -25,6 +25,41 @@
     });
 </script>
 {{ end }}
+{{ with .Params.playerURL }}
+<script>
+    $(function () {
+        const postAPlayer = new APlayer({
+            container: document.getElementById("post-aplayer"),
+            theme: "#8F82BC",
+            volume: 0.25,
+            audio: [{
+                name: "{{ $.Params.playerName }}",
+                artist: "{{ $.Params.playerArtist }}",
+                url: "{{ . }}",
+                cover: "{{ $.Params.playerCover }}"
+            }]
+        });
+    });
+</script>
+{{ end }}
+{{ with .Site.Params.playerURL }}
+<script>
+    $(function () {
+        const siteAPlayer = new APlayer({
+            container: document.getElementById("aplayer"),
+            fixed: true,
+            theme: "#8F82BC",
+            volume: 0.25,
+            audio: [{
+                name: "{{ $.Site.Params.playerName }}",
+                artist: "{{ $.Site.Params.playerArtist }}",
+                url: "{{ . }}",
+                cover: "{{ $.Site.Params.playerCover }}"
+            }]
+        });
+    });
+</script>
+{{ end }}
 {{ if .Site.Params.scrollTop }}
 <!-- scroll to top button -->
 <script>

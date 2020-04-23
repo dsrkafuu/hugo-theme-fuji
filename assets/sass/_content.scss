@@ -78,6 +78,11 @@
     @include link-secondary();
 }
 
+#post-aplayer {
+    font-family: inherit;
+    margin: 0 2px 1.5em 2px;
+}
+
 // read more link style
 #post-exlink {
     margin: 0.5em 0 0 0;
