@@ -62,7 +62,7 @@ paginate = 10
   cdnLazyPlaceholderCol = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.1.0/lazyload/dsrca_loading_480x540.svg"
 
   # enable this to fetch css & js from jsDelivr CDN
-  useCDN = false
+  useCDN = true
 
 [markup]
   [markup.highlight]
