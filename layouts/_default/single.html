@@ -6,6 +6,9 @@
     <div id="post-meta">
         {{ partial "post-meta.html" . }}
     </div>
+    {{ with .Params.playerURL }}
+    <div id="post-aplayer"></div>
+    {{ end }}
     <div class="markdown-body" id="post-content">
         {{ .Content }}
     </div>
@@ -17,10 +20,6 @@
     </blockquote>
 </div>
 {{ end }}
-{{ if .Site.Params.utterancesComment }}
 {{ partial "comment-utterances.html" . }}
-{{ end }}
-{{ if .Site.Params.disqusComment }}
 {{ partial "comment-disqus.html" . }}
-{{ end }}
 {{ end }}

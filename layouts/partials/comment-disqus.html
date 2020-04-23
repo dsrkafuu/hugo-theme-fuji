@@ -1,16 +1,18 @@
+{{ with .Site.Params.disqusShortname }}
 <div id="post-comment">
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function () {
-            this.page.url = "{{ .Permalink }}";
-            this.page.identifier = "{{ .RelPermalink }}";
+            this.page.url = "{{ $.Permalink }}";
+            this.page.identifier = "{{ $.RelPermalink }}";
         };
         (function () {
             var d = document,
                 s = d.createElement('script');
-            s.src = 'https://{{ .Site.Params.disqusShortname }}.disqus.com/embed.js';
+            s.src = 'https://{{ . }}.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         })();
     </script>
 </div>
+{{ end }}

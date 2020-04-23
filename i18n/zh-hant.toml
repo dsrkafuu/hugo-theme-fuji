@@ -1,3 +1,6 @@
+[sidebarToc]
+    other = "目錄"
+
 [sidebarPages]
     other = "頁面"
 
@@ -19,6 +22,9 @@
 [postMetaNoTag]
     other = "無標籤"
 
+[postMetaWordCount]
+    other = " 字"
+
 [postCopyrightFront]
     other = "除特殊註明部分，本站內容採用 "
 
@@ -36,3 +42,9 @@
 
 [tagsCurrentTag]
     other = "擁有標籤 {{ .Title }} 的文章："
+
+[webpCheckerFront]
+    other = "您的瀏覽器暫未支持顯示 "
+
+[webpCheckerEnd]
+    other = " 圖片"

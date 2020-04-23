@@ -1,7 +1,10 @@
-<span class="post-meta-item post-meta-date">
-    <time datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }} | </time>
+<span>
+    <time datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time> |
 </span>
-<span class="post-meta-item post-meta-tags">
+<span>
+    <span>{{ .WordCount }}{{ i18n "postMetaWordCount" }}</span> |
+</span>
+<span>
     {{ if .Params.tags }}
     {{ range .Params.tags }}
     <a href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}/">{{ . }}</a>

@@ -31,6 +31,11 @@
     }
 
     @include link-secondary();
+
+    img {
+        border: 2px solid $color-secondary;
+        border-radius: 1px;
+    }
 }
 
 #post-content {

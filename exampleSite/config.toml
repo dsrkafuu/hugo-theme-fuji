@@ -3,6 +3,7 @@ title = "Fuji Demo"
 theme = "fuji"
 hasCJKLanguage = true
 enableEmoji = true
+enableRobotsTXT = true
 disableKinds = ["RSS", "taxonomyTerm"]
 
 ## Change this two to switch between different language
@@ -13,8 +14,7 @@ languageCode = "en"
 summaryLength = 100 # Custom cummary length, add <!--more--> in post file to custom split point
 paginate = 10
 
-# Set your Google Analytics UA here, or comment out to disable
-# googleAnalytics = "UA-000000000-0"
+# googleAnalytics = "UA-000000000-0" # Set your Google Analytics UA here, or comment out to disable
 
 [permalinks]
   post = "/:filename/" # Custom post links, e.g. "/:year/:month/:title/"
@@ -43,27 +43,38 @@ paginate = 10
 
   # Comments
   # utterances, see: https://utteranc.es/
-  utterancesComment = false
-  cdnUtterancesJS = "https://utteranc.es/client.js"
-  utterancesRepo = "[ENTER REPO HERE]"
-  utterancesIssueTerm = "pathname"
-  utterancesTheme = "github-light"
+  # utterancesRepo = "[ENTER REPO HERE]"
+  # utterancesIssueTerm = "pathname"
+  # utterancesTheme = "github-light"
 
   # Disqus, see: https://disqus.com/admin/install/platforms/universalcode/
-  disqusComment = false
-  disqusShortname = "[ENTER YOUR DISQUS SHORTNAME HERE]"
+  # disqusComment = false
+  # disqusShortname = "[ENTER YOUR DISQUS SHORTNAME HERE]"
 
-  # Custom lazyload thumbnail
-  cdnLazyloadSRC = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr/lazyload/dsr_loading.svg"
-  # Custom css & js CDN
-  # cdnIntersectionObserverJS = "https://cdn.jsdelivr.net/npm/intersection-observer@0.7.0/intersection-observer.min.js" # Optional
-  cdnVanillaLazyloadJS = "https://cdn.jsdelivr.net/npm/vanilla-lazyload@15.1.1/dist/lazyload.min.js"
-  cdnJQueryJS = "https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"
-  cdnProgessJS = "https://cdn.jsdelivr.net/npm/progressbar.js@1.1.0/dist/progressbar.min.js"
+  # Custom lazyload placeholder
+  # 16:9
+  cdnLazyPlaceholder = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.1.0/lazyload/dsrca_loading_480x270.svg"
+  # 32:9
+  cdnLazyPlaceholderRow = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.1.0/lazyload/dsrca_loading_960x270.svg"
+  # 8:9
+  cdnLazyPlaceholderCol = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.1.0/lazyload/dsrca_loading_480x540.svg"
+
+  # enable this to fetch css & js from jsDelivr CDN
+  useCDN = true
+
+  # site global fixed mode aplayer 
+  # playerName = "..." # Audio title or name
+  # playerArtist = "..." # Audio artist
+  # playerURL = "..." # Audio URL, support aac, mp3, wav and ogg
+  # playerCover = "..." # Audio cover
 
 [markup]
   [markup.highlight]
     style = "monokailight"
+
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 2
 
 [taxonomies]
   tag = "tags"
@@ -87,6 +98,10 @@ paginate = 10
     url = "https://github.com/amzrk2"
     weight = 1
   [[menu.link]]
+    name = "Twitter"
+    url = "https://twitter.com/amzrk2"
+    weight = 2
+  [[menu.link]]
     name = "bilibili"
     url = "https://space.bilibili.com/19767474"
-    weight = 2
+    weight = 3
