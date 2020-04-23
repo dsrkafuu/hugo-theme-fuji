@@ -23,12 +23,12 @@
 <ul id="pagination">
     {{ if ne $paginator.PageNumber 1 }}
     <li class="pag-first">
-        <a href="{{ $paginator.First.URL }}">{{ partial "fas/fa-angle-double-left" . }}</a>
+        <a href="{{ $paginator.First.URL }}"><i class="fas fa-angle-double-left"></a>
     </li>
     {{ end }}
     {{ if $paginator.HasPrev }}
     <li class="pag-previous">
-        <a href="{{ $paginator.Prev.URL }}">{{ partial "fas/fa-angle-left" . }}</a>
+        <a href="{{ $paginator.Prev.URL }}"><i class="fas fa-angle-left"></a>
     </li>
     {{ end }}
 
@@ -60,12 +60,12 @@
 
     {{ if $paginator.HasNext }}
     <li class="pag-next">
-        <a href="{{ $paginator.Next.URL }}">{{ partial "fas/fa-angle-right" . }}</a>
+        <a href="{{ $paginator.Next.URL }}"><i class="fas fa-angle-right"></i></a>
     </li>
     {{ end }}
     {{ if ne $paginator.PageNumber $paginator.TotalPages }}
     <li class="pag-last">
-        <a href="{{ $paginator.Last.URL }}">{{ partial "fas/fa-angle-double-right" . }}</a>
+        <a href="{{ $paginator.Last.URL }}"><i class="fas fa-angle-double-right"></i></a>
     </li>
     {{ end }}
 </ul>

@@ -41,8 +41,7 @@
     $(function () {
         Modernizr.on("webp", function (result) {
             if (!result) {
-                $('<blockquote><p>{{ i18n "webpCheckerFront" }}<a href="https://caniuse.com/#feat=webp" target="_blank">WebP</a>{{ i18n "webpCheckerEnd" }}</p></blockquote>')
-                    .replaceAll("#content img");
+                $('<blockquote><p>{{ i18n "webpCheckerFront" }}<a href="https://caniuse.com/#feat=webp" target="_blank">WebP</a>{{ i18n "webpCheckerEnd" }}</p></blockquote>').replaceAll("#content img");
             }
         });
     });

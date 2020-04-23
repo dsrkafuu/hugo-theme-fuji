@@ -8,8 +8,12 @@
         display: inline;
         @include link-primary();
 
-        &.pag-item a {
-            vertical-align: middle;
+        &.pag-item {
+            padding: 0em 0.25em;
+
+            a {
+                vertical-align: middle;
+            }
         }
 
         // darker number when active
@@ -18,9 +22,8 @@
         }
     }
 
-    svg {
-        height: 1em;
-        width: 1em;
+    i {
+        padding: 0em 0.25em;
         vertical-align: middle;
     }
 }
