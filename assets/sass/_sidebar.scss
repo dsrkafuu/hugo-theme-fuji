@@ -40,27 +40,27 @@
     }
 }
 
-#container-progress {
+#scroll-top {
     cursor: pointer;
     position: fixed;
     width: 2.5em;
+    height: 2.5em;
     right: 1em;
     bottom: 1em;
     color: $color-primary;
+    background-color: $color-spliter;
+    border-radius: 100%;
+    line-height: 2.5em;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
 
     &:hover {
         color: $color-secondary;
     }
 
-    .progressbar-text {
-        svg {
-            width: 1em;
-            vertical-align: middle;
-        }
-
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+    i {
+        font-size: 1.5em;
+        line-height: inherit;
     }
 }

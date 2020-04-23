@@ -2,38 +2,24 @@
 <!-- comment loading indicator -->
 <script>
     $(function () {
-        var loadingBar = new ProgressBar.Circle("#loading-bar", {
-            color: "#8AA2D3",
-            strokeWidth: 15,
-            trailColor: "#E5E2E4",
-            trailWidth: 15,
-            fill: "#E5E2E4"
-        });
-        loadingBar.animate(1.0, {
-            duration: 10000
-        });
-
         var commentStatus;
         var commentLoadingTime = 0;
         var commentCheckInterval = self.setInterval(checkUtterances, 500);
 
         function checkUtterances() {
-            commentStatus = $("#post-comment .utterances").attr("style");
+            commentStatus = $('#post-comment .utterances').attr('style');
             if (commentStatus === undefined) {
                 commentLoadingTime += 1;
                 if (commentLoadingTime > 20) {
                     clearInterval(commentCheckInterval);
-                    $("#post-comment").hide();
-                    $("#post-loading p").text('{{ i18n "postCommentLoadingFailed" }}');
+                    $('#post-comment').hide();
+                    $('#post-loading p').text('{{ i18n "postCommentLoadingFailed" }}');
+                    $('#post-loading i').attr("class", "far fa-times-circle");
                 }
                 return;
             } else {
                 clearInterval(commentCheckInterval);
-                loadingBar.animate(1.0, {
-                    duration: 500
-                }, function () {
-                    $("#post-loading").hide();
-                });
+                $('#post-loading').hide();
             }
         }
     });
@@ -42,31 +28,7 @@
 {{ if .Site.Params.scrollTop }}
 <!-- scroll to top button -->
 <script>
-    $(function () {
-        var bar = new ProgressBar.Circle("#progress", {
-            color: "#8AA2D3",
-            strokeWidth: 10,
-            trailColor: "#E5E2E4",
-            trailWidth: 10,
-            text: {
-                value: '{{ partial "fas/fa-angle-up" . }}',
-                style: null
-            },
-            fill: "#E5E2E4"
-        });
-        var scrolled = ($(window).scrollTop() / ($(document).height() - $(window).height() - 1));
-        bar.animate(scrolled);
-        $(window).scroll(function () {
-            scrolled = ($(window).scrollTop() / ($(document).height() - $(window).height() - 1));
-            if (scrolled < 0.0005) {
-                scrolled = 0;
-            } else if (scrolled > 1) {
-                scrolled = 1;
-            }
-            bar.set(scrolled);
-        });
-    });
-    $("#container-progress").click(function () {
+    $("#scroll-top").click(function () {
         $("html, body").animate({
             scrollTop: 0
         }, "slow");

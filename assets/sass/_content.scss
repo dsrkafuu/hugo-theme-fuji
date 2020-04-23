@@ -100,7 +100,7 @@ article {
 
 // in-post license style
 #license {
-    @include link-primary();
+    @include link-secondary();
 
     margin-bottom: 1.5em;
 }
@@ -110,14 +110,14 @@ article {
     border-top: $spliter;
     margin: 0 0 1.5em 0;
     padding-top: 1.5em;
+    text-align: center;
 
-    #container-loading-bar {
-        width: 2em;
-        margin: 0 auto;
+    i {
+        font-size: 1.5em;
+        color: $color-primary;
     }
 
     p {
-        text-align: center;
         margin: 0.5em 0 0 0;
     }
 }

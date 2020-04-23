@@ -25,14 +25,14 @@
 
 <!-- global css -->
 {{ $options := (dict "targetPath" "css/main.min.css" "outputStyle" "compressed") }}
-{{ $style := resources.Get "sass/main.scss" | resources.ToCSS $options | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous" />
+{{ $style := resources.Get "sass/main.scss" | resources.ToCSS $options }}
+<link rel="stylesheet" href="{{ $style.Permalink }}" />
 
 {{ if .Site.Params.useCDN }}
 <!-- global dependency -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/js/fontawesome.min.js" integrity="sha256-NP9NujdEzS5m4ZxvNqkcbxyHB0dTRy9hG13RwTVBGwo=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous">
 <!-- optional katex math -->
 {{ if or .Params.math .Site.Params.math }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous" />
@@ -41,20 +41,20 @@
 {{ end }}
 {{ else }}
 <!-- global dependency -->
-{{ $jquery := resources.Get "js/jquery.min.js" | resources.Fingerprint }}
-<script src="{{ $jquery.Permalink }}" integrity="{{ $jquery.Data.Integrity }}" crossorigin="anonymous"></script>
-{{ $lazysizes := resources.Get "js/lazysizes.min.js" | resources.Fingerprint }}
-<script src="{{ $lazysizes.Permalink }}" integrity="{{ $lazysizes.Data.Integrity }}" crossorigin="anonymous"></script>
-{{ $fontawesome := resources.Get "js/fontawesome.min.js" | resources.Fingerprint }}
-<script src="{{ $fontawesome.Permalink }}" integrity="{{ $fontawesome.Data.Integrity }}" crossorigin="anonymous"></script>
+{{ $jquery := resources.Get "js/jquery.min.js" }}
+<script src="{{ $jquery.Permalink }}"></script>
+{{ $lazysizes := resources.Get "js/lazysizes.min.js" }}
+<script src="{{ $lazysizes.Permalink }}"></script>
+{{ $fontawesome := resources.Get "css/all.min.css" }}
+<link rel="stylesheet" href="{{ $fontawesome.Permalink }}" />
 <!-- optional katex math -->
 {{ if or .Params.math .Site.Params.math }}
-{{ $katexCSS := resources.Get "css/katex.min.css" | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $katexCSS.Permalink }}" integrity="{{ $katexCSS.Data.Integrity }}" crossorigin="anonymous" />
-{{ $katexJS := resources.Get "js/katex.min.js" | resources.Fingerprint }}
-<script defer src="{{ $katexJS.Permalink }}" integrity="{{ $katexJS.Data.Integrity }}" crossorigin="anonymous"></script>
-{{ $katexRender := resources.Get "js/auto-render.min.js" | resources.Fingerprint }}
-<script defer src="{{ $katexRender.Permalink }}" integrity="{{ $katexRender.Data.Integrity }}" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+{{ $katexCSS := resources.Get "css/katex.min.css" }}
+<link rel="stylesheet" href="{{ $katexCSS.Permalink }}" />
+{{ $katexJS := resources.Get "js/katex.min.js" }}
+<script defer src="{{ $katexJS.Permalink }}"></script>
+{{ $katexRender := resources.Get "js/auto-render.min.js" }}
+<script defer src="{{ $katexRender.Permalink }}" onload="renderMathInElement(document.body);"></script>
 {{ end }}
 {{ end }}
 
