@@ -31,7 +31,7 @@
         const postAPlayer = new APlayer({
             container: document.getElementById("post-aplayer"),
             theme: "#8F82BC",
-            volume: 0.25,
+            volume: 0.1,
             audio: [{
                 name: "{{ $.Params.playerName }}",
                 artist: "{{ $.Params.playerArtist }}",
@@ -49,7 +49,7 @@
             container: document.getElementById("aplayer"),
             fixed: true,
             theme: "#8F82BC",
-            volume: 0.25,
+            volume: 0.1,
             audio: [{
                 name: "{{ $.Site.Params.playerName }}",
                 artist: "{{ $.Site.Params.playerArtist }}",
