@@ -60,6 +60,17 @@
     });
 </script>
 {{ end }}
+{{ if in .Site.Params.mainSections .Type }}
+<!-- toc smooth scroll & aplayer cjk html anchor fix -->
+<script>
+    $("#widget-toc a").click(function () {
+        $("html, body").animate({
+            scrollTop: $($(this).attr("href")).offset().top
+        });
+        return false;
+    });
+</script>
+{{ end }}
 {{ if .Site.Params.scrollTop }}
 <!-- scroll to top button -->
 <script>
