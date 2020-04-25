@@ -1,50 +1,31 @@
 @font-face {
-    font-family: 'Product Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local('Product Sans'), local('ProductSans-Regular'),
-        url('https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.0.0/product-sans/product-sans.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Product Sans';
+    font-family: "Product Sans";
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: local('Product Sans Bold'), local('ProductSans-Bold'),
-        url('https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.0.0/product-sans/product-sans-bold.woff2') format('woff2');
+    src: local("Product Sans Bold"), local("ProductSans-Bold"),
+        url("https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.0.0/product-sans/product-sans-bold.woff2") format("woff2");
 }
 
 @font-face {
-    font-family: 'Cascadia Code';
+    font-family: "Cascadia Code";
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: local('Cascadia Code'), local('Cascadia Mono'),
-        url('https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.0.0/cascadia-code/cascadia.woff2') format('woff2'),
-}
-
-@font-face {
-    font-family: 'PingFang SC Web';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: local('PingFang SC Medium'),
-        /* Modern Browsers */
-        url('https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.0.0/pingfang/pingfang-medium.woff2') format('woff2'),
+    src: local("Cascadia Code"), local("Cascadia Mono"),
+        url("https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.0.0/cascadia-code/cascadia.woff2") format("woff2"),
 }
 
 // @primer/css/support/variables/layout.scss
-// Fixed-width container variables
-$container-width: 900px;
-// Large screen / desktop (900 + (16 * 2)) <= container + gutters
-$width-lg: 932px;
+// fixed-width container variables
+$container-width: 900px !default;
+// large screen / desktop (900 + (16 * 2)) <= container + gutters
+$width-lg: 932px !default;
 
 // @primer/css/support/variables/typography.scss
-// Font stacks
-$body-font: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', 'Source Han Sans SC', 'Source Han Sans CN', 'Source Han Sans', 'Microsoft YaHei', sans-serif;
-// Monospace font stack
-$mono-font: 'Cascadia Code', 'SFMono-Regular', 'Consolas', $body-font;
-// The base body size
-$body-font-size: 16px;
+// font stacks
+$body-font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Helvetica", "Arial", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif !default;
+// monospace font stack
+$mono-font: "Cascadia Code", "SF Mono", "Fira Code", "Consolas", $body-font !default;
+// the base text size
+$body-font-size: $font-size-l4 !default;
