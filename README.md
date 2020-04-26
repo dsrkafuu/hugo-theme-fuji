@@ -76,11 +76,9 @@ Note that if you use the origin markdown syntax to add images such as ```![This 
 
 ### Custom CSS (need extended version of Hugo)
 
-You can create ```[SITEROOT]/assets/sass/custom.sass``` to cover sass variables of the theme, for example:
+You can create ```[SITEROOT]/assets/sass/custom.sass``` to cover sass variables of the theme. Just copy the variable which you need into it, check available variables below:
 
 ```sass
-// change the variables below to customize the site theme
-
 // colors
 $color-primary: #8AA2D3; // apply to titles and icons
 $color-primary-dark: #3B469B; // apply to links:hover and pagination:current
@@ -98,17 +96,15 @@ $font-size-l4: 1em; // Primer CSS H4 & Normal Text
 // divider css
 $spliter: 1px solid $color-spliter;
 
-// @primer/css/support/variables/layout.scss
 // fixed-width container variables
 $container-width: 900px;
 // large screen / desktop (900 + (16 * 2)) <= container + gutters
 $width-lg: 932px;
 
-// @primer/css/support/variables/typography.scss
 // font stacks
-$body-font: -apple-system, BlinkMacSystemFont, sans-serif;
+$body-font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Helvetica", "Arial", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 // monospace font stack
-$mono-font: 'Cascadia Code', 'SFMono-Regular', 'Consolas', $body-font;
+$mono-font: "Cascadia Code", "SF Mono", "Fira Code", "Consolas", $body-font;
 // the base text size
 $body-font-size: $font-size-l4;
 ```
