@@ -1,0 +1,50 @@
+[sidebarToc]
+    other = "Inhoud"
+
+[sidebarPages]
+    other = "Pagina's"
+
+[sidebarTags]
+    other = "Tags"
+
+[sidebarLinks]
+    other = "Links"
+
+[sidebarBangumiChart]
+    other = "Bangumi"
+
+[footerPoweredFront]
+    other = "Powered by "
+
+[footerPoweredEnd]
+    other = " "
+
+[postMetaNoTag]
+    other = "Geen Tags"
+
+[postMetaWordCount]
+    other = " woorden"
+
+[postCopyrightFront]
+    other = "Tenzij anders vermeld is de inhoud van deze site eigendom van "
+
+[postCopyrightEnd]
+    other = "."
+
+[postCommentLoading]
+    other = "Commentaren worden geladen..."
+
+[postCommentLoadingFailed]
+    other = "Commentaren konden niet geladen worden."
+
+[archivesTotalPages]
+    other = "Totaal aantal posts: "
+
+[tagsCurrentTag]
+    other = "Alle posts met de tag {{ .Title }}: "
+
+[webpCheckerFront]
+    other = "Uw huidige browser ondersteund deze pagina niet "
+
+[webpCheckerEnd]
+    other = " afbeeldingen"
