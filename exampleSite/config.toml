@@ -7,7 +7,7 @@ enableRobotsTXT = true
 disableKinds = ["RSS", "taxonomyTerm"]
 
 ## Change this two to switch between different language
-## Now support: en, zh-hans, zh-hant, ja
+## Now support: en, zh-hans, zh-hant, ja, nl
 defaultContentLanguage = "en"
 languageCode = "en"
 
