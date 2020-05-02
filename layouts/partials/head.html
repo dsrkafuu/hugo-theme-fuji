@@ -8,8 +8,10 @@
 
 {{ partial "favicon.html" . }}
 
-{{ if .IsHome }}
+{{ if and (.IsHome) (.Site.Params.subTitle) }}
 <title>{{ .Site.Title }} - {{ .Site.Params.subTitle }}</title>
+{{ else if .IsHome }}
+<title>{{ .Site.Title }}</title>
 {{ else }}
 <title>{{ .Title }} - {{ .Site.Title }}</title>
 {{ end }}
