@@ -23,7 +23,7 @@
 
 {{ template "_internal/opengraph.html" . }}
 {{ template "_internal/twitter_cards.html" . }}
-{{ partial "analytic-google.html" . }}
+{{ template "_internal/google_analytics_async.html" . }}
 
 <!-- global css -->
 {{ $options := (dict "targetPath" "css/main.min.css" "outputStyle" "compressed") }}
