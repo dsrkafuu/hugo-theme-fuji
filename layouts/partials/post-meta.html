@@ -7,7 +7,7 @@
 <span>
     {{ if .Params.tags }}
     {{ range .Params.tags }}
-    <a href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}/">{{ . }}</a>
+    <a href="/tags/{{ . | urlize }}/">{{ . }}</a>
     {{ end }}
     {{ else }}
     <span>{{ i18n "postMetaNoTag" }}</span>
