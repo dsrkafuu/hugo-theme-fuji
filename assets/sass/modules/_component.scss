@@ -1,0 +1,28 @@
+#aplayer {
+    font-family: inherit;
+}
+
+#scroll-top {
+    cursor: pointer;
+    position: fixed;
+    width: 2.5rem;
+    height: 2.5rem;
+    right: 1rem;
+    bottom: 1rem;
+    color: $color-primary;
+    background-color: $color-spliter;
+    border-radius: 100%;
+    line-height: 2.5rem;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+
+    &:hover {
+        color: $color-secondary;
+    }
+
+    i {
+        font-size: 1.5rem;
+        line-height: inherit;
+    }
+}

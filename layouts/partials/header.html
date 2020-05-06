@@ -1,8 +1,10 @@
 <header>
     <div class="container-lg clearfix">
-        <div class="col-12 p-3">
-            <a id="main-title" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-            {{ with .Site.Params.subTitle }}<span id="sub-title">{{ . }}</span>{{ end }}
+        <div class="col-12 link-primary">
+            <a class="main-title" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+            {{ with .Site.Params.subTitle }}
+            <span class="sub-title">{{ . }}</span>
+            {{ end }}
         </div>
     </div>
 </header>

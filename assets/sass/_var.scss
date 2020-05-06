@@ -6,44 +6,29 @@ $color-mute: #9EA1A3 !default; // https://irocore.com/suzu-iro/
 $color-spliter: #E5E2E4 !default; // https://irocore.com/komachinezu/
 
 // font size list
-$font-size-logo: 2.5em !default; // Logo Only
-$font-size-l1: 1.75em !default; // Primer CSS H1
-$font-size-l2: 1.5em !default; // Primer CSS H2
-$font-size-l3: 1.25em !default; // Primer CSS H3
-$font-size-l4: 1em !default; // Primer CSS H4 & Normal Text
+$font-size-logo: 2.5rem !default; // Logo Only
+$font-size-l1: 1.75rem !default; // Primer CSS H1
+$font-size-l2: 1.5rem !default; // Primer CSS H2
+$font-size-l3: 1.25rem !default; // Primer CSS H3
+$font-size-l4: 1rem !default; // Primer CSS H4 & Normal Text
 
 // divider css
 $spliter: 1px solid $color-spliter !default;
 
-// link color mixin
-@mixin link-primary {
-    a {
-        color: $color-primary;
-    }
-
-    a:hover {
-        color: $color-secondary;
-        text-decoration: none;
-    }
-}
-
-@mixin link-secondary {
-    a {
-        color: $color-secondary;
-    }
-
-    a:hover {
-        color: $color-primary-dark;
-        text-decoration: none;
-    }
-}
-
-// title css which also used in 404
-@mixin pdsans-title {
-    font-family: 'Product Sans', -apple-system, BlinkMacSystemFont, Arial, monospace;
+@font-face {
+    font-family: "Product Sans";
+    font-style: normal;
     font-weight: 700;
-    font-size: $font-size-logo;
-    white-space: nowrap;
-    display: block;
-    color: $color-primary;
+    font-display: swap;
+    src: local("Product Sans Bold"), local("ProductSans-Bold"),
+        url("https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.0.0/product-sans/product-sans-bold.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Cascadia Code";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local("Cascadia Code"), local("Cascadia Mono"),
+        url("https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.0.0/cascadia-code/cascadia.woff2") format("woff2"),
 }

@@ -1,0 +1,31 @@
+.post-archive {
+    &:not(:last-child) {
+        padding: 0.5rem 0;
+    }
+
+    &:last-child {
+        padding: 0.5rem 0 1rem 0;
+    }
+}
+
+.post-archive+.post-archive {
+    border-top: $spliter;
+}
+
+.post-title-archive {
+    font-size: $font-size-l2;
+}
+
+.post-meta-archive {
+    color: $color-mute;
+    padding: 0;
+    white-space: nowrap;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+        display: none; // WebKit
+    }
+
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // Microsoft
+}

@@ -2,37 +2,34 @@
 <!-- homepage range in all posts -->
 {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
 {{ range $paginator.Pages }}
-<div id="post">
-    <h2 id="post-title">
+<div class="post">
+    <h2 class="post-title">
         <a href="{{ .Permalink }}">{{ .Title }}</a>
     </h2>
-    <div id="post-meta">
+    <div class="post-meta link-alter">
         {{ partial "post-meta.html" . }}
     </div>
-    <div class="markdown-body" id="post-summary">
+    <div class="post-summary markdown-body">
         {{ .Summary }}
-    </div>
-    <div id="post-exlink">
-        {{ partial "post-exlink.html" . }}
     </div>
 </div>
 {{ end }}
 
-<!-- START custom smart pagination -->
+<!-- custom smart pagination -->
 {{ $offsetLinks := 2 }}
 {{ $maxLinks := (add (mul $offsetLinks 2) 1) }}
 {{ $lowerLimit := (add $offsetLinks 1) }}
 {{ $upperLimit := (sub $paginator.TotalPages $offsetLinks) }}
 {{ if gt $paginator.TotalPages 1 }}
-<ul id="pagination">
+<ul class="pagination">
     {{ if ne $paginator.PageNumber 1 }}
     <li class="pag-first">
-        <a href="{{ $paginator.First.URL }}"><i class="fas fa-angle-double-left"></a>
+        <a href="{{ $paginator.First.URL }}"><i class="fas fa-angle-double-left"></i></a>
     </li>
     {{ end }}
     {{ if $paginator.HasPrev }}
     <li class="pag-previous">
-        <a href="{{ $paginator.Prev.URL }}"><i class="fas fa-angle-left"></a>
+        <a href="{{ $paginator.Prev.URL }}"><i class="fas fa-angle-left"></i></a>
     </li>
     {{ end }}
     {{ range $paginator.Pagers }}
@@ -72,6 +69,5 @@
     {{ end }}
 </ul>
 {{ end }}
-<!-- END custom smart pagination -->
 
 {{ end }}

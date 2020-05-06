@@ -1,9 +1,9 @@
 {{ with .Site.Params.utterancesRepo }}
-<div id="post-loading">
+<div class="post-loading">
     <i class="fas fa-circle-notch fa-spin"></i>
     <p>{{ i18n "postCommentLoading" }}</p>
 </div>
-<div id="post-comment">
+<div class="post-comment">
     <script src="https://utteranc.es/client.js" repo="{{ . }}" issue-term="{{ $.Site.Params.utterancesIssueTerm }}" theme="{{ $.Site.Params.utterancesTheme }}" crossorigin="anonymous" async></script>
 </div>
 {{ end }}

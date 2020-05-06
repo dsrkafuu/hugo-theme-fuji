@@ -1,0 +1,39 @@
+#sidebar {
+    ul {
+        list-style-type: none;
+    }
+
+    padding: 1.5rem 1rem;
+
+    // different padding when screen size below width-md(768px)
+    @media screen and (max-width: $width-md) {
+        border-top: $spliter;
+        padding: 1.5rem;
+    }
+
+    h5 {
+        font-size: $font-size-l3;
+    }
+
+    .widget-toc,
+    .widget-pages,
+    .widget-tags,
+    .widget-links {
+
+        div,
+        ul {
+            margin: 0.5rem 0;
+        }
+    }
+
+    .widget-bgm img {
+        margin: 0.5rem 0;
+        width: 100%;
+        border-radius: 2px;
+        filter: grayscale(50%);
+
+        @media screen and (max-width: $width-md) {
+            width: 50%;
+        }
+    }
+}

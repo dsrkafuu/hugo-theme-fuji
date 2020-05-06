@@ -1,15 +1,14 @@
-#pagination {
+.pagination {
     text-align: center;
     // spliter between pagination and last post block
     border-top: $spliter;
-    padding: 1em 0 1em 0;
+    padding: 1rem 0;
 
     li {
         display: inline;
-        @include link-primary();
 
         &.pag-item {
-            padding: 0em 0.25em;
+            padding: 0 0.25rem;
 
             a {
                 vertical-align: middle;
@@ -23,7 +22,7 @@
     }
 
     i {
-        padding: 0em 0.25em;
+        padding: 0 0.25rem;
         vertical-align: middle;
     }
 }

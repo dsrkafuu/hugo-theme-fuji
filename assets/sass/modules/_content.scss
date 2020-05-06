@@ -1,0 +1,90 @@
+#content {
+    padding: 0 1rem;
+
+    // different padding when screen size below width-md(768px)
+    @media screen and (max-width: $width-md) {
+        padding: 0 1.5rem;
+    }
+}
+
+article {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.post {
+    padding: 1.25rem 0 1.5rem 0;
+}
+
+.post+.post {
+    border-top: $spliter;
+}
+
+.post-title {
+    font-size: $font-size-l1;
+}
+
+.post-meta {
+    color: $color-mute;
+    padding: 0.5rem 0 1rem 0;
+    white-space: nowrap;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+        display: none; // WebKit
+    }
+
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // Microsoft
+}
+
+.post-summary {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        display: none;
+    }
+}
+
+#post-aplayer {
+    font-family: inherit;
+    margin: 0 2px 1.5rem 2px;
+}
+
+.license {
+    margin-bottom: 1.5rem;
+}
+
+.post-loading {
+    border-top: $spliter;
+    margin: 0 0 1.5rem 0;
+    padding-top: 1.5rem;
+    text-align: center;
+
+    i {
+        font-size: 1.5rem;
+        color: $color-primary;
+    }
+
+    p {
+        margin: 0.5rem 0 0 0;
+    }
+}
+
+.post-comment .utterances-frame {
+    border-top: $spliter;
+}
+
+.post-comment #disqus_thread {
+    border-top: $spliter;
+}
+
+.page-info {
+    padding: 1rem 0;
+    font-size: $font-size-l3;
+    border-bottom: $spliter;
+}
