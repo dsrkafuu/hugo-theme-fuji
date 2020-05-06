@@ -1,5 +1,5 @@
 {{ define "main" }}
-<!-- homepage range in posts -->
+<!-- homepage range in all posts -->
 {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
 {{ range $paginator.Pages }}
 <div id="post">
@@ -17,7 +17,8 @@
     </div>
 </div>
 {{ end }}
-<!-- custom smart pagination -->
+
+<!-- START custom smart pagination -->
 {{ $offsetLinks := 2 }}
 {{ $maxLinks := (add (mul $offsetLinks 2) 1) }}
 {{ $lowerLimit := (add $offsetLinks 1) }}
@@ -26,15 +27,14 @@
 <ul id="pagination">
     {{ if ne $paginator.PageNumber 1 }}
     <li class="pag-first">
-        <a href="{{ $paginator.First.URL }}"><i class="fas fa-angle-double-left"></i></a>
+        <a href="{{ $paginator.First.URL }}"><i class="fas fa-angle-double-left"></a>
     </li>
     {{ end }}
     {{ if $paginator.HasPrev }}
     <li class="pag-previous">
-        <a href="{{ $paginator.Prev.URL }}"><i class="fas fa-angle-left"></i></a>
+        <a href="{{ $paginator.Prev.URL }}"><i class="fas fa-angle-left"></a>
     </li>
     {{ end }}
-
     {{ range $paginator.Pagers }}
     {{ $.Scratch.Set "pageNumFlag" false }}
     {{ if gt $paginator.TotalPages $maxLinks }}
@@ -60,7 +60,6 @@
     </li>
     {{ end }}
     {{ end }}
-
     {{ if $paginator.HasNext }}
     <li class="pag-next">
         <a href="{{ $paginator.Next.URL }}"><i class="fas fa-angle-right"></i></a>
@@ -73,5 +72,6 @@
     {{ end }}
 </ul>
 {{ end }}
+<!-- END custom smart pagination -->
 
 {{ end }}

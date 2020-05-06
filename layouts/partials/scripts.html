@@ -1,5 +1,5 @@
+<!-- utterances comment loading indicator -->
 {{ if and (.IsPage) (.Site.Params.utterancesRepo) }}
-<!-- comment loading indicator -->
 <script>
     $(function () {
         var commentStatus;
@@ -8,13 +8,13 @@
 
         function checkUtterances() {
             commentStatus = $('#post-comment .utterances').attr('style');
-            if (commentStatus === undefined) {
+            if (commentStatus == undefined) {
                 commentLoadingTime += 1;
                 if (commentLoadingTime > 20) {
                     clearInterval(commentCheckInterval);
                     $('#post-comment').hide();
                     $('#post-loading p').text('{{ i18n "postCommentLoadingFailed" }}');
-                    $('#post-loading i').attr("class", "far fa-times-circle");
+                    $('#post-loading i').attr('class', 'far fa-times-circle');
                 }
                 return;
             } else {
@@ -25,70 +25,61 @@
     });
 </script>
 {{ end }}
-{{ with .Params.playerURL }}
-<script>
-    $(function () {
-        const postAPlayer = new APlayer({
-            container: document.getElementById("post-aplayer"),
-            theme: "#8F82BC",
-            volume: 0.1,
-            audio: [{
-                name: "{{ $.Params.playerName }}",
-                artist: "{{ $.Params.playerArtist }}",
-                url: "{{ . }}",
-                cover: "{{ $.Params.playerCover }}"
-            }]
-        });
-    });
-</script>
-{{ end }}
-{{ with .Site.Params.playerURL }}
-<script>
-    $(function () {
-        const siteAPlayer = new APlayer({
-            container: document.getElementById("aplayer"),
-            fixed: true,
-            theme: "#8F82BC",
-            volume: 0.1,
-            audio: [{
-                name: "{{ $.Site.Params.playerName }}",
-                artist: "{{ $.Site.Params.playerArtist }}",
-                url: "{{ . }}",
-                cover: "{{ $.Site.Params.playerCover }}"
-            }]
-        });
-    });
-</script>
-{{ end }}
+
+<!-- toc smooth scroll & APlayer cjk html anchor fix -->
 {{ if in .Site.Params.mainSections .Type }}
-<!-- toc smooth scroll & aplayer cjk html anchor fix -->
 <script>
-    $("#widget-toc a").click(function () {
-        $("html, body").animate({
-            scrollTop: $($(this).attr("href")).offset().top
+    $('#widget-toc a').click(function () {
+        $('html, body').animate({
+            scrollTop: $($(this).attr('href')).offset().top
         });
-        return false;
     });
 </script>
 {{ end }}
 {{ if .Site.Params.scrollTop }}
 <!-- scroll to top button -->
 <script>
-    $("#scroll-top").click(function () {
-        $("html, body").animate({
+    $('#scroll-top').click(function () {
+        $('html, body').animate({
             scrollTop: 0
         });
     });
 </script>
 {{ end }}
-{{ if .Site.Params.webpChecker }}
-<!-- webp checker -->
+
+<!-- in-post APlayer -->
+{{ with .Params.playerURL }}
 <script>
     $(function () {
-        Modernizr.on("webp", function (result) {
-            if (!result) {
-                $('<blockquote><p>{{ i18n "webpCheckerFront" }}<a href="https://caniuse.com/#feat=webp" target="_blank">WebP</a>{{ i18n "webpCheckerEnd" }}</p></blockquote>').replaceAll("#content img");
-            }
+        const postAPlayer = new APlayer({
+            container: document.getElementById('post-aplayer'),
+            theme: '#8F82BC',
+            volume: 0.1,
+            audio: [{
+                name: '{{ $.Params.playerName }}',
+                artist: '{{ $.Params.playerArtist }}',
+                url: '{{ . }}',
+                cover: '{{ $.Params.playerCover }}'
+            }]
+        });
+    });
+</script>
+{{ end }}
+<!-- site global APlayer -->
+{{ with .Site.Params.playerURL }}
+<script>
+    $(function () {
+        const siteAPlayer = new APlayer({
+            container: document.getElementById('aplayer'),
+            fixed: true,
+            theme: '#8F82BC',
+            volume: 0.1,
+            audio: [{
+                name: '{{ $.Site.Params.playerName }}',
+                artist: '{{ $.Site.Params.playerArtist }}',
+                url: '{{ . }}',
+                cover: '{{ $.Site.Params.playerCover }}'
+            }]
         });
     });
 </script>

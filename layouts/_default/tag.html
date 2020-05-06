@@ -1,8 +1,9 @@
 {{ define "main" }}
-<div id="page-tag">
+<!-- page info section e.g. current tag & total archive pages -->
+<div id="page-info">
     <span>{{ i18n "tagsCurrentTag" . }}</span>
 </div>
-<!-- tags page range in posts -->
+<!-- tags page range in posts with current tag -->
 {{ $paginator := .Paginator }}
 {{ range $paginator.Pages }}
 <div id="post">
@@ -16,11 +17,12 @@
         {{ .Summary }}
     </div>
     <div id="post-exlink">
-        <a href="{{ .Permalink }}"><i class="fas fa-angle-right"></i>&nbsp;READ MORE&nbsp;<i class="fas fa-angle-left"></i></a>
+        {{ partial "post-exlink.html" . }}
     </div>
 </div>
 {{ end }}
-<!-- custom smart pagination -->
+
+<!-- START custom smart pagination -->
 {{ $offsetLinks := 2 }}
 {{ $maxLinks := (add (mul $offsetLinks 2) 1) }}
 {{ $lowerLimit := (add $offsetLinks 1) }}
@@ -37,7 +39,6 @@
         <a href="{{ $paginator.Prev.URL }}"><i class="fas fa-angle-left"></a>
     </li>
     {{ end }}
-
     {{ range $paginator.Pagers }}
     {{ $.Scratch.Set "pageNumFlag" false }}
     {{ if gt $paginator.TotalPages $maxLinks }}
@@ -63,7 +64,6 @@
     </li>
     {{ end }}
     {{ end }}
-
     {{ if $paginator.HasNext }}
     <li class="pag-next">
         <a href="{{ $paginator.Next.URL }}"><i class="fas fa-angle-right"></i></a>
@@ -76,5 +76,6 @@
     {{ end }}
 </ul>
 {{ end }}
+<!-- END custom smart pagination -->
 
 {{ end }}

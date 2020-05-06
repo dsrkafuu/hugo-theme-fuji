@@ -1,9 +1,11 @@
+<!-- in-post toc -->
 {{ if in .Site.Params.mainSections .Type }}
 <div id="widget-toc">
     <h5>{{ i18n "sidebarToc" }}</h5>
     {{.TableOfContents}}
 </div>
 {{ end }}
+<!-- pages -->
 <div id="widget-pages">
     <h5>{{ i18n "sidebarPages" }}</h5>
     <ul>
@@ -15,6 +17,7 @@
         {{ end }}
     </ul>
 </div>
+<!-- tags -->
 <div id="widget-tags">
     <h5>{{ i18n "sidebarTags" }}</h5>
     <div>
@@ -25,6 +28,7 @@
         {{ end }}
     </div>
 </div>
+<!-- links -->
 <div id="widget-links">
     <h5>{{ i18n "sidebarLinks" }}</h5>
     <ul>
@@ -35,6 +39,7 @@
         {{ end }}
     </ul>
 </div>
+<!-- bgm.tv image chart -->
 {{ with .Site.Params.bgmImageChart }}
 <div id="widget-bgm">
     <h5>{{ i18n "sidebarBangumiChart" }}</h5>

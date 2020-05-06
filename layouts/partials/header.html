@@ -1,9 +1,8 @@
 <header>
-    <!-- fake navbar header-->
     <div class="container-lg clearfix">
         <div class="col-12 p-3">
             <a id="main-title" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-            <span id="sub-title">{{ .Site.Params.subTitle }}</span>
+            {{ with .Site.Params.subTitle }}<span id="sub-title">{{ . }}</span>{{ end }}
         </div>
     </div>
 </header>

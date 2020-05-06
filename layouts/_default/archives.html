@@ -1,8 +1,9 @@
 {{ define "main" }}
-<div id="page-tag">
+<!-- page info section e.g. current tag & total archive pages -->
+<div id="page-info">
     <span>{{ i18n "archivesTotalPages" }}{{ len (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}</span>
 </div>
-<!-- archives range in posts -->
+<!-- archives range in all posts -->
 {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) 50 }}
 {{ range $paginator.Pages }}
 <div id="post-archive">
@@ -14,7 +15,8 @@
     </div>
 </div>
 {{ end }}
-<!-- custom smart pagination -->
+
+<!-- START custom smart pagination -->
 {{ $offsetLinks := 2 }}
 {{ $maxLinks := (add (mul $offsetLinks 2) 1) }}
 {{ $lowerLimit := (add $offsetLinks 1) }}
@@ -31,7 +33,6 @@
         <a href="{{ $paginator.Prev.URL }}"><i class="fas fa-angle-left"></a>
     </li>
     {{ end }}
-
     {{ range $paginator.Pagers }}
     {{ $.Scratch.Set "pageNumFlag" false }}
     {{ if gt $paginator.TotalPages $maxLinks }}
@@ -57,7 +58,6 @@
     </li>
     {{ end }}
     {{ end }}
-
     {{ if $paginator.HasNext }}
     <li class="pag-next">
         <a href="{{ $paginator.Next.URL }}"><i class="fas fa-angle-right"></i></a>
@@ -70,5 +70,6 @@
     {{ end }}
 </ul>
 {{ end }}
+<!-- END custom smart pagination -->
 
 {{ end }}

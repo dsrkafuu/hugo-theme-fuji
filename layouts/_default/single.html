@@ -1,5 +1,6 @@
 {{ define "main" }}
 <article>
+    <!-- post meta -->
     <h4 id="post-title">
         <a href="{{ .Permalink }}">{{ .Title }}</a>
     </h4>
@@ -9,10 +10,12 @@
     {{ with .Params.playerURL }}
     <div id="post-aplayer"></div>
     {{ end }}
+    <!-- post main content -->
     <div class="markdown-body" id="post-content">
         {{ .Content }}
     </div>
 </article>
+<!-- post license -->
 {{ if ne .Params.noLicense true }}
 <div class="markdown-body" id="license">
     <blockquote>
