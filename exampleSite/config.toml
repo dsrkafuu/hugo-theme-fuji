@@ -4,7 +4,7 @@ theme = "fuji"
 hasCJKLanguage = true
 enableEmoji = true
 enableRobotsTXT = true
-disableKinds = ["RSS", "taxonomyTerm"]
+disableKinds = ["taxonomyTerm"]
 
 ## Change this two to switch between different language
 ## Now support: en, zh-hans, zh-hant, ja, nl
