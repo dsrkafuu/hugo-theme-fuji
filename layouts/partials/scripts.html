@@ -1,3 +1,12 @@
+<!-- init zoomable images -->
+<script>
+    $(function () {
+        mediumZoom('.img-zoomable', {
+            margin: 32
+        });
+    });
+</script>
+
 <!-- utterances comment loading indicator -->
 {{ if and (.IsPage) (.Site.Params.utterancesRepo) }}
 <script>
