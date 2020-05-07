@@ -25,7 +25,7 @@ paginate = 10
 
   # Word counter and read time indicator in post metadata
   showWordCounter = true
-  showReadTime = true
+  # showReadTime = true
 
   # Open Graph & Twitter Card variables
   # You can also set description and images in post front matter individually
@@ -55,13 +55,13 @@ paginate = 10
   # disqusComment = false
   # disqusShortname = "[ENTER YOUR DISQUS SHORTNAME HERE]"
 
-  # Custom lazyload placeholder
+  # custom lazyload placeholder
   # 16:9
-  cdnLazyPlaceholder = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.1.0/lazyload/dsrca_loading_480x270.svg"
+  lazyPlaceholder = "/lazyload/dsrca_loading_480x270.svg"
   # 32:9
-  cdnLazyPlaceholderRow = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.1.0/lazyload/dsrca_loading_960x270.svg"
+  lazyPlaceholderRow = "/lazyload/dsrca_loading_960x270.svg"
   # 8:9
-  cdnLazyPlaceholderCol = "https://cdn.jsdelivr.net/gh/amzrk2/poal-jsdelivr@1.1.0/lazyload/dsrca_loading_480x540.svg"
+  lazyPlaceholderCol = "/lazyload/dsrca_loading_480x540.svg"
 
   # enable this to fetch css & js from jsDelivr CDN
   useCDN = true
