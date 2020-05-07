@@ -26,9 +26,14 @@ article {
 
 .post-meta {
     color: $color-mute;
-    padding: 0.5rem 0 1rem 0;
+    padding: 0.5rem 0.1rem 1.25rem 0.1rem;
     white-space: nowrap;
     overflow-x: scroll;
+
+    time,
+    span:not(:last-child) {
+        padding-right: 1rem;
+    }
 
     &::-webkit-scrollbar {
         display: none; // WebKit
@@ -52,7 +57,7 @@ article {
 
 #post-aplayer {
     font-family: inherit;
-    margin: 0 2px 1.5rem 2px;
+    margin: 0 0.1rem 1.5rem 0.1rem;
 }
 
 .license {

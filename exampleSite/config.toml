@@ -23,6 +23,10 @@ paginate = 10
   author = "DSRKafuU" # You can also set author in post front matter individually
   subTitle = "This is a Sub Title"
 
+  # Word counter and read time indicator in post metadata
+  showWordCounter = true
+  showReadTime = true
+
   # Open Graph & Twitter Card variables
   # You can also set description and images in post front matter individually
   description = "A minimal hugo theme powered by Primer CSS."

@@ -25,6 +25,9 @@
 [postMetaWordCount]
     other = " words"
 
+[postMetaReadingTime]
+    other = " minutes"
+
 [postCopyrightFront]
     other = "Unless otherwise noted, the content of this site is licensed under "
 
@@ -42,9 +45,3 @@
 
 [tagsCurrentTag]
     other = "Posts with the tag {{ .Title }}: "
-
-[webpCheckerFront]
-    other = "Your browser does not currently support "
-
-[webpCheckerEnd]
-    other = " images"

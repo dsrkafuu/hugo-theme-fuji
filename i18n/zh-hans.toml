@@ -25,6 +25,9 @@
 [postMetaWordCount]
     other = " 字"
 
+[postMetaReadingTime]
+    other = " 分钟"
+
 [postCopyrightFront]
     other = "除特殊注明部分，本站内容采用 "
 
@@ -42,9 +45,3 @@
 
 [tagsCurrentTag]
     other = "拥有标签 {{ .Title }} 的文章："
-
-[webpCheckerFront]
-    other = "您的浏览器暂未支持显示 "
-
-[webpCheckerEnd]
-    other = " 图片"

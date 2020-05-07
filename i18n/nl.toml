@@ -25,6 +25,9 @@
 [postMetaWordCount]
     other = " woorden"
 
+[postMetaReadingTime]
+    other = " minuten"
+
 [postCopyrightFront]
     other = "Tenzij anders vermeld is de inhoud van deze site eigendom van "
 
@@ -42,9 +45,3 @@
 
 [tagsCurrentTag]
     other = "Alle posts met de tag {{ .Title }}: "
-
-[webpCheckerFront]
-    other = "Uw huidige browser ondersteund deze pagina niet "
-
-[webpCheckerEnd]
-    other = " afbeeldingen"

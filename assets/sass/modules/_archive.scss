@@ -18,9 +18,17 @@
 
 .post-meta-archive {
     color: $color-mute;
-    padding: 0;
+    padding: 0 0.1rem;
     white-space: nowrap;
     overflow-x: scroll;
+
+    time {
+        padding-right: 1rem;
+    }
+
+    span:not(:last-child) {
+        display: none;
+    }
 
     &::-webkit-scrollbar {
         display: none; // WebKit

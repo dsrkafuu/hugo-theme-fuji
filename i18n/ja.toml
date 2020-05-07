@@ -23,7 +23,10 @@
     other = "タグはありません"
 
 [postMetaWordCount]
-    other = " 文字"
+    other = " 字"
+
+[postMetaReadingTime]
+    other = " 分"
 
 [postCopyrightFront]
     other = "特定のセクションを除いて、このサイトは "
@@ -42,9 +45,3 @@
 
 [tagsCurrentTag]
     other = "タグ {{ .Title }} を持つ記事："
-
-[webpCheckerFront]
-    other = "お使いのブラウザは現在 "
-
-[webpCheckerEnd]
-    other = " 画像の表示に対応していません"

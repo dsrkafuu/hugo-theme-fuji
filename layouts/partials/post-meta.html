@@ -1,9 +1,1 @@
-<time datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time> |
-<span>{{ .WordCount }}{{ i18n "postMetaWordCount" }}</span> |
-{{ if .Params.tags }}
-{{ range .Params.tags }}
-<a href="/tags/{{ . | urlize }}/">{{ . }}</a>
-{{ end }}
-{{ else }}
-<span>{{ i18n "postMetaNoTag" }}</span>
-{{ end }}
+<time datetime="{{ .Date }}"><i class="fas fa-calendar-day"></i> {{ .Date.Format "2006-01-02" }}</time>{{ if .Site.Params.showWordCounter }}<span><i class="fas fa-file-alt"></i> {{ .WordCount }}{{ i18n "postMetaWordCount" }}</span>{{ end }}{{ if .Site.Params.showReadTime }}<span><i class="fas fa-clock"></i> {{ .ReadingTime }}{{ i18n "postMetaReadingTime" }}</span>{{ end }}{{ if .Params.tags }}<i class="fas fa-tag"></i> {{ range .Params.tags }}<a href="/tags/{{ . | urlize }}/">{{ . }}</a> {{ end }}{{ else }}<span>{{ i18n "postMetaNoTag" }}</span>{{ end }}
