@@ -4,7 +4,7 @@ A minimal Hugo theme inspired by Hexo theme [Murasaki](https://github.com/printe
 
 ## Live demos
 
-[GitHub Pages Demo](https://amzrk2.cc/hugo-theme-fuji-demo/) | [My Blog](https://blog.amzrk2.cc/)
+[GitHub Pages Demo (en)](https://amzrk2.cc/hugo-theme-fuji-demo/) | [My Blog (zh-Hans)](https://blog.amzrk2.cc/)
 
 ![Screenshot of the theme](https://raw.githubusercontent.com/amzrk2/hugo-theme-fuji/master/images/screenshot.png)
 
@@ -87,14 +87,14 @@ $color-mute: #9EA1A3; // apply to sub-title and post metadata
 $color-spliter: #E5E2E4; // apply to divider and button background
 
 // font size list
-$font-size-logo: 2.5em; // Logo Only
-$font-size-l1: 1.75em; // Primer CSS H1
-$font-size-l2: 1.5em; // Primer CSS H2
-$font-size-l3: 1.25em; // Primer CSS H3
-$font-size-l4: 1em; // Primer CSS H4 & Normal Text
+$font-size-logo: 2.5rem; // Logo Only
+$font-size-l1: 1.75rem; // Primer CSS H1
+$font-size-l2: 1.5rem; // Primer CSS H2
+$font-size-l3: 1.25rem; // Primer CSS H3
+$font-size-l4: 1rem; // Primer CSS H4 & Normal Text
 
 // divider css
-$spliter: 1px solid $color-spliter;
+$spliter: 2px solid $color-spliter;
 
 // fixed-width container variables
 $container-width: 900px;
@@ -136,5 +136,7 @@ Did you found a bug or got an idea for a new feature? Feel free to use the [issu
 The theme is released under the ```GNU General Public License v3.0```, for more information read the [License](https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE).
 
 ## Annotations
+
+Thanks to [community contributors](https://github.com/amzrk2/hugo-theme-fuji/graphs/contributors) for great help.
 
 Thanks to developers for creating Hugo, Primer CSS, Font Awesome, APlayer and Lazysizes with the awesome community around these project.

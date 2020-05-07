@@ -4,7 +4,7 @@
 name = "Fuji"
 license = "GPLv3"
 licenselink = "https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE"
-description = "A minimal Hugo theme inspired by Murasaki, powered by GitHub Primer CSS."
+description = "A minimal Hugo theme powered by GitHub Primer CSS."
 homepage = "https://github.com/amzrk2/hugo-theme-fuji/"
 tags = ["blog", "minimal", "primer"]
 features = ["responsive"]
