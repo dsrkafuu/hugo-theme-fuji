@@ -1,6 +1,12 @@
 #sidebar {
     ul {
         list-style-type: none;
+        margin: 0.5rem 0;
+
+        ul {
+            margin: 0rem 0.5rem;
+            font-size: 0.875rem;
+        }
     }
 
     padding: 1.5rem 1rem;
@@ -13,17 +19,6 @@
 
     h5 {
         font-size: $font-size-l3;
-    }
-
-    .widget-toc,
-    .widget-pages,
-    .widget-tags,
-    .widget-links {
-
-        div,
-        ul {
-            margin: 0.5rem 0;
-        }
     }
 
     .widget-bgm img {
