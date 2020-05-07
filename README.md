@@ -85,6 +85,7 @@ $color-primary-dark: #3B469B; // apply to links:hover and pagination:current
 $color-secondary: #8F82BC; // apply to titles:hover, normal links, tags, pagination and sidebars
 $color-mute: #9EA1A3; // apply to sub-title and post metadata
 $color-spliter: #E5E2E4; // apply to divider and button background
+$color-bg: #FFFFFD !default; // https://irocore.com/shiro/
 
 // font size list
 $font-size-logo: 2.5rem; // Logo Only
