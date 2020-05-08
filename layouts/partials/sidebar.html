@@ -1,12 +1,12 @@
 <!-- in-post toc -->
 {{ if in .Site.Params.mainSections .Type }}
-<div class="widget-toc link-alter">
+<div class="widget-toc">
     <h5>{{ i18n "sidebarToc" }}</h5>
     {{.TableOfContents}}
 </div>
 {{ end }}
 <!-- pages -->
-<div class="widget-pages link-alter">
+<div class="widget-pages">
     <h5>{{ i18n "sidebarPages" }}</h5>
     <ul>
         {{ $currentPage := . }}
@@ -21,7 +21,7 @@
     </ul>
 </div>
 <!-- tags -->
-<div class="widget-tags link-alter">
+<div class="widget-tags">
     <h5>{{ i18n "sidebarTags" }}</h5>
     <div>
         {{ range .Site.Taxonomies.tags }}
@@ -32,7 +32,7 @@
     </div>
 </div>
 <!-- links -->
-<div class="widget-links link-alter">
+<div class="widget-links">
     <h5>{{ i18n "sidebarLinks" }}</h5>
     <ul>
         {{ range .Site.Menus.link }}

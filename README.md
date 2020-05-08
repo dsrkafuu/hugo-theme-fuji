@@ -1,5 +1,7 @@
 # Fuji
 
+![RELEASE](https://img.shields.io/github/v/release/amzrk2/hugo-theme-fuji) ![BUILD STATUS](https://img.shields.io/github/workflow/status/amzrk2/hugo-theme-fuji/Build%20Test) ![REPO SIZE](https://img.shields.io/github/repo-size/amzrk2/hugo-theme-fuji) ![LICENSE](https://img.shields.io/github/license/amzrk2/hugo-theme-fuji)
+
 A minimal Hugo theme inspired by Hexo theme [Murasaki](https://github.com/printempw/hexo-theme-murasaki/), with responsive grid system and markdown style, powered by GitHub Primer CSS.
 
 ## Live demos

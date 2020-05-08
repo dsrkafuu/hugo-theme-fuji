@@ -1,14 +1,4 @@
 #sidebar {
-    ul {
-        list-style-type: none;
-        margin: 0.5rem 0;
-
-        ul {
-            margin: 0rem 0.5rem;
-            font-size: 0.875rem;
-        }
-    }
-
     padding: 1.5rem 1rem;
 
     // different padding when screen size below width-md(768px)
@@ -17,19 +7,35 @@
         padding: 1.5rem;
     }
 
-    h5 {
-        font-size: $font-size-l3;
+    ul {
+        list-style-type: none;
+
+        ul {
+            margin: 0 0.5rem;
+            font-size: 0.875rem;
+        }
     }
 
-    .widget-bgm img {
-        color: $color-secondary;
-        margin: 0.5rem 0;
-        width: 100%;
-        border-radius: 2px;
-        filter: grayscale(50%);
+    h5 {
+        font-size: $font-size-l3;
+        margin-bottom: 0.25rem;
 
-        @media screen and (max-width: $width-md) {
-            width: 50%;
+        &~div,
+        &~ul {
+            margin: 0 0.1rem 1rem 0.1rem;
+        }
+
+        &~img {
+            margin: 0 0.25rem;
+            padding: 0.25rem 0;
+            color: $color-secondary;
+            width: 100%;
+            border-radius: 2px;
+            filter: grayscale(50%);
+
+            @media screen and (max-width: $width-md) {
+                width: 50%;
+            }
         }
     }
 }
