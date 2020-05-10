@@ -7,9 +7,8 @@ enableRobotsTXT = true
 disableKinds = ["taxonomyTerm"]
 
 ## Change this two to switch between different language
-## Now support: en, zh-hans, zh-hant, ja, nl
-defaultContentLanguage = "en"
-languageCode = "en"
+languageCode = "en"  # For RSS, view https://www.rssboard.org/rss-language-codes
+defaultContentLanguage = "en"  # For HTML page, now support: en, zh-hans, zh-hant, ja, nl
 
 summaryLength = 100 # Custom cummary length, add <!--more--> in post file to custom split point
 paginate = 10
