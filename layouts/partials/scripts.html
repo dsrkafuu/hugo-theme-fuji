@@ -93,3 +93,36 @@
     });
 </script>
 {{ end }}
+
+<!-- Search -->
+{{ if eq .RelPermalink "/search/" }}
+<script>
+    $('#search').click(function () {
+        $.get('../index.xml', function (data) {
+            var html = '';
+            var count = 0;
+            var keyword = document.getElementById('keyword').value.toLowerCase();
+
+            if (keyword == '') {
+                html = '<h3>No Input</h3>';
+            } else {
+                var items = data.documentElement.getElementsByTagName("item");
+                for (i = 0; i < items.length; i++) {
+                    var title = items[i].getElementsByTagName("title")[0].firstChild.nodeValue;
+                    if (title.toLowerCase().indexOf(keyword) != -1) {
+                        var link = items[i].getElementsByTagName("link")[0].firstChild.nodeValue;
+                        html += '<tr><td align=center>' + count + '</td><td align=center><a href="' + link + '" target="_blank">' + title + '</a></td></tr>';
+                        count += 1;
+                    }
+                }
+                if (count != 0) {
+                    html = '<table><thead><tr><th align=center>#</th><th align=center>Title</th></tr></thead><tbody>' + html + '</tbody></table>';
+                } else {
+                    html = '<h3>No Result</h3>'
+                }
+            }
+            document.getElementById('result').innerHTML = html;
+        });
+    });
+</script>
+{{ end }}

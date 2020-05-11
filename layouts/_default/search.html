@@ -1,0 +1,9 @@
+{{ define "main" }}
+<div class="post">
+    <form onsubmit="return false" action="#">
+        <input type="text" id="keyword" />
+        <button type="submit" id="search"><i class="fas fa-search"></i></button>
+    </form>
+</div>
+<div class="post-content markdown-body" id="result"></div>
+{{ end }}
