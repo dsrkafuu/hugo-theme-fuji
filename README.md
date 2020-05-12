@@ -6,7 +6,7 @@ A minimal Hugo theme inspired by Hexo theme [Murasaki](https://github.com/printe
 
 ## Live demos
 
-[GitHub Pages Demo (en)](https://amzrk2.cc/hugo-theme-fuji-demo/) | [My Blog (zh-Hans)](https://blog.amzrk2.cc/)
+[**Demo on gohugo.io (en)**](https://themes.gohugo.io/theme/hugo-theme-fuji/) | [My Blog (zh-Hans)](https://blog.amzrk2.cc/)
 
 ![Screenshot of the theme](https://raw.githubusercontent.com/amzrk2/hugo-theme-fuji/master/images/screenshot.png)
 
