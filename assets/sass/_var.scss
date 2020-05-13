@@ -22,7 +22,7 @@ $spliter: 2px solid $color-spliter !default;
     font-weight: 700;
     font-display: swap;
     src: local("Product Sans Bold"), local("ProductSans-Bold"),
-        url("https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.0.0/product-sans/product-sans-bold.woff2") format("woff2");
+        url("https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.2.0/product-sans/product-sans-bold.woff2") format("woff2");
 }
 
 @font-face {
@@ -31,5 +31,5 @@ $spliter: 2px solid $color-spliter !default;
     font-weight: 400;
     font-display: swap;
     src: local("Cascadia Code"), local("Cascadia Mono"),
-        url("https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.0.0/cascadia-code/cascadia.woff2") format("woff2"),
+        url("https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.2.0/cascadia-code/cascadia.woff2") format("woff2"),
 }
