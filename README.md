@@ -29,6 +29,10 @@ $ git submodule add https://github.com/amzrk2/hugo-theme-fuji.git themes/fuji
 
 For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.
 
+## Notice
+
+Remember to add ```<!--more-->``` code to your post ```.md``` files to show blockquotes, links and codes with proper style in list pages' summary part.
+
 ## Getting started
 
 Copy the ```config.toml``` in the ```exampleSite```to the root of your Hugo site. Change strings as you like.
