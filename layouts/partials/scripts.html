@@ -8,6 +8,7 @@
 </script>
 
 <!-- utterances comment loading indicator -->
+{{ if ne .Params.noComments true }}
 {{ if and (.IsPage) (.Site.Params.utterancesRepo) }}
 <script>
     $(function () {
@@ -33,6 +34,7 @@
         }
     });
 </script>
+{{ end }}
 {{ end }}
 
 <!-- toc smooth scroll & APlayer cjk html anchor fix -->

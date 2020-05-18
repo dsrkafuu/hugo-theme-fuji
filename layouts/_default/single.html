@@ -23,6 +23,8 @@
     </blockquote>
 </div>
 {{ end }}
+{{ if ne .Params.noComments true }}
 {{ partial "comment-utterances.html" . }}
 {{ partial "comment-disqus.html" . }}
+{{ end }}
 {{ end }}
