@@ -47,12 +47,13 @@ If you want to generate your site, just run ```hugo``` or ```hugo --minify```.
 
 ## Advance configration
 
-### In-post license
+### In-post license & comments
 
-You can set variables below in post's front matter to disable it:
+You can set variables below in post's front matter to disable them:
 
 ```toml
 noLicense = true # Do not show license in this post
+noComments = true # Do not show comments in this post
 ```
 
 ### APlayer
