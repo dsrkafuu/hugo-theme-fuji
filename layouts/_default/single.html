@@ -1,10 +1,10 @@
 {{ define "main" }}
 <article>
     <!-- post meta -->
-    <h4 class="post-title">
+    <h2 class="post-item post-title">
         <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </h4>
-    <div class="post-meta link-alter">
+    </h2>
+    <div class="post-item post-meta">
         {{ partial "post-meta.html" . }}
     </div>
     {{ with .Params.playerURL }}
@@ -19,12 +19,12 @@
 {{ if ne .Params.noLicense true }}
 <div class="license markdown-body">
     <blockquote>
-        <p>{{ i18n "postCopyrightFront" }}<a rel="license" href="{{ .Site.Params.licenseLink }}" target="_blank">{{ .Site.Params.license }}</a>{{ i18n "postCopyrightEnd" }}</p>
+        <p>{{ i18n "postCopyrightFront" }}<a rel="license" href="{{ .Site.Params.licenseLink }}"
+               target="_blank">{{ .Site.Params.license }}</a>{{ i18n "postCopyrightEnd" }}</p>
     </blockquote>
 </div>
 {{ end }}
 {{ if ne .Params.noComments true }}
 {{ partial "comment-utterances.html" . }}
-{{ partial "comment-disqus.html" . }}
 {{ end }}
 {{ end }}

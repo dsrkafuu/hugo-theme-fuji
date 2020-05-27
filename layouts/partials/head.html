@@ -18,51 +18,54 @@
 {{ else }}
 <title>{{ .Title }} - {{ .Site.Title }}</title>
 {{ end }}
-<meta name="author" content="{{if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}" />
-<meta name="description" content="{{if .Params.description }}{{ .Params.description }}{{ else if .Summary }}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+{{ if or (.Params.author) (.Site.Params.author) }}
+<meta name="author" content="{{ if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}" />
+{{ end }}
+{{ if or (.Params.description) (.Site.Params.description) }}
+<meta name="description"
+      content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+{{ end }}
 {{ if .Params.tags }}
 <meta name="keywords" content="{{ delimit .Params.tags ", " }}" />
 {{ end }}
+
 {{ template "_internal/opengraph.html" . }}
 {{ template "_internal/twitter_cards.html" . }}
-{{ template "_internal/google_analytics_async.html" . }}
 
-<!-- global main css -->
-{{ $options := (dict "targetPath" "css/main.min.css" "outputStyle" "compressed") }}
-{{ $style := resources.Get "sass/main.scss" | resources.ToCSS $options }}
-<link rel="stylesheet" href="{{ $style.Permalink }}" />
+<!-- dep -->
+{{ $sass := resources.Get "fuji.scss" }}
+{{ $options := (dict "targetPath" "assets/css/fuji.min.css" "outputStyle" "compressed" "enableSourceMap" true) }}
+{{ $style := $sass | resources.ToCSS $options }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 
-<!-- global dependency (CDN) -->
-{{ if .Site.Params.useCDN }}
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
-<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.5/dist/medium-zoom.min.js" integrity="sha256-Jd9xef1tT52aCb+cAqhElj/9D3c99lQvEjyKOuPn3S4=" crossorigin="anonymous"></script>
-{{ if or (.Site.Params.playerURL) (.Params.playerURL) }}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" integrity="sha256-uqQQGnDcmRKvhKwc5Vm4XT1GQ2oV6t1U0NR2N9tV+BQ=" crossorigin="anonymous" />
-<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js" integrity="sha256-6Y7CJDaltoeNgk+ZftgCD9jLgmGv4xKUo8nQ0HgAwVo=" crossorigin="anonymous"></script>
-{{ end }}
-<!-- global dependency (LOCAL) -->
+{{ if .Site.Params.useResourceCDN }}
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" data-cfasync="false"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.1/lazysizes.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.5/dist/medium-zoom.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
 {{ else }}
-{{ $jquery := resources.Get "js/jquery.min.js" }}
-<script src="{{ $jquery.Permalink }}"></script>
-{{ $lazysizes := resources.Get "js/lazysizes.min.js" }}
-<script src="{{ $lazysizes.Permalink }}"></script>
-{{ $fontawesome := resources.Get "css/fontawsome.min.css" }}
-<link rel="stylesheet" href="{{ $fontawesome.Permalink }}" />
-{{ $zoom := resources.Get "js/medium-zoom.min.js" }}
-<script src="{{ $zoom.Permalink }}"></script>
-{{ if or (.Site.Params.playerURL) (.Params.playerURL) }}
-{{ $aplayerCSS := resources.Get "css/APlayer.min.css" }}
-<link rel="stylesheet" href="{{ $aplayerCSS.Permalink }}" />
-{{ $aplayerJS := resources.Get "js/APlayer.min.js" }}
-<script src="{{ $aplayerJS.Permalink }}"></script>
-{{ end }}
+<script src="{{ "/assets/js/jquery-3.5.1.min.js" | relURL }}" data-cfasync="false"></script>
+<link rel="stylesheet" href="{{ "/assets/css/fa.min.css" | relURL }}" />
+<script src="{{ "/assets/js/lazysizes.min.js" | relURL }}"></script>
+<script src="{{ "/assets/js/medium-zoom.min.js" | relURL }}"></script>
+<script src="{{ "/assets/js/highlight.min.js" | relURL }}"></script>
+<script src="{{ "/assets/css/APlayer.min.css" | relURL }}"></script>
+<script src="{{ "/assets/js/APlayer.min.js" | relURL }}"></script>
 {{ end }}
 
-<!-- optional katex math -->
-{{ if or (.Params.math) (.Site.Params.math) }}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous" />
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+{{ with .Site.GoogleAnalytics }}
+<!-- GA -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+<script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+            dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', '{{ . }}');
+</script>
 {{ end }}

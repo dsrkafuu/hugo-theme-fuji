@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+// sticky footer
+html {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+main {
+    flex: 1 1 auto;
+}
+
+// remove text decoration
+a:hover {
+    text-decoration: none !important;
+}

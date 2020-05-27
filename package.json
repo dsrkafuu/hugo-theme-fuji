@@ -1,28 +1,23 @@
 {
-  "name": "hugo-theme-fuji",
-  "version": "1.3.0",
-  "description": "A minimal Hugo theme inspired by Murasaki, powered by GitHub Primer CSS.",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amzrk2/hugo-theme-fuji.git"
-  },
-  "keywords": [
-    "hugo",
-    "theme",
-    "fuji",
-    "primer"
-  ],
-  "author": "DSRKafuU <mail@amzrk2.cc> (https://amzrk2.cc/)",
-  "license": "GPL-3.0-only",
-  "bugs": {
-    "url": "https://github.com/amzrk2/hugo-theme-fuji/issues"
-  },
-  "homepage": "https://github.com/amzrk2/hugo-theme-fuji#readme",
-  "devDependencies": {
-    "@primer/css": "14.3.0",
-    "@fortawesome/fontawesome-free": "5.13.0",
-    "lazysizes": "5.2.0",
-    "aplayer": "1.10.1",
-    "medium-zoom": "1.0.5"
-  }
+    "name": "hugo-theme-fuji",
+    "version": "2.0.0",
+    "description": "A minimal Hugo theme.",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/amzrk2/hugo-theme-fuji.git"
+    },
+    "keywords": [
+        "hugo",
+        "theme",
+        "fuji"
+    ],
+    "author": "DSRKafuU <mail@amzrk2.cc> (https://blog.amzrk2.cc/)",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/amzrk2/hugo-theme-fuji/issues"
+    },
+    "homepage": "https://github.com/amzrk2/hugo-theme-fuji#readme",
+    "devDependencies": {
+        "@primer/css": "14.4.0"
+    }
 }

@@ -1,0 +1,157 @@
+.content {
+    padding: 1.5rem 1.5rem 0 1.5rem; // same as sidebar
+}
+
+.post {
+    // paddings between posts
+    &:not(:first-child) {
+        padding: 1.5rem 0;
+    }
+
+    &:first-child {
+        padding: 0 0 1.5rem 0;
+    }
+}
+
+.post-title {
+    font-size: $font-size-1;
+}
+
+.post-meta {
+    margin: 0.5rem 0.25rem 1rem 0.25rem; // little space
+    white-space: nowrap;
+    overflow-x: scroll;
+
+    time,
+    span:not(:last-child) {
+        padding-right: 1.5rem;
+    }
+
+    &::-webkit-scrollbar {
+        display: none; // WebKit
+    }
+
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // Microsoft
+}
+
+.post-summary {
+    margin: 0 0.1rem; // little space
+
+    p:last-child {
+        margin-bottom: 0; // remove margin-bottom of last para in summary
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        display: none; // hide h1-h6 in post summary
+    }
+}
+
+.post-meta-archive {
+    margin: 0.5rem 0.25rem 0 0.25rem; // little space
+    white-space: nowrap;
+    overflow-x: scroll;
+
+    time,
+    span:not(:last-child) {
+        padding-right: 1.5rem;
+    }
+
+    &::-webkit-scrollbar {
+        display: none; // WebKit
+    }
+
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // Microsoft
+}
+
+.pagination {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.25rem;
+
+    & > div {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+
+        &.pag-item {
+            padding: 0 0.25rem;
+
+            a {
+                vertical-align: middle;
+            }
+        }
+    }
+
+    i {
+        padding: 0 0.25rem;
+        vertical-align: middle;
+    }
+}
+
+.page-info {
+    padding: 0 0.1rem 1.5rem 0.1rem;
+}
+
+// single page part
+article {
+    padding-bottom: 1.5rem;
+
+    .post-content {
+        margin: 1.25rem 0.1rem 0 0.1rem;
+    }
+}
+
+.license {
+    margin-bottom: 1.5rem;
+}
+
+.post-loading {
+    margin: 0 0 1.5rem 0;
+    padding-top: 1.5rem;
+    text-align: center;
+
+    i {
+        font-size: 1.25rem;
+    }
+
+    p {
+        margin: 0.5rem 0 0 0;
+    }
+}
+
+.markdown-body {
+    h1 {
+        font-size: $font-size-1;
+        margin-top: 1.5rem;
+    }
+
+    h2 {
+        font-size: $font-size-2;
+        margin-top: 1.375rem;
+    }
+
+    h3 {
+        font-size: $font-size-3;
+        margin-top: 1.25rem;
+    }
+
+    h4 {
+        margin-top: 1.25rem;
+    }
+
+    ul {
+        list-style-type: circle;
+    }
+
+    img {
+        max-width: 98%;
+        margin: 0 0.25rem 0.5rem 0.25rem;
+    }
+}

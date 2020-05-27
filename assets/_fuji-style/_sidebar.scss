@@ -1,0 +1,69 @@
+.sidebar {
+    padding: 1.5rem 1.5rem 1.5rem 0; // no left padding on big screen
+}
+
+.sidebar-item {
+    &:not(:last-child) {
+        margin-bottom: 1rem; // space betreen sidebar items
+    }
+
+    h3 {
+        margin-bottom: 0.25rem; // space betreen head3 & lists
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0 0.1rem; // little space
+    }
+
+    & > div,
+    & > nav {
+        margin: 0 0.1rem; // little space
+    }
+
+    & > img {
+        margin: 0.5rem 0.25rem 0 0.25rem;
+        width: 100%;
+        border-radius: 2px;
+    }
+}
+
+@media screen and (max-width: $width-md) {
+    .sidebar {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .sidebar-item {
+        width: 40%; // max 2 modules per line
+
+        // space only at first 2 modules
+        .sidebar-pages,
+        .sidebar-tags {
+            margin-bottom: 1rem;
+        }
+
+        .sidebar-links,
+        .sidebar-bgm {
+            margin-bottom: 0;
+        }
+
+        & > img {
+            margin: 0.5rem 0.25rem 0 0.25rem;
+            width: 75%;
+            border-radius: 0.25rem;
+        }
+    }
+}
+
+// single page part
+.sidebar-toc {
+    ul ul {
+        font-size: 0.875rem;
+        padding-left: 0.5rem;
+        margin-bottom: 0.25rem;
+    }
+}

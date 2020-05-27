@@ -1,0 +1,18 @@
+<script data-cfasync="false">
+    // detect theme data in localStorage
+    // change the data-theme attribute of body
+    var fujiThemeData = localStorage.getItem('fuji_theme');
+    if (fujiThemeData) {
+        if ($('body').attr('data-theme') !== fujiThemeData) {
+            $('body').attr('data-theme', (index, attr) => {
+                if (fujiThemeData === 'dark') {
+                    return 'dark';
+                } else {
+                    return 'light';
+                }
+            });
+        }
+    } else {
+        localStorage.setItem('fuji_theme', $('body').attr('data-theme'));
+    }
+</script>

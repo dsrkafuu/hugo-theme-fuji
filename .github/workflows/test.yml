@@ -18,4 +18,4 @@ jobs:
           cd exampleSite
           mkdir themes
           ln -s ../.. themes/fuji
-          hugo --minify
+          hugo
