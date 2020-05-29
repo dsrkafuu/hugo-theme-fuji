@@ -41,7 +41,7 @@
 {{ if .Site.Params.useResourceCDN }}
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" data-cfasync="false"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.1/lazysizes.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.5/dist/medium-zoom.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
@@ -52,7 +52,7 @@
 <script src="{{ "/assets/js/lazysizes.min.js" | relURL }}"></script>
 <script src="{{ "/assets/js/medium-zoom.min.js" | relURL }}"></script>
 <script src="{{ "/assets/js/highlight.min.js" | relURL }}"></script>
-<script src="{{ "/assets/css/APlayer.min.css" | relURL }}"></script>
+<link rel="stylesheet" href="{{ "/assets/css/APlayer.min.css" | relURL }}" />
 <script src="{{ "/assets/js/APlayer.min.js" | relURL }}"></script>
 {{ end }}
 

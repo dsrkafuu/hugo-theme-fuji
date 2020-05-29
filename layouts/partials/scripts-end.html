@@ -72,13 +72,15 @@
         background: mediumTheme
     });
 
-    // init highlight.js
     hljs.initHighlightingOnLoad();
 
     // remove empty ul in toc if article only have ## and ###
     if ($('.sidebar-toc ul ul').length > 0 && $('.sidebar-toc ul ul li').text() === '') {
         $('.sidebar-toc ul ul').hide();
     }
+
+    // init highlight.js
+    hljs.initHighlighting();
 </script>
 
 {{ if and (and (ne .Params.noComments true) (.IsPage)) (.Site.Params.utterancesRepo) }}
