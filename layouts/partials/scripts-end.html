@@ -118,6 +118,22 @@
         }
     });
 </script>
+{{ else if and (and (ne .Params.noComments true) (.IsPage)) (.Site.Params.disqusShortname) }}
+<script>
+    // theme switch button
+    $('.btn .btn-toggle-mode').on('click', () => {
+        // toggle theme
+        toggleTheme();
+        // update medium background
+        updateMeidumTheme($('body').attr('data-theme'), mediumEvent);
+        // update disqus theme  if available
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    });
+</script>
 {{ else }}
 <script>
     // theme switch button

@@ -1,6 +1,6 @@
 # Fuji
 
-Fuji is a minimal Hugo theme inspired by Hexo theme [Murasaki](https://github.com/printempw/hexo-theme-murasaki/), with responsive grid system and GitHub Primer markdown style.
+Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markdown style.
 
 ![RELEASE](https://img.shields.io/github/v/release/amzrk2/hugo-theme-fuji?style=flat-square) ![BUILD STATUS](https://img.shields.io/github/workflow/status/amzrk2/hugo-theme-fuji/Build%20Test?style=flat-square) ![REPO SIZE](https://img.shields.io/github/repo-size/amzrk2/hugo-theme-fuji?style=flat-square) ![LICENSE](https://img.shields.io/github/license/amzrk2/hugo-theme-fuji?style=flat-square)
 
@@ -11,11 +11,13 @@ Fuji is a minimal Hugo theme inspired by Hexo theme [Murasaki](https://github.co
 - [Getting started](#getting-started)
 - [Update the theme](#update-the-theme)
 - [Configration](#configration)
+  - [Favicon](#favicon)
   - [In-post license & comments](#in-post-license--comments)
   - [APlayer](#aplayer)
   - [Image zoom and lazyload settings](#image-zoom-and-lazyload-settings)
   - [Markdown render hook](#markdown-render-hook)
   - [Custom fonts](#custom-fonts)
+  - [Disqus identifier](#disqus-identifier)
 - [Contributing](#contributing)
 - [License](#license)
 - [Annotations](#annotations)
@@ -61,6 +63,12 @@ $ git submodule update --remote --merge
 ```
 
 ## Configration
+
+### Favicon
+
+Create `[SITEROOT]/layouts/partials/favicon.html` to cover theme's favicon.
+
+You can generate your favicons in [realfavicongenerator.net](https://realfavicongenerator.net/).
 
 ### In-post license & comments
 
@@ -142,6 +150,10 @@ $body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 
 $mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $body-font;
 $body-font-size: 16px;
 ```
+
+## Disqus identifier
+
+Use the `[SITEROOT]/layouts/partials/comment-disqus.html` to cover `themes/fuji/layouts/partials/comment-disqus.html`.
 
 ## Contributing
 
