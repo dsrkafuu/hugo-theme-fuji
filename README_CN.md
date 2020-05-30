@@ -4,23 +4,24 @@
 
 ![RELEASE](https://img.shields.io/github/v/release/amzrk2/hugo-theme-fuji?style=flat-square) ![BUILD STATUS](https://img.shields.io/github/workflow/status/amzrk2/hugo-theme-fuji/Build%20Test?style=flat-square) ![REPO SIZE](https://img.shields.io/github/repo-size/amzrk2/hugo-theme-fuji?style=flat-square) ![LICENSE](https://img.shields.io/github/license/amzrk2/hugo-theme-fuji?style=flat-square)
 
-[English](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README.md) | [真正的白话文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
+[English](https://github.com/amzrk2/hugo-theme-fuji#readme) | [白话文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
 
 ## 目录
 
-- [在线 Demo](#live-demos)
-- [注意注意注意啦](#notice)
-- [所以怎么用](#getting-started)
-- [更新主题](#update-the-theme)
-- [看看设置项](#configration)
-  - [改下网站图标](#favicon)
-  - [这文章有点敏感，关了 License 和评论吧](#in-post-license--comments)
-  - [加点音乐](#aplayer)
-  - [放大图片；网慢，要 lazyload](#image-zoom-and-lazyload-settings)
-  - [Markdown 钩子](#markdown-render-hook)
-  - [这字体也太丑了，换掉](#custom-fonts)
+- [在线 Demo](#在线-demo)
+- [注意注意注意啦](#注意注意注意啦)
+- [所以怎么用](#所以怎么用)
+- [更新主题](#更新主题)
+- [看看设置项](#看看设置项)
+  - [改下网站图标](#改下网站图标)
+  - [这文章有点敏感，关了 License 和评论吧](#这文章有点敏感关了-license-和评论吧)
+  - [加点音乐](#加点音乐)
+  - [放大图片；网慢，要 lazyload](#放大图片网慢要-lazyload)
+  - [Markdown 钩子](#markdown-钩子)
+  - [这字体也太丑了，换掉](#这字体也太丑了换掉)
+  - [自定义 highlight.js 支持的语言]()
   - [Disqus identifier](#disqus-identifier)
-- [批判一番](#contributing)
+- [批判一番](#批判一番)
 - [License](#license)
 - [Annotations](#annotations)
 
@@ -141,7 +142,13 @@ $mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $body-font;
 $body-font-size: 16px;
 ```
 
-## Disqus identifier
+### 自定义 highlight.js 支持的语言
+
+在 `config.toml` 里面把 `customHighlight` 设置为 `true`，将 `customHighlightURL` 设置为自定义的 `highlight.js` 的路径即可。
+
+语言的选择可以去 [Getting highlight.js](https://highlightjs.org/download/)，非自定义情况下默认使用的即默认选项。
+
+### Disqus identifier
 
 用 `[SITEROOT]/layouts/partials/comment-disqus.html` 覆盖 `themes/fuji/layouts/partials/comment-disqus.html`.
 

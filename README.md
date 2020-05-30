@@ -4,7 +4,7 @@ Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markd
 
 ![RELEASE](https://img.shields.io/github/v/release/amzrk2/hugo-theme-fuji?style=flat-square) ![BUILD STATUS](https://img.shields.io/github/workflow/status/amzrk2/hugo-theme-fuji/Build%20Test?style=flat-square) ![REPO SIZE](https://img.shields.io/github/repo-size/amzrk2/hugo-theme-fuji?style=flat-square) ![LICENSE](https://img.shields.io/github/license/amzrk2/hugo-theme-fuji?style=flat-square)
 
-[English](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README.md) | [真正的白话文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
+[English](https://github.com/amzrk2/hugo-theme-fuji#readme) | [白话文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
 
 ## Table of contents
 
@@ -153,7 +153,13 @@ $mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $body-font;
 $body-font-size: 16px;
 ```
 
-## Disqus identifier
+### Custom highlight.js language support
+
+Set `customHighlight` to `true` in `config.toml`, then set `customHighlightURL` to the path of your own `highlight.js`.
+
+Check [Getting highlight.js](https://highlightjs.org/download/) to download you own bundle of highlight.js.
+
+### Disqus identifier
 
 Use the `[SITEROOT]/layouts/partials/comment-disqus.html` to cover `themes/fuji/layouts/partials/comment-disqus.html`.
 
