@@ -38,11 +38,10 @@
 {{ $style := $sass | resources.ToCSS $options }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 
-{{ if .Site.Params.useResourceCDN }}
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" data-cfasync="false"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.5/dist/medium-zoom.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.4.5/font-awesome/fontawesome.min.css" />
 {{ if .Site.Params.customHighlight }}
 <script src="{{ .Site.Params.customHighlightURL | relURL }}"></script>
 {{ else }}
@@ -51,24 +50,6 @@
 {{ if .Params.playerURL }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-{{ end }}
-
-{{ else }}
-
-<script src="{{ "/assets/js/jquery-3.5.1.min.js" | relURL }}" data-cfasync="false"></script>
-<link rel="stylesheet" href="{{ "/assets/css/fa.min.css" | relURL }}" />
-<script src="{{ "/assets/js/lazysizes.min.js" | relURL }}"></script>
-<script src="{{ "/assets/js/medium-zoom.min.js" | relURL }}"></script>
-{{ if .Site.Params.customHighlight }}
-<script src="{{ .Site.Params.customHighlightURL | relURL }}"></script>
-{{ else }}
-<script src="{{ "/assets/js/highlight.min.js" | relURL }}"></script>
-{{ end }}
-{{ if .Params.playerURL }}
-<link rel="stylesheet" href="{{ "/assets/css/APlayer.min.css" | relURL }}" />
-<script src="{{ "/assets/js/APlayer.min.js" | relURL }}"></script>
-{{ end }}
-
 {{ end }}
 
 {{ partial "analytic-gtag.html" . }}

@@ -1,5 +1,5 @@
-<time><i class="fas fa-calendar-day"></i>
-{{ .Date.Format "2006-01-02" }}</time>{{ if .Site.Params.showWordCounter }}<span><i class="fas fa-file-alt"></i>
-{{ .WordCount }}{{ i18n "postMetaWordCount" }}</span>{{ end }}{{ if .Site.Params.showReadTime }}<span><i class="fas fa-clock"></i>
-{{ .ReadingTime }}{{ i18n "postMetaReadingTime" }}</span>{{ end }}<span><i class="fas fa-tag"></i>
+<time><i class="far fa-calendar-day"></i>
+{{ .Date.Format "2006-01-02" }}</time>{{ if .Site.Params.showWordCounter }}<span><i class="far fa-archive"></i>
+{{ .WordCount }}{{ i18n "postMetaWordCount" }}</span>{{ end }}{{ if .Site.Params.showReadTime }}<span><i class="far fa-clock"></i>
+{{ .ReadingTime }}{{ i18n "postMetaReadingTime" }}</span>{{ end }}<span><i class="far fa-tag"></i>
 {{ if .Params.tags }}{{ range .Params.tags }}<a href="{{ "/tags/" | relURL }}{{ . | urlize}}">{{ . }}</a> {{ end }}{{ else }}{{ i18n "postMetaNoTag" }}{{ end }}</span>

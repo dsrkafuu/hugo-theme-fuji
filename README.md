@@ -173,6 +173,8 @@ Feel free to use the [issue tracker](https://github.com/amzrk2/hugo-theme-fuji/i
 
 The theme is released under the ```Apache License 2.0```, for more information read the [License](https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE).
 
+- [Font Awesome - Creative Commons Attribution 4.0 International](https://fontawesome.com/license)
+
 > © 2020 DSRKafuU(amzrk2) Twitter[@amzrk2](https://twitter.com/amzrk2)
 
 ## Annotations

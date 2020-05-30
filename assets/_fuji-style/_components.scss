@@ -19,15 +19,13 @@
 
         &:first-child {
             border-radius: 0.25rem 0.25rem 0 0;
+            font-size: 1.25rem;
         }
 
         &:last-child {
             border-radius: 0 0 0.25rem 0.25rem;
+            font-size: 1.3rem;
         }
-    }
-
-    i {
-        font-size: 1.25rem;
     }
 }
 

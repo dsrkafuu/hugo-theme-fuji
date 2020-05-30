@@ -1,6 +1,6 @@
 # Fuji
 
-简单的 Hugo 主题，支持夜间模式，Markdown 照搬 GitHub Primer。萌新一个啥也不会，有问题尽管提（
+简单的 Hugo 主题，支持夜间模式，Markdown 是蹭的 GitHub Primer。萌新一个啥也不会，有问题尽管提（
 
 ![RELEASE](https://img.shields.io/github/v/release/amzrk2/hugo-theme-fuji?style=flat-square) ![BUILD STATUS](https://img.shields.io/github/workflow/status/amzrk2/hugo-theme-fuji/Build%20Test?style=flat-square) ![REPO SIZE](https://img.shields.io/github/repo-size/amzrk2/hugo-theme-fuji?style=flat-square) ![LICENSE](https://img.shields.io/github/license/amzrk2/hugo-theme-fuji?style=flat-square)
 
