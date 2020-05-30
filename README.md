@@ -4,6 +4,8 @@ Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markd
 
 ![RELEASE](https://img.shields.io/github/v/release/amzrk2/hugo-theme-fuji?style=flat-square) ![BUILD STATUS](https://img.shields.io/github/workflow/status/amzrk2/hugo-theme-fuji/Build%20Test?style=flat-square) ![REPO SIZE](https://img.shields.io/github/repo-size/amzrk2/hugo-theme-fuji?style=flat-square) ![LICENSE](https://img.shields.io/github/license/amzrk2/hugo-theme-fuji?style=flat-square)
 
+[English](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README.md) | [真正的白话文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
+
 ## Table of contents
 
 - [Live demos](#live-demos)
@@ -32,7 +34,7 @@ Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markd
 
 ## Notice
 
-Remember to add [summary divider](https://gohugo.io/content-management/summaries/#manual-summary-splitting) to your post `.md` files to show blockquotes, links and codes with proper style in list pages' summary part.
+Remember to add [summary divider](https://gohugo.io/content-management/summaries/#manual-summary-splitting) `<!--more-->` to your post `.md` files to show blockquotes, links and codes with proper style in list pages' summary part.
 
 ## Getting started
 
@@ -157,11 +159,15 @@ Use the `[SITEROOT]/layouts/partials/comment-disqus.html` to cover `themes/fuji/
 
 ## Contributing
 
-Did you found a bug or got an idea for a new feature? Feel free to use the [issue tracker](https://github.com/amzrk2/hugo-theme-fuji/issues) to let me know.
+Note that to keep the `master` branch clean, the main development work is made under `dev` branch. Please set base branch to `dev`, then make commitment or pull request.
+
+Feel free to use the [issue tracker](https://github.com/amzrk2/hugo-theme-fuji/issues). The theme has only been fully tested on Firefox, so if there are some problems when accessing with Chrome or others please also report an issue.
 
 ## License
 
 The theme is released under the ```Apache License 2.0```, for more information read the [License](https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE).
+
+> © 2020 DSRKafuU(amzrk2) Twitter[@amzrk2](https://twitter.com/amzrk2)
 
 ## Annotations
 
