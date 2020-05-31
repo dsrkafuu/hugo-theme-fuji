@@ -104,11 +104,6 @@ body[data-theme='light'] {
         hr {
             height: 2px;
         }
-
-        pre,
-        code {
-            background-color: #f2f2f2;
-        }
     }
 
     .post-loading,
@@ -135,64 +130,6 @@ body[data-theme='light'] {
         }
     }
 
-    // highlight.js theme [solarized-light]
-    .hljs {
-        display: block;
-        overflow-x: auto;
-    }
-    .hljs-comment,
-    .hljs-quote {
-        color: #93a1a1;
-    }
-    .hljs-addition,
-    .hljs-keyword,
-    .hljs-selector-tag {
-        color: #859900;
-    }
-    .hljs-doctag,
-    .hljs-literal,
-    .hljs-meta .hljs-meta-string,
-    .hljs-number,
-    .hljs-regexp,
-    .hljs-string {
-        color: #2aa198;
-    }
-    .hljs-name,
-    .hljs-section,
-    .hljs-selector-class,
-    .hljs-selector-id,
-    .hljs-title {
-        color: #268bd2;
-    }
-    .hljs-attr,
-    .hljs-attribute,
-    .hljs-class .hljs-title,
-    .hljs-template-variable,
-    .hljs-type,
-    .hljs-variable {
-        color: #b58900;
-    }
-    .hljs-bullet,
-    .hljs-link,
-    .hljs-meta,
-    .hljs-meta .hljs-keyword,
-    .hljs-selector-attr,
-    .hljs-selector-pseudo,
-    .hljs-subst,
-    .hljs-symbol {
-        color: #ca5624;
-    }
-    .hljs-built_in,
-    .hljs-deletion {
-        color: #da4a47;
-    }
-    .hljs-formula {
-        background: #eee8d5;
-    }
-    .hljs-emphasis {
-        font-style: italic;
-    }
-    .hljs-strong {
-        font-weight: 600;
-    }
+    // prism.js theme [olarized-light]
+    @import '../../css/prism-solarizedlight';
 }

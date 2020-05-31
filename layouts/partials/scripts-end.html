@@ -1,11 +1,8 @@
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.5/dist/medium-zoom.min.js"></script>
-{{ if .Site.Params.customHighlight }}
-<script src="{{ .Site.Params.customHighlightURL | relURL }}"></script>
-{{ else }}
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
-{{ end }}
-<script src="{{ "/assets/js/fuji.dev.js" | relURL }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="{{ "/assets/js/fuji.js" | relURL }}"></script>
 
 {{ with .Params.playerURL }}
 <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>

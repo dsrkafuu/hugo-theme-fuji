@@ -104,11 +104,6 @@ body[data-theme='dark'] {
         hr {
             height: 2px;
         }
-
-        pre,
-        code {
-            background-color: $color-divider-dark;
-        }
     }
 
     .post-loading,
@@ -134,66 +129,8 @@ body[data-theme='dark'] {
         }
     }
 
-    // highlight.js theme [solarized-dark]
-    .hljs {
-        display: block;
-        overflow-x: auto;
-    }
-    .hljs-comment,
-    .hljs-quote {
-        color: #85aab6;
-    }
-    .hljs-addition,
-    .hljs-keyword,
-    .hljs-selector-tag {
-        color: #bad601;
-    }
-    .hljs-doctag,
-    .hljs-literal,
-    .hljs-meta .hljs-meta-string,
-    .hljs-number,
-    .hljs-regexp,
-    .hljs-string {
-        color: #38cfc3;
-    }
-    .hljs-name,
-    .hljs-section,
-    .hljs-selector-class,
-    .hljs-selector-id,
-    .hljs-title {
-        color: #479fdf;
-    }
-    .hljs-attr,
-    .hljs-attribute,
-    .hljs-class .hljs-title,
-    .hljs-template-variable,
-    .hljs-type,
-    .hljs-variable {
-        color: #c9ac56;
-    }
-    .hljs-bullet,
-    .hljs-link,
-    .hljs-meta,
-    .hljs-meta .hljs-keyword,
-    .hljs-selector-attr,
-    .hljs-selector-pseudo,
-    .hljs-subst,
-    .hljs-symbol {
-        color: #db835d;
-    }
-    .hljs-built_in,
-    .hljs-deletion {
-        color: #e27876;
-    }
-    .hljs-formula {
-        background: #24849c;
-    }
-    .hljs-emphasis {
-        font-style: italic;
-    }
-    .hljs-strong {
-        font-weight: 600;
-    }
+    // prism.js theme [tomorrow-dark]
+    @import '../../css/prism-solarizeddark';
 
     // diff from light
     img {

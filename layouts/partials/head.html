@@ -33,7 +33,7 @@
 {{ template "_internal/twitter_cards.html" . }}
 
 <!-- dep -->
-{{ $sass := resources.Get "fuji.scss" }}
+{{ $sass := resources.Get "scss/fuji.scss" }}
 {{ $options := (dict "targetPath" "assets/css/fuji.min.css" "outputStyle" "compressed" "enableSourceMap" true) }}
 {{ $style := $sass | resources.ToCSS $options }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" />

@@ -85,9 +85,6 @@ if ($('body').attr('data-theme') === 'dark') {
     });
 }
 
-// init highlight.js
-hljs.initHighlighting();
-
 // if in post page and using utterances
 // add utterances comment loading indicator
 if ($('.post-loading').length >= 1) {
