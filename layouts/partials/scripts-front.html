@@ -1,6 +1,6 @@
 <script data-cfasync="false">
     // detect theme data in localStorage
-    // change the data-theme attribute of body
+    // if diff change the data-theme attribute of body
     var fujiThemeData = localStorage.getItem('fuji_theme');
     if (fujiThemeData) {
         if ($('body').attr('data-theme') !== fujiThemeData) {
@@ -12,12 +12,10 @@
                 }
             });
         }
-    } else {
-        localStorage.setItem('fuji_theme', $('body').attr('data-theme'));
     }
 </script>
 <script data-cfasync="false">
-    // ie
+    // ie detection
     var ua = window.navigator.userAgent;
 
     function browserDetection() {

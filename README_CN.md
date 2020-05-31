@@ -2,7 +2,7 @@
 
 简单的 Hugo 主题，支持夜间模式，Markdown 是蹭的 GitHub Primer。萌新一个啥也不会，有问题尽管提（
 
-![RELEASE](https://img.shields.io/github/v/release/amzrk2/hugo-theme-fuji?style=flat-square) ![BUILD STATUS](https://img.shields.io/github/workflow/status/amzrk2/hugo-theme-fuji/Build%20Test?style=flat-square) ![REPO SIZE](https://img.shields.io/github/repo-size/amzrk2/hugo-theme-fuji?style=flat-square) ![LICENSE](https://img.shields.io/github/license/amzrk2/hugo-theme-fuji?style=flat-square)
+![RELEASE](https://img.shields.io/github/v/release/amzrk2/hugo-theme-fuji?style=flat-square) ![BUILD STATUS](https://img.shields.io/github/workflow/status/amzrk2/hugo-theme-fuji/Build%20Test?style=flat-square) ![CODE SIZE](https://img.shields.io/github/languages/code-size/amzrk2/hugo-theme-fuji?style=flat-square) ![LICENSE](https://img.shields.io/github/license/amzrk2/hugo-theme-fuji?style=flat-square)
 
 [English](https://github.com/amzrk2/hugo-theme-fuji#readme) | [白话文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
 
@@ -19,7 +19,7 @@
   - [放大图片；网慢，要 lazyload](#放大图片网慢要-lazyload)
   - [Markdown 钩子](#markdown-钩子)
   - [这字体也太丑了，换掉](#这字体也太丑了换掉)
-  - [自定义 highlight.js 支持的语言]()
+  - [自定义 highlight.js 支持的语言](#自定义-highlightjs-支持的语言)
   - [Disqus identifier](#disqus-identifier)
 - [批判一番](#批判一番)
 - [License](#license)

@@ -18,6 +18,13 @@
     },
     "homepage": "https://github.com/amzrk2/hugo-theme-fuji#readme",
     "devDependencies": {
-        "@primer/css": "14.4.0"
+        "@babel/cli": "^7.10.1",
+        "@babel/core": "^7.10.2",
+        "@primer/css": "14.4.0",
+        "uglify-js": "^3.9.4"
+    },
+    "scripts": {
+        "babel": "babel static/assets/js/fuji.dev.js --out-file static/assets/js/fuji.js",
+        "js": "uglifyjs static/assets/js/fuji.js -o static/assets/js/fuji.min.js -c --source-map"
     }
 }
