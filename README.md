@@ -159,9 +159,16 @@ Set `customHighlight` to `true` in `config.toml`, then set `customHighlightURL` 
 
 Check [Getting highlight.js](https://highlightjs.org/download/) to download you own bundle of highlight.js.
 
-### Disqus identifier
+### Disqus
 
-Use the `[SITEROOT]/layouts/partials/comment-disqus.html` to cover `themes/fuji/layouts/partials/comment-disqus.html`.
+By default theme use these as identifier:
+
+```js
+this.page.url = {{ $.Permalink }};
+this.page.identifier = {{ $.File.ContentBaseName }};
+```
+
+Use the `[SITEROOT]/layouts/partials/comment-disqus.html` to cover `themes/fuji/layouts/partials/comment-disqus.html`. Then you can customize the url and identifier, or switch to DisqusJS for accessing from Mainland China. If you want to use DisqusJS, please also remember to set `useDisqusJS = true` in your `config.toml` to load CSS.
 
 ## Contributing
 
