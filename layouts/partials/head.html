@@ -33,12 +33,7 @@
 {{ template "_internal/twitter_cards.html" . }}
 
 <!-- dep -->
-{{ $sass := resources.Get "scss/fuji.scss" }}
-{{ $options := (dict "targetPath" "assets/css/fuji.min.css" "outputStyle" "compressed" "enableSourceMap" true) }}
-{{ $style := $sass | resources.ToCSS $options }}
-<link rel="stylesheet" href="{{ $style.RelPermalink }}" />
-
-<script data-cfasync="false" src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="{{ "/assets/css/fuji.min.css" | relURL }}" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.4.5/font-awesome/fontawesome.min.css" />
 {{ if .Params.playerURL }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />

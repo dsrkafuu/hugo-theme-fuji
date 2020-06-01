@@ -1,0 +1,203 @@
+::selection,
+::-moz-selection {
+    color: var(--color-bg);
+    background-color: var(--color-primary);
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-font);
+
+    @include link-1();
+}
+
+.post-summary,
+.post-meta {
+    @include link-2();
+}
+
+.pag-current a,
+.pag-current a:hover {
+    color: var(--color-focus);
+}
+
+.title-sub,
+.post-meta {
+    color: var(--color-mute);
+}
+
+header,
+.page-info {
+    border-bottom: $divider;
+}
+
+.post + .post,
+.pagination,
+footer {
+    border-top: $divider;
+}
+
+.post-meta-archive {
+    @include link-2();
+
+    color: var(--color-mute);
+}
+
+@media screen and (max-width: $width-md) {
+    .sidebar {
+        border-top: $divider;
+    }
+}
+
+// single page part
+.post-content {
+    @include link-2();
+}
+
+.markdown-body {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--color-primary);
+    }
+
+    h1,
+    h2 {
+        border-bottom: $divider;
+    }
+
+    blockquote {
+        color: var(--color-mute);
+    }
+
+    img {
+        border-radius: 2px;
+        background-color: inherit; // fix white pixels under border-radius
+    }
+
+    hr {
+        height: 2px;
+    }
+
+    pre,
+    code {
+        background-color: var(--color-codebg);
+    }
+}
+
+.post-loading,
+.post-comment .utterances-frame,
+.post-comment #disqus_thread {
+    border-top: $divider;
+}
+
+// components
+.btn {
+    div {
+        background-color: var(--color-divider);
+
+        color: var(--color-primary);
+    }
+
+    div:hover {
+        background-color: var(--color-primary);
+        color: var(--color-divider);
+    }
+
+    div + div {
+        border-top: 2px solid var(--color-bg);
+    }
+}
+
+// prism.js theme [solarized-light]
+
+code[class*='language-'],
+pre[class*='language-'] {
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #93a1a1; /* base1 */
+}
+
+.token.punctuation {
+    color: #586e75; /* base01 */
+}
+
+.token.namespace {
+    opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #268bd2; /* blue */
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.url,
+.token.inserted {
+    color: #2aa198; /* cyan */
+}
+
+.token.entity {
+    color: #657b83; /* base00 */
+    background: #eee8d5; /* base2 */
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: #859900; /* green */
+}
+
+.token.function,
+.token.class-name {
+    color: #b58900; /* yellow */
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+    color: #cb4b16; /* orange */
+}
+
+.token.important,
+.token.bold {
+    font-weight: 600;
+}
+.token.italic {
+    font-style: italic;
+}
+
+// fix conflicts of primer css & prism.js style
+pre,
+code {
+    .rule {
+        margin: 0;
+        border-bottom: none;
+        overflow: inherit;
+
+        &::before,
+        &::after {
+            display: inherit;
+            clear: inherit;
+        }
+    }
+}

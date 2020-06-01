@@ -18,13 +18,27 @@
     },
     "homepage": "https://github.com/amzrk2/hugo-theme-fuji#readme",
     "devDependencies": {
-        "@babel/cli": "^7.10.1",
         "@babel/core": "^7.10.2",
+        "@babel/preset-env": "^7.10.2",
         "@primer/css": "14.4.0",
+        "autoprefixer": "^9.8.0",
+        "cssnano": "^4.1.10",
+        "gulp": "^4.0.2",
+        "gulp-babel": "^8.0.0",
+        "gulp-postcss": "^8.0.0",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^4.1.0",
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-uglify": "^3.0.2",
+        "node-sass": "^4.14.1",
+        "npm-run-all": "^4.1.5",
+        "readable-stream": "^3.6.0",
         "uglify-js": "^3.9.4"
     },
     "scripts": {
-        "babel": "babel static/assets/js/fuji.dev.js --out-file static/assets/js/fuji.js",
-        "js": "uglifyjs static/assets/js/fuji.js -o static/assets/js/fuji.min.js -c --source-map"
+        "build": "gulp build",
+        "devCss": "gulp devCss",
+        "devJs": "gulp devJs",
+        "dev": "npm-run-all -p devCss devJs"
     }
 }

@@ -1,0 +1,35 @@
+img {
+    filter: brightness(60%);
+}
+
+table {
+    th,
+    td {
+        border-color: var(--color-font);
+    }
+
+    tr {
+        background-color: var(--color-bg);
+        border-color: var(--color-font);
+
+        &:nth-child(2n) {
+            background-color: var(--color-divider);
+        }
+    }
+}
+
+#post-aplayer {
+    background-color: var(--color-divider);
+}
+
+.aplayer .aplayer-info .aplayer-music .aplayer-author {
+    color: var(--color-font) !important;
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
+    fill: var(--color-font) !important;
+}
+
+.aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon:hover path {
+    fill: var(--color-focus) !important;
+}
