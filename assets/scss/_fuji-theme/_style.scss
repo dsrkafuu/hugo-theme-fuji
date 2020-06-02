@@ -201,3 +201,97 @@ code {
         }
     }
 }
+
+// disqus js styles
+
+#dsqjs {
+    a {
+        text-decoration: none !important;
+        color: var(--color-secondary) !important;
+    }
+
+    a:hover {
+        color: var(--color-focus) !important;
+    }
+
+    .dsqjs-bullet::after {
+        color: var(--color-mute) !important;
+        font-weight: 600 !important;
+    }
+
+    .dsqjs-no-comment {
+        color: var(--color-font) !important;
+    }
+
+    .dsqjs-nav-tab {
+        color: var(--color-mute) !important;
+    }
+
+    .dsqjs-tab-active {
+        color: var(--color-font) !important;
+
+        & > span:after {
+            background-color: var(--color-secondary) !important;
+        }
+    }
+
+    .dsqjs-post-list {
+        .dsqjs-post-avatar {
+            background: var(--color-bg) !important;
+        }
+
+        .dsqjs-post-header {
+            .dsqjs-post-author {
+                color: var(--color-mute) !important;
+                font-weight: 600;
+            }
+
+            .dsqjs-admin-badge {
+                color: var(--color-font) !important;
+                background: var(--color-codebg) !important;
+            }
+
+            .dsqjs-meta {
+                color: var(--color-mute) !important;
+            }
+        }
+    }
+
+    .dsqjs-post-body {
+        color: var(--color-font) !important;
+
+        code,
+        pre {
+            background: var(--color-codebg) !important;
+        }
+
+        blockquote {
+            color: var(--color-codebg) !important;
+            border-left: 0.25em solid var(--color-divider) !important;
+        }
+    }
+
+    .dsqjs-load-more {
+        background: var(--color-mute) !important;
+        color: var(--color-bg) !important;
+    }
+
+    footer {
+        border-top: 2px solid var(--color-divider) !important;
+        font-weight: 600 !important;
+        color: var(--color-mute) !important;
+    }
+
+    .dsqjs-order-radio:checked + .dsqjs-order-label {
+        color: var(--color-font) !important;
+        background-color: var(--color-divider) !important;
+    }
+
+    .dsqjs-order-label {
+        background-color: var(--color-bg) !important;
+    }
+
+    p.dsqjs-has-more a.dsqjs-has-more-btn {
+        color: var(--color-mute) !important;
+    }
+}
