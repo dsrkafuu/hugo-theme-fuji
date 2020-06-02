@@ -20,6 +20,7 @@
   - [Markdown 钩子](#markdown-钩子)
   - [这字体也太丑了，换掉](#这字体也太丑了换掉)
   - [Disqus](#disqus)
+  - [通过 CDN 加载主 CSS 和 JS](#通过-cdn-加载主-css-和-js)
   - [其他高级修改](#其他高级修改)
 - [批判一番和贡献代码](#批判一番和贡献代码)
 - [License](#license)
@@ -133,6 +134,10 @@ this.page.identifier = {{ $.File.ContentBaseName }};
 ```
 
 使用 `[SITEROOT]/layouts/partials/comment-disqus.html` 来覆盖 `themes/fuji/layouts/partials/comment-disqus.html`。可在此文件内自定义指定的 url 和 identifier，同时也可以切换成 DisqusJS，具体实现可以参考这里。注意如果使用 DisqusJS，将 `config.toml` 内的 `useDisqusJS = true` 解除注释来加载 CSS。
+
+### 通过 CDN 加载主 CSS 和 JS
+
+如果你不需要自行修改 CSS 和 JS，可以将 `config.toml` 内的 `mainAssetsCDN = true` 解除注释。`fuji.min.css` 和 `fuji.min.js` 将会从 jsDelivr 加载。
 
 ### 其他高级修改
 

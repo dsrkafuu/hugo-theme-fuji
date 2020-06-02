@@ -33,7 +33,11 @@
 {{ template "_internal/twitter_cards.html" . }}
 
 <!-- dep -->
+{{ if .Site.Params.mainAssetsCDN }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/amzrk2/hugo-theme-fuji@2.0/dist/fuji.min.css" />
+{{ else }}
 <link rel="stylesheet" href="{{ "/assets/css/fuji.min.css" | relURL }}" />
+{{ end }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.4.5/font-awesome/fontawesome.min.css" />
 {{ if .Params.playerURL }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />

@@ -19,6 +19,7 @@ Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markd
   - [Image zoom and lazyload settings](#image-zoom-and-lazyload-settings)
   - [Markdown render hook](#markdown-render-hook)
   - [Disqus](#disqus)
+  - [Load main CSS und JS from CDN](#load-main-css-und-js-from-cdn)
   - [Advanced configuration](#advanced-configuration)
 - [Report und contributing](#report-und-contributing)
 - [License](#license)
@@ -142,6 +143,10 @@ this.page.identifier = {{ $.File.ContentBaseName }};
 ```
 
 Use the `[SITEROOT]/layouts/partials/comment-disqus.html` to cover `themes/fuji/layouts/partials/comment-disqus.html`. Then you can customize the url and identifier, or switch to DisqusJS for accessing from Mainland China. If you want to use DisqusJS, please also remember to set `useDisqusJS = true` in your `config.toml` to load CSS.
+
+### Load main CSS und JS from CDN
+
+Without the demand of custmize the CSS, you can uncomment `mainAssetsCDN = true` in `config.toml` to load `fuji.min.css` and `fuji.min.js` from jsDelivr.
 
 ### Advanced configuration
 

@@ -36,7 +36,16 @@ function css() {
     );
 }
 
-exports.build = gulp.parallel(js, css);
+function dist() {
+    return pipeline(
+        gulp.src('static/assets/css/*.*'),
+        gulp.dest('dist/'),
+        gulp.src('static/assets/js/*.*'),
+        gulp.dest('dist/')
+    );
+}
+
+exports.build = gulp.series(gulp.parallel(js, css), dist);
 exports.devJs = function () {
     return gulp.watch('assets/js/fuji.js', { delay: 500 }, gulp.parallel(js));
 };
