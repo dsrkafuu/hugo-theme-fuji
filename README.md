@@ -4,7 +4,7 @@ Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markd
 
 ![RELEASE](https://img.shields.io/github/v/release/amzrk2/hugo-theme-fuji?style=flat-square) ![BUILD STATUS](https://img.shields.io/github/workflow/status/amzrk2/hugo-theme-fuji/Build%20Test?style=flat-square) ![CODE SIZE](https://img.shields.io/github/languages/code-size/amzrk2/hugo-theme-fuji?style=flat-square) ![LICENSE](https://img.shields.io/github/license/amzrk2/hugo-theme-fuji?style=flat-square)
 
-[English](https://github.com/amzrk2/hugo-theme-fuji#readme) | [白话文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
+[English](https://github.com/amzrk2/hugo-theme-fuji#readme) | [简体中文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
 
 ## Table of contents
 
@@ -18,17 +18,15 @@ Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markd
   - [APlayer](#aplayer)
   - [Image zoom and lazyload settings](#image-zoom-and-lazyload-settings)
   - [Markdown render hook](#markdown-render-hook)
-  - [Custom fonts](#custom-fonts)
-  - [Disqus identifier](#disqus-identifier)
-- [Contributing](#contributing)
+  - [Disqus](#disqus)
+  - [Advanced configuration](#advanced-configuration)
+- [Report und contributing](#report-und-contributing)
 - [License](#license)
 - [Annotations](#annotations)
 
 ## Live demos
 
-[**Demo on gohugo.io (en)**](https://themes.gohugo.io/theme/hugo-theme-fuji/) | [My Blog (zh-Hans)](https://blog.amzrk2.cc/)
-
-<!--more-->
+[**Live Demo (en)**](https://themes.gohugo.io/theme/hugo-theme-fuji/) | [My Blog (zh-Hans)](https://blog.amzrk2.cc/)
 
 ![Screenshot of Fuji](https://raw.githubusercontent.com/amzrk2/hugo-theme-fuji/master/images/screenshot.png)
 
@@ -134,31 +132,6 @@ You can use `[SITEROOT]/layouts/_default/_markup/render-link.html` to decide whe
 <a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank"{{ end }}>{{ .Text | safeHTML }}</a>
 ```
 
-### Custom fonts
-
-**Hugo Extended version needed.**
-
-You can create `[SITEROOT]/assets/_custom.sass` to cover sass variables of the theme. Just copy the variable which you need into it, check available variables below:
-
-```scss
-$font-size-0: 2rem; // 16px->32px
-$font-size-1: 1.75rem; // 16px->28px #
-$font-size-2: 1.5rem; // 16px->24px ##
-$font-size-3: 1.25rem; // 16px->20px ###
-$font-size-4: 1rem; // 16px->16px ####
-
-$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC',
-    'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
-$mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $body-font;
-$body-font-size: 16px;
-```
-
-### Custom highlight.js language support
-
-Set `customHighlight` to `true` in `config.toml`, then set `customHighlightURL` to the path of your own `highlight.js`.
-
-Check [Getting highlight.js](https://highlightjs.org/download/) to download you own bundle of highlight.js.
-
 ### Disqus
 
 By default theme use these as identifier:
@@ -170,26 +143,49 @@ this.page.identifier = {{ $.File.ContentBaseName }};
 
 Use the `[SITEROOT]/layouts/partials/comment-disqus.html` to cover `themes/fuji/layouts/partials/comment-disqus.html`. Then you can customize the url and identifier, or switch to DisqusJS for accessing from Mainland China. If you want to use DisqusJS, please also remember to set `useDisqusJS = true` in your `config.toml` to load CSS.
 
-## Contributing
+### Advanced configuration
+
+See [Report und contributing](#report-und-contributing).
+
+## Report und contributing
 
 Note that to keep the `master` branch clean, the main development work is made under `dev` branch. Please set base branch to `dev`, then make commitment or pull request.
 
 Feel free to use the [issue tracker](https://github.com/amzrk2/hugo-theme-fuji/issues). The theme has only been fully tested on Firefox, so if there are some problems when accessing with Chrome or others please also report an issue.
 
+Inside the folder of theme root run:
+
+```bash
+npm install
+```
+
+Dev:
+
+```bash
+npm run dev
+```
+
+Build:
+
+```bash
+npm run build
+```
+
 ## License
 
 The theme is released under the ```Apache License 2.0```, for more information read the [License](https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE).
 
-- [Font Awesome - Creative Commons Attribution 4.0 International](https://fontawesome.com/license)
+- [Primer CSS - MIT](https://github.com/primer/css/blob/master/LICENSE)
+- [APlayer - MIT](https://github.com/MoePlayer/APlayer/blob/master/LICENSE)
+- [lazysizes - MIT](https://github.com/aFarkas/lazysizes/blob/gh-pages/LICENSE)
+- [medium-zoom - MIT](https://github.com/francoischalifour/medium-zoom/blob/master/LICENSE)
+- [DisqusJS - MIT](https://github.com/SukkaW/DisqusJS/blob/master/LICENSE)
+- [Font Awesome - CC 4.0](https://fontawesome.com/license)
 
-> © 2020 DSRKafuU(amzrk2) Twitter[@amzrk2](https://twitter.com/amzrk2)
+> © 2020 DSRKafuU(amzrk2) [Twitter](https://twitter.com/amzrk2) [GitHub]()
 
 ## Annotations
 
 Thanks to [community contributors](https://github.com/amzrk2/hugo-theme-fuji/graphs/contributors) for great help.
 
-- [Hugo](https://gohugo.io/)
-- [Primer CSS](https://primer.style/css/)
-- [APlayer](https://github.com/MoePlayer/APlayer)
-- [lazysizes](https://github.com/aFarkas/lazysizes)
-- [medium-zoom](https://github.com/francoischalifour/medium-zoom)
+Learned a lot in [Sukka's Blog](https://blog.skk.moe/).

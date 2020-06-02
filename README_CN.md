@@ -1,43 +1,43 @@
 # Fuji
 
-简单的 Hugo 主题，支持夜间模式，Markdown 是蹭的 GitHub Primer。萌新一个啥也不会，有问题尽管提（
+简单的 Hugo 主题，支持夜间模式，Markdown 样式来自 GitHub Primer。
 
 ![RELEASE](https://img.shields.io/github/v/release/amzrk2/hugo-theme-fuji?style=flat-square) ![BUILD STATUS](https://img.shields.io/github/workflow/status/amzrk2/hugo-theme-fuji/Build%20Test?style=flat-square) ![CODE SIZE](https://img.shields.io/github/languages/code-size/amzrk2/hugo-theme-fuji?style=flat-square) ![LICENSE](https://img.shields.io/github/license/amzrk2/hugo-theme-fuji?style=flat-square)
 
-[English](https://github.com/amzrk2/hugo-theme-fuji#readme) | [白话文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
+[English](https://github.com/amzrk2/hugo-theme-fuji#readme) | [简体中文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
 
 ## 目录
 
 - [在线 Demo](#在线-demo)
-- [注意注意注意啦](#注意注意注意啦)
-- [所以怎么用](#所以怎么用)
+- [注意事项](#注意事项)
+- [开始使用](#开始使用)
 - [更新主题](#更新主题)
-- [看看设置项](#看看设置项)
-  - [改下网站图标](#改下网站图标)
-  - [这文章有点敏感，关了 License 和评论吧](#这文章有点敏感关了-license-和评论吧)
-  - [加点音乐](#加点音乐)
-  - [放大图片；网慢，要 lazyload](#放大图片网慢要-lazyload)
+- [自定义设置](#自定义设置)
+  - [站点图标](#站点图标)
+  - [关闭特定文章的 License 和评论](#关闭特定文章的-license-和评论)
+  - [文章音乐](#文章音乐)
+  - [图片放大的设置和 lazyload](#图片放大的设置和-lazyload)
   - [Markdown 钩子](#markdown-钩子)
   - [这字体也太丑了，换掉](#这字体也太丑了换掉)
-  - [自定义 highlight.js 支持的语言](#自定义-highlightjs-支持的语言)
-  - [Disqus identifier](#disqus-identifier)
-- [批判一番](#批判一番)
+  - [Disqus](#disqus)
+  - [其他高级修改](#其他高级修改)
+- [批判一番和贡献代码](#批判一番和贡献代码)
 - [License](#license)
 - [Annotations](#annotations)
 
 ## 在线 Demo
 
-[**Demo on gohugo.io (英文)**](https://themes.gohugo.io/theme/hugo-theme-fuji/) | [My Blog (中文)](https://blog.amzrk2.cc/)
+[**在线 Demo (英文)**](https://themes.gohugo.io/theme/hugo-theme-fuji/) | [我的博客 (中文)](https://blog.amzrk2.cc/)
 
-<!--more-->
+![Fuji 截图](https://raw.githubusercontent.com/amzrk2/hugo-theme-fuji/master/images/screenshot.png)
 
-![Screenshot of Fuji](https://raw.githubusercontent.com/amzrk2/hugo-theme-fuji/master/images/screenshot.png)
+## 注意事项
 
-## 注意注意注意啦
+记得给文章添加 [简介分隔线](https://gohugo.io/content-management/summaries/#manual-summary-splitting) `<!--more-->`，以让文章列表的文章预览部分样式正确。
 
-记得加上 [简介分隔线](https://gohugo.io/content-management/summaries/#manual-summary-splitting) `<!--more-->` 到文章里面，不然 Hugo 会直接自己裁剪简介，列表显示不出样式。
+## 开始使用
 
-## 所以怎么用
+添加主题：
 
 ```bash
 $ git submodule add https://github.com/amzrk2/hugo-theme-fuji.git themes/fuji
@@ -45,7 +45,7 @@ $ git submodule add https://github.com/amzrk2/hugo-theme-fuji.git themes/fuji
 
 其他的可以看[官方指南](https://gohugo.io/overview/installing/)。
 
-然后把 `exampleSite` 复制出来，改下 `config.toml` 就行了。
+然后把 `exampleSite` 复制出来，并修改 `config.toml` 即可。
 
 ## 更新主题
 
@@ -53,15 +53,15 @@ $ git submodule add https://github.com/amzrk2/hugo-theme-fuji.git themes/fuji
 $ git submodule update --remote --merge
 ```
 
-## 看看设置项
+## 自定义设置
 
-### 改下网站图标
+### 站点图标
 
-用 `[SITEROOT]/layouts/partials/favicon.html` 来覆盖主题自带的图标。
+使用 `[SITEROOT]/layouts/partials/favicon.html` 来覆盖主题自带的图标。
 
 可以在 [realfavicongenerator.net](https://realfavicongenerator.net/) 快速创建自己的图标。
 
-### 这文章有点敏感，关了 License 和评论吧
+### 关闭特定文章的 License 和评论
 
 安全第一，在 front matter 里加上这些:
 
@@ -70,7 +70,7 @@ noLicense = true # 憋显示 License
 noComments = true # 憋显示评论区
 ```
 
-### 加点音乐
+### 文章音乐
 
 支持给文章单独添加 APlayer，在 front matter 里加上这些:
 
@@ -81,7 +81,7 @@ playerURL = "..." # URL
 playerCover = "..." # 封面
 ```
 
-### 放大图片；网慢，要 lazyload
+### 图片放大的设置和 lazyload
 
 可放大，非 lazyload：
 
@@ -123,53 +123,60 @@ playerCover = "..." # 封面
 <a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank"{{ end }}>{{ .Text | safeHTML }}</a>
 ```
 
-### 这字体也太丑了，换掉
+### Disqus
 
-**要 Hugo Extended 版的**
+默认情况下主题使用以下设置：
 
-创建 `[SITEROOT]/assets/_custom.sass` 来覆盖主题的 sass 变量，以下是可以用的：
-
-```scss
-$font-size-0: 2rem; // 16px->32px
-$font-size-1: 1.75rem; // 16px->28px #
-$font-size-2: 1.5rem; // 16px->24px ##
-$font-size-3: 1.25rem; // 16px->20px ###
-$font-size-4: 1rem; // 16px->16px ####
-
-$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC',
-    'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
-$mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $body-font;
-$body-font-size: 16px;
+```js
+this.page.url = {{ $.Permalink }};
+this.page.identifier = {{ $.File.ContentBaseName }};
 ```
 
-### 自定义 highlight.js 支持的语言
+使用 `[SITEROOT]/layouts/partials/comment-disqus.html` 来覆盖 `themes/fuji/layouts/partials/comment-disqus.html`。可在此文件内自定义指定的 url 和 identifier，同时也可以切换成 DisqusJS，具体实现可以参考这里。注意如果使用 DisqusJS，将 `config.toml` 内的 `useDisqusJS = true` 解除注释来加载 CSS。
 
-在 `config.toml` 里面把 `customHighlight` 设置为 `true`，将 `customHighlightURL` 设置为自定义的 `highlight.js` 的路径即可。
+### 其他高级修改
 
-语言的选择可以去 [Getting highlight.js](https://highlightjs.org/download/)，非自定义情况下默认使用的即默认选项。
+见[批判一番和贡献代码](#批判一番和贡献代码)。
 
-### Disqus identifier
-
-用 `[SITEROOT]/layouts/partials/comment-disqus.html` 覆盖 `themes/fuji/layouts/partials/comment-disqus.html`.
-
-## 批判一番
+## 批判一番和贡献代码
 
 为了保证 `master` 分支干净，所有开发都是在 `dev` 分支进行的，记得对着 `dev` 分支批判。
 
 [Issue](https://github.com/amzrk2/hugo-theme-fuji/issues)。主题本身只在 Firefox 上完整测试过，因此要是遇到了什么问题也可以随便批判。
 
+进入主题目录，运行：
+
+```bash
+npm install
+```
+
+开发用：
+
+```bash
+npm run dev
+```
+
+最终发布用：
+
+```bash
+npm run build
+```
+
 ## License
 
 The theme is released under the ```Apache License 2.0```, for more information read the [License](https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE).
 
-> © 2020 DSRKafuU(amzrk2) Twitter[@amzrk2](https://twitter.com/amzrk2)
+- [Primer CSS - MIT](https://github.com/primer/css/blob/master/LICENSE)
+- [APlayer - MIT](https://github.com/MoePlayer/APlayer/blob/master/LICENSE)
+- [lazysizes - MIT](https://github.com/aFarkas/lazysizes/blob/gh-pages/LICENSE)
+- [medium-zoom - MIT](https://github.com/francoischalifour/medium-zoom/blob/master/LICENSE)
+- [DisqusJS - MIT](https://github.com/SukkaW/DisqusJS/blob/master/LICENSE)
+- [Font Awesome - CC 4.0](https://fontawesome.com/license)
+
+> © 2020 DSRKafuU(amzrk2) [Twitter](https://twitter.com/amzrk2) [GitHub]()
 
 ## Annotations
 
 Thanks to [community contributors](https://github.com/amzrk2/hugo-theme-fuji/graphs/contributors) for great help.
 
-- [Hugo](https://gohugo.io/)
-- [Primer CSS](https://primer.style/css/)
-- [APlayer](https://github.com/MoePlayer/APlayer)
-- [lazysizes](https://github.com/aFarkas/lazysizes)
-- [medium-zoom](https://github.com/francoischalifour/medium-zoom)
+Learned a lot in [Sukka's Blog](https://blog.skk.moe/).
