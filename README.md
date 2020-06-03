@@ -139,9 +139,9 @@ You can use `[SITEROOT]/layouts/_default/_markup/render-link.html` to decide whe
 
 对于 Disqus 默认情况下使用 `{{ .Permalink }}` 作为 `url`，使用 `{{ .File.ContentBaseName }}` 作为 `identifier`。
 
-Use the `[SITEROOT]/layouts/partials/comment-*.html` to cover `themes/fuji/layouts/partials/comment-*.html`. Then you can customize the url and identifier, or set multiple api key for using DisqusJS. If you want to use DisqusJS, please remember to set `disqusJSApi` to anything in your `config.toml` to load CSS.
+Use the `[SITEROOT]/layouts/partials/comment-*.html` to cover `themes/fuji/layouts/partials/comment-*.html`. Then you can customize the url and identifier, or set multiple api key, add more settings for using DisqusJS. If you want to use DisqusJS, please remember to set `disqusJSApi` to anything in your `config.toml` to load CSS.
 
-You can check my blog for example of using DisqusJS, remember to set to your own key when deploing:
+You can check my blog for example of using DisqusJS and add more settings and api keys, remember to set to your own key when deploing:
 
 - [`config.toml`]()
 - [`comment-disqusjs.html`]()

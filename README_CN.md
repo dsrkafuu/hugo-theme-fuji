@@ -130,9 +130,9 @@ playerCover = "..." # 封面
 
 对于 Disqus 默认情况下使用 `{{ .Permalink }}` 作为 `url`，使用 `{{ .File.ContentBaseName }}` 作为 `identifier`。
 
-使用 `[SITEROOT]/layouts/partials/comment-*.html` 来覆盖 `themes/fuji/layouts/partials/comment-*.html`。可在此文件内自定义指定的 url 和 identifier，或者为 DisqusJS 设置多个 api key。注意如果使用 DisqusJS，将 `config.toml` 内的 `disqusJSApi` 解除注释来加载 CSS。
+使用 `[SITEROOT]/layouts/partials/comment-*.html` 来覆盖 `themes/fuji/layouts/partials/comment-*.html`。可在此文件内自定义指定的 url 和 identifier，或者为 DisqusJS 设置多个 api key 抑或是添加更多设置。注意如果使用 DisqusJS，将 `config.toml` 内的 `disqusJSApi` 解除注释来加载 CSS。
 
-可以参考 Demo 的设置作为使用 DisqusJS 的例子，记得最后部署时候修改为自己的设置和 key 哦：
+可以参考 Demo 的设置作为使用 DisqusJS、并且自定义设置和多个 api key 的例子，记得最后部署时候修改为自己的设置和 key 哦：
 
 - [`config.toml`]()
 - [`comment-disqusjs.html`]()

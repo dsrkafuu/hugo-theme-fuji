@@ -14,9 +14,7 @@
                 url: '{{ .Permalink }}',
                 title: '{{ .Title }}',
                 api: '{{ .Site.Params.disqusJSApi }}',
-                apikey: '{{ .Site.Params.disqusJSApikey }}',
-                admin: '{{ .Site.Params.disqusJSAdmin }}',
-                adminLabel: '{{ .Site.Params.disqusJSAdminlabel }}'
+                apikey: '{{ .Site.Params.disqusJSApikey }}'
             });
             document.querySelector('span.post-comment-notloaded').setAttribute('style', 'display: none;');
         }
