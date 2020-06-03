@@ -29,8 +29,10 @@
     // see https://github.com/MoePlayer/APlayer/issues/242#issuecomment-602471423
     document.addEventListener('DOMContentLoaded', function () {
         var issueTocEle = document.querySelector('.sidebar-toc');
-        var newTocEle = issueTocEle.cloneNode(true);
-        issueTocEle.parentNode.replaceChild(newTocEle, issueTocEle);
+        if (issueTocEle) {
+            var newTocEle = issueTocEle.cloneNode(true);
+            issueTocEle.parentNode.replaceChild(newTocEle, issueTocEle);
+        }
     });
 </script>
 {{ end }}
