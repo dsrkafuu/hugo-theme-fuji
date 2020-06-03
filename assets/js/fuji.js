@@ -56,16 +56,6 @@ if (document.querySelector('span.post-comment-notloaded')) {
     document.querySelector('span.post-comment-notloaded').addEventListener('click', loadComment);
 }
 
-// remove empty ul in toc if article only have ## and ###
-var secondQueryOfToc = document.querySelectorAll('.sidebar-toc ul ul');
-if (secondQueryOfToc.length > 0) {
-    secondQueryOfToc.forEach((value, key, parent) => {
-        if (value.innerText === '') {
-            value.setAttribute('style', 'display: none;');
-        }
-    });
-}
-
 // to-top button
 document.querySelector('.btn .btn-scroll-top').addEventListener('click', () => {
     document.documentElement.scrollTop = 0;
