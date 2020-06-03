@@ -187,7 +187,7 @@ The theme is released under the ```Apache License 2.0```, for more information r
 - [lazysizes - MIT](https://github.com/aFarkas/lazysizes/blob/gh-pages/LICENSE)
 - [medium-zoom - MIT](https://github.com/francoischalifour/medium-zoom/blob/master/LICENSE)
 - [DisqusJS - MIT](https://github.com/SukkaW/DisqusJS/blob/master/LICENSE)
-- [Font Awesome - CC 4.0](https://fontawesome.com/license)
+- [ionicons - MIT](https://github.com/ionic-team/ionicons/blob/master/LICENSE)
 
 > © 2020 DSRKafuU(amzrk2) [Twitter](https://twitter.com/amzrk2) [GitHub]()
 
