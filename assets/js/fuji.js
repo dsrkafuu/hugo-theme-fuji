@@ -51,13 +51,18 @@ function updateUtterancesTheme(utterancesFrame) {
     }
 }
 
-// load comment
-document.querySelector('span.post-comment-notloaded').addEventListener('click', loadComment);
+// load comment button only when comment area exist
+if (document.querySelector('span.post-comment-notloaded')) {
+    document.querySelector('span.post-comment-notloaded').addEventListener('click', loadComment);
+}
 
 // remove empty ul in toc if article only have ## and ###
-if (document.querySelectorAll('.sidebar-toc ul ul').length > 0) {
-    document.querySelectorAll('.sidebar-toc ul ul').forEach((value, key, parent) => {
-        value.setAttribute('style', 'display: none;');
+var secondQueryOfToc = document.querySelectorAll('.sidebar-toc ul ul');
+if (secondQueryOfToc.length > 0) {
+    secondQueryOfToc.forEach((value, key, parent) => {
+        if (value.innerText === '') {
+            value.setAttribute('style', 'display: none;');
+        }
     });
 }
 
