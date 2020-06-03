@@ -28,12 +28,12 @@
 <div class="pagination">
     {{ if ne $paginator.PageNumber 1 }}
     <div class="pag-first">
-        <a href="{{ $paginator.First.URL }}"><i class="far fa-angle-double-left"></i></a>
+        <a href="{{ $paginator.First.URL }}"><ion-icon name="caret-back-circle"></ion-icon></a>
     </div>
     {{ end }}
     {{ if $paginator.HasPrev }}
     <div class="pag-previous">
-        <a href="{{ $paginator.Prev.URL }}"><i class="far fa-angle-left"></i></a>
+        <a href="{{ $paginator.Prev.URL }}"><ion-icon name="chevron-back-circle"></ion-icon></a>
     </div>
     {{ end }}
     {{ range $paginator.Pagers }}
@@ -63,12 +63,12 @@
     {{ end }}
     {{ if $paginator.HasNext }}
     <div class="pag-next">
-        <a href="{{ $paginator.Next.URL }}"><i class="far fa-angle-right"></i></a>
+        <a href="{{ $paginator.Next.URL }}"><ion-icon name="chevron-forward-circle"></ion-icon></i></a>
     </div>
     {{ end }}
     {{ if ne $paginator.PageNumber $paginator.TotalPages }}
     <div class="pag-last">
-        <a href="{{ $paginator.Last.URL }}"><i class="far fa-angle-double-right"></i></a>
+        <a href="{{ $paginator.Last.URL }}"><ion-icon name="caret-forward-circle"></ion-icon></a>
     </div>
     {{ end }}
 </div>

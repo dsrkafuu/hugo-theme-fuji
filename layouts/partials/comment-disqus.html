@@ -1,18 +1,21 @@
-{{ with .Site.Params.disqusShortname }}
-<div class="post-comment">
-    <div id="disqus_thread"></div>
+<div class="post-comment" data-comment="disqus">
+    <span class="post-comment-notloaded">
+        <ion-icon name="chatbox-ellipses"></ion-icon>&nbsp;查看评论
+    </span>
+    <div id="disqus_thread" style="display: none;"></div>
     <script>
-        var disqus_config = function () {
-            this.page.url = {{ $.Permalink }};
-            this.page.identifier = {{ $.File.ContentBaseName }};
-        };
-        (function () {
-            var d = document,
-                s = d.createElement('script');
-            s.src = 'https://' + {{ . }} + '.disqus.com/embed.js';
+        function loadComment() {
+            var commentArea = document.querySelector('.post-comment');
+            var disqus_config = function () {
+                this.page.url = '{{ .Permalink }}';
+                this.page.identifier = '{{ .File.ContentBaseName }}';
+            };
+            var s = document.createElement('script');
+            s.src = 'https://' + '{{ .Site.Params.disqusShortname }}' + '.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
+            document.querySelector('#disqus_thread').removeAttribute('style');
+            (document.body || document.head).appendChild(s);
+            document.querySelector('span.post-comment-notloaded').setAttribute('style', 'display: none;');
+        }
     </script>
 </div>
-{{ end }}

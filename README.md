@@ -18,7 +18,7 @@ Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markd
   - [APlayer](#aplayer)
   - [Image zoom and lazyload settings](#image-zoom-and-lazyload-settings)
   - [Markdown render hook](#markdown-render-hook)
-  - [Disqus](#disqus)
+  - [Comments area](#comments-area)
   - [Load main CSS und JS from CDN](#load-main-css-und-js-from-cdn)
   - [Advanced configuration](#advanced-configuration)
 - [Report und contributing](#report-und-contributing)
@@ -133,16 +133,18 @@ You can use `[SITEROOT]/layouts/_default/_markup/render-link.html` to decide whe
 <a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank"{{ end }}>{{ .Text | safeHTML }}</a>
 ```
 
-### Disqus
+### Comments area
 
-By default theme use these as identifier:
+主题支持三种评论系统，Disqus、utterances 和 DisqusJS (给大陆用户的)。
 
-```js
-this.page.url = {{ $.Permalink }};
-this.page.identifier = {{ $.File.ContentBaseName }};
-```
+对于 Disqus 默认情况下使用 `{{ .Permalink }}` 作为 `url`，使用 `{{ .File.ContentBaseName }}` 作为 `identifier`。
 
-Use the `[SITEROOT]/layouts/partials/comment-disqus.html` to cover `themes/fuji/layouts/partials/comment-disqus.html`. Then you can customize the url and identifier, or switch to DisqusJS for accessing from Mainland China. If you want to use DisqusJS, please also remember to set `useDisqusJS = true` in your `config.toml` to load CSS.
+Use the `[SITEROOT]/layouts/partials/comment-*.html` to cover `themes/fuji/layouts/partials/comment-*.html`. Then you can customize the url and identifier, or set multiple api key for using DisqusJS. If you want to use DisqusJS, please remember to set `disqusJSApi` to anything in your `config.toml` to load CSS.
+
+You can check my blog for example of using DisqusJS, remember to set to your own key when deploing:
+
+- [`config.toml`]()
+- [`comment-disqusjs.html`]()
 
 ### Load main CSS und JS from CDN
 

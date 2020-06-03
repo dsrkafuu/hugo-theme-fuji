@@ -51,6 +51,9 @@ function updateUtterancesTheme(utterancesFrame) {
     }
 }
 
+// load comment
+document.querySelector('span.post-comment-notloaded').addEventListener('click', loadComment);
+
 // remove empty ul in toc if article only have ## and ###
 if (document.querySelectorAll('.sidebar-toc ul ul').length > 0) {
     document.querySelectorAll('.sidebar-toc ul ul').forEach((value, key, parent) => {
@@ -73,31 +76,6 @@ if (getNowTheme() === 'dark') {
     mediumInst = mediumZoom('.img-zoomable', {
         background: '#fffffd',
     });
-}
-
-// if in post page and using utterances
-// add utterances comment loading indicator
-if (document.querySelector('.post-loading')) {
-    var commentStatus; // utterence status
-    var commentLoadingTime = 0; // loading time passed
-    var commentCheckInterval = self.setInterval(checkUtterances, 500);
-
-    function checkUtterances() {
-        if (document.querySelector('.post-comment .utterances')) {
-            commentStatus = document.querySelector('.post-comment .utterances').getAttribute('style');
-        }
-        if (commentStatus) {
-            clearInterval(commentCheckInterval);
-            updateUtterancesTheme(document.querySelector('.post-comment iframe'));
-            document.querySelector('.post-loading').setAttribute('style', 'display: none;');
-        } else {
-            if (++commentLoadingTime > 20) {
-                clearInterval(commentCheckInterval);
-                document.querySelector('.post-comment').setAttribute('style', 'display: none;');
-                document.querySelector('.post-loading i').className = 'far fa-times-circle';
-            }
-        }
-    }
 }
 
 // theme switch button
@@ -126,12 +104,16 @@ document.querySelector('.btn .btn-toggle-mode').addEventListener('click', () => 
     updateMeidumTheme(mediumInst);
     // switch comment area theme
     // only works after comment area are initialized
-    if (document.querySelector('.post-loading') && commentStatus) {
-        updateUtterancesTheme(document.querySelector('.post-comment iframe'));
-    }
-    if (document.querySelector('#disqus_thread') && typeof DISQUS !== 'undefined') {
-        DISQUS.reset({
-            reload: true,
-        });
+    let commentArea = document.querySelector('.post-comment');
+    let commentStatus = document.querySelector('span.post-comment-notloaded').getAttribute('style');
+    if (commentStatus) {
+        if (commentArea.getAttribute('data-comment') === 'utterances') {
+            updateUtterancesTheme(document.querySelector('.post-comment iframe'));
+        }
+        if (commentArea.getAttribute('data-comment') === 'disqus') {
+            DISQUS.reset({
+                reload: true,
+            });
+        }
     }
 });

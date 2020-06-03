@@ -24,8 +24,11 @@
     </blockquote>
 </div>
 {{ end }}
-{{ if ne .Params.noComments true }}
-{{ partial "comment-utterances.html" . }}
+{{ if .Site.Params.disqusJSApi }}
+{{ partial "comment-disqusjs.html" . }}
+{{ else if .Site.Params.disqusShortname }}
 {{ partial "comment-disqus.html" . }}
-{{ end }}
+{{ else if .Site.Params.utterancesRepo }}
+{{ partial "comment-utterances.html" . }}
+{{ else }}{{ end }}
 {{ end }}

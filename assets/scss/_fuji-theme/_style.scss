@@ -88,10 +88,22 @@ footer {
     }
 }
 
-.post-loading,
-.post-comment .utterances-frame,
-.post-comment #disqus_thread {
+.post-loading {
     border-top: $divider;
+}
+
+.post-comment {
+    border-top: $divider;
+
+    span.post-comment-notloaded {
+        padding: 1.5rem 0;
+        color: var(--color-secondary);
+        cursor: pointer;
+
+        &:hover {
+            color: var(--color-focus);
+        }
+    }
 }
 
 // components

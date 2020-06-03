@@ -18,24 +18,18 @@
 }
 
 .post-meta {
-    margin: 0.5rem 0.25rem 1rem 0.25rem; // little space
-    white-space: nowrap;
-    overflow-x: scroll;
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0.1rem 1rem 0.1rem; // little space
+    flex-wrap: wrap;
 
-    time,
+    span {
+        display: flex;
+        align-items: center;
+    }
+
     span:not(:last-child) {
         padding-right: 1.5rem;
-    }
-
-    &::-webkit-scrollbar {
-        display: none; // WebKit
-    }
-
-    scrollbar-width: none; // Firefox
-    -ms-overflow-style: none; // Microsoft
-
-    i {
-        font-size: 0.875rem;
     }
 }
 
@@ -57,45 +51,35 @@
 }
 
 .post-meta-archive {
-    margin: 0.5rem 0.25rem 0 0.25rem; // little space
-    white-space: nowrap;
-    overflow-x: scroll;
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0.1rem 1rem 0.1rem; // little space
+    flex-wrap: wrap;
 
-    time,
     span:not(:last-child) {
         padding-right: 1.5rem;
     }
-
-    &::-webkit-scrollbar {
-        display: none; // WebKit
-    }
-
-    scrollbar-width: none; // Firefox
-    -ms-overflow-style: none; // Microsoft
 }
 
 .pagination {
-    text-align: center;
-    padding: 1rem 0;
-    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    padding: 1.25rem 0;
 
-    & > div {
-        display: inline-block;
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 2rem;
         height: 2rem;
 
-        &.pag-item {
-            padding: 0 0.25rem;
-
-            a {
-                vertical-align: middle;
-            }
+        a {
+            display: flex;
+            align-items: center;
         }
-    }
-
-    i {
-        padding: 0 0.25rem;
-        vertical-align: middle;
     }
 }
 
@@ -157,6 +141,14 @@ article {
     img {
         max-width: 98%;
         margin: 0 0.25rem 0.5rem 0.25rem;
+    }
+}
+
+.post-comment {
+    span.post-comment-notloaded {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
