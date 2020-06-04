@@ -6,7 +6,9 @@
 
 [English](https://github.com/amzrk2/hugo-theme-fuji#readme) | [简体中文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
 
-**v2 发布之后关于 lazyload 这一块可能会有较大的改动**，现在这样确实有些麻烦了。如果想修改主题配色的话，可以参考
+**v2 发布之后关于 lazyload 这一块可能会有较大的改动**，现在这样确实有些麻烦了。如果想修改主题配色的话，可以参考 [🔧 其他高级修改](#-其他高级修改)。
+
+当前 i18n 支持语言：en, zh-hans, zh-hant, ja, nl。i18n 文件夹内为所有语言文件。
 
 ## 目录
 
