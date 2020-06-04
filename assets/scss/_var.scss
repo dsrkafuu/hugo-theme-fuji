@@ -15,6 +15,24 @@ $body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 
 $mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $body-font !default;
 $body-font-size: 16px !default;
 
+$light-color-primary: #8aa2d3 !default; // https://irocore.com/aofuji/
+$light-color-secondary: #8f82bc !default; // https://irocore.com/fujimurasaki/
+$light-color-focus: #3b469b !default; // https://irocore.com/aomurasaki/
+$light-color-mute: #9ea1a3 !default; // https://irocore.com/suzu-iro/
+$light-color-font: #3f4551 !default; // https://irocore.com/konnezu/
+$light-color-divider: #e5e2e4 !default; // https://irocore.com/komachinezu/
+$light-color-bg: #fffffd !default; // https://irocore.com/shiro/
+$light-color-codebg: #f6f8fa !default; // GitHub
+
+$dark-color-primary: #8aa2d3 !default; // https://irocore.com/aofuji/
+$dark-color-secondary: #bab1df !default; // kai https://irocore.com/fujimurasaki/
+$dark-color-focus: #e6e6e6 !default; // https://irocore.com/shironezumi/
+$dark-color-mute: #9ea1a3 !default; // https://irocore.com/suzu-iro/
+$dark-color-font: #c0c0c0 !default; // https://irocore.com/gin-iro/
+$dark-color-divider: #4d5158 !default; // Discord
+$dark-color-bg: #2f3136 !default; // Discord
+$dark-color-codebg: #414449 !default; // kai GitHub
+
 @font-face {
     font-family: 'Product Sans';
     font-style: normal;

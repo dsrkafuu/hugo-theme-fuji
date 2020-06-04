@@ -6,24 +6,25 @@
 
 [English](https://github.com/amzrk2/hugo-theme-fuji#readme) | [简体中文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
 
+**v2 发布之后关于 lazyload 这一块可能会有较大的改动**，现在这样确实有些麻烦了。如果想修改主题配色的话，可以参考
+
 ## 目录
 
-- [💻 在线 Demo](#user-content--在线-demo)
-- [❗ 注意事项](#user-content--注意事项)
-- [🐣 开始使用](#user-content--开始使用)
-- [🆕 更新主题](#user-content--更新主题)
-- [⚙️ 自定义设置](#user-content--自定义设置)
-  - [🎨 站点图标](#user-content--站点图标)
-  - [❌ 关闭 License、评论区和目录](#user-content--关闭-license评论区和目录)
-  - [🎵 文章音乐](#user-content--文章音乐)
-  - [📷 图片放大的设置和 lazyload](#user-content--图片放大的设置和-lazyload)
-  - [⚓ Markdown 钩子](#user-content--markdown-钩子)
-  - [📨 评论区](#user-content--评论区)
-  - [⏱️ 通过 CDN 加载主 CSS 和 JS](#user-content--通过-cdn-加载主-css-和-js)
-  - [🔧 其他高级修改](#user-content--其他高级修改)
-- [👓 批判一番和贡献代码](#user-content--批判一番和贡献代码)
-- [📝 License](#user-content--license)
-- [🤝 Annotations](#user-content--annotations)
+- [💻 在线 Demo](#-在线-demo)
+- [❗ 注意事项](#-注意事项)
+- [🐣 开始使用](#-开始使用)
+- [🆕 更新主题](#-更新主题)
+- [⚙️ 自定义设置](#%EF%B8%8F-自定义设置)
+  - [🎨 站点图标](#-站点图标)
+  - [❌ 关闭 License、评论区和目录](#-关闭-license评论区和目录)
+  - [🎵 文章音乐](#-文章音乐)
+  - [📷 图片放大的设置和 lazyload](#-图片放大的设置和-lazyload)
+  - [⚓ Markdown 钩子](#-markdown-钩子)
+  - [📨 评论区](#-评论区)
+  - [🔧 其他高级修改](#-其他高级修改)
+- [👓 批判一番和贡献代码](#-批判一番和贡献代码)
+- [📝 License](#-license)
+- [🤝 Annotations](#-annotations)
 
 ## 💻 在线 Demo
 
@@ -48,6 +49,8 @@ $ git submodule add https://github.com/amzrk2/hugo-theme-fuji.git themes/fuji
 然后把 `exampleSite` 复制出来，并修改 `config.toml` 即可。
 
 ## 🆕 更新主题
+
+可以 watch (release only) 这个 repo 来接收更新信息，master 分支不会频繁改动。
 
 ```bash
 $ git submodule update --remote --merge
@@ -139,18 +142,41 @@ playerCover = "..." # 封面
 
 使用 `[SITEROOT]/layouts/partials/comment-*.html` 来覆盖 `themes/fuji/layouts/partials/comment-*.html`。可在此文件内自定义指定的 url 和 identifier，或者为 DisqusJS 设置多个 api key 抑或是添加更多设置。注意如果使用 DisqusJS，将 `config.toml` 内的 `disqusJSApi` 解除注释来加载 CSS。
 
-可以参考 Demo 的设置作为使用 DisqusJS、并且自定义设置和多个 api key 的例子，记得最后部署时候修改为自己的设置和 key 哦：
-
-- [`config.toml`]()
-- [`comment-disqusjs.html`]()
-
-### ⏱️ 通过 CDN 加载主 CSS 和 JS
-
-如果你不需要自行修改 CSS 和 JS，可以将 `config.toml` 内的 `mainAssetsCDN = true` 解除注释。`fuji.min.css` 和 `fuji.min.js` 将会从 jsDelivr 加载。
-
 ### 🔧 其他高级修改
 
 见[批判一番和贡献代码](#批判一番和贡献代码)。
+
+如果只是想修改主题色或者字体的话，在 `config.toml` 以下设置：
+
+```toml
+useHugoPipes = true
+```
+
+这将让 Hugo 使用 Hugo Pipes 来编译 SCSS，注意需要 Extended Version，然后就可以自己覆盖主题内的 SCSS 变量了。创建 `[SITEROOT]/assets/scss/_custom.scss`，可选项如下：
+
+```scss
+$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+$mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $body-font;
+$body-font-size: 16px;
+
+$light-color-primary: #8aa2d3; // https://irocore.com/aofuji/
+$light-color-secondary: #8f82bc; // https://irocore.com/fujimurasaki/
+$light-color-focus: #3b469b; // https://irocore.com/aomurasaki/
+$light-color-mute: #9ea1a3; // https://irocore.com/suzu-iro/
+$light-color-font: #3f4551; // https://irocore.com/konnezu/
+$light-color-divider: #e5e2e4; // https://irocore.com/komachinezu/
+$light-color-bg: #fffffd; // https://irocore.com/shiro/
+$light-color-codebg: #f6f8fa; // GitHub
+
+$dark-color-primary: #8aa2d3; // https://irocore.com/aofuji/
+$dark-color-secondary: #bab1df; // https://irocore.com/fujimurasaki/
+$dark-color-focus: #e6e6e6; // https://irocore.com/shironezumi/
+$dark-color-mute: #9ea1a3; // https://irocore.com/suzu-iro/
+$dark-color-font: #c0c0c0; // https://irocore.com/gin-iro/
+$dark-color-divider: #4d5158; // Discord
+$dark-color-bg: #2f3136; // Discord
+$dark-color-codebg: #414449; // GitHub
+```
 
 ## 👓 批判一番和贡献代码
 
@@ -187,7 +213,7 @@ The theme is released under the ```Apache License 2.0```, for more information r
 - [DisqusJS - MIT](https://github.com/SukkaW/DisqusJS/blob/master/LICENSE)
 - [ionicons - MIT](https://github.com/ionic-team/ionicons/blob/master/LICENSE)
 
-> © 2020 DSRKafuU(amzrk2) [Twitter](https://twitter.com/amzrk2) [GitHub]()
+> © 2020 DSRKafuU(amzrk2) [Twitter @amzrk2](https://twitter.com/amzrk2) [GitHub @amzrk2](https://github.com/amzrk2)
 
 ## 🤝 Annotations
 

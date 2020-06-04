@@ -6,24 +6,25 @@ Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markd
 
 [English](https://github.com/amzrk2/hugo-theme-fuji#readme) | [简体中文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
 
+After the release of v2, **there may be major changes in the image lazyload shortcode** to make it easier to use.If you want to change the color scheme, please check [🔧 Advanced configuration](#-advanced-configuration).
+
 ## 📑 Table of contents
 
-- [💻 Live demos](#user-content--live-demos)
-- [❗ Notice](#user-content--notice)
-- [🐣 Getting started](#user-content--getting-started)
-- [🆕 Update the theme](#user-content--update-the-theme)
-- [⚙️ Configration](#user-content--configration)
-  - [🎨 Favicon](#user-content--favicon)
-  - [❌ In-post license, comments und toc](#user-content--in-post-license-comments-und-toc)
-  - [🎵 APlayer](#user-content--aplayer)
-  - [📷 Image zoom and lazyload settings](#user-content--image-zoom-and-lazyload-settings)
-  - [⚓ Markdown render hook](#user-content--markdown-render-hook)
-  - [📨 Comments area](#user-content--comments-area)
-  - [⏱️ Load main CSS und JS from CDN](#user-content--load-main-css-und-js-from-cdn)
-  - [🔧 Advanced configuration](#user-content--advanced-configuration)
-- [✏️ Report und contributing](#user-content--report-und-contributing)
-- [📝 License](#user-content--license)
-- [🤝 Annotations](#user-content--annotations)
+- [💻 Live demos](#-live-demos)
+- [❗ Notice](#-notice)
+- [🐣 Getting started](#-getting-started)
+- [🆕 Update the theme](#-update-the-theme)
+- [⚙️ Configration](#%EF%B8%8F-configration)
+  - [🎨 Favicon](#-favicon)
+  - [❌ In-post license, comments und toc](#-in-post-license-comments-und-toc)
+  - [🎵 APlayer](#-aplayer)
+  - [📷 Image zoom and lazyload settings](#-image-zoom-and-lazyload-settings)
+  - [⚓ Markdown render hook](#-markdown-render-hook)
+  - [📨 Comments area](#-comments-area)
+  - [🔧 Advanced configuration](#-advanced-configuration)
+- [✏️ Issue und contributing](#%EF%B8%8F-issue-und-contributing)
+- [📝 License](#-license)
+- [🤝 Annotations](#-annotations)
 
 ## 💻 Live demos
 
@@ -56,6 +57,8 @@ $ hugo server
 If you want to generate your site, just run `hugo` or `hugo --minify`.
 
 ## 🆕 Update the theme
+
+You can watch (release only) this repo to receive update notifications.
 
 Inside the folder of your Hugo site run:
 
@@ -143,24 +146,47 @@ You can use `[SITEROOT]/layouts/_default/_markup/render-link.html` to decide whe
 
 ### 📨 Comments area
 
-主题支持三种评论系统，Disqus、utterances 和 DisqusJS (给大陆用户的)。
+Theme supports Disqus, utterances and DisqusJS (for Mainland China user)。
 
-对于 Disqus 默认情况下使用 `{{ .Permalink }}` 作为 `url`，使用 `{{ .File.ContentBaseName }}` 作为 `identifier`。
+by default, disqus uses `{{ .Permalink }}` as `url`, `{{ .File.ContentBaseName }}` as `identifier`.
 
 Use the `[SITEROOT]/layouts/partials/comment-*.html` to cover `themes/fuji/layouts/partials/comment-*.html`. Then you can customize the url and identifier, or set multiple api key, add more settings for using DisqusJS. If you want to use DisqusJS, please remember to set `disqusJSApi` to anything in your `config.toml` to load CSS.
-
-You can check my blog for example of using DisqusJS and add more settings and api keys, remember to set to your own key when deploing:
-
-- [`config.toml`]()
-- [`comment-disqusjs.html`]()
-
-### ⏱️ Load main CSS und JS from CDN
-
-Without the demand of custmize the CSS, you can uncomment `mainAssetsCDN = true` in `config.toml` to load `fuji.min.css` and `fuji.min.js` from jsDelivr.
 
 ### 🔧 Advanced configuration
 
 See [Report und contributing](#report-und-contributing).
+
+If you just simply want to change the color scheme, set this in your `config.toml`:
+
+```toml
+useHugoPipes = true
+```
+
+This will make the theme use Hugo Pipes provided by Hugo Extended Vesion to compile the SCSS, then you can cover theme's internal SCSS with your own. Then create `[SITEROOT]/assets/scss/_custom.scss` cover variables in SCSS:
+
+```scss
+$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+$mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $body-font;
+$body-font-size: 16px;
+
+$light-color-primary: #8aa2d3; // https://irocore.com/aofuji/
+$light-color-secondary: #8f82bc; // https://irocore.com/fujimurasaki/
+$light-color-focus: #3b469b; // https://irocore.com/aomurasaki/
+$light-color-mute: #9ea1a3; // https://irocore.com/suzu-iro/
+$light-color-font: #3f4551; // https://irocore.com/konnezu/
+$light-color-divider: #e5e2e4; // https://irocore.com/komachinezu/
+$light-color-bg: #fffffd; // https://irocore.com/shiro/
+$light-color-codebg: #f6f8fa; // GitHub
+
+$dark-color-primary: #8aa2d3; // https://irocore.com/aofuji/
+$dark-color-secondary: #bab1df; // https://irocore.com/fujimurasaki/
+$dark-color-focus: #e6e6e6; // https://irocore.com/shironezumi/
+$dark-color-mute: #9ea1a3; // https://irocore.com/suzu-iro/
+$dark-color-font: #c0c0c0; // https://irocore.com/gin-iro/
+$dark-color-divider: #4d5158; // Discord
+$dark-color-bg: #2f3136; // Discord
+$dark-color-codebg: #414449; // GitHub
+```
 
 ## ✏️ Report und contributing
 
@@ -197,7 +223,7 @@ The theme is released under the ```Apache License 2.0```, for more information r
 - [DisqusJS - MIT](https://github.com/SukkaW/DisqusJS/blob/master/LICENSE)
 - [ionicons - MIT](https://github.com/ionic-team/ionicons/blob/master/LICENSE)
 
-> © 2020 DSRKafuU(amzrk2) [Twitter](https://twitter.com/amzrk2) [GitHub]()
+> © 2020 DSRKafuU(amzrk2) [Twitter @amzrk2](https://twitter.com/amzrk2) [GitHub @amzrk2](https://github.com/amzrk2)
 
 ## 🤝 Annotations
 

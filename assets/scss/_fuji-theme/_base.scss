@@ -1,25 +1,25 @@
 @mixin light {
     --color-mode: 'light';
-    --color-primary: #8aa2d3; // https://irocore.com/aofuji/
-    --color-secondary: #8f82bc; // https://irocore.com/fujimurasaki/
-    --color-focus: #3b469b; // https://irocore.com/aomurasaki/
-    --color-mute: #9ea1a3; // https://irocore.com/suzu-iro/
-    --color-font: #3f4551; // https://irocore.com/konnezu/
-    --color-divider: #e5e2e4; // https://irocore.com/komachinezu/
-    --color-bg: #fffffd; // https://irocore.com/shiro/
-    --color-codebg: #f6f8fa; // GitHub
+    --color-primary: #{$light-color-primary};
+    --color-secondary: #{$light-color-secondary};
+    --color-focus: #{$light-color-focus};
+    --color-mute: #{$light-color-mute};
+    --color-font: #{$light-color-font};
+    --color-divider: #{$light-color-divider};
+    --color-bg: #{$light-color-bg};
+    --color-codebg: #{$light-color-codebg};
 }
 
 @mixin dark {
     --color-mode: 'dark';
-    --color-primary: #8aa2d3; // https://irocore.com/aofuji/
-    --color-secondary: #bab1df; // kai https://irocore.com/fujimurasaki/
-    --color-focus: #e6e6e6; // https://irocore.com/shironezumi/
-    --color-mute: #9ea1a3; // https://irocore.com/suzu-iro/
-    --color-font: #c0c0c0; // https://irocore.com/gin-iro/
-    --color-divider: #4d5158; // Discord
-    --color-bg: #2f3136; // Discord
-    --color-codebg: #414449; // kai GitHub
+    --color-primary: #{$dark-color-primary};
+    --color-secondary: #{$dark-color-secondary};
+    --color-focus: #{$dark-color-focus};
+    --color-mute: #{$dark-color-mute};
+    --color-font: #{$dark-color-font};
+    --color-divider: #{$dark-color-divider};
+    --color-bg: #{$dark-color-bg};
+    --color-codebg: #{$dark-color-codebg};
 }
 
 body[data-theme='auto'] {

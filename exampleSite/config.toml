@@ -71,8 +71,8 @@ paginate = 10
   # 8:9
   lazyPlaceholderCol = "/assets/lazyload/dsrca_loading_480x540.svg"
 
-  # Load `fuji.min.css` and `fuji.min.js` from jsDelivr
-  # mainAssetsCDN = true
+  # Use Hugo Pipes in Hugo Extended Version to compile SCSS
+  # useHugoPipes = true
 
 [markup]
   [markup.goldmark]

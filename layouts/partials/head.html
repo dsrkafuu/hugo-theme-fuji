@@ -36,7 +36,13 @@
 {{ if .Site.Params.mainAssetsCDN }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/amzrk2/hugo-theme-fuji@2.0/dist/fuji.min.css" />
 {{ else }}
+{{ if .Site.Params.useHugoPipes }}
+{{ $options := (dict "targetPath" "assets/css/fuji-custom.min.css" "outputStyle" "compressed") }}
+{{ $style := resources.Get "scss/fuji.scss" | resources.ToCSS $options }}
+<link rel="stylesheet" href="{{ $style.Permalink }}" />
+{{ else }}
 <link rel="stylesheet" href="{{ "/assets/css/fuji.min.css" | relURL }}" />
+{{ end }}
 {{ end }}
 {{ if .Params.playerURL }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
