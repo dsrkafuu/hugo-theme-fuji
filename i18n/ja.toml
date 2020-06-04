@@ -34,11 +34,8 @@
 [postCopyrightEnd]
     other = " の下に提供されています。"
 
-[postCommentLoading]
-    other = "読み込み中..."
-
-[postCommentLoadingFailed]
-    other = "読み込みエラー"
+[postComment]
+    other = "コメントを表示"
 
 [archivesTotalPages]
     other = "総記事数："

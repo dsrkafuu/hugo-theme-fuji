@@ -34,11 +34,8 @@
 [postCopyrightEnd]
     other = "."
 
-[postCommentLoading]
-    other = "Loading comments..."
-
-[postCommentLoadingFailed]
-    other = "Comments failed to load."
+[postComment]
+    other = "Load comments"
 
 [archivesTotalPages]
     other = "Total posts: "
