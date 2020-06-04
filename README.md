@@ -8,26 +8,26 @@ Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markd
 
 ## 📑 Table of contents
 
-- [💻 Live demos](#live-demos)
-- [❗ Notice](#notice)
-- [🐣 Getting started](#getting-started)
-- [🆕 Update the theme](#update-the-theme)
-- [⚙️ Configration](#configration)
-  - [🎨 Favicon](#favicon)
-  - [❌ In-post license & comments](#in-post-license--comments)
-  - [🎵 APlayer](#aplayer)
-  - [📷 Image zoom and lazyload settings](#image-zoom-and-lazyload-settings)
-  - [⚓ Markdown render hook](#markdown-render-hook)
-  - [📨 Comments area](#comments-area)
-  - [⏱️ Load main CSS und JS from CDN](#load-main-css-und-js-from-cdn)
-  - [🔧 Advanced configuration](#advanced-configuration)
-- [✏️ Report und contributing](#report-und-contributing)
-- [📝 License](#license)
-- [🤝 Annotations](#annotations)
+- [💻 Live demos](#user-content--live-demos)
+- [❗ Notice](#user-content--notice)
+- [🐣 Getting started](#user-content--getting-started)
+- [🆕 Update the theme](#user-content--update-the-theme)
+- [⚙️ Configration](#user-content--configration)
+  - [🎨 Favicon](#user-content--favicon)
+  - [❌ In-post license, comments und toc](#user-content--in-post-license-comments-und-toc)
+  - [🎵 APlayer](#user-content--aplayer)
+  - [📷 Image zoom and lazyload settings](#user-content--image-zoom-and-lazyload-settings)
+  - [⚓ Markdown render hook](#user-content--markdown-render-hook)
+  - [📨 Comments area](#user-content--comments-area)
+  - [⏱️ Load main CSS und JS from CDN](#user-content--load-main-css-und-js-from-cdn)
+  - [🔧 Advanced configuration](#user-content--advanced-configuration)
+- [✏️ Report und contributing](#user-content--report-und-contributing)
+- [📝 License](#user-content--license)
+- [🤝 Annotations](#user-content--annotations)
 
 ## 💻 Live demos
 
-[**Live Demo (en)**](https://themes.gohugo.io/theme/hugo-theme-fuji/) | [My Blog (zh-Hans)](https://blog.amzrk2.cc/)
+[**Live Demo (en)**](https://fuji.amzrk2.cc/) | [My Blog (zh-Hans)](https://blog.amzrk2.cc/)
 
 ![Screenshot of Fuji](https://raw.githubusercontent.com/amzrk2/hugo-theme-fuji/master/images/screenshot.png)
 
