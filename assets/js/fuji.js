@@ -98,17 +98,19 @@ document.querySelector('.btn .btn-toggle-mode').addEventListener('click', () => 
     // update medium background
     updateMeidumTheme(mediumInst);
     // switch comment area theme
-    // only works after comment area are initialized
+    // if this page has comment area
     let commentArea = document.querySelector('.post-comment');
-    let commentStatus = document.querySelector('span.post-comment-notloaded').getAttribute('style');
-    if (commentStatus) {
-        if (commentArea.getAttribute('data-comment') === 'utterances') {
-            updateUtterancesTheme(document.querySelector('.post-comment iframe'));
-        }
-        if (commentArea.getAttribute('data-comment') === 'disqus') {
-            DISQUS.reset({
-                reload: true,
-            });
+    if (commentArea) {
+        // if comment area loaded
+        if (document.querySelector('span.post-comment-notloaded').getAttribute('style')) {
+            if (commentArea.getAttribute('data-comment') === 'utterances') {
+                updateUtterancesTheme(document.querySelector('.post-comment iframe'));
+            }
+            if (commentArea.getAttribute('data-comment') === 'disqus') {
+                DISQUS.reset({
+                    reload: true,
+                });
+            }
         }
     }
 });

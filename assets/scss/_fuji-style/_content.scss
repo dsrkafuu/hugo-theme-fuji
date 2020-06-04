@@ -53,7 +53,7 @@
 .post-meta-archive {
     display: flex;
     align-items: center;
-    margin: 0.5rem 0.1rem 1rem 0.1rem; // little space
+    margin: 0.5rem 0.1rem 0 0.1rem; // little space
     flex-wrap: wrap;
 
     span:not(:last-child) {

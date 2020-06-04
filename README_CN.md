@@ -27,7 +27,7 @@
 
 ## 💻 在线 Demo
 
-[**在线 Demo (英文)**](https://fuji.amzrk2.cc/) | [我的博客 (中文)](https://blog.amzrk2.cc/)
+[**在线 Demo - Vercel (英文)**](https://fuji.amzrk2.cc/) | [我的博客 - Coding (中文)](https://blog.amzrk2.cc/)
 
 ![Fuji 截图](https://raw.githubusercontent.com/amzrk2/hugo-theme-fuji/master/images/screenshot.png)
 
