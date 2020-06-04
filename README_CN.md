@@ -8,35 +8,34 @@
 
 ## 目录
 
-- [在线 Demo](#在线-demo)
-- [注意事项](#注意事项)
-- [开始使用](#开始使用)
-- [更新主题](#更新主题)
-- [自定义设置](#自定义设置)
-  - [站点图标](#站点图标)
-  - [关闭特定文章的 License 和评论](#关闭特定文章的-license-和评论)
-  - [文章音乐](#文章音乐)
-  - [图片放大的设置和 lazyload](#图片放大的设置和-lazyload)
-  - [Markdown 钩子](#markdown-钩子)
-  - [这字体也太丑了，换掉](#这字体也太丑了换掉)
-  - [评论区](#评论区)
-  - [通过 CDN 加载主 CSS 和 JS](#通过-cdn-加载主-css-和-js)
-  - [其他高级修改](#其他高级修改)
-- [批判一番和贡献代码](#批判一番和贡献代码)
-- [License](#license)
-- [Annotations](#annotations)
+- [💻 在线 Demo](#在线-demo)
+- [❗ 注意事项](#注意事项)
+- [🐣 开始使用](#开始使用)
+- [🆕 更新主题](#更新主题)
+- [⚙️ 自定义设置](#自定义设置)
+  - [🎨 站点图标](#站点图标)
+  - [❌ 关闭特定文章的 License 和评论](#关闭特定文章的-license-和评论)
+  - [🎵 文章音乐](#文章音乐)
+  - [📷 图片放大的设置和 lazyload](#图片放大的设置和-lazyload)
+  - [⚓ Markdown 钩子](#markdown-钩子)
+  - [📨 评论区](#评论区)
+  - [⏱️ 通过 CDN 加载主 CSS 和 JS](#通过-cdn-加载主-css-和-js)
+  - [🔧 其他高级修改](#其他高级修改)
+- [👓 批判一番和贡献代码](#批判一番和贡献代码)
+- [📝 License](#license)
+- [🤝 Annotations](#annotations)
 
-## 在线 Demo
+## 💻 在线 Demo
 
 [**在线 Demo (英文)**](https://themes.gohugo.io/theme/hugo-theme-fuji/) | [我的博客 (中文)](https://blog.amzrk2.cc/)
 
 ![Fuji 截图](https://raw.githubusercontent.com/amzrk2/hugo-theme-fuji/master/images/screenshot.png)
 
-## 注意事项
+## ❗ 注意事项
 
 记得给文章添加 [简介分隔线](https://gohugo.io/content-management/summaries/#manual-summary-splitting) `<!--more-->`，以让文章列表的文章预览部分样式正确。
 
-## 开始使用
+## 🐣 开始使用
 
 添加主题：
 
@@ -48,21 +47,21 @@ $ git submodule add https://github.com/amzrk2/hugo-theme-fuji.git themes/fuji
 
 然后把 `exampleSite` 复制出来，并修改 `config.toml` 即可。
 
-## 更新主题
+## 🆕 更新主题
 
 ```bash
 $ git submodule update --remote --merge
 ```
 
-## 自定义设置
+## ⚙️ 自定义设置
 
-### 站点图标
+### 🎨 站点图标
 
 使用 `[SITEROOT]/layouts/partials/favicon.html` 来覆盖主题自带的图标。
 
 可以在 [realfavicongenerator.net](https://realfavicongenerator.net/) 快速创建自己的图标。
 
-### 关闭特定文章的 License 和评论
+### ❌ 关闭 License 和评论
 
 安全第一，在 front matter 里加上这些:
 
@@ -71,7 +70,13 @@ noLicense = true # 憋显示 License
 noComments = true # 憋显示评论区
 ```
 
-### 文章音乐
+你也可以全局关闭 License 显示，在 `config.toml` 把下面这项设置为 false 或注释掉：
+
+```toml
+showLicense = false
+```
+
+### 🎵 文章音乐
 
 支持给文章单独添加 APlayer，在 front matter 里加上这些:
 
@@ -82,7 +87,7 @@ playerURL = "..." # URL
 playerCover = "..." # 封面
 ```
 
-### 图片放大的设置和 lazyload
+### 📷 图片放大的设置和 lazyload
 
 可放大，非 lazyload：
 
@@ -114,7 +119,7 @@ playerCover = "..." # 封面
 
 `img-lazy` 提供 16:9 的占位 svg，`img-lazy-row` 提供 32:9 的占位 svg，`img-lazy-col` 提供 8:9 的占位 svg。你也可以在 `config.toml` 里面自定义想要的占位图片和比例。
 
-### Markdown 钩子
+### ⚓ Markdown 钩子
 
 具体内容看 [Hugo's Official Docs](https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks)，用于配置 Markdown 解释器。
 
@@ -124,7 +129,7 @@ playerCover = "..." # 封面
 <a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank"{{ end }}>{{ .Text | safeHTML }}</a>
 ```
 
-### 评论区
+### 📨 评论区
 
 主题支持三种评论系统，Disqus、utterances 和 DisqusJS (给大陆用户的)。
 
@@ -137,15 +142,15 @@ playerCover = "..." # 封面
 - [`config.toml`]()
 - [`comment-disqusjs.html`]()
 
-### 通过 CDN 加载主 CSS 和 JS
+### ⏱️ 通过 CDN 加载主 CSS 和 JS
 
 如果你不需要自行修改 CSS 和 JS，可以将 `config.toml` 内的 `mainAssetsCDN = true` 解除注释。`fuji.min.css` 和 `fuji.min.js` 将会从 jsDelivr 加载。
 
-### 其他高级修改
+### 🔧 其他高级修改
 
 见[批判一番和贡献代码](#批判一番和贡献代码)。
 
-## 批判一番和贡献代码
+## 👓 批判一番和贡献代码
 
 为了保证 `master` 分支干净，所有开发都是在 `dev` 分支进行的，记得对着 `dev` 分支批判。
 
@@ -169,7 +174,7 @@ npm run dev
 npm run build
 ```
 
-## License
+## 📝 License
 
 The theme is released under the ```Apache License 2.0```, for more information read the [License](https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE).
 
@@ -182,7 +187,7 @@ The theme is released under the ```Apache License 2.0```, for more information r
 
 > © 2020 DSRKafuU(amzrk2) [Twitter](https://twitter.com/amzrk2) [GitHub]()
 
-## Annotations
+## 🤝 Annotations
 
 Thanks to [community contributors](https://github.com/amzrk2/hugo-theme-fuji/graphs/contributors) for great help.
 

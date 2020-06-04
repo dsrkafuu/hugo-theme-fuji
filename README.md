@@ -1,4 +1,4 @@
-# Fuji
+# 🍥 Fuji 🍥
 
 Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markdown style.
 
@@ -6,36 +6,36 @@ Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markd
 
 [English](https://github.com/amzrk2/hugo-theme-fuji#readme) | [简体中文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
 
-## Table of contents
+## 📑 Table of contents
 
-- [Live demos](#live-demos)
-- [Notice](#notice)
-- [Getting started](#getting-started)
-- [Update the theme](#update-the-theme)
-- [Configration](#configration)
-  - [Favicon](#favicon)
-  - [In-post license & comments](#in-post-license--comments)
-  - [APlayer](#aplayer)
-  - [Image zoom and lazyload settings](#image-zoom-and-lazyload-settings)
-  - [Markdown render hook](#markdown-render-hook)
-  - [Comments area](#comments-area)
-  - [Load main CSS und JS from CDN](#load-main-css-und-js-from-cdn)
-  - [Advanced configuration](#advanced-configuration)
-- [Report und contributing](#report-und-contributing)
-- [License](#license)
-- [Annotations](#annotations)
+- [💻 Live demos](#live-demos)
+- [❗ Notice](#notice)
+- [🐣 Getting started](#getting-started)
+- [🆕 Update the theme](#update-the-theme)
+- [⚙️ Configration](#configration)
+  - [🎨 Favicon](#favicon)
+  - [❌ In-post license & comments](#in-post-license--comments)
+  - [🎵 APlayer](#aplayer)
+  - [📷 Image zoom and lazyload settings](#image-zoom-and-lazyload-settings)
+  - [⚓ Markdown render hook](#markdown-render-hook)
+  - [📨 Comments area](#comments-area)
+  - [⏱️ Load main CSS und JS from CDN](#load-main-css-und-js-from-cdn)
+  - [🔧 Advanced configuration](#advanced-configuration)
+- [✏️ Report und contributing](#report-und-contributing)
+- [📝 License](#license)
+- [🤝 Annotations](#annotations)
 
-## Live demos
+## 💻 Live demos
 
 [**Live Demo (en)**](https://themes.gohugo.io/theme/hugo-theme-fuji/) | [My Blog (zh-Hans)](https://blog.amzrk2.cc/)
 
 ![Screenshot of Fuji](https://raw.githubusercontent.com/amzrk2/hugo-theme-fuji/master/images/screenshot.png)
 
-## Notice
+## ❗ Notice
 
 Remember to add [summary divider](https://gohugo.io/content-management/summaries/#manual-summary-splitting) `<!--more-->` to your post `.md` files to show blockquotes, links and codes with proper style in list pages' summary part.
 
-## Getting started
+## 🐣 Getting started
 
 Inside the folder of your Hugo site run:
 
@@ -55,7 +55,7 @@ $ hugo server
 
 If you want to generate your site, just run `hugo` or `hugo --minify`.
 
-## Update the theme
+## 🆕 Update the theme
 
 Inside the folder of your Hugo site run:
 
@@ -63,15 +63,15 @@ Inside the folder of your Hugo site run:
 $ git submodule update --remote --merge
 ```
 
-## Configration
+## ⚙️ Configration
 
-### Favicon
+### 🎨 Favicon
 
 Create `[SITEROOT]/layouts/partials/favicon.html` to cover theme's favicon.
 
 You can generate your favicons in [realfavicongenerator.net](https://realfavicongenerator.net/).
 
-### In-post license & comments
+### ❌ In-post license & comments
 
 You can set variables below in post's front matter to disable them:
 
@@ -80,7 +80,13 @@ noLicense = true # Do not show license in this post
 noComments = true # Do not show comments in this post
 ```
 
-### APlayer
+Or you can disable the license globally, set this below to false or comment it in your `config.toml`:
+
+```toml
+showLicense = false
+```
+
+### 🎵 APlayer
 
 In-post APlayer supported, you can set these variables in post's front matter:
 
@@ -91,7 +97,7 @@ playerURL = "..." # Audio URL, support aac, mp3, wav and ogg
 playerCover = "..." # Audio cover
 ```
 
-### Image zoom and lazyload settings
+### 📷 Image zoom and lazyload settings
 
 Zoomable, not lazyloaded:
 
@@ -123,7 +129,7 @@ Not zoomable, lazyloaded, optional ext link:
 
 `img-lazy` will show a 16x9 placeholder before image is loaded, so `img-lazy-row` will show a 32x9 placeholder and `img-lazy-col` will show a 8x9 placeholder. You can choose different aspect ratios you want for different images. The placeholder image can be set in site's `config.toml`.
 
-### Markdown render hook
+### ⚓ Markdown render hook
 
 You can create the files below in your site to adjust the markdown render hook, see [Hugo's Official Docs](https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks).
 
@@ -133,7 +139,7 @@ You can use `[SITEROOT]/layouts/_default/_markup/render-link.html` to decide whe
 <a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank"{{ end }}>{{ .Text | safeHTML }}</a>
 ```
 
-### Comments area
+### 📨 Comments area
 
 主题支持三种评论系统，Disqus、utterances 和 DisqusJS (给大陆用户的)。
 
@@ -146,15 +152,15 @@ You can check my blog for example of using DisqusJS and add more settings and ap
 - [`config.toml`]()
 - [`comment-disqusjs.html`]()
 
-### Load main CSS und JS from CDN
+### ⏱️ Load main CSS und JS from CDN
 
 Without the demand of custmize the CSS, you can uncomment `mainAssetsCDN = true` in `config.toml` to load `fuji.min.css` and `fuji.min.js` from jsDelivr.
 
-### Advanced configuration
+### 🔧 Advanced configuration
 
 See [Report und contributing](#report-und-contributing).
 
-## Report und contributing
+## ✏️ Report und contributing
 
 Note that to keep the `master` branch clean, the main development work is made under `dev` branch. Please set base branch to `dev`, then make commitment or pull request.
 
@@ -178,7 +184,7 @@ Build:
 npm run build
 ```
 
-## License
+## 📝 License
 
 The theme is released under the ```Apache License 2.0```, for more information read the [License](https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE).
 
@@ -191,7 +197,7 @@ The theme is released under the ```Apache License 2.0```, for more information r
 
 > © 2020 DSRKafuU(amzrk2) [Twitter](https://twitter.com/amzrk2) [GitHub]()
 
-## Annotations
+## 🤝 Annotations
 
 Thanks to [community contributors](https://github.com/amzrk2/hugo-theme-fuji/graphs/contributors) for great help.
 
