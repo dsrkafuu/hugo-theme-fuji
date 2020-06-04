@@ -1,9 +1,26 @@
-{{ with .Site.Params.utterancesRepo }}
-<div class="post-loading">
-    <i class="fas fa-circle-notch fa-spin"></i>
-    <p>{{ i18n "postCommentLoading" }}</p>
+<div class="post-comment" data-comment="utterances">
+    <span class="post-comment-notloaded">
+        <ion-icon name="chatbox-ellipses"></ion-icon>&nbsp;{{ i18n "postComment" }}
+    </span>
+    <script>
+        function loadComment() {
+            var commentArea = document.querySelector('.post-comment');
+            var utterancesTheme = document.body.getAttribute('data-theme');
+            if (utterancesTheme === 'auto') {
+                utterancesTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'photon-dark' :
+                    'github-light';
+            } else {
+                utterancesTheme = utterancesTheme === 'dark' ? 'photon-dark' : 'github-light';
+            }
+            var s = document.createElement('script');
+            s.src = 'https://utteranc.es/client.js';
+            s.setAttribute('repo', '{{ .Site.Params.utterancesRepo }}');
+            s.setAttribute('issue-term', '{{ .Site.Params.utterancesIssueTerm }}');
+            s.setAttribute('theme', utterancesTheme);
+            s.setAttribute('crossorigin', 'anonymous');
+            s.setAttribute('async', '');
+            document.querySelector('.post-comment').appendChild(s);
+            document.querySelector('span.post-comment-notloaded').setAttribute('style', 'display: none;');
+        }
+    </script>
 </div>
-<div class="post-comment">
-    <script src="https://utteranc.es/client.js" repo="{{ . }}" issue-term="{{ $.Site.Params.utterancesIssueTerm }}" theme="{{ $.Site.Params.utterancesTheme }}" crossorigin="anonymous" async></script>
-</div>
-{{ end }}

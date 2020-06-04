@@ -1,25 +1,42 @@
-# Fuji
+# 🍥 Fuji 🍥
 
-![RELEASE](https://img.shields.io/github/v/release/amzrk2/hugo-theme-fuji) ![BUILD STATUS](https://img.shields.io/github/workflow/status/amzrk2/hugo-theme-fuji/Build%20Test) ![REPO SIZE](https://img.shields.io/github/repo-size/amzrk2/hugo-theme-fuji) ![LICENSE](https://img.shields.io/github/license/amzrk2/hugo-theme-fuji)
+Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markdown style.
 
-A minimal Hugo theme inspired by Hexo theme [Murasaki](https://github.com/printempw/hexo-theme-murasaki/), with responsive grid system and markdown style, powered by GitHub Primer CSS.
+![RELEASE](https://img.shields.io/github/v/release/amzrk2/hugo-theme-fuji?style=flat-square) ![BUILD STATUS](https://img.shields.io/github/workflow/status/amzrk2/hugo-theme-fuji/Build%20Test?style=flat-square) ![CODE SIZE](https://img.shields.io/github/languages/code-size/amzrk2/hugo-theme-fuji?style=flat-square) ![LICENSE](https://img.shields.io/github/license/amzrk2/hugo-theme-fuji?style=flat-square)
 
-## Live demos
+[English](https://github.com/amzrk2/hugo-theme-fuji#readme) | [简体中文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
 
-[**Demo on gohugo.io (en)**](https://themes.gohugo.io/theme/hugo-theme-fuji/) | [My Blog (zh-Hans)](https://blog.amzrk2.cc/)
+After the release of v2, **there may be major changes in the image lazyload shortcode** to make it easier to use.If you want to change the color scheme, please check [🔧 Advanced configuration](#-advanced-configuration).
 
-![Screenshot of the theme](https://raw.githubusercontent.com/amzrk2/hugo-theme-fuji/master/images/screenshot.png)
+## 📑 Table of contents
 
-## Todo
+- [💻 Live demos](#-live-demos)
+- [❗ Notice](#-notice)
+- [🐣 Getting started](#-getting-started)
+- [🆕 Update the theme](#-update-the-theme)
+- [⚙️ Configration](#%EF%B8%8F-configration)
+  - [🎨 Favicon](#-favicon)
+  - [❌ In-post license, comments und toc](#-in-post-license-comments-und-toc)
+  - [🎵 APlayer](#-aplayer)
+  - [📷 Image zoom and lazyload settings](#-image-zoom-and-lazyload-settings)
+  - [⚓ Markdown render hook](#-markdown-render-hook)
+  - [📨 Comments area](#-comments-area)
+  - [🔧 Advanced configuration](#-advanced-configuration)
+- [✏️ Issue und contributing](#%EF%B8%8F-issue-und-contributing)
+- [📝 License](#-license)
+- [🤝 Annotations](#-annotations)
 
-- [x] Custom pagination
-- [x] Archive page
-- [x] Analytics
-- [x] SEO optimization
-- [x] Better mobile devices support
-- [ ] Multilingual
+## 💻 Live demos
 
-## Installation
+[**Live Demo by Vercel (en)**](https://hugo-theme-fuji-demo.now.sh/) | [My Blog by Coding (zh-Hans)](https://blog.amzrk2.cc/)
+
+![Screenshot of Fuji](https://raw.githubusercontent.com/amzrk2/hugo-theme-fuji/master/images/screenshot.png)
+
+## ❗ Notice
+
+Remember to add [summary divider](https://gohugo.io/content-management/summaries/#manual-summary-splitting) `<!--more-->` to your post `.md` files to show blockquotes, links and codes with proper style in list pages' summary part.
+
+## 🐣 Getting started
 
 Inside the folder of your Hugo site run:
 
@@ -29,13 +46,7 @@ $ git submodule add https://github.com/amzrk2/hugo-theme-fuji.git themes/fuji
 
 For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.
 
-## Notice
-
-Remember to add ```<!--more-->``` code to your post ```.md``` files to show blockquotes, links and codes with proper style in list pages' summary part.
-
-## Getting started
-
-Copy the ```config.toml``` in the ```exampleSite```to the root of your Hugo site. Change strings as you like.
+Then copy the `config.toml` in the `exampleSite`to the root of your Hugo site. Change strings as you like.
 
 Run Hugo's built-in local server:
 
@@ -43,22 +54,46 @@ Run Hugo's built-in local server:
 $ hugo server
 ```
 
-If you want to generate your site, just run ```hugo``` or ```hugo --minify```.
+If you want to generate your site, just run `hugo` or `hugo --minify`.
 
-## Advance configration
+## 🆕 Update the theme
 
-### In-post license & comments
+You can watch (release only) this repo to receive update notifications.
+
+Inside the folder of your Hugo site run:
+
+```bash
+$ git submodule update --remote --merge
+```
+
+## ⚙️ Configration
+
+### 🎨 Favicon
+
+Create `[SITEROOT]/layouts/partials/favicon.html` to cover theme's favicon.
+
+You can generate your favicons in [realfavicongenerator.net](https://realfavicongenerator.net/).
+
+### ❌ In-post license, comments und toc
 
 You can set variables below in post's front matter to disable them:
 
 ```toml
 noLicense = true # Do not show license in this post
 noComments = true # Do not show comments in this post
+noToc = true # Do not show toc in this post
 ```
 
-### APlayer
+Or you can disable these globally, set these below to false or comment it in your `config.toml`:
 
-APlayer support both global left-bottom-fixed or in-post, you can set these variables in site's ```config.toml``` or in post's front matter:
+```toml
+showLicense = false
+showToc = false
+```
+
+### 🎵 APlayer
+
+In-post APlayer supported, you can set these variables in post's front matter:
 
 ```toml
 playerName = "..." # Audio title or name
@@ -67,84 +102,131 @@ playerURL = "..." # Audio URL, support aac, mp3, wav and ogg
 playerCover = "..." # Audio cover
 ```
 
-### Lazyload images
+### 📷 Image zoom and lazyload settings
 
-Lazyload images in posts, for example in ```[SITEROOT]/content/post/test.md```:
+Zoomable, not lazyloaded:
 
-```go-html-template
-{{< lazyimg "This is alt text" "/img/sample.png" >}}
-{{< lazyimg-row "This is alt text" "/img/sample.png" >}}
-{{< lazyimg-col "This is alt text" "/img/sample.png" >}}
+```markdown
+![Alt text](test/example.png)
 ```
 
-```lazyimg``` will show a 16x9 placeholder before image is loaded, so ```lazyimg-row``` will show a 32x9 placeholder and ```lazyimg-col``` will show a 8x9 placeholder. You can choose different aspect ratios you want for different images. The placeholder image can be set in site's ```config.toml```.
+Zoomable, lazyloaded:
 
-Note that if you use the origin markdown syntax to add images such as ```![This is alt text](/img/sample.png)```, it will not become a lazy image.
-
-### Custom CSS (need extended version of Hugo)
-
-You can create ```[SITEROOT]/assets/sass/custom.sass``` to cover sass variables of the theme. Just copy the variable which you need into it, check available variables below:
-
-```sass
-// colors
-$color-primary: #8AA2D3; // apply to titles and icons
-$color-primary-dark: #3B469B; // apply to links:hover and pagination:current
-$color-secondary: #8F82BC; // apply to titles:hover, normal links, tags, pagination and sidebars
-$color-mute: #9EA1A3; // apply to sub-title and post metadata
-$color-spliter: #E5E2E4; // apply to divider and button background
-$color-bg: #FFFFFD !default; // https://irocore.com/shiro/
-
-// font size list
-$font-size-logo: 2.5rem; // Logo Only
-$font-size-l1: 1.75rem; // Primer CSS H1
-$font-size-l2: 1.5rem; // Primer CSS H2
-$font-size-l3: 1.25rem; // Primer CSS H3
-$font-size-l4: 1rem; // Primer CSS H4 & Normal Text
-
-// divider css
-$spliter: 2px solid $color-spliter;
-
-// fixed-width container variables
-$container-width: 900px;
-// large screen / desktop (900 + (16 * 2)) <= container + gutters
-$width-lg: 932px;
-
-// font stacks
-$body-font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Helvetica", "Arial", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-// monospace font stack
-$mono-font: "Cascadia Code", "SF Mono", "Fira Code", "Consolas", $body-font;
-// the base text size
-$body-font-size: $font-size-l4;
+```html
+{{< img-lazy "Alt text" "test/example.png" >}}
+{{< img-lazy "row" "Alt text" "test/example.png" >}}
+{{< img-lazy "col" "Alt text" "test/example.png" >}}
 ```
 
-### Markdown render hook
+Not zoomable, not lazyloaded, optional ext link:
+
+```html
+{{< img-nz "Alt text" "test/example.png" ["https://example.com"] >}}
+```
+
+Not zoomable, lazyloaded, optional ext link:
+
+```html
+{{< img-nz-lazy "Alt text" "test/example.png" ["https://example.com"] >}}
+{{< img-nz-lazy "row" "Alt text" "test/example.png" ["https://example.com"] >}}
+{{< img-nz-lazy "col" "Alt text" "test/example.png" ["https://example.com"] >}}
+```
+
+`img-lazy` will show a 16x9 placeholder before image is loaded, so `img-lazy-row` will show a 32x9 placeholder and `img-lazy-col` will show a 8x9 placeholder. You can choose different aspect ratios you want for different images. The placeholder image can be set in site's `config.toml`.
+
+### ⚓ Markdown render hook
 
 You can create the files below in your site to adjust the markdown render hook, see [Hugo's Official Docs](https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks).
 
-You can use ```[SITEROOT]/layouts/_default/_markup/render-link.html``` to decide whether or not links in the markdown content will open in new tab:
+You can use `[SITEROOT]/layouts/_default/_markup/render-link.html` to decide whether or not links in the markdown content will open in new tab:
 
 ```html
 <a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank"{{ end }}>{{ .Text | safeHTML }}</a>
 ```
 
-## Update the theme
+### 📨 Comments area
 
-Inside the folder of your Hugo site run:
+Theme supports Disqus, utterances and DisqusJS (for Mainland China user)。
 
-```bash
-$ git submodule update --remote --merge
+by default, disqus uses `{{ .Permalink }}` as `url`, `{{ .File.ContentBaseName }}` as `identifier`.
+
+Use the `[SITEROOT]/layouts/partials/comment-*.html` to cover `themes/fuji/layouts/partials/comment-*.html`. Then you can customize the url and identifier, or set multiple api key, add more settings for using DisqusJS. If you want to use DisqusJS, please remember to set `disqusJSApi` to anything in your `config.toml` to load CSS.
+
+### 🔧 Advanced configuration
+
+See [Report und contributing](#report-und-contributing).
+
+If you just simply want to change the color scheme, set this in your `config.toml`:
+
+```toml
+useHugoPipes = true
 ```
 
-## Contributing
+This will make the theme use Hugo Pipes provided by Hugo Extended Vesion to compile the SCSS, then you can cover theme's internal SCSS with your own. Then create `[SITEROOT]/assets/scss/_custom.scss` cover variables in SCSS:
 
-Did you found a bug or got an idea for a new feature? Feel free to use the [issue tracker](https://github.com/amzrk2/hugo-theme-fuji/issues) to let me know.
+```scss
+$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+$mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $body-font;
+$body-font-size: 16px;
 
-## License
+$light-color-primary: #8aa2d3; // https://irocore.com/aofuji/
+$light-color-secondary: #8f82bc; // https://irocore.com/fujimurasaki/
+$light-color-focus: #3b469b; // https://irocore.com/aomurasaki/
+$light-color-mute: #9ea1a3; // https://irocore.com/suzu-iro/
+$light-color-font: #3f4551; // https://irocore.com/konnezu/
+$light-color-divider: #e5e2e4; // https://irocore.com/komachinezu/
+$light-color-bg: #fffffd; // https://irocore.com/shiro/
+$light-color-codebg: #f6f8fa; // GitHub
 
-The theme is released under the ```GNU General Public License v3.0```, for more information read the [License](https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE).
+$dark-color-primary: #8aa2d3; // https://irocore.com/aofuji/
+$dark-color-secondary: #bab1df; // https://irocore.com/fujimurasaki/
+$dark-color-focus: #e6e6e6; // https://irocore.com/shironezumi/
+$dark-color-mute: #9ea1a3; // https://irocore.com/suzu-iro/
+$dark-color-font: #c0c0c0; // https://irocore.com/gin-iro/
+$dark-color-divider: #4d5158; // Discord
+$dark-color-bg: #2f3136; // Discord
+$dark-color-codebg: #414449; // GitHub
+```
 
-## Annotations
+## ✏️ Report und contributing
+
+Note that to keep the `master` branch clean, the main development work is made under `dev` branch. Please set base branch to `dev`, then make commitment or pull request.
+
+Feel free to use the [issue tracker](https://github.com/amzrk2/hugo-theme-fuji/issues). The theme has only been fully tested on Firefox, so if there are some problems when accessing with Chrome or others please also report an issue.
+
+Inside the folder of theme root run:
+
+```bash
+npm install
+```
+
+Dev:
+
+```bash
+npm run dev
+```
+
+Build:
+
+```bash
+npm run build
+```
+
+## 📝 License
+
+The theme is released under the ```Apache License 2.0```, for more information read the [License](https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE).
+
+- [Primer CSS - MIT](https://github.com/primer/css/blob/master/LICENSE)
+- [APlayer - MIT](https://github.com/MoePlayer/APlayer/blob/master/LICENSE)
+- [lazysizes - MIT](https://github.com/aFarkas/lazysizes/blob/gh-pages/LICENSE)
+- [medium-zoom - MIT](https://github.com/francoischalifour/medium-zoom/blob/master/LICENSE)
+- [DisqusJS - MIT](https://github.com/SukkaW/DisqusJS/blob/master/LICENSE)
+- [ionicons - MIT](https://github.com/ionic-team/ionicons/blob/master/LICENSE)
+
+> © 2020 DSRKafuU(amzrk2) [Twitter @amzrk2](https://twitter.com/amzrk2) [GitHub @amzrk2](https://github.com/amzrk2)
+
+## 🤝 Annotations
 
 Thanks to [community contributors](https://github.com/amzrk2/hugo-theme-fuji/graphs/contributors) for great help.
 
-Thanks to developers for creating Hugo, Primer CSS, Font Awesome, APlayer and Lazysizes with the awesome community around these project.
+Learned a lot in [Sukka's Blog](https://blog.skk.moe/).

@@ -34,11 +34,8 @@
 [postCopyrightEnd]
     other = " 进行许可。"
 
-[postCommentLoading]
-    other = "正在加载评论区"
-
-[postCommentLoadingFailed]
-    other = "评论区加载失败"
+[postComment]
+    other = "查看评论"
 
 [archivesTotalPages]
     other = "文章总数："

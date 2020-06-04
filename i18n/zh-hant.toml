@@ -34,11 +34,8 @@
 [postCopyrightEnd]
     other = " 授權。"
 
-[postCommentLoading]
-    other = "正在讀取評論區"
-
-[postCommentLoadingFailed]
-    other = "評論區讀取失敗"
+[postComment]
+    other = "查看評論"
 
 [archivesTotalPages]
     other = "文章總數："

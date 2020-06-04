@@ -1,0 +1,35 @@
+.btn {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    width: 2.5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    div {
+        flex: 0 1 auto;
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        &:first-child {
+            border-radius: 0.25rem 0.25rem 0 0;
+            font-size: 1.25rem;
+        }
+
+        &:last-child {
+            border-radius: 0 0 0.25rem 0.25rem;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+#post-aplayer {
+    margin: 0 0.125rem 1.25rem 0.125rem;
+    font-family: inherit;
+}

@@ -1,0 +1,24 @@
+@import '_custom';
+
+// var & global
+@import '_var';
+@import '_global';
+
+// primer
+@import '_primer/support/index.scss'; // support
+@import '_primer/base/index.scss'; // base
+@import '_primer/layout/container.scss'; // containers
+@import '_primer/layout/grid.scss'; // grid system
+@import '_primer/markdown/index.scss'; // markdown parsing system
+@import '_primer/utilities/layout.scss'; // float and clearfix
+
+// style
+@import '_fuji-style/_header';
+@import '_fuji-style/_content';
+@import '_fuji-style/_sidebar';
+@import '_fuji-style/_footer';
+@import '_fuji-style/_components';
+
+// theme
+@import '_fuji-theme/_base';
+@import '_fuji-theme/_style';

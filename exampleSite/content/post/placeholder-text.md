@@ -47,11 +47,5 @@ Echionides cornuaque tenent clausit possit. Omnia putatur. Praeteritae refert
 ausus; ferebant e primus lora nutat, vici quae mea ipse. Et iter nil spectatae
 vulnus haerentia iuste et exercebat, sui et.
 
-Eurytus Hector, materna ipsumque ut Politen, nec, nate, ignari, vernum cohaesit sequitur. Vel **mitis temploque** vocatus, inque alis, *oculos nomen* non silvis corpore coniunx ne displicet illa. Crescunt non unus, vidit visa quantum inmiti flumina mortis facto sic: undique a alios vincula sunt iactata abdita! Suspenderat ego fuit tendit: luna, ante urbem
+Eurytus Hector, materna ipsumque ut Politen, nec, nate, ignari, vernum cohaesit sequitur. Vel **mitis temploque** vocatus, inque alis, _oculos nomen_ non silvis corpore coniunx ne displicet illa. Crescunt non unus, vidit visa quantum inmiti flumina mortis facto sic: undique a alios vincula sunt iactata abdita! Suspenderat ego fuit tendit: luna, ante urbem
 Propoetides **parte**.
-
-{{< css.inline >}}
-<style>
-.canon { background: white; width: 100%; height: auto;}
-</style>
-{{< /css.inline >}}

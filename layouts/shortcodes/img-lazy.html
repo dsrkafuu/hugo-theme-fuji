@@ -1,0 +1,10 @@
+{{ if len .Params | eq 2 }}
+<img class="lazyload img-zoomable" src="{{ .Site.Params.lazyPlaceholder | relURL }}" data-src="{{ index .Params 1 }}"
+     alt="{{ index .Params 0 }}" />
+{{ else if len .Params | eq 3 }}{{ if eq (index .Params 0) "row" }}
+<img class="lazyload img-zoomable" src="{{ .Site.Params.lazyPlaceholderRow | relURL }}" data-src="{{ index .Params 2 }}"
+     alt="{{ index .Params 1 }}" />
+{{ else if eq (index .Params 0) "col" }}
+<img class="lazyload img-zoomable" src="{{ .Site.Params.lazyPlaceholderCol | relURL }}" data-src="{{ index .Params 2 }}"
+     alt="{{ index .Params 1 }}" />
+{{ else }}{{ end }}{{ else }}{{ end }}

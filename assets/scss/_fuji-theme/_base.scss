@@ -1,0 +1,63 @@
+@mixin light {
+    --color-mode: 'light';
+    --color-primary: #{$light-color-primary};
+    --color-secondary: #{$light-color-secondary};
+    --color-focus: #{$light-color-focus};
+    --color-mute: #{$light-color-mute};
+    --color-font: #{$light-color-font};
+    --color-divider: #{$light-color-divider};
+    --color-bg: #{$light-color-bg};
+    --color-codebg: #{$light-color-codebg};
+}
+
+@mixin dark {
+    --color-mode: 'dark';
+    --color-primary: #{$dark-color-primary};
+    --color-secondary: #{$dark-color-secondary};
+    --color-focus: #{$dark-color-focus};
+    --color-mute: #{$dark-color-mute};
+    --color-font: #{$dark-color-font};
+    --color-divider: #{$dark-color-divider};
+    --color-bg: #{$dark-color-bg};
+    --color-codebg: #{$dark-color-codebg};
+}
+
+body[data-theme='auto'] {
+    @include light();
+
+    @media (prefers-color-scheme: dark) {
+        @include dark();
+        @import '_dark-diff'; // things different from light
+    }
+}
+
+body[data-theme='light'] {
+    @include light();
+}
+
+body[data-theme='dark'] {
+    @include dark();
+    @import '_dark-diff'; // things different from light
+}
+
+@mixin link-1 {
+    a {
+        color: var(--color-primary);
+    }
+
+    a:hover {
+        color: var(--color-secondary);
+    }
+}
+
+@mixin link-2 {
+    a {
+        color: var(--color-secondary);
+    }
+
+    a:hover {
+        color: var(--color-focus);
+    }
+}
+
+$divider: 2px solid var(--color-divider);

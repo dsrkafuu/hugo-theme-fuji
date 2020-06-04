@@ -34,11 +34,8 @@
 [postCopyrightEnd]
     other = "."
 
-[postCommentLoading]
-    other = "Commentaren worden geladen..."
-
-[postCommentLoadingFailed]
-    other = "Commentaren konden niet geladen worden."
+[postComment]
+    other = "Laad commentaren"
 
 [archivesTotalPages]
     other = "Totaal aantal posts: "

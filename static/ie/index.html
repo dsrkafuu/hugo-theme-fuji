@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>BROWSER NOT SUPPORT - Fuji</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Helvetica", "Arial", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+            font-size: 16px;
+            background-color: #8aa2d3;
+            color: #fffffd;
+            margin: 0 1em;
+        }
+
+        h1 {
+            margin: 1em 0;
+        }
+
+        .browser-meta {
+            margin: 0 0 2em 0;
+            font-family: 'Cascadia Code', 'Cascadia Mono', 'SF Mono', 'Fira Code', 'Noto Mono', 'Consolas', monospace;
+            font-size: 0.875em;
+        }
+
+        .info {
+            margin: 0 0 1em 0;
+        }
+
+        .info p {
+            margin: 0.25em 0;
+        }
+
+        .links {
+            margin: 0.5em 0;
+        }
+
+        .firefox {
+            display: inline-block;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .firefox:hover {
+            color: #8aa2d3;
+            background-color: #fffffd;
+        }
+
+        .firefox img {
+            display: block;
+            width: 5em;
+            margin: 1em 1em 0 1em;
+        }
+
+        .firefox span {
+            display: block;
+            margin: 0 0 1em 0;
+        }
+    </style>
+    <script>
+        var ua = window.navigator.userAgent;
+        /*
+        function browserDetection() {
+            if (ua.indexOf('MSIE ') > 0 || ua.indexOf('Trident/') > 0 || ua.indexOf('Edge/') > 0) {
+                return true;
+            }
+            return false;
+        }
+
+        if (browserDetection()) {
+            window.location.href('/alert-browser/');
+        }
+        */
+    </script>
+</head>
+
+<body>
+    <main>
+        <h1>BROWSER NOT SUPPORT</h1>
+        <div class="browser-meta">
+            <span>Checking your browser...</span>
+        </div>
+        <div class="info">
+            <p>您的网页浏览器已过期</p>
+            <p>Your web browser is out of date</p>
+            <p>お使いのブラウザは最新版ではございません</p>
+        </div>
+        <div class="info">
+            <p>请下载一款免费而优秀的最新版浏览器</p>
+            <p>Please download one of these up-to-date, free and excellent browsers</p>
+            <p>以下の最新バージョンで、無料で、素晴らしいブラウザをダウンロードしてください</p>
+        </div>
+        <div class="links">
+            <div class="firefox">
+                <img src="firefox.png" alt="Firefox Logo" />
+                <span>Firefox</span>
+            </div>
+        </div>
+        <div class="info">
+            <p>我们强烈推荐 Mozilla 基金会提供的 Firefox 浏览器</p>
+            <p>We highly recommend Firefox browser provided by Mozilla Foundation</p>
+            <p>Mozilla Foundation が提供する Firefox ブラウザを強くお勧めします</p>
+        </div>
+    </main>
+
+    <script>
+        document.querySelector('.browser-meta span').textContent = ua;
+        document.querySelector('.firefox').addEventListener('click', function () {
+            window.location.href = "https://www.mozilla.org/firefox/new/";
+        });
+    </script>
+</body>
+
+</html>

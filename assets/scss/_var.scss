@@ -1,0 +1,53 @@
+$font-size-0: 2rem !default; // 16px->32px
+$font-size-1: 1.75rem !default; // 16px->28px #
+$font-size-2: 1.5rem !default; // 16px->24px ##
+$font-size-3: 1.25rem !default; // 16px->20px ###
+$font-size-4: 1rem !default; // 16px->16px ####
+
+// used primer variables
+// @primer/css/support/variables/misc.scss
+$font-weight-bold: 600;
+$font-weight-semibold: 600;
+$font-weight-normal: 400;
+$font-weight-light: 400;
+$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC',
+    'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif !default;
+$mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $body-font !default;
+$body-font-size: 16px !default;
+
+$light-color-primary: #8aa2d3 !default; // https://irocore.com/aofuji/
+$light-color-secondary: #8f82bc !default; // https://irocore.com/fujimurasaki/
+$light-color-focus: #3b469b !default; // https://irocore.com/aomurasaki/
+$light-color-mute: #9ea1a3 !default; // https://irocore.com/suzu-iro/
+$light-color-font: #3f4551 !default; // https://irocore.com/konnezu/
+$light-color-divider: #e5e2e4 !default; // https://irocore.com/komachinezu/
+$light-color-bg: #fffffd !default; // https://irocore.com/shiro/
+$light-color-codebg: #f6f8fa !default; // GitHub
+
+$dark-color-primary: #8aa2d3 !default; // https://irocore.com/aofuji/
+$dark-color-secondary: #bab1df !default; // kai https://irocore.com/fujimurasaki/
+$dark-color-focus: #e6e6e6 !default; // https://irocore.com/shironezumi/
+$dark-color-mute: #9ea1a3 !default; // https://irocore.com/suzu-iro/
+$dark-color-font: #c0c0c0 !default; // https://irocore.com/gin-iro/
+$dark-color-divider: #4d5158 !default; // Discord
+$dark-color-bg: #2f3136 !default; // Discord
+$dark-color-codebg: #414449 !default; // kai GitHub
+
+@font-face {
+    font-family: 'Product Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local('Product Sans Bold'), local('ProductSans-Bold'),
+        url('https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.4.5/product-sans/product-sans-bold.woff2') format('woff2');
+    unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Cascadia Code';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Cascadia Code Regular'),
+        url('https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.4.5/cascadia-code/cascadia.woff2') format('woff2');
+}

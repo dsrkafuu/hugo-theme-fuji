@@ -4,12 +4,12 @@
 name = "Fuji"
 license = "GPLv3"
 licenselink = "https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE"
-description = "A minimal Hugo theme powered by GitHub Primer CSS."
+description = "A minimal Hugo theme."
 homepage = "https://github.com/amzrk2/hugo-theme-fuji/"
-tags = ["blog", "minimal", "primer"]
-features = ["responsive"]
+tags = ["blog", "minimal", "responsive", "dark mode"]
+features = ["blog", "minimal", "responsive", "dark mode"]
 min_version = "0.62.1"
 
 [author]
   name = "DSRKafuU(amzrk2)"
-  homepage = "https://amzrk2.cc/about/"
+  homepage = "https://blog.amzrk2.cc/"

@@ -1,0 +1,22 @@
+<div class="post-comment" data-comment="disqus">
+    <span class="post-comment-notloaded">
+        <ion-icon name="chatbox-ellipses"></ion-icon>&nbsp;{{ i18n "postComment" }}
+    </span>
+    <div id="disqus_thread" style="display: none;"></div>
+    <script src="https://cdn.jsdelivr.net/npm/disqusjs@1.3/dist/disqus.js"></script>
+    <script>
+        function loadComment() {
+            document.querySelector('#disqus_thread').removeAttribute('style');
+            var dsqjs = new DisqusJS({
+                shortname: '{{ .Site.Params.disqusShortname }}',
+                siteName: '{{ .Site.Title }}',
+                identifier: '{{ .File.ContentBaseName }}',
+                url: '{{ .Permalink }}',
+                title: '{{ .Title }}',
+                api: '{{ .Site.Params.disqusJSApi }}',
+                apikey: '{{ .Site.Params.disqusJSApikey }}'
+            });
+            document.querySelector('span.post-comment-notloaded').setAttribute('style', 'display: none;');
+        }
+    </script>
+</div>

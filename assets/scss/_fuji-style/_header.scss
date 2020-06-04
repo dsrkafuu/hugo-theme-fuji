@@ -1,0 +1,25 @@
+header {
+    .header {
+        padding: 1.75rem 1.5rem 2rem 1.5rem;
+    }
+
+    .title-main {
+        font-size: 2.5rem;
+        font-family: 'Product Sans', -apple-system, BlinkMacSystemFont, monospace;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    .title-sub {
+        margin: 0 0.1rem;
+        display: block;
+        white-space: nowrap;
+
+        &::-webkit-scrollbar {
+            display: none; // WebKit
+        }
+
+        scrollbar-width: none; // Firefox
+        -ms-overflow-style: none; // Microsoft
+    }
+}

@@ -1,0 +1,38 @@
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.5/dist/medium-zoom.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.0.1/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule="" src="https://cdn.jsdelivr.net/npm/ionicons@5.0.1/dist/ionicons/ionicons.js"></script>
+{{ if .Site.Params.mainAssetsCDN }}
+<script src="https://cdn.jsdelivr.net/gh/amzrk2/hugo-theme-fuji@2.0/dist/fuji.min.js"></script>
+{{ else }}
+<script src="{{ "/assets/js/fuji.min.js" | relURL }}"></script>
+{{ end }}
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+{{ with .Params.playerURL }}
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script>
+    // in-post aplayer
+    var aPlayer = new APlayer({
+        container: document.getElementById('post-aplayer'),
+        theme: '#8f82bc',
+        volume: 0.1,
+        audio: [{
+            name: '{{ $.Params.playerName }}',
+            artist: '{{ $.Params.playerArtist }}',
+            url: '{{ . }}',
+            cover: '{{ $.Params.playerCover }}'
+        }]
+    });
+    // aplayer toc anchors fix
+    // see https://github.com/MoePlayer/APlayer/issues/242#issuecomment-602471423
+    document.addEventListener('DOMContentLoaded', function () {
+        var issueTocEle = document.querySelector('.sidebar-toc');
+        if (issueTocEle) {
+            var newTocEle = issueTocEle.cloneNode(true);
+            issueTocEle.parentNode.replaceChild(newTocEle, issueTocEle);
+        }
+    });
+</script>
+{{ end }}

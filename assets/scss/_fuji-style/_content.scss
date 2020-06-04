@@ -1,0 +1,157 @@
+.content {
+    padding: 1.5rem 1.5rem 0 1.5rem; // same as sidebar
+}
+
+.post {
+    // paddings between posts
+    &:not(:first-child) {
+        padding: 1.5rem 0;
+    }
+
+    &:first-child {
+        padding: 0 0 1.5rem 0;
+    }
+}
+
+.post-title {
+    font-size: $font-size-1;
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0.1rem 1rem 0.1rem; // little space
+    flex-wrap: wrap;
+
+    span {
+        display: flex;
+        align-items: center;
+    }
+
+    span:not(:last-child) {
+        padding-right: 1.5rem;
+    }
+}
+
+.post-summary {
+    margin: 0 0.1rem; // little space
+
+    p:last-child {
+        margin-bottom: 0; // remove margin-bottom of last para in summary
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        display: none; // hide h1-h6 in post summary
+    }
+}
+
+.post-meta-archive {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0.1rem 0 0.1rem; // little space
+    flex-wrap: wrap;
+
+    span:not(:last-child) {
+        padding-right: 1.5rem;
+    }
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+    padding: 1.25rem 0;
+
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+
+        a {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+.page-info {
+    padding: 0 0.1rem 1.5rem 0.1rem;
+}
+
+// single page part
+article {
+    padding-bottom: 1.5rem;
+
+    .post-content {
+        margin: 1.25rem 0.1rem 0 0.1rem;
+    }
+}
+
+.license {
+    margin-bottom: 1.5rem;
+}
+
+.post-loading {
+    margin: 0 0 1.5rem 0;
+    padding-top: 1.5rem;
+    text-align: center;
+
+    i {
+        font-size: 1.25rem;
+    }
+
+    p {
+        margin: 0.5rem 0 0 0;
+    }
+}
+
+.markdown-body {
+    h1 {
+        font-size: $font-size-1;
+        margin-top: 1.5rem;
+    }
+
+    h2 {
+        font-size: $font-size-2;
+        margin-top: 1.375rem;
+    }
+
+    h3 {
+        font-size: $font-size-3;
+        margin-top: 1.25rem;
+    }
+
+    h4 {
+        margin-top: 1.25rem;
+    }
+
+    ul {
+        list-style-type: circle;
+    }
+
+    img {
+        max-width: 98%;
+        margin: 0 0.25rem 0.5rem 0.25rem;
+    }
+}
+
+.post-comment {
+    span.post-comment-notloaded {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+#disqus_thread {
+    padding: 1.25rem 0;
+}
