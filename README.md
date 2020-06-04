@@ -27,7 +27,7 @@ Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markd
 
 ## 💻 Live demos
 
-[**Live Demo by Vercel (en)**](https://fuji.amzrk2.cc/) | [My Blog by Coding (zh-Hans)](https://blog.amzrk2.cc/)
+[**Live Demo by Vercel (en)**](https://hugo-theme-fuji-demo.now.sh/) | [My Blog by Coding (zh-Hans)](https://blog.amzrk2.cc/)
 
 ![Screenshot of Fuji](https://raw.githubusercontent.com/amzrk2/hugo-theme-fuji/master/images/screenshot.png)
 
