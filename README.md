@@ -71,19 +71,21 @@ Create `[SITEROOT]/layouts/partials/favicon.html` to cover theme's favicon.
 
 You can generate your favicons in [realfavicongenerator.net](https://realfavicongenerator.net/).
 
-### ❌ In-post license & comments
+### ❌ In-post license, comments und toc
 
 You can set variables below in post's front matter to disable them:
 
 ```toml
 noLicense = true # Do not show license in this post
 noComments = true # Do not show comments in this post
+noToc = true # Do not show toc in this post
 ```
 
-Or you can disable the license globally, set this below to false or comment it in your `config.toml`:
+Or you can disable these globally, set these below to false or comment it in your `config.toml`:
 
 ```toml
 showLicense = false
+showToc = false
 ```
 
 ### 🎵 APlayer

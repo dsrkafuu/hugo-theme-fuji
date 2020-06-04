@@ -1,6 +1,6 @@
 <aside class="col-12 col-md-3 float-left sidebar">
     <!-- in-post toc -->
-    {{ if in .Site.Params.mainSections .Type }}
+    {{ if and (in .Site.Params.mainSections .Type) (and (.Site.Params.showToc) (ne .Params.noToc true)) }}
     <div class="sidebar-item sidebar-toc">
         <h3>{{ i18n "sidebarToc" }}</h3>
         {{ .TableOfContents }}

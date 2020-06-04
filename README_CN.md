@@ -61,19 +61,21 @@ $ git submodule update --remote --merge
 
 可以在 [realfavicongenerator.net](https://realfavicongenerator.net/) 快速创建自己的图标。
 
-### ❌ 关闭 License 和评论
+### ❌ 关闭 License、评论区和目录
 
-安全第一，在 front matter 里加上这些:
+在 front matter 里加上这些:
 
 ```toml
 noLicense = true # 憋显示 License
 noComments = true # 憋显示评论区
+noToc = true # 憋显示目录
 ```
 
-你也可以全局关闭 License 显示，在 `config.toml` 把下面这项设置为 false 或注释掉：
+你也可以全局关闭这些内容的显示，在 `config.toml` 把下面这些设置为 false 或注释掉：
 
 ```toml
 showLicense = false
+showToc = false
 ```
 
 ### 🎵 文章音乐
