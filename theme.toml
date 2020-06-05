@@ -2,9 +2,9 @@
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
 name = "Fuji"
-license = "GPLv3"
+license = "Apache-2.0"
 licenselink = "https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE"
-description = "A minimal Hugo theme."
+description = "A minimal Hugo theme with customizable theme color."
 homepage = "https://github.com/amzrk2/hugo-theme-fuji/"
 tags = ["blog", "minimal", "responsive", "dark mode"]
 features = ["blog", "minimal", "responsive", "dark mode"]
