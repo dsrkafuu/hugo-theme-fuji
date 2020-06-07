@@ -13,16 +13,15 @@
 </script>
 <script data-cfasync="false">
     // ie detection
-    var ua = window.navigator.userAgent;
-
-    function browserDetection() {
-        if (ua.indexOf('MSIE ') > 0 || ua.indexOf('Trident/') > 0 || ua.indexOf('Edge/') > 0) {
+    function browserDetection(ua) {
+        if (ua.indexOf('MSIE ') > 0 || ua.indexOf('Trident/') > 0) {
             return true;
         }
         return false;
     }
 
-    if (browserDetection()) {
+    var ua = window.navigator.userAgent;
+    if (browserDetection(ua)) {
         window.location.href('{{ "/ie/" | absURL }}');
     }
 </script>
