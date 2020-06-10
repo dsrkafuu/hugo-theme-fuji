@@ -190,7 +190,7 @@ $dark-color-bg: #2f3136; // Discord
 $dark-color-codebg: #414449; // GitHub
 ```
 
-## ✏️ Report und contributing
+## ✏️ Issue und contributing
 
 Note that to keep the `master` branch clean, the main development work is made under `dev` branch. Please set base branch to `dev`, then make commitment or pull request.
 
