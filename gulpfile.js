@@ -36,19 +36,14 @@ function css() {
     );
 }
 
-function dist() {
-    return pipeline(
-        gulp.src('static/assets/css/*.*'),
-        gulp.dest('dist/'),
-        gulp.src('static/assets/js/*.*'),
-        gulp.dest('dist/')
-    );
-}
-
-exports.build = gulp.series(gulp.parallel(js, css), dist);
+exports.build = gulp.parallel(js, css);
 exports.devJs = function () {
     return gulp.watch('assets/js/fuji.js', { delay: 500 }, gulp.parallel(js));
 };
 exports.devCss = function () {
-    return gulp.watch(['assets/scss/*.scss', 'assets/scss/*/*.scss'], { delay: 500 }, gulp.parallel(css));
+    return gulp.watch(
+        ['assets/scss/*.scss', 'assets/scss/*/*.scss', 'assets/scss/*/*/*.scss'],
+        { delay: 500 },
+        gulp.parallel(css)
+    );
 };
