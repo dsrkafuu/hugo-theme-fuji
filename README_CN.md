@@ -159,6 +159,7 @@ useHugoPipes = true
 ```scss
 $body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
 $mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $body-font;
+$title-font: 'Product Sans', $body-font;
 $body-font-size: 16px;
 
 $light-color-primary: #8aa2d3; // https://irocore.com/aofuji/
