@@ -13,6 +13,7 @@ $font-weight-light: 400;
 $body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC',
     'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif !default;
 $mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $body-font !default;
+$title-font: 'Product Sans', $body-font !default;
 $body-font-size: 16px !default;
 
 $light-color-primary: #8aa2d3 !default; // https://irocore.com/aofuji/
@@ -39,8 +40,10 @@ $dark-color-codebg: #414449 !default; // kai GitHub
     font-weight: 700;
     font-display: swap;
     src: local('Product Sans Bold'), local('ProductSans-Bold'),
-        url('https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.4.5/product-sans/product-sans-bold.woff2') format('woff2');
-    unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        url('https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@1.4.5/product-sans/product-sans-bold.woff2')
+            format('woff2');
+    unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
+        U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {

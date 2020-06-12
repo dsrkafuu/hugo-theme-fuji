@@ -60,10 +60,13 @@ footer {
     h3,
     h4,
     h5,
-    h6,
+    h6 {
+        color: var(--color-primary);
+    }
+
     strong,
     em {
-        color: var(--color-primary);
+        color: var(--color-secondary);
     }
 
     h1,

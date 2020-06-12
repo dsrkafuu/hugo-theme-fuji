@@ -5,7 +5,7 @@ header {
 
     .title-main {
         font-size: 2.5rem;
-        font-family: 'Product Sans', -apple-system, BlinkMacSystemFont, monospace;
+        font-family: $title-font;
         font-weight: 700;
         white-space: nowrap;
     }

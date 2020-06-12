@@ -169,6 +169,7 @@ This will make the theme use Hugo Pipes provided by Hugo Extended Vesion to comp
 ```scss
 $body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
 $mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $body-font;
+$title-font: 'Product Sans', $body-font;
 $body-font-size: 16px;
 
 $light-color-primary: #8aa2d3; // https://irocore.com/aofuji/
@@ -190,7 +191,7 @@ $dark-color-bg: #2f3136; // Discord
 $dark-color-codebg: #414449; // GitHub
 ```
 
-## ✏️ Report und contributing
+## ✏️ Issue und contributing
 
 Note that to keep the `master` branch clean, the main development work is made under `dev` branch. Please set base branch to `dev`, then make commitment or pull request.
 
