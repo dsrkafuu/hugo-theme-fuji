@@ -98,10 +98,16 @@ showToc = false
 In-post APlayer supported, you can set these variables in post's front matter:
 
 ```toml
-playerName = "..." # Audio title or name
-playerArtist = "..." # Audio artist
-playerURL = "..." # Audio URL, support aac, mp3, wav and ogg
-playerCover = "..." # Audio cover
+[[player]]
+  playerName = "..." # Audio title or name
+  playerArtist = "..." # Audio artist
+  playerURL = "..." # Audio URL, support aac, mp3, wav and ogg
+  playerCover = "..." # Audio cover
+[[player]]
+  playerName = "..."
+  playerArtist = "..."
+  playerURL = "..."
+  playerCover = "..."
 ```
 
 ### 📷 Image zoom and lazyload settings

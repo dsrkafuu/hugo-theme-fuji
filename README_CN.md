@@ -88,10 +88,16 @@ showToc = false
 支持给文章单独添加 APlayer，在 front matter 里加上这些:
 
 ```toml
-playerName = "..." # 标题
-playerArtist = "..." # 作者
-playerURL = "..." # URL
-playerCover = "..." # 封面
+[[player]]
+  playerName = "..." # 标题
+  playerArtist = "..." # 作者
+  playerURL = "..." # URL
+  playerCover = "..." # 封面
+[[player]]
+  playerName = "..."
+  playerArtist = "..."
+  playerURL = "..."
+  playerCover = "..."
 ```
 
 ### 📷 图片放大的设置和 lazyload
