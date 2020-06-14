@@ -10,23 +10,6 @@ function getNowTheme() {
     }
 }
 
-// update medium-zoom theme
-function updateMeidumTheme(mediumInst) {
-    let targetTheme = getNowTheme();
-    if (mediumInst) {
-        mediumInst.detach();
-        if (targetTheme === 'dark') {
-            mediumInst = mediumZoom('.img-zoomable', {
-                background: '#2f3136',
-            });
-        } else {
-            mediumInst = mediumZoom('.img-zoomable', {
-                background: '#fffffd',
-            });
-        }
-    }
-}
-
 // update utterances theme
 function updateUtterancesTheme(utterancesFrame) {
     let targetTheme = getNowTheme();
@@ -61,18 +44,6 @@ document.querySelector('.btn .btn-scroll-top').addEventListener('click', () => {
     document.documentElement.scrollTop = 0;
 });
 
-// init medium-zoom
-var mediumInst; // medium-zoom instance
-if (getNowTheme() === 'dark') {
-    mediumInst = mediumZoom('.img-zoomable', {
-        background: '#2f3136',
-    });
-} else {
-    mediumInst = mediumZoom('.img-zoomable', {
-        background: '#fffffd',
-    });
-}
-
 // theme switch button
 document.querySelector('.btn .btn-toggle-mode').addEventListener('click', () => {
     let nowTheme = getNowTheme();
@@ -95,8 +66,6 @@ document.querySelector('.btn .btn-toggle-mode').addEventListener('click', () => 
         localStorage.setItem('fuji_data-theme', systemTheme === 'light' ? 'auto' : 'light');
     }
 
-    // update medium background
-    updateMeidumTheme(mediumInst);
     // switch comment area theme
     // if this page has comment area
     let commentArea = document.querySelector('.post-comment');
