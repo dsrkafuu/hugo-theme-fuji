@@ -2,6 +2,8 @@ baseURL = "https://example.com"
 title = "Hugo Theme Fuji"
 
 theme = "fuji"
+[outputs]
+  home = ["html", "rss", "json"]
 hasCJKLanguage = true
 enableEmoji = true
 enableRobotsTXT = true
