@@ -68,7 +68,7 @@ Inside the folder of your Hugo site run:
 $ git submodule update --remote --merge
 ```
 
-## ⚙️ Configration
+## ⚙️ Configuration
 
 ### 🎨 Favicon
 
