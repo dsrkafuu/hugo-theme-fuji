@@ -32,6 +32,10 @@ paginate = 10
   # googleAnalyticsTid = "UA-000000000-0"
   # googleAnalyticsRoute = "https://*.*.workers.dev/"
 
+  # Google AdSense
+  # The AdSense code will be inserted between the head tags of your site.
+  # googleAdsense = "0000000000000000"
+
   # Word counter and read time indicator in post metadata
   showWordCounter = true
   showReadTime = false
