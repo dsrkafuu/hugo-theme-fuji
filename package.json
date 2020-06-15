@@ -37,11 +37,9 @@
         "uglify-js": "^3.9.4"
     },
     "scripts": {
-        "prodBuild": "gulp build",
-        "prodClean": "gulp clean",
+        "build": "gulp build",
         "devCss": "gulp devCss",
         "devJs": "gulp devJs",
-        "build": "npm-run-all -p prodBuild prodClean",
         "dev": "npm-run-all -p devCss devJs"
     }
 }

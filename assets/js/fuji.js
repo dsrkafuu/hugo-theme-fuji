@@ -83,3 +83,40 @@ document.querySelector('.btn .btn-toggle-mode').addEventListener('click', () => 
         }
     }
 });
+
+// search by fuse.js
+function searchAll(key, index) {
+    let fuse = new Fuse(index, {
+        keys: ['title', 'tags'],
+    });
+    let result = fuse.search(key);
+    console.log(result);
+    if (result.length > 0) {
+        document.getElementById('search-result').innerHTML = template('search-result-template', result);
+    }
+}
+
+let urlParams = new URLSearchParams(window.location.search); // get params from URL
+if (urlParams.has('search')) {
+    let key = urlParams.get('search'); // get search keyword
+    document.querySelector('.search-input input').setAttribute('value', key);
+    // get search index from json
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', '/index.json', true);
+    xhr.responseType = 'json';
+    xhr.onerror = function (e) {
+        console.error(`${xhr.status} ${xhr.statusText}`);
+    };
+    xhr.onload = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                // use index json to search
+                console.log(xhr.response);
+                searchAll(key, xhr.response);
+            } else {
+                console.error(`${xhr.status} ${xhr.statusText}`);
+            }
+        }
+    };
+    xhr.send(null);
+}

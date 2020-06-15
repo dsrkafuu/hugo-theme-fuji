@@ -58,13 +58,16 @@ function css() {
     );
 }
 
-exports.build = gulp.parallel(js, css);
-exports.clean = function () {
+function clean() {
     return del(['static/assets/css/fuji.min.css.map', 'static/assets/js/fuji.min.js.map']);
-};
+}
+
+exports.build = gulp.parallel(js, css, clean);
 exports.devJs = function () {
+    devJs();
     return gulp.watch('assets/js/fuji.js', { delay: 500 }, devJs);
 };
 exports.devCss = function () {
+    devJs();
     return gulp.watch('assets/**/*.scss', { delay: 500 }, devCss);
 };

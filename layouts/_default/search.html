@@ -1,20 +1,16 @@
 {{ define "main" }}
-<!-- page info section e.g. current tag & total archive pages -->
+<!-- search form -->
 <div class="page-info">
-    <form class="search-form" autocomplete="off">
+    <form class="search-form" method="GET">
         <div class="search-input">
-            <input type="text" name="search-input" maxlength="40" required />
+            <input name="search" type="text" autocapitalize="off" autocomplete="off" autocorrect="off"
+                   spellcheck="false" />
         </div>
         <div class="search-submit">
-            <button>搜索</button>
+            <button type="submit">SEARCH</button>
         </div>
     </form>
 </div>
-<!-- archives range in all posts -->
-<div class="post">
-    <h3 class="post-item post-title-archive">
-        Not Finished Yet
-    </h3>
-</div>
-
+<!-- search result and template -->
+<div id="search-result"></div>
 {{ end }}
