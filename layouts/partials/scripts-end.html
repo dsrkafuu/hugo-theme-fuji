@@ -12,7 +12,13 @@
             <a href="<%= $data[i].item.permalink %>">{{ "<%= $data[i].item.title %>" | safeHTML }}</a>
         </h3>
         <div class="post-item post-meta-archive">
-            {{ "<%= $data[i].item.tags %>" | safeHTML }}
+            {{ "<% if ($data[i].item.tags && $data[i].item.tags.length > 0) { %>" | safeHTML }}
+            {{ "<% for(var j = 0; j < $data[i].item.tags.length; j++){ %>" | safeHTML }}
+                {{ "<%= $data[i].item.tags[j] %>" | safeHTML }}
+            {{ "<% } %>" | safeHTML }}
+            {{ "<% } else { %>" | safeHTML }}
+                No Tag
+            {{ "<% } %>" | safeHTML }}
         </div>
     </div>
     {{ "<% } %>" | safeHTML }}

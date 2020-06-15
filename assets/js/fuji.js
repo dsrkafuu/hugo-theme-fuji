@@ -93,12 +93,14 @@ function searchAll(key, index) {
     console.log(result);
     if (result.length > 0) {
         document.getElementById('search-result').innerHTML = template('search-result-template', result);
+    } else {
+        document.getElementById('search-result').innerHTML = '<span>NOT FOUND</span>';
     }
 }
 
 let urlParams = new URLSearchParams(window.location.search); // get params from URL
-if (urlParams.has('search')) {
-    let key = urlParams.get('search'); // get search keyword
+if (urlParams.has('s')) {
+    let key = urlParams.get('s'); // get search keyword
     document.querySelector('.search-input input').setAttribute('value', key);
     // get search index from json
     let xhr = new XMLHttpRequest();
