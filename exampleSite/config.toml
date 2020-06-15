@@ -16,6 +16,9 @@ paginate = 10
 
 # googleAnalytics = "UA-000000000-0" # Set your Google Analytics UA here
 
+[outputs]
+  home = ["html", "rss", "json"]
+
 [permalinks]
   post = "/:section/:filename/" # Custom post links, e.g. "/:year/:month/:title/"
 
@@ -98,13 +101,17 @@ paginate = 10
     url = "/"
     weight = 1
   [[menu.nav]]
+    name = "Search"
+    url = "/search/"
+    weight = 2
+  [[menu.nav]]
     name = "Archives"
     url = "/archives/"
-    weight = 2
+    weight = 3
   [[menu.nav]]
     name = "About"
     url = "/about/"
-    weight = 3
+    weight = 4
 
   [[menu.link]]
     name = "GitHub"
