@@ -85,6 +85,20 @@
 
 .page-info {
     padding: 0 0.1rem 1.5rem 0.1rem;
+
+    // search page part
+    .search-form {
+        display: flex;
+    }
+
+    .search-input {
+        flex: 1 1 auto;
+
+        input {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
 }
 
 // single page part
