@@ -16,7 +16,7 @@ Now supported i18n langs: en, zh-hans, zh-hant, ja, nl. Check the i18n folder to
 - [❗ Notice](#-notice)
 - [🐣 Getting started](#-getting-started)
 - [🆕 Update the theme](#-update-the-theme)
-- [⚙️ Configration](#%EF%B8%8F-configration)
+- [⚙️ Configuration](#%EF%B8%8F-configuration)
   - [🎨 Favicon](#-favicon)
   - [❌ In-post license, comments und toc](#-in-post-license-comments-und-toc)
   - [🎵 APlayer](#-aplayer)
