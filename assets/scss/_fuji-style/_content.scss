@@ -187,8 +187,13 @@ article {
 
     button {
         flex: 0 1 auto;
-        padding: 0 0.75rem;
+        padding: 0 0.5rem;
         word-break: keep-all;
         height: 2.5rem;
+
+        ion-icon {
+            height: 100%;
+            font-size: 1.6rem;
+        }
     }
 }

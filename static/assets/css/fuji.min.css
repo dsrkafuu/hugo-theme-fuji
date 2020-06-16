@@ -1589,9 +1589,12 @@ article {
     height: 2rem; }
   .search-input button {
     flex: 0 1 auto;
-    padding: 0 0.75rem;
+    padding: 0 0.5rem;
     word-break: keep-all;
     height: 2.5rem; }
+    .search-input button ion-icon {
+      height: 100%;
+      font-size: 1.6rem; }
 
 .sidebar {
   padding: 1.5rem 1.5rem 1.5rem 0; }

@@ -42,3 +42,12 @@
 
 [tagsCurrentTag]
     other = "Alle posts met de tag {{ .Title }}: "
+
+[searchSuccess]
+    other = "[NUM] results ([TIME] ms) [Translation Help Needed]"
+
+[searchNotFound]
+    other = "Results not found [Translation Help Needed]"
+
+[searchFailed]
+    other = "Failed to load index file [Translation Help Needed]"

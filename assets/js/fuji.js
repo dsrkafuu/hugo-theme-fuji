@@ -105,7 +105,7 @@ function searchAll(key, index, counter) {
         ],
     });
     let result = fuse.search(key);
-    console.log(result);
+    // console.log(result);
     if (result.length > 0) {
         document.getElementById('search-result').innerHTML = template('search-result-template', result);
         return [new Date().getTime() - counter, result.length];
@@ -124,16 +124,19 @@ if (urlParams.has('s')) {
     let xhr = new XMLHttpRequest();
     xhr.open('GET', '/index.json', true);
     xhr.responseType = 'json';
-    xhr.onerror = (e) => {
+    xhr.onerror = () => {
         infoElements[2].removeAttribute('style');
     };
-    xhr.onload = () => {
+    xhr.ontimeout = () => {
+        infoElements[2].removeAttribute('style');
+    };
+    xhr.onreadystatechange = () => {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
                 // use index json to search
-                console.log(xhr.response);
+                // console.log(xhr.response);
                 counter = searchAll(key, xhr.response, counter);
-                console.log(counter);
+                // console.log(counter);
                 if (counter === 'notFound') {
                     infoElements[1].removeAttribute('style');
                 } else {
@@ -142,7 +145,6 @@ if (urlParams.has('s')) {
                     infoElements[0].removeAttribute('style');
                 }
             } else {
-                console.error(`Failed to get index.json, ${xhr.status} ${xhr.statusText}`);
                 infoElements[2].removeAttribute('style');
             }
         }

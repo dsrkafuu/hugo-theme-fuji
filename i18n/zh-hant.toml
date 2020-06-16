@@ -42,3 +42,12 @@
 
 [tagsCurrentTag]
     other = "擁有標籤 {{ .Title }} 的文章："
+
+[searchSuccess]
+    other = "[NUM] 項結果 (搜尋時間 [TIME] 毫秒)"
+
+[searchNotFound]
+    other = "未找到結果"
+
+[searchFailed]
+    other = "無法獲取索引"

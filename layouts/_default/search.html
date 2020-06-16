@@ -5,14 +5,14 @@
         <div class="search-input">
             <input name="s" type="search" autocapitalize="off" autocomplete="off" autocorrect="off"
                    spellcheck="false" />
-            <button type="submit">SEARCH</button>
+            <button type="submit"><ion-icon name="search-circle-outline"></ion-icon></button>
         </div>
     </form>
 </div>
 <!-- search result and template -->
-<div class="search-result-info" style="display: none;"><span>搜索用时：[TIME] ms，找到 [NUM] 个结果</span></div>
-<div class="search-result-info" style="display: none;"><span>搜索未找到结果</span></div>
-<div class="search-result-info" style="display: none;"><span>无法获取索引</span></div>
+<div class="search-result-info" style="display: none;"><span>{{ i18n "searchSuccess" }}</span></div>
+<div class="search-result-info" style="display: none;"><span>{{ i18n "searchNotFound" }}</span></div>
+<div class="search-result-info" style="display: none;"><span>{{ i18n "searchFailed" }}</span></div>
 <div id="search-result"></div>
 <script id="search-result-template" type="text/fuse-template">
     {{ "<% for(var i = 0; i < $data.length; i++){ %>" | safeHTML }}
