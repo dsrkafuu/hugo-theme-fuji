@@ -9,7 +9,6 @@
 
 <!-- favicon -->
 {{ partial "favicon.html" . }}
-
 <!-- seo metadata -->
 {{ if and (.IsHome) (.Site.Params.subTitle) }}
 <title>{{ .Site.Title }} - {{ .Site.Params.subTitle }}</title>
@@ -22,16 +21,13 @@
 <meta name="author" content="{{ if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}" />
 {{ end }}
 {{ if or (.Params.description) (.Site.Params.description) }}
-<meta name="description"
-      content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
+<meta name="description" content="{{ if .Params.description }}{{ .Params.description }}{{ else }}{{ .Site.Params.description }}{{ end }}" />
 {{ end }}
 {{ if .Params.tags }}
 <meta name="keywords" content="{{ delimit .Params.tags ", " }}" />
 {{ end }}
-
 {{ template "_internal/opengraph.html" . }}
 {{ template "_internal/twitter_cards.html" . }}
-
 <!-- dep -->
 {{ if .Site.Params.useHugoPipes }}
 {{ $options := (dict "targetPath" "assets/css/fuji-custom.min.css" "outputStyle" "compressed") }}
@@ -40,17 +36,14 @@
 {{ else }}
 <link rel="stylesheet" href="{{ "/assets/css/fuji.min.css" | relURL }}" />
 {{ end }}
-
 {{ with .Site.Params.googleAdsense }}
 <script async data-ad-client="ca-pub-{{ . }}" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 {{ end}}
-
 {{ if .Params.player }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
 {{ end }}
 {{ if .Site.Params.useDisqusJS }}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.3/dist/disqusjs.css" />
 {{ end }}
-
 {{ partial "analytic-gtag.html" . }}
 {{ partial "analytic-cfga.html" . }}

@@ -56,6 +56,11 @@
     margin: 0.5rem 0.1rem 0 0.1rem; // little space
     flex-wrap: wrap;
 
+    span {
+        display: flex;
+        align-items: center;
+    }
+
     span:not(:last-child) {
         padding-right: 1.5rem;
     }
