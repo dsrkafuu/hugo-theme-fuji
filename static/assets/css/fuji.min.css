@@ -1698,9 +1698,6 @@ body[data-theme='auto'] {
       --color-divider: #4d5158;
       --color-bg: #2f3136;
       --color-codebg: #414449; }
-      body[data-theme='auto'] img {
-        -webkit-filter: brightness(60%);
-                filter: brightness(60%); }
       body[data-theme='auto'] table th,
       body[data-theme='auto'] table td {
         border-color: var(--color-font); }
@@ -1750,9 +1747,6 @@ body[data-theme='dark'] {
   --color-divider: #4d5158;
   --color-bg: #2f3136;
   --color-codebg: #414449; }
-  body[data-theme='dark'] img {
-    -webkit-filter: brightness(60%);
-            filter: brightness(60%); }
   body[data-theme='dark'] table th,
   body[data-theme='dark'] table td {
     border-color: var(--color-font); }

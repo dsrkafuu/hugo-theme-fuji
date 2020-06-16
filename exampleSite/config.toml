@@ -81,6 +81,9 @@ paginate = 10
   # Use Hugo Pipes in Hugo Extended Version to compile SCSS
   # useHugoPipes = true
 
+  # Let images display in full brightness under dark mode
+  # disableDarkImage = true
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
