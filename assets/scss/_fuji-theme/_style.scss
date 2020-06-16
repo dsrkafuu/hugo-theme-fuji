@@ -312,3 +312,46 @@ code {
         color: var(--color-mute) !important;
     }
 }
+
+.search-result-info {
+    border-bottom: $divider;
+}
+
+.search-input {
+    border-top: 2px solid;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    border-right: none;
+    border-radius: 0.25rem;
+    border-color: var(--color-divider);
+    background-color: var(--color-bg);
+
+    &:hover,
+    &:focus-within {
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+    }
+
+    input {
+        outline: none;
+        border: none;
+        color: inherit;
+        background-color: inherit;
+    }
+
+    button {
+        outline: none;
+        border-top: 2px solid;
+        border-left: none;
+        border-right: 2px solid;
+        border-bottom: 2px solid;
+        border-radius: 0 0.25rem 0.25rem 0;
+        border-color: inherit;
+        color: inherit;
+        background-color: inherit;
+
+        &:hover {
+            color: var(--color-secondary);
+        }
+    }
+}

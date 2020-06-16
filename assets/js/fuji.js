@@ -85,38 +85,65 @@ document.querySelector('.btn .btn-toggle-mode').addEventListener('click', () => 
 });
 
 // search by fuse.js
-function searchAll(key, index) {
+function searchAll(key, index, counter) {
     let fuse = new Fuse(index, {
-        keys: ['title', 'tags'],
+        shouldSort: true,
+        distance: 10000,
+        keys: [
+            {
+                name: 'title',
+                weight: 2.0,
+            },
+            {
+                name: 'tags',
+                weight: 1.5,
+            },
+            {
+                name: 'content',
+                weight: 1.0,
+            },
+        ],
     });
     let result = fuse.search(key);
     console.log(result);
     if (result.length > 0) {
         document.getElementById('search-result').innerHTML = template('search-result-template', result);
+        return [new Date().getTime() - counter, result.length];
     } else {
-        document.getElementById('search-result').innerHTML = '<span>NOT FOUND</span>';
+        return 'notFound';
     }
 }
 
 let urlParams = new URLSearchParams(window.location.search); // get params from URL
 if (urlParams.has('s')) {
-    let key = urlParams.get('s'); // get search keyword
+    let counter = new Date().getTime();
+    let infoElements = document.querySelectorAll('.search-result-info');
+    let key = urlParams.get('s'); // get search keyword, divided by space
     document.querySelector('.search-input input').setAttribute('value', key);
     // get search index from json
     let xhr = new XMLHttpRequest();
     xhr.open('GET', '/index.json', true);
     xhr.responseType = 'json';
-    xhr.onerror = function (e) {
-        console.error(`${xhr.status} ${xhr.statusText}`);
+    xhr.onerror = (e) => {
+        infoElements[2].removeAttribute('style');
     };
-    xhr.onload = function () {
+    xhr.onload = () => {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
                 // use index json to search
                 console.log(xhr.response);
-                searchAll(key, xhr.response);
+                counter = searchAll(key, xhr.response, counter);
+                console.log(counter);
+                if (counter === 'notFound') {
+                    infoElements[1].removeAttribute('style');
+                } else {
+                    infoElements[0].innerHTML = infoElements[0].innerHTML.replace('[TIME]', counter[0]);
+                    infoElements[0].innerHTML = infoElements[0].innerHTML.replace('[NUM]', counter[1]);
+                    infoElements[0].removeAttribute('style');
+                }
             } else {
-                console.error(`${xhr.status} ${xhr.statusText}`);
+                console.error(`Failed to get index.json, ${xhr.status} ${xhr.statusText}`);
+                infoElements[2].removeAttribute('style');
             }
         }
     };

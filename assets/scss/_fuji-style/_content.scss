@@ -85,20 +85,6 @@
 
 .page-info {
     padding: 0 0.1rem 1.5rem 0.1rem;
-
-    // search page part
-    .search-form {
-        display: flex;
-    }
-
-    .search-input {
-        flex: 1 1 auto;
-
-        input {
-            width: 100%;
-            max-width: 100%;
-        }
-    }
 }
 
 // single page part
@@ -170,6 +156,34 @@ article {
     padding: 1.25rem 0;
 }
 
+// search page part
+
 #search-result .post:first-child {
     padding: 1.5rem 0;
+}
+
+.search-result-info {
+    padding: 1rem 0.1rem;
+}
+
+.search-input {
+    display: flex;
+    height: 2.5rem;
+    align-items: center;
+    padding-left: 0.5rem;
+    width: 100%;
+
+    input {
+        width: 100%;
+        min-width: 0;
+        flex: 1 1 auto;
+        height: 2rem;
+    }
+
+    button {
+        flex: 0 1 auto;
+        padding: 0 0.75rem;
+        word-break: keep-all;
+        height: 2.5rem;
+    }
 }

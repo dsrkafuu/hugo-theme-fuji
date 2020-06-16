@@ -2,27 +2,8 @@
 <script async nomodule src="https://cdn.jsdelivr.net/npm/ionicons@5.0.1/dist/ionicons/ionicons.js"></script>
 
 {{ if eq .Section "search" }}
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.1.0/dist/fuse.js"></script>
-<!-- Search result template -->
-<script src="https://cdn.jsdelivr.net/npm/art-template@4.13.2/lib/template-web.min.js"></script>
-<script id="search-result-template" type="text/fuse-template">
-    {{ "<% for(var i = 0; i < $data.length; i++){ %>" | safeHTML }}
-    <div class="post">
-        <h3 class="post-item post-title-archive">
-            <a href="<%= $data[i].item.permalink %>">{{ "<%= $data[i].item.title %>" | safeHTML }}</a>
-        </h3>
-        <div class="post-item post-meta-archive">
-            {{ "<% if ($data[i].item.tags && $data[i].item.tags.length > 0) { %>" | safeHTML }}
-            {{ "<% for(var j = 0; j < $data[i].item.tags.length; j++){ %>" | safeHTML }}
-                {{ "<%= $data[i].item.tags[j] %>" | safeHTML }}
-            {{ "<% } %>" | safeHTML }}
-            {{ "<% } else { %>" | safeHTML }}
-                No Tag
-            {{ "<% } %>" | safeHTML }}
-        </div>
-    </div>
-    {{ "<% } %>" | safeHTML }}
-</script>
+<script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.1.0/dist/fuse.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/art-template@4.13.2/lib/template-web.min.js"></script>
 {{ else if eq .Section "archives" }}
 {{ else }}
 <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/components/prism-core.min.js"></script>
@@ -37,6 +18,7 @@
 <!-- prettier-ignore -->
 <script>
     // in-post aplayer
+    /* beautify preserve:start */
     var aPlayer = new APlayer({
         container: document.getElementById('post-aplayer'),
         theme: '#8f82bc',
@@ -49,8 +31,9 @@
                 url: '{{ .playerURL }}',
                 cover: '{{ .playerCover }}'
             },
-            {{- end -}}
+            {{- end -}}]
     });
+    /* beautify preserve:end */
     // aplayer toc anchors fix
     // see https://github.com/MoePlayer/APlayer/issues/242#issuecomment-602471423
     document.addEventListener('DOMContentLoaded', function () {
