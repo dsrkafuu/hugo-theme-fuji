@@ -6,7 +6,7 @@ Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markd
 
 [English](https://github.com/amzrk2/hugo-theme-fuji#readme) | [简体中文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
 
-After the release of v2, **there may be major changes in the image lazyload shortcode** to make it easier to use.If you want to change the color scheme, please check [🔧 Advanced configuration](#-advanced-configuration).
+After the release of v2, **there may be major changes in the image lazyload shortcode** to make it easier to use. If you want to change the color scheme, please check [🔧 Advanced configuration](#-advanced-configuration).
 
 Now supported i18n langs: en, zh-hans, zh-hant, ja, nl. Check the i18n folder to add more languages.
 
@@ -233,9 +233,11 @@ The theme is released under the ```Apache License 2.0```, for more information r
 - [Primer CSS - MIT](https://github.com/primer/css/blob/master/LICENSE)
 - [APlayer - MIT](https://github.com/MoePlayer/APlayer/blob/master/LICENSE)
 - [lazysizes - MIT](https://github.com/aFarkas/lazysizes/blob/gh-pages/LICENSE)
-- [medium-zoom - MIT](https://github.com/francoischalifour/medium-zoom/blob/master/LICENSE)
 - [DisqusJS - MIT](https://github.com/SukkaW/DisqusJS/blob/master/LICENSE)
 - [ionicons - MIT](https://github.com/ionic-team/ionicons/blob/master/LICENSE)
+- [Fuse.js - Apache-2.0](https://github.com/krisk/Fuse/blob/master/LICENSE)
+- [cloudflare-workers-async-google-analytics - MIT](https://github.com/SukkaW/cloudflare-workers-async-google-analytics/blob/master/LICENSE)
+- [art-template - MIT](https://github.com/aui/art-template/blob/master/LICENSE)
 
 > © 2020 DSRKafuU(amzrk2) [Twitter @amzrk2](https://twitter.com/amzrk2) [GitHub @amzrk2](https://github.com/amzrk2)
 
