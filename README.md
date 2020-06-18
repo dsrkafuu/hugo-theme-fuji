@@ -95,7 +95,7 @@ showToc = true # Enable or disable ToC for this specific post
 To disable comment area for specific post, add this in front matter:
 
 ```toml
-noComments = true # Do not show comments in this post
+showComments = false # Do not show comments in this post
 ```
 
 ### 🎵 APlayer

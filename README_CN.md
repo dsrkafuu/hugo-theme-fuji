@@ -85,7 +85,7 @@ showToc = true # 对这篇文章开关目录显示
 除此之外你也可以关闭特定文章的评论：
 
 ```toml
-noComments = true # 对这篇文章关闭评论
+showComments = false # 对这篇文章关闭评论
 ```
 
 ### 🎵 文章音乐

@@ -24,11 +24,11 @@
     </blockquote>
 </div>
 {{ end }}
-{{ if .Site.Params.disqusJSApi }}
+{{ if and (.Site.Params.disqusJSApi) (ne .Params.showComments false) }}
 {{ partial "comment-disqusjs.html" . }}
-{{ else if .Site.Params.disqusShortname }}
+{{ else if and (.Site.Params.disqusShortname) (ne .Params.showComments false) }}
 {{ partial "comment-disqus.html" . }}
-{{ else if .Site.Params.utterancesRepo }}
+{{ else if and (.Site.Params.utterancesRepo) (ne .Params.showComments false) }}
 {{ partial "comment-utterances.html" . }}
 {{ else }}{{ end }}
 {{ end }}
