@@ -16,7 +16,7 @@
     </div>
 </article>
 <!-- post license -->
-{{ if and (.Site.Params.showLicense) (ne .Params.noLicense true) }}
+{{ if and (or .Site.Params.showLicense .Params.showLicense) (ne .Params.showLicense false) }}
 <div class="license markdown-body">
     <blockquote>
         <p>{{ i18n "postCopyrightFront" }}<a rel="license" href="{{ .Site.Params.licenseLink }}"

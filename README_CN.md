@@ -18,7 +18,7 @@
 - [🆕 更新主题](#-更新主题)
 - [⚙️ 自定义设置](#%EF%B8%8F-自定义设置)
   - [🎨 站点图标](#-站点图标)
-  - [❌ 关闭 License、评论区和目录](#-关闭-license评论区和目录)
+  - [❌ License、目录和评论区](#-license目录和评论区)
   - [🎵 文章音乐](#-文章音乐)
   - [📷 图片放大的设置和 lazyload](#-图片放大的设置和-lazyload)
   - [⚓ Markdown 钩子](#-markdown-钩子)
@@ -30,7 +30,7 @@
 
 ## 💻 在线 Demo
 
-[**在线 Demo - Vercel (英文)**](https://hugo-theme-fuji-demo.now.sh/) | [我的博客 - Coding (中文)](https://blog.amzrk2.cc/)
+[**在线 Demo (英文)**](https://hugo-theme-fuji-demo.now.sh/) | [我的博客 (中文)](https://blog.amzrk2.cc/)
 
 ![Fuji 截图](https://raw.githubusercontent.com/amzrk2/hugo-theme-fuji/master/images/screenshot.png)
 
@@ -66,21 +66,26 @@ $ git submodule update --remote --merge
 
 可以在 [realfavicongenerator.net](https://realfavicongenerator.net/) 快速创建自己的图标。
 
-### ❌ 关闭 License、评论区和目录
+### ❌ License、目录和评论区
 
-在 front matter 里加上这些:
+在全局的 `config.toml` 里设置：
 
 ```toml
-noLicense = true # 憋显示 License
-noComments = true # 憋显示评论区
-noToc = true # 憋显示目录
+showLicense = true # 对所有文章开关 License 显示
+showToc = true # 对所有文章开关目录显示
 ```
 
-你也可以全局关闭这些内容的显示，在 `config.toml` 把下面这些设置为 false 或注释掉：
+在特定文章的 front matter 里设置：
 
 ```toml
-showLicense = false
-showToc = false
+showLicense = true # 对这篇文章开关 License 显示
+showToc = true # 对这篇文章开关目录显示
+```
+
+除此之外你也可以关闭特定文章的评论：
+
+```toml
+noComments = true # 对这篇文章关闭评论
 ```
 
 ### 🎵 文章音乐

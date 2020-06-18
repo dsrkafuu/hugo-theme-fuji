@@ -18,7 +18,7 @@ Now supported i18n langs: en, zh-hans, zh-hant, ja, nl. Check the i18n folder to
 - [🆕 Update the theme](#-update-the-theme)
 - [⚙️ Configuration](#%EF%B8%8F-configuration)
   - [🎨 Favicon](#-favicon)
-  - [❌ In-post license, comments und toc](#-in-post-license-comments-und-toc)
+  - [❌ License, toc und comments](#-license-toc-und-comments)
   - [🎵 APlayer](#-aplayer)
   - [📷 Image zoom and lazyload settings](#-image-zoom-and-lazyload-settings)
   - [⚓ Markdown render hook](#-markdown-render-hook)
@@ -30,7 +30,7 @@ Now supported i18n langs: en, zh-hans, zh-hant, ja, nl. Check the i18n folder to
 
 ## 💻 Live demos
 
-[**Live Demo by Vercel (en)**](https://hugo-theme-fuji-demo.now.sh/) | [My Blog by Coding (zh-Hans)](https://blog.amzrk2.cc/)
+[**Live Demo (en)**](https://hugo-theme-fuji-demo.now.sh/) | [My Blog (zh-Hans)](https://blog.amzrk2.cc/)
 
 ![Screenshot of Fuji](https://raw.githubusercontent.com/amzrk2/hugo-theme-fuji/master/images/screenshot.png)
 
@@ -76,21 +76,26 @@ Create `[SITEROOT]/layouts/partials/favicon.html` to cover theme's favicon.
 
 You can generate your favicons in [realfavicongenerator.net](https://realfavicongenerator.net/).
 
-### ❌ In-post license, comments und toc
+### ❌ License, toc und comments
 
-You can set variables below in post's front matter to disable them:
+Globally in `config.toml`:
 
 ```toml
-noLicense = true # Do not show license in this post
-noComments = true # Do not show comments in this post
-noToc = true # Do not show toc in this post
+showLicense = true # Enable or disable license for all post
+showToc = true # Enable or disable ToC for all post
 ```
 
-Or you can disable these globally, set these below to false or comment it in your `config.toml`:
+Or in posts' front matter:
 
 ```toml
-showLicense = false
-showToc = false
+showLicense = true # Enable or disable license for this specific post
+showToc = true # Enable or disable ToC for this specific post
+```
+
+To disable comment area for specific post, add this in front matter:
+
+```toml
+noComments = true # Do not show comments in this post
 ```
 
 ### 🎵 APlayer
