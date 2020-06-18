@@ -1,8 +1,7 @@
 <script async type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.0.1/dist/ionicons/ionicons.esm.js"></script>
 <script async nomodule src="https://cdn.jsdelivr.net/npm/ionicons@5.0.1/dist/ionicons/ionicons.js"></script>
 {{ if eq .Section "search" }}
-<script defer src="https://cdn.jsdelivr.net/npm/fuse.js@6.1.0/dist/fuse.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/art-template@4.13.2/lib/template-web.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/combine/npm/art-template@4.13.2/lib/template-web.min.js,npm/fuse.js@6.2.0"></script>
 {{ else if eq .Section "archives" }}
 {{ else }}
 <script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.20.0/components/prism-core.min.js"></script>
