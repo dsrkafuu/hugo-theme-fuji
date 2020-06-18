@@ -11,7 +11,7 @@ disableKinds = ["taxonomyTerm"]
 languageCode = "en"  # For RSS, view https://www.rssboard.org/rss-language-codes
 defaultContentLanguage = "en"  # For HTML page, now support: en, zh-hans, zh-hant, ja, nl
 
-summaryLength = 100 # Custom cummary length, add <!--more--> in post file to custom split point
+summaryLength = 100 # Custom summary length, add <!--more--> in post file to custom split point
 paginate = 10
 
 # googleAnalytics = "UA-000000000-0" # Set your Google Analytics UA here

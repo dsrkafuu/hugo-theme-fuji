@@ -4,11 +4,11 @@
 
 .sidebar-item {
     &:not(:last-child) {
-        margin-bottom: 1rem; // space betreen sidebar items
+        margin-bottom: 1rem; // space between sidebar items
     }
 
     h3 {
-        margin-bottom: 0.25rem; // space betreen head3 & lists
+        margin-bottom: 0.25rem; // space between head3 & lists
     }
 
     ul {
