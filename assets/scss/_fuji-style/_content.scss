@@ -56,6 +56,11 @@
     margin: 0.5rem 0.1rem 0 0.1rem; // little space
     flex-wrap: wrap;
 
+    span {
+        display: flex;
+        align-items: center;
+    }
+
     span:not(:last-child) {
         padding-right: 1.5rem;
     }
@@ -154,4 +159,41 @@ article {
 
 #disqus_thread {
     padding: 1.25rem 0;
+}
+
+// search page part
+
+#search-result .post:first-child {
+    padding: 1.5rem 0;
+}
+
+.search-result-info {
+    padding: 1rem 0.1rem;
+}
+
+.search-input {
+    display: flex;
+    height: 2.5rem;
+    align-items: center;
+    padding-left: 0.5rem;
+    width: 100%;
+
+    input {
+        width: 100%;
+        min-width: 0;
+        flex: 1 1 auto;
+        height: 2rem;
+    }
+
+    button {
+        flex: 0 1 auto;
+        padding: 0 0.5rem;
+        word-break: keep-all;
+        height: 2.5rem;
+
+        ion-icon {
+            height: 100%;
+            font-size: 1.6rem;
+        }
+    }
 }

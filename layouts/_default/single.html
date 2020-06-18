@@ -7,7 +7,7 @@
     <div class="post-item post-meta">
         {{ partial "post-meta.html" . }}
     </div>
-    {{ with .Params.playerURL }}
+    {{ with .Params.player }}
     <div id="post-aplayer"></div>
     {{ end }}
     <!-- post main content -->
@@ -16,7 +16,7 @@
     </div>
 </article>
 <!-- post license -->
-{{ if and (.Site.Params.showLicense) (ne .Params.noLicense true) }}
+{{ if and (or .Site.Params.showLicense .Params.showLicense) (ne .Params.showLicense false) }}
 <div class="license markdown-body">
     <blockquote>
         <p>{{ i18n "postCopyrightFront" }}<a rel="license" href="{{ .Site.Params.licenseLink }}"
@@ -24,11 +24,11 @@
     </blockquote>
 </div>
 {{ end }}
-{{ if .Site.Params.disqusJSApi }}
+{{ if and (.Site.Params.disqusJSApi) (ne .Params.showComments false) }}
 {{ partial "comment-disqusjs.html" . }}
-{{ else if .Site.Params.disqusShortname }}
+{{ else if and (.Site.Params.disqusShortname) (ne .Params.showComments false) }}
 {{ partial "comment-disqus.html" . }}
-{{ else if .Site.Params.utterancesRepo }}
+{{ else if and (.Site.Params.utterancesRepo) (ne .Params.showComments false) }}
 {{ partial "comment-utterances.html" . }}
 {{ else }}{{ end }}
 {{ end }}

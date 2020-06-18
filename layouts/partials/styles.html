@@ -1,0 +1,13 @@
+{{ if ne .Site.Params.disableDarkImage true }}
+<style>
+    @media (prefers-color-scheme: dark) {
+        body[data-theme='auto'] img {
+            filter: brightness(60%);
+        }
+    }
+
+    body[data-theme='dark'] img {
+        filter: brightness(60%);
+    }
+</style>
+{{ end }}

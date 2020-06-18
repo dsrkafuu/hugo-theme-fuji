@@ -1,7 +1,3 @@
-img {
-    filter: brightness(60%);
-}
-
 table {
     th,
     td {
@@ -32,4 +28,25 @@ table {
 
 .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon:hover path {
     fill: var(--color-focus) !important;
+}
+
+.aplayer .aplayer-list ol li {
+    border-top: 1px solid var(--color-bg) !important;
+}
+
+.aplayer.aplayer-withlist .aplayer-info {
+    border-bottom: 1px solid var(--color-bg) !important;
+}
+
+.aplayer .aplayer-list ol li.aplayer-list-light {
+    background-color: var(--color-codebg) !important;
+}
+
+.aplayer .aplayer-list ol li:hover {
+    background-color: var(--color-codebg) !important;
+}
+
+.aplayer .aplayer-list ol li .aplayer-list-author,
+.aplayer .aplayer-list ol li .aplayer-list-index {
+    color: var(--color-font) !important;
 }

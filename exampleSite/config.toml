@@ -11,10 +11,13 @@ disableKinds = ["taxonomyTerm"]
 languageCode = "en"  # For RSS, view https://www.rssboard.org/rss-language-codes
 defaultContentLanguage = "en"  # For HTML page, now support: en, zh-hans, zh-hant, ja, nl
 
-summaryLength = 100 # Custom cummary length, add <!--more--> in post file to custom split point
+summaryLength = 100 # Custom summary length, add <!--more--> in post file to custom split point
 paginate = 10
 
 # googleAnalytics = "UA-000000000-0" # Set your Google Analytics UA here
+
+[outputs]
+  home = ["html", "rss", "json"]
 
 [permalinks]
   post = "/:section/:filename/" # Custom post links, e.g. "/:year/:month/:title/"
@@ -29,9 +32,14 @@ paginate = 10
   # googleAnalyticsTid = "UA-000000000-0"
   # googleAnalyticsRoute = "https://*.*.workers.dev/"
 
+  # Google AdSense
+  # The AdSense code will be inserted between the head tags of your site.
+  # googleAdsense = "0000000000000000"
+
   # Word counter and read time indicator in post metadata
   showWordCounter = true
   showReadTime = false
+
   # License at the end of each post
   showLicense = true
   showToc = true
@@ -74,6 +82,9 @@ paginate = 10
   # Use Hugo Pipes in Hugo Extended Version to compile SCSS
   # useHugoPipes = true
 
+  # Let images display in full brightness under dark mode
+  # disableDarkImage = true
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
@@ -101,6 +112,14 @@ paginate = 10
     name = "About"
     url = "/about/"
     weight = 3
+  [[menu.nav]]
+    name = "Search"
+    url = "/search/"
+    weight = 4
+  [[menu.nav]]
+    name = "RSS"
+    url = "/index.xml"
+    weight = 5
 
   [[menu.link]]
     name = "GitHub"

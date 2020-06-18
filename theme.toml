@@ -4,7 +4,7 @@
 name = "Fuji"
 license = "Apache-2.0"
 licenselink = "https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE"
-description = "A minimal Hugo theme with customizable theme color."
+description = "A minimal Hugo theme with nice theme color."
 homepage = "https://github.com/amzrk2/hugo-theme-fuji/"
 tags = ["blog", "minimal", "responsive", "dark mode"]
 features = ["blog", "minimal", "responsive", "dark mode"]

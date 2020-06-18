@@ -1,0 +1,39 @@
+{{ define "main" }}
+<!-- search form -->
+<div class="page-info">
+    <form class="search-form" method="GET">
+        <div class="search-input">
+            <input name="s" type="search" autocapitalize="off" autocomplete="off" autocorrect="off"
+                   spellcheck="false" />
+            <button type="submit"><ion-icon name="search-circle-outline"></ion-icon></button>
+        </div>
+    </form>
+</div>
+<!-- search result and template -->
+<div class="search-result-info" style="display: none;"><span>{{ i18n "searchSuccess" }}</span></div>
+<div class="search-result-info" style="display: none;"><span>{{ i18n "searchNotFound" }}</span></div>
+<div class="search-result-info" style="display: none;"><span>{{ i18n "searchFailed" }}</span></div>
+<div id="search-result"></div>
+<script id="search-result-template" type="text/fuse-template">
+    {{ "<% for(var i = 0; i < $data.length; i++){ %>" | safeHTML }}
+    <div class="post">
+        <h3 class="post-item post-title-archive">
+            <a href="<%= $data[i].item.permalink %>">{{ "<%= $data[i].item.title %>" | safeHTML }}</a>
+        </h3>
+        <div class="post-item post-meta-archive">
+            <span><ion-icon name="today"></ion-icon>&nbsp;{{- "<%= $data[i].item.date %>" | safeHTML -}}</span>
+            <span>
+                <ion-icon name="pricetags"></ion-icon>&nbsp;
+                {{- "<% if ($data[i].item.tags && $data[i].item.tags.length > 0) { %>" | safeHTML -}}
+                    {{- "<% for(var j = 0; j < $data[i].item.tags.length; j++){ %>" | safeHTML -}}
+                        {{- "<%= $data[i].item.tags[j] %>&nbsp;" | safeHTML -}}
+                    {{- "<% } %>" | safeHTML -}}
+                {{- "<% } else { %>" | safeHTML -}}
+                    {{- i18n "postMetaNoTag" -}}
+                {{- "<% } %>" | safeHTML }}
+            </span>
+        </div>
+    </div>
+    {{ "<% } %>" | safeHTML }}
+</script>
+{{ end }}

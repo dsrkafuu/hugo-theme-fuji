@@ -42,3 +42,12 @@
 
 [tagsCurrentTag]
     other = "Posts with the tag {{ .Title }}: "
+
+[searchSuccess]
+    other = "[NUM] results ([TIME] ms)"
+
+[searchNotFound]
+    other = "Results not found"
+
+[searchFailed]
+    other = "Failed to load index file"

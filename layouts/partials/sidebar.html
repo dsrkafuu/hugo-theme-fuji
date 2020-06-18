@@ -1,10 +1,12 @@
 <aside class="col-12 col-md-3 float-left sidebar">
     <!-- in-post toc -->
-    {{ if and (in .Site.Params.mainSections .Type) (and (.Site.Params.showToc) (ne .Params.noToc true)) }}
+    {{ if in .Site.Params.mainSections .Type }}
+    {{ if and (or .Site.Params.showToc .Params.showToc) (ne .Params.showToc false) }}
     <div class="sidebar-item sidebar-toc">
         <h3>{{ i18n "sidebarToc" }}</h3>
         {{ .TableOfContents }}
     </div>
+    {{ end }}
     {{ end }}
     <!-- pages -->
     <div class="sidebar-item sidebar-pages">
@@ -15,9 +17,6 @@
                 <a href="{{ .URL }}">{{ .Name }}</a>
             </li>
             {{ end }}
-            <li>
-                <a href="{{ "/index.xml" | relURL }}" target="_blank">RSS</a>
-            </li>
         </ul>
     </div>
     <!-- tags -->
@@ -46,8 +45,8 @@
     <!-- bgm.tv image chart -->
     <div class="sidebar-item sidebar-bgm">
         <h3>{{ i18n "sidebarBangumiChart" }}</h3>
-        <img class="lazyload" src="{{ $.Site.Params.lazyPlaceholder | relURL }}" data-src="https://bgm.tv/chart/img/{{ . }}"
-             alt="Bangumi 图像榜单" />
+        <img class="lazyload" src="{{ $.Site.Params.lazyPlaceholder | relURL }}"
+             data-src="https://bgm.tv/chart/img/{{ . }}" alt="Bangumi 图像榜单" />
     </div>
     {{ end }}
 </aside>

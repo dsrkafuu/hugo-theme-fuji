@@ -1,0 +1,5 @@
+{{- $.Scratch.Add "search" slice -}}
+{{- range (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) -}}
+    {{- $.Scratch.Add "search" (dict "title" .Title "tags" .Params.tags "content" .Plain "permalink" .Permalink "date" (.Date.Format "2006-01-02")) -}}
+{{- end -}}
+{{- $.Scratch.Get "search" | jsonify -}}

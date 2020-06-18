@@ -1,10 +1,22 @@
-{{ if len .Params | eq 2 }}
-<img class="lazyload img-zoomable" src="{{ .Site.Params.lazyPlaceholder | relURL }}" data-src="{{ index .Params 1 }}"
-     alt="{{ index .Params 0 }}" />
-{{ else if len .Params | eq 3 }}{{ if eq (index .Params 0) "row" }}
-<img class="lazyload img-zoomable" src="{{ .Site.Params.lazyPlaceholderRow | relURL }}" data-src="{{ index .Params 2 }}"
-     alt="{{ index .Params 1 }}" />
-{{ else if eq (index .Params 0) "col" }}
-<img class="lazyload img-zoomable" src="{{ .Site.Params.lazyPlaceholderCol | relURL }}" data-src="{{ index .Params 2 }}"
-     alt="{{ index .Params 1 }}" />
-{{ else }}{{ end }}{{ else }}{{ end }}
+{{- if len .Params | eq 2 -}}
+<p>
+     <a href="{{ index .Params 1 | safeURL }}" target="_blank">
+          <img class="lazyload" src="{{ .Site.Params.lazyPlaceholder | relURL }}"
+               data-src="{{ index .Params 1 | safeURL }}" alt="{{ index .Params 0 }}" />
+     </a>
+</p>
+{{- else if len .Params | eq 3 }}{{ if eq (index .Params 0) "row" -}}
+<p>
+     <a href="{{ index .Params 2 | safeURL }}" target="_blank">
+          <img class="lazyload" src="{{ .Site.Params.lazyPlaceholderRow | relURL }}"
+               data-src="{{ index .Params 2 | safeURL }}" alt="{{ index .Params 1 }}" />
+     </a>
+</p>
+{{- else if eq (index .Params 0) "col" -}}
+<p>
+     <a href="{{ index .Params 2 | safeURL }}" target="_blank">
+          <img class="lazyload" src="{{ .Site.Params.lazyPlaceholderCol | relURL }}"
+               data-src="{{ index .Params 2 | safeURL }}" alt="{{ index .Params 1 }}" />
+     </a>
+</p>
+{{- else -}}{{- end -}}{{- else -}}{{ end -}}

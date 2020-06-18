@@ -6,7 +6,7 @@ Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markd
 
 [English](https://github.com/amzrk2/hugo-theme-fuji#readme) | [简体中文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
 
-After the release of v2, **there may be major changes in the image lazyload shortcode** to make it easier to use.If you want to change the color scheme, please check [🔧 Advanced configuration](#-advanced-configuration).
+After the release of v2, **there may be major changes in the image lazyload shortcode** to make it easier to use. If you want to change the color scheme, please check [🔧 Advanced configuration](#-advanced-configuration).
 
 Now supported i18n langs: en, zh-hans, zh-hant, ja, nl. Check the i18n folder to add more languages.
 
@@ -16,9 +16,9 @@ Now supported i18n langs: en, zh-hans, zh-hant, ja, nl. Check the i18n folder to
 - [❗ Notice](#-notice)
 - [🐣 Getting started](#-getting-started)
 - [🆕 Update the theme](#-update-the-theme)
-- [⚙️ Configration](#%EF%B8%8F-configration)
+- [⚙️ Configuration](#%EF%B8%8F-configuration)
   - [🎨 Favicon](#-favicon)
-  - [❌ In-post license, comments und toc](#-in-post-license-comments-und-toc)
+  - [❌ License, toc und comments](#-license-toc-und-comments)
   - [🎵 APlayer](#-aplayer)
   - [📷 Image zoom and lazyload settings](#-image-zoom-and-lazyload-settings)
   - [⚓ Markdown render hook](#-markdown-render-hook)
@@ -30,7 +30,7 @@ Now supported i18n langs: en, zh-hans, zh-hant, ja, nl. Check the i18n folder to
 
 ## 💻 Live demos
 
-[**Live Demo by Vercel (en)**](https://hugo-theme-fuji-demo.now.sh/) | [My Blog by Coding (zh-Hans)](https://blog.amzrk2.cc/)
+[**Live Demo (en)**](https://hugo-theme-fuji-demo.now.sh/) | [My Blog (zh-Hans)](https://blog.amzrk2.cc/)
 
 ![Screenshot of Fuji](https://raw.githubusercontent.com/amzrk2/hugo-theme-fuji/master/images/screenshot.png)
 
@@ -68,7 +68,7 @@ Inside the folder of your Hugo site run:
 $ git submodule update --remote --merge
 ```
 
-## ⚙️ Configration
+## ⚙️ Configuration
 
 ### 🎨 Favicon
 
@@ -76,21 +76,26 @@ Create `[SITEROOT]/layouts/partials/favicon.html` to cover theme's favicon.
 
 You can generate your favicons in [realfavicongenerator.net](https://realfavicongenerator.net/).
 
-### ❌ In-post license, comments und toc
+### ❌ License, toc und comments
 
-You can set variables below in post's front matter to disable them:
+Globally in `config.toml`:
 
 ```toml
-noLicense = true # Do not show license in this post
-noComments = true # Do not show comments in this post
-noToc = true # Do not show toc in this post
+showLicense = true # Enable or disable license for all post
+showToc = true # Enable or disable ToC for all post
 ```
 
-Or you can disable these globally, set these below to false or comment it in your `config.toml`:
+Or in posts' front matter:
 
 ```toml
-showLicense = false
-showToc = false
+showLicense = true # Enable or disable license for this specific post
+showToc = true # Enable or disable ToC for this specific post
+```
+
+To disable comment area for specific post, add this in front matter:
+
+```toml
+showComments = false # Do not show comments in this post
 ```
 
 ### 🎵 APlayer
@@ -98,10 +103,16 @@ showToc = false
 In-post APlayer supported, you can set these variables in post's front matter:
 
 ```toml
-playerName = "..." # Audio title or name
-playerArtist = "..." # Audio artist
-playerURL = "..." # Audio URL, support aac, mp3, wav and ogg
-playerCover = "..." # Audio cover
+[[player]]
+  playerName = "..." # Audio title or name
+  playerArtist = "..." # Audio artist
+  playerURL = "..." # Audio URL, support aac, mp3, wav and ogg
+  playerCover = "..." # Audio cover
+[[player]]
+  playerName = "..."
+  playerArtist = "..."
+  playerURL = "..."
+  playerCover = "..."
 ```
 
 ### 📷 Image zoom and lazyload settings
@@ -222,9 +233,11 @@ The theme is released under the ```Apache License 2.0```, for more information r
 - [Primer CSS - MIT](https://github.com/primer/css/blob/master/LICENSE)
 - [APlayer - MIT](https://github.com/MoePlayer/APlayer/blob/master/LICENSE)
 - [lazysizes - MIT](https://github.com/aFarkas/lazysizes/blob/gh-pages/LICENSE)
-- [medium-zoom - MIT](https://github.com/francoischalifour/medium-zoom/blob/master/LICENSE)
 - [DisqusJS - MIT](https://github.com/SukkaW/DisqusJS/blob/master/LICENSE)
 - [ionicons - MIT](https://github.com/ionic-team/ionicons/blob/master/LICENSE)
+- [Fuse.js - Apache-2.0](https://github.com/krisk/Fuse/blob/master/LICENSE)
+- [cloudflare-workers-async-google-analytics - MIT](https://github.com/SukkaW/cloudflare-workers-async-google-analytics/blob/master/LICENSE)
+- [art-template - MIT](https://github.com/aui/art-template/blob/master/LICENSE)
 
 > © 2020 DSRKafuU(amzrk2) [Twitter @amzrk2](https://twitter.com/amzrk2) [GitHub @amzrk2](https://github.com/amzrk2)
 

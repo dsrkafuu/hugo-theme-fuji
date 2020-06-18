@@ -42,3 +42,12 @@
 
 [tagsCurrentTag]
     other = "タグ {{ .Title }} を持つ記事："
+
+[searchSuccess]
+    other = "[NUM] 件 ([TIME] ミリ秒)"
+
+[searchNotFound]
+    other = "検索できませんでした"
+
+[searchFailed]
+    other = "インデックスを取得できません"

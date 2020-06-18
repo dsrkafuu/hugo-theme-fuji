@@ -1,4 +1,5 @@
 var pipeline = require('readable-stream').pipeline;
+var del = require('del');
 var gulp = require('gulp');
 var sourcemaps = require('gulp-sourcemaps');
 var babel = require('gulp-babel');
@@ -57,10 +58,16 @@ function css() {
     );
 }
 
-exports.build = gulp.parallel(js, css);
+function clean() {
+    return del(['static/assets/css/fuji.min.css.map', 'static/assets/js/fuji.min.js.map']);
+}
+
+exports.build = gulp.parallel(js, css, clean);
 exports.devJs = function () {
+    devJs();
     return gulp.watch('assets/js/fuji.js', { delay: 500 }, devJs);
 };
 exports.devCss = function () {
+    devJs();
     return gulp.watch('assets/**/*.scss', { delay: 500 }, devCss);
 };
