@@ -1,0 +1,53 @@
+[sidebarToc]
+    other = "TOC"
+
+[sidebarPages]
+    other = "Paginas"
+
+[sidebarTags]
+    other = "Tags"
+
+[sidebarLinks]
+    other = "Links"
+
+[sidebarBangumiChart]
+    other = "Bangumi"
+
+[footerPoweredFront]
+    other = "Powered by "
+
+[footerPoweredEnd]
+    other = " "
+
+[postMetaNoTag]
+    other = "No tag"
+
+[postMetaWordCount]
+    other = " Palavras"
+
+[postMetaReadingTime]
+    other = " Minutos"
+
+[postCopyrightFront]
+    other = "Salvo indicação em contrário, o conteúdo deste site é licenciado sob "
+
+[postCopyrightEnd]
+    other = "."
+
+[postComment]
+    other = "Carregar comentarios"
+
+[archivesTotalPages]
+    other = "Nº total de posts: "
+
+[tagsCurrentTag]
+    other = "Posts a tag {{ .Title }}: "
+
+[searchSuccess]
+    other = "[NUM] resultados ([TIME] ms)"
+
+[searchNotFound]
+    other = "Não foram encontrados resultados"
+
+[searchFailed]
+    other = "Falha ao carregar o índice"
