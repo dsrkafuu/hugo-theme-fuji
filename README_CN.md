@@ -8,7 +8,7 @@
 
 **v2 发布之后关于 lazyload 这一块可能会有较大的改动**，现在这样确实有些麻烦了。如果想修改主题配色的话，可以参考 [🔧 其他高级修改](#-其他高级修改)。
 
-当前 i18n 支持语言：en, zh-hans, zh-hant, ja, nl。i18n 文件夹内为所有语言文件。
+当前 i18n 支持语言：en, zh-hans, zh-hant, ja, nl, pt-pt。i18n 文件夹内为所有语言文件。
 
 ## 目录
 
@@ -193,8 +193,6 @@ $dark-color-codebg: #414449; // GitHub
 ```
 
 ## 👓 批判一番和贡献代码
-
-为了保证 `master` 分支干净，所有开发都是在 `dev` 分支进行的，记得对着 `dev` 分支批判。
 
 [Issue](https://github.com/amzrk2/hugo-theme-fuji/issues)。主题本身只在 Firefox 上完整测试过，因此要是遇到了什么问题也可以随便批判。
 
