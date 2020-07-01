@@ -6,7 +6,7 @@ tags = [
     "test",
     "wtf"
 ]
-noToc = true
+showToc = false
 +++
 
 本文内容无实际意义，由狗屁不通文章生成器自动生成，不代表作者本人观点。
