@@ -43,7 +43,7 @@ Remember to add [summary divider](https://gohugo.io/content-management/summaries
 Inside the folder of your Hugo site run:
 
 ```bash
-$ git submodule add https://github.com/amzrk2/hugo-theme-fuji.git themes/fuji
+git submodule add https://github.com/amzrk2/hugo-theme-fuji.git themes/fuji
 ```
 
 For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.
@@ -53,7 +53,7 @@ Then copy the `config.toml` in the `exampleSite`to the root of your Hugo site. C
 Run Hugo's built-in local server:
 
 ```bash
-$ hugo server
+hugo server
 ```
 
 If you want to generate your site, just run `hugo` or `hugo --minify`.
@@ -65,7 +65,7 @@ You can watch (release only) this repo to receive update notifications.
 Inside the folder of your Hugo site run:
 
 ```bash
-$ git submodule update --remote --merge
+git submodule update --remote --merge
 ```
 
 ## ⚙️ Configuration
@@ -126,9 +126,8 @@ Zoomable, not lazyloaded:
 Zoomable, lazyloaded:
 
 ```html
-{{< img-lazy "Alt text" "test/example.png" >}}
-{{< img-lazy "row" "Alt text" "test/example.png" >}}
-{{< img-lazy "col" "Alt text" "test/example.png" >}}
+{{< img-lazy "Alt text" "test/example.png" >}} {{< img-lazy "row" "Alt text" "test/example.png" >}} {{< img-lazy "col"
+"Alt text" "test/example.png" >}}
 ```
 
 Not zoomable, not lazyloaded, optional ext link:
@@ -140,9 +139,9 @@ Not zoomable, not lazyloaded, optional ext link:
 Not zoomable, lazyloaded, optional ext link:
 
 ```html
-{{< img-nz-lazy "Alt text" "test/example.png" ["https://example.com"] >}}
-{{< img-nz-lazy "row" "Alt text" "test/example.png" ["https://example.com"] >}}
-{{< img-nz-lazy "col" "Alt text" "test/example.png" ["https://example.com"] >}}
+{{< img-nz-lazy "Alt text" "test/example.png" ["https://example.com"] >}} {{< img-nz-lazy "row" "Alt text"
+"test/example.png" ["https://example.com"] >}} {{< img-nz-lazy "col" "Alt text" "test/example.png"
+["https://example.com"] >}}
 ```
 
 `img-lazy` will show a 16x9 placeholder before image is loaded, so `img-lazy-row` will show a 32x9 placeholder and `img-lazy-col` will show a 8x9 placeholder. You can choose different aspect ratios you want for different images. The placeholder image can be set in site's `config.toml`.
@@ -178,7 +177,8 @@ useHugoPipes = true
 This will make the theme use Hugo Pipes provided by Hugo Extended Vesion to compile the SCSS, then you can cover theme's internal SCSS with your own. Then create `[SITEROOT]/assets/scss/_custom.scss` cover variables in SCSS:
 
 ```scss
-$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC',
+  'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
 $mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $body-font;
 $title-font: 'Product Sans', $body-font;
 $body-font-size: 16px;
@@ -226,7 +226,7 @@ npm run build
 
 ## 📝 License
 
-The theme is released under the ```Apache License 2.0```, for more information read the [License](https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE).
+The theme is released under the `Apache License 2.0`, for more information read the [License](https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE).
 
 - [Primer CSS - MIT](https://github.com/primer/css/blob/master/LICENSE)
 - [APlayer - MIT](https://github.com/MoePlayer/APlayer/blob/master/LICENSE)

@@ -43,7 +43,7 @@
 添加主题：
 
 ```bash
-$ git submodule add https://github.com/amzrk2/hugo-theme-fuji.git themes/fuji
+git submodule add https://github.com/amzrk2/hugo-theme-fuji.git themes/fuji
 ```
 
 其他的可以看[官方指南](https://gohugo.io/overview/installing/)。
@@ -55,7 +55,7 @@ $ git submodule add https://github.com/amzrk2/hugo-theme-fuji.git themes/fuji
 可以 watch (release only) 这个 repo 来接收更新信息，master 分支不会频繁改动。
 
 ```bash
-$ git submodule update --remote --merge
+git submodule update --remote --merge
 ```
 
 ## ⚙️ 自定义设置
@@ -116,9 +116,8 @@ showComments = false # 对这篇文章关闭评论
 可放大，lazyload：
 
 ```html
-{{< img-lazy "Alt text" "test/example.png" >}}
-{{< img-lazy "row" "Alt text" "test/example.png" >}}
-{{< img-lazy "col" "Alt text" "test/example.png" >}}
+{{< img-lazy "Alt text" "test/example.png" >}} {{< img-lazy "row" "Alt text" "test/example.png" >}} {{< img-lazy "col"
+"Alt text" "test/example.png" >}}
 ```
 
 不可放大，非 lazyload，可选外链：
@@ -130,9 +129,9 @@ showComments = false # 对这篇文章关闭评论
 不可放大，lazyload，可选外链：
 
 ```html
-{{< img-nz-lazy "Alt text" "test/example.png" ["https://example.com"] >}}
-{{< img-nz-lazy "row" "Alt text" "test/example.png" ["https://example.com"] >}}
-{{< img-nz-lazy "col" "Alt text" "test/example.png" ["https://example.com"] >}}
+{{< img-nz-lazy "Alt text" "test/example.png" ["https://example.com"] >}} {{< img-nz-lazy "row" "Alt text"
+"test/example.png" ["https://example.com"] >}} {{< img-nz-lazy "col" "Alt text" "test/example.png"
+["https://example.com"] >}}
 ```
 
 `img-lazy` 提供 16:9 的占位 svg，`img-lazy-row` 提供 32:9 的占位 svg，`img-lazy-col` 提供 8:9 的占位 svg。你也可以在 `config.toml` 里面自定义想要的占位图片和比例。
@@ -168,7 +167,8 @@ useHugoPipes = true
 这将让 Hugo 使用 Hugo Pipes 来编译 SCSS，注意需要 Extended Version，然后就可以自己覆盖主题内的 SCSS 变量了。创建 `[SITEROOT]/assets/scss/_custom.scss`，可选项如下：
 
 ```scss
-$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC',
+  'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
 $mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $body-font;
 $title-font: 'Product Sans', $body-font;
 $body-font-size: 16px;
@@ -216,7 +216,7 @@ npm run build
 
 ## 📝 License
 
-The theme is released under the ```Apache License 2.0```, for more information read the [License](https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE).
+The theme is released under the `Apache License 2.0`, for more information read the [License](https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE).
 
 - [Primer CSS - MIT](https://github.com/primer/css/blob/master/LICENSE)
 - [APlayer - MIT](https://github.com/MoePlayer/APlayer/blob/master/LICENSE)
