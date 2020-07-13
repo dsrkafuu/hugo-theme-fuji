@@ -11,5 +11,5 @@ features = ["blog", "minimal", "responsive", "dark mode"]
 min_version = "0.62.1"
 
 [author]
-  name = "DSRKafuU(amzrk2)"
-  homepage = "https://blog.amzrk2.cc/"
+  name = "DSRKafuU"
+  homepage = "https://amzrk2.cc/"
