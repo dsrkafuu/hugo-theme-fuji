@@ -215,7 +215,7 @@ npm install
 Dev:
 
 ```bash
-npm run dev
+npm run serve
 ```
 
 Build:

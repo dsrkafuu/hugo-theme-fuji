@@ -19,6 +19,15 @@ main {
     flex: 1 1 auto;
 }
 
+.container-lg {
+    display: flex;
+    flex-direction: row;
+
+    @media screen and (max-width: $width-md) {
+        flex-direction: column;
+    }
+}
+
 // remove text decoration
 a:hover {
     text-decoration: none !important;

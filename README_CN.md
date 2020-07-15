@@ -205,7 +205,7 @@ npm install
 开发用：
 
 ```bash
-npm run dev
+npm run serve
 ```
 
 最终发布用：
