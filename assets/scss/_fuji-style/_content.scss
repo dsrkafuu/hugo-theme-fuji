@@ -147,6 +147,14 @@ article {
         max-width: 98%;
         margin: 0 0.25rem 0.5rem 0.25rem;
     }
+
+    .table-dense {
+        font-size: 0.875rem;
+
+        td, th {
+            padding: 4px 8px !important; 
+        }
+    }
 }
 
 .post-comment {
