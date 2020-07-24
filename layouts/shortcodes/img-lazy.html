@@ -2,21 +2,21 @@
 <img
   class="lazyload img-zoomable"
   src="{{ .Site.Params.lazyPlaceholder | relURL }}"
-  data-src="{{ index .Params 1 }}"
+  data-src="{{ index .Params 1 | relURL | safeURL }}"
   alt="{{ index .Params 0 }}"
 />
 {{ else if len .Params | eq 3 }}{{ if eq (index .Params 0) "row" }}
 <img
   class="lazyload img-zoomable"
   src="{{ .Site.Params.lazyPlaceholderRow | relURL }}"
-  data-src="{{ index .Params 2 }}"
+  data-src="{{ index .Params 2 | relURL | safeURL }}"
   alt="{{ index .Params 1 }}"
 />
 {{ else if eq (index .Params 0) "col" }}
 <img
   class="lazyload img-zoomable"
   src="{{ .Site.Params.lazyPlaceholderCol | relURL }}"
-  data-src="{{ index .Params 2 }}"
+  data-src="{{ index .Params 2 | relURL | safeURL }}"
   alt="{{ index .Params 1 }}"
 />
 {{ else }}{{ end }}{{ else }}{{ end }}

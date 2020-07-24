@@ -1,7 +1,7 @@
 {{ if (index .Params 2) }}
 <a href="{{ index .Params 2 }}" target="_blank">
-  <img src="{{ index .Params 1 }}" alt="{{ index .Params 0 }}" />
+  <img src="{{ index .Params 1 | relURL | safeURL }}" alt="{{ index .Params 0 }}" />
 </a>
 {{ else }}
-<img src="{{ index .Params 1 }}" alt="{{ index .Params 0 }}" />
+<img src="{{ index .Params 1 | relURL | safeURL }}" alt="{{ index .Params 0 }}" />
 {{ end }}
