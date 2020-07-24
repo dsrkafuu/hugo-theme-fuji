@@ -21,7 +21,7 @@
     "@primer/css": "15.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.4",
+    "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
     "autoprefixer": "^9.8.5",
     "cross-env": "^7.0.2",
