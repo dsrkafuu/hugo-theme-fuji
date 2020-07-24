@@ -16,8 +16,15 @@ paginate = 10
 
 # googleAnalytics = "UA-000000000-0" # Set your Google Analytics UA here
 
+[outputFormats]
+  [outputFormats.SearchIndex]
+    isPlainText = true
+    notAlternative = true
+    mediaType = "application/json"
+    path = "/search/"
+
 [outputs]
-  home = ["html", "rss", "json"]
+  home = ["HTML", "RSS", "SearchIndex"]
 
 [permalinks]
   post = "/:section/:filename/" # Custom post links, e.g. "/:year/:month/:title/"
