@@ -21,11 +21,13 @@ document.querySelector('.btn .btn-scroll-top').addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  mediumZoom('.img-zoomable', {
-    margin: 32,
-    background: '#00000054',
-    scrollOffset: 128,
-  });
+  if (typeof mediumZoom === 'function') {
+    mediumZoom('.img-zoomable', {
+      margin: 32,
+      background: '#00000054',
+      scrollOffset: 128,
+    });
+  }
 });
 
 // update utterances theme
