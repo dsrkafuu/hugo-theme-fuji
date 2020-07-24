@@ -132,7 +132,7 @@ if (urlParams.has('s')) {
   document.querySelector('.search-input input').setAttribute('value', key);
   // get search index from json
   let xhr = new XMLHttpRequest();
-  xhr.open('GET', '/index.json', true);
+  xhr.open('GET', 'index.json', true);
   xhr.responseType = 'json';
   xhr.onerror = () => {
     infoElements[2].removeAttribute('style');
