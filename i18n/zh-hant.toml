@@ -23,10 +23,10 @@
     other = "無標籤"
 
 [postMetaWordCount]
-    other = " 字"
+    other = "{{.Count}} 字"
 
 [postMetaReadingTime]
-    other = " 分鐘"
+    other = "{{.Count}} 分鐘"
 
 [postCopyrightFront]
     other = "除特殊註明部分，本站內容採用 "

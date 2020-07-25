@@ -23,10 +23,10 @@
     other = "タグはありません"
 
 [postMetaWordCount]
-    other = " 字"
+    other = "{{.Count}} 字"
 
 [postMetaReadingTime]
-    other = " 分"
+    other = "{{.Count}} 分"
 
 [postCopyrightFront]
     other = "特定のセクションを除いて、このサイトは "

@@ -23,10 +23,10 @@
     other = "Sem tags"
 
 [postMetaWordCount]
-    other = " Palavras"
+    other = "{{.Count}} Palavras"
 
 [postMetaReadingTime]
-    other = " Minutos"
+    other = "{{.Count}} Minutos"
 
 [postCopyrightFront]
     other = "Salvo indicação em contrário, o conteúdo deste site é licenciado sob "
