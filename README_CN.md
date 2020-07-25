@@ -20,6 +20,7 @@
   - [🎨 站点图标](#-站点图标)
   - [❌ License、目录和评论区](#-license目录和评论区)
   - [🎵 文章音乐](#-文章音乐)
+  - [📐 LaTeX 渲染](#-latex-渲染)
   - [📷 图片放大的设置和 lazyload](#-图片放大的设置和-lazyload)
   - [⚓ Markdown 钩子](#-markdown-钩子)
   - [📨 评论区](#-评论区)
@@ -104,6 +105,42 @@ showComments = false # 对这篇文章关闭评论
   playerURL = "..."
   playerCover = "..."
 ```
+
+### 📐 LaTeX 渲染
+
+You can write LaTeX directly in markdown with escape characters:
+
+```txt
+$$
+\begin{matrix}
+  a & b \\\\ c & d
+\end{matrix}
+$$
+```
+
+Or use the short code, display style:
+
+```txt
+{{< math >}}
+\begin{matrix}
+  a & b \\
+  c & d
+\end{matrix}
+{{</ math >}}
+```
+
+Inline style:
+
+```txt
+{{< math "inline" >}}
+\begin{matrix}
+  a & b \\
+  c & d
+\end{matrix}
+{{</ math >}}
+```
+
+Don't forget to add `math = true` in your front matter or `config.toml`.
 
 ### 📷 图片放大的设置和 lazyload
 

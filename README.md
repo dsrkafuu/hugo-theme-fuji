@@ -20,7 +20,7 @@ Now supported i18n langs: en, zh-hans, zh-hant, ja, nl, pt-pt. Check the i18n fo
   - [🎨 Favicon](#-favicon)
   - [❌ License, toc und comments](#-license-toc-und-comments)
   - [🎵 APlayer](#-aplayer)
-  - [📐 Render LaTeX with KaTex](#-image-zoom-and-lazyload-settings)
+  - [📐 Render LaTeX with KaTex](#-render-latex-with-katex)
   - [📷 Image zoom and lazyload settings](#-image-zoom-and-lazyload-settings)
   - [⚓ Markdown render hook](#-markdown-render-hook)
   - [📨 Comments area](#-comments-area)
@@ -149,6 +149,8 @@ Inline style:
 \end{matrix}
 {{</ math >}}
 ```
+
+Don't forget to add `math = true` in your front matter or `config.toml`.
 
 ### 📷 Image zoom and lazyload settings
 

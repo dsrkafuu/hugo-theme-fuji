@@ -1,27 +1,13 @@
 <script data-cfasync="false">
-    // detect theme data in localStorage
-    var fujiThemeData = localStorage.getItem('fuji_data-theme');
-    // if first look, set theme mode to auto
-    if (!fujiThemeData) {
-        localStorage.setItem('fuji_data-theme', 'auto');
-    } else {
-        // if not auto mode, change the data-theme attribute of body
-        if (fujiThemeData !== 'auto') {
-            document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
-        }
+  // detect theme data in localStorage
+  var fujiThemeData = localStorage.getItem('fuji_data-theme');
+  // if first look, set theme mode to auto
+  if (!fujiThemeData) {
+    localStorage.setItem('fuji_data-theme', 'auto');
+  } else {
+    // if not auto mode, change the data-theme attribute of body
+    if (fujiThemeData !== 'auto') {
+      document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
     }
-</script>
-<script data-cfasync="false">
-    // ie detection
-    function browserDetection(ua) {
-        if (ua.indexOf('MSIE ') > 0 || ua.indexOf('Trident/') > 0) {
-            return true;
-        }
-        return false;
-    }
-
-    var ua = window.navigator.userAgent;
-    if (browserDetection(ua)) {
-        window.location.href('{{ "/ie/" | absURL }}');
-    }
+  }
 </script>
