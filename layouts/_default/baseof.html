@@ -21,9 +21,6 @@
     </main>
 
     {{ partial "footer.html" . }}
-    {{ if or .Params.math .Site.Params.math }}
-    {{ partial "math.html" . }}
-    {{ end }}
     {{ partial "scripts-end.html" . }}
 </body>
 
