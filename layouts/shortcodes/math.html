@@ -1,0 +1,5 @@
+{{ if len .Params | eq 1 }}
+\( {{- trim .Inner "\n" -}} \)
+{{ else }}
+$$ {{- trim .Inner "\n" -}} $$
+{{ end }}

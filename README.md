@@ -20,6 +20,7 @@ Now supported i18n langs: en, zh-hans, zh-hant, ja, nl, pt-pt. Check the i18n fo
   - [🎨 Favicon](#-favicon)
   - [❌ License, toc und comments](#-license-toc-und-comments)
   - [🎵 APlayer](#-aplayer)
+  - [📐 Render LaTeX with KaTex](#-image-zoom-and-lazyload-settings)
   - [📷 Image zoom and lazyload settings](#-image-zoom-and-lazyload-settings)
   - [⚓ Markdown render hook](#-markdown-render-hook)
   - [📨 Comments area](#-comments-area)
@@ -113,6 +114,40 @@ In-post APlayer supported, you can set these variables in post's front matter:
   playerArtist = "..."
   playerURL = "..."
   playerCover = "..."
+```
+
+### 📐 Render LaTeX with KaTex
+
+You can write LaTeX directly in markdown with escape characters:
+
+```txt
+$$
+\begin{matrix}
+  a & b \\\\ c & d
+\end{matrix}
+$$
+```
+
+Or use the short code, display style:
+
+```txt
+{{< math >}}
+\begin{matrix}
+  a & b \\
+  c & d
+\end{matrix}
+{{</ math >}}
+```
+
+Inline style:
+
+```txt
+{{< math "inline" >}}
+\begin{matrix}
+  a & b \\
+  c & d
+\end{matrix}
+{{</ math >}}
 ```
 
 ### 📷 Image zoom and lazyload settings
