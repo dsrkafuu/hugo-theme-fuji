@@ -12,6 +12,9 @@
 @import '_primer/markdown/index.scss'; // markdown parsing system
 @import '_primer/utilities/layout.scss'; // float and clearfix
 
+// iconfont
+@import 'iconfont.css';
+
 // style
 @import '_fuji-style/_header';
 @import '_fuji-style/_content';

@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url('../iconfont/iconfont.woff2') format('woff2'), url('../iconfont/iconfont.woff') format('woff'),
+    url('../iconfont/iconfont.ttf') format('truetype');
+}
+
+.iconfont {
+  font-family: 'iconfont' !important;
+  font-size: inherit;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-chevron-back-circle-sharp:before {
+  content: '\e608';
+}
+
+.icon-caret-back-circle-sharp:before {
+  content: '\e609';
+}
+
+.icon-chevron-forward-circle-sharp:before {
+  content: '\e60a';
+}
+
+.icon-caret-forward-circle-sharp:before {
+  content: '\e60b';
+}
+
+.icon-today-sharp:before {
+  content: '\e607';
+}
+
+.icon-chevron-up-circle-sharp:before {
+  content: '\e606';
+}
+
+.icon-contrast-sharp:before {
+  content: '\e601';
+}
+
+.icon-file-tray-sharp:before {
+  content: '\e602';
+}
+
+.icon-pricetags-sharp:before {
+  content: '\e603';
+}
+
+.icon-chatbox-ellipses-sharp:before {
+  content: '\e604';
+}
+
+.icon-time-sharp:before {
+  content: '\e605';
+}

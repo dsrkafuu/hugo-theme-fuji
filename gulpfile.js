@@ -48,7 +48,7 @@ function css() {
   src = src
     .pipe(sass({ includePaths: ['./node_modules'] }).on('error', sass.logError))
     .pipe(postcss([autoprefixer()]))
-    .pipe(cleanCSS());
+    .pipe(cleanCSS({ rebase: false }));
   if (env === 'development') {
     src = src.pipe(sourcemaps.write('.'));
   }
