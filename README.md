@@ -49,15 +49,7 @@ git submodule add https://github.com/amzrk2/hugo-theme-fuji.git themes/fuji
 
 For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.
 
-Then copy the `config.toml` in the `exampleSite`to the root of your Hugo site. Change strings as you like.
-
-Run Hugo's built-in local server:
-
-```bash
-hugo server
-```
-
-If you want to generate your site, just run `hugo` or `hugo --minify`.
+Then copy the `config.toml` in the `exampleSite` to the root of your Hugo site, and use it as a reference for your config file. **It contains all of the settings for site menus, search pages and other features, you'll need this file to make your site work properly.**
 
 ## 🆕 Update the theme
 

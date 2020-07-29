@@ -8,7 +8,7 @@
 
 **v2 发布之后关于 lazyload 这一块可能会有较大的改动**，现在这样确实有些麻烦了。如果想修改主题配色的话，可以参考 [🔧 其他高级修改](#-其他高级修改)。
 
-当前 i18n 支持语言：en, zh-hans, zh-hant, ja, nl, pt-pt。i18n 文件夹内为所有语言文件。
+支持的 i18n 语言：`cs`, `en`, `ja`, `nl`, `pt-pt`, `zh-hans`, `zh-hant`。i18n 文件夹内为所有语言文件。
 
 ## 目录
 
@@ -49,7 +49,7 @@ git submodule add https://github.com/amzrk2/hugo-theme-fuji.git themes/fuji
 
 其他的可以看[官方指南](https://gohugo.io/overview/installing/)。
 
-然后把 `exampleSite` 复制出来，并修改 `config.toml` 即可。
+然后把 `exampleSite` 复制出来，并修改 `config.toml` 即可。注意这个文件内包含了所有使站点正常工作所需的配置项 (比如搜索页面的配置)，因此将其当作参考是一个比较好的选择。
 
 ## 🆕 更新主题
 
