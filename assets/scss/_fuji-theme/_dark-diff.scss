@@ -1,52 +1,52 @@
 table {
-    th,
-    td {
-        border-color: var(--color-font);
-    }
+  th,
+  td {
+    border-color: var(--color-font);
+  }
 
-    tr {
-        background-color: var(--color-bg);
-        border-color: var(--color-font);
+  tr {
+    background-color: var(--color-bg);
+    border-color: var(--color-font);
 
-        &:nth-child(2n) {
-            background-color: var(--color-divider);
-        }
+    &:nth-child(2n) {
+      background-color: var(--color-divider);
     }
+  }
 }
 
 #post-aplayer {
-    background-color: var(--color-divider);
+  background-color: var(--color-divider);
 }
 
 .aplayer .aplayer-info .aplayer-music .aplayer-author {
-    color: var(--color-font) !important;
+  color: var(--color-font) !important;
 }
 
 .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon path {
-    fill: var(--color-font) !important;
+  fill: var(--color-font) !important;
 }
 
 .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon:hover path {
-    fill: var(--color-focus) !important;
+  fill: var(--color-focus) !important;
 }
 
 .aplayer .aplayer-list ol li {
-    border-top: 1px solid var(--color-bg) !important;
+  border-top: 1px solid var(--color-bg) !important;
 }
 
 .aplayer.aplayer-withlist .aplayer-info {
-    border-bottom: 1px solid var(--color-bg) !important;
+  border-bottom: 1px solid var(--color-bg) !important;
 }
 
 .aplayer .aplayer-list ol li.aplayer-list-light {
-    background-color: var(--color-codebg) !important;
+  background-color: var(--color-codebg) !important;
 }
 
 .aplayer .aplayer-list ol li:hover {
-    background-color: var(--color-codebg) !important;
+  background-color: var(--color-codebg) !important;
 }
 
 .aplayer .aplayer-list ol li .aplayer-list-author,
 .aplayer .aplayer-list ol li .aplayer-list-index {
-    color: var(--color-font) !important;
+  color: var(--color-font) !important;
 }

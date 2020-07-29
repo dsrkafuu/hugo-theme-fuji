@@ -1,25 +1,25 @@
 header {
-    .header {
-        padding: 1.75rem 1.5rem 2rem 1.5rem;
+  .header {
+    padding: 1.75rem 1.5rem 2rem 1.5rem;
+  }
+
+  .title-main {
+    font-size: 2.5rem;
+    font-family: $title-font;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .title-sub {
+    margin: 0 0.1rem;
+    display: block;
+    white-space: nowrap;
+
+    &::-webkit-scrollbar {
+      display: none; // WebKit
     }
 
-    .title-main {
-        font-size: 2.5rem;
-        font-family: $title-font;
-        font-weight: 700;
-        white-space: nowrap;
-    }
-
-    .title-sub {
-        margin: 0 0.1rem;
-        display: block;
-        white-space: nowrap;
-
-        &::-webkit-scrollbar {
-            display: none; // WebKit
-        }
-
-        scrollbar-width: none; // Firefox
-        -ms-overflow-style: none; // Microsoft
-    }
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // Microsoft
+  }
 }

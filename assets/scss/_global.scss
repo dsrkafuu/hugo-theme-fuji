@@ -1,34 +1,34 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 // sticky footer
 html {
-    height: 100%;
-    scroll-behavior: smooth;
+  height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  scroll-behavior: smooth;
 }
 
 main {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .container-lg {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 
-    @media screen and (max-width: $width-md) {
-        flex-direction: column;
-    }
+  @media screen and (max-width: $width-md) {
+    flex-direction: column;
+  }
 }
 
 // remove text decoration
 a:hover {
-    text-decoration: none !important;
+  text-decoration: none !important;
 }
