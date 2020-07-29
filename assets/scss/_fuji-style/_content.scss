@@ -198,8 +198,15 @@ article {
         padding: 0 0.5rem;
         word-break: keep-all;
         height: 2.5rem;
+        
+        &:hover {
+            i {
+                color: var(--color-primary);
+            }
+        }
 
-        ion-icon {
+        i {
+            color: var(--color-mute);
             height: 100%;
             font-size: 1.6rem;
         }
