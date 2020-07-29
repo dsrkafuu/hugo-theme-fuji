@@ -23,10 +23,12 @@
     other = "No tag"
 
 [postMetaWordCount]
-    other = " words"
+    one = "{{.Count}} word"
+    other = "{{.Count}} words"
 
 [postMetaReadingTime]
-    other = " minutes"
+    one = "{{.Count}} minute"
+    other = "{{.Count}} minutes"
 
 [postCopyrightFront]
     other = "Unless otherwise noted, the content of this site is licensed under "

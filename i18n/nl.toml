@@ -23,10 +23,10 @@
     other = "Geen Tags"
 
 [postMetaWordCount]
-    other = " woorden"
+    other = "{{.Count}} woorden"
 
 [postMetaReadingTime]
-    other = " minuten"
+    other = "{{.Count}} minuten"
 
 [postCopyrightFront]
     other = "Tenzij anders vermeld is de inhoud van deze site eigendom van "

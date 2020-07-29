@@ -1,0 +1,59 @@
+[sidebarToc]
+    other = "Obsah"
+
+[sidebarPages]
+    other = "Navigace"
+
+[sidebarTags]
+    other = "Štítky"
+
+[sidebarLinks]
+    other = "Odkazy"
+
+[sidebarBangumiChart]
+    other = "Bangumi"
+
+[footerPoweredFront]
+    other = "Vytvořeno pomocí "
+
+[footerPoweredEnd]
+    other = " "
+
+[postMetaNoTag]
+    other = "Bez štítků"
+
+[postMetaWordCount]
+    one = "{{.Count}} slovo"
+    few = "{{.Count}} slova"
+    many = "{{.Count}} slov"
+    other = "{{.Count}} slov"
+
+[postMetaReadingTime]
+    one = "{{.Count}} minuta"
+    few = "{{.Count}} minuty"
+    many = "{{.Count}} minut"
+    other = "{{.Count}} minut"
+
+[postCopyrightFront]
+    other = "Pokud není uvedeno jinak, tato stránka je licencována pod "
+
+[postCopyrightEnd]
+    other = "."
+
+[postComment]
+    other = "Načíst komentáře"
+
+[archivesTotalPages]
+    other = "Celkový počet článků: "
+
+[tagsCurrentTag]
+    other = "Počet článků se štítkem {{ .Title }}: "
+
+[searchSuccess]
+    other = "[NUM] výsledků ([TIME] ms)"
+
+[searchNotFound]
+    other = "Nic jsme nenašli"
+
+[searchFailed]
+    other = "Nepodařilo se načíst index"

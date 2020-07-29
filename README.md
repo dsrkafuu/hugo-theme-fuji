@@ -8,7 +8,7 @@ Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markd
 
 After the release of v2, **there may be major changes in the image lazyload shortcode** to make it easier to use. If you want to change the color scheme, please check [🔧 Advanced configuration](#-advanced-configuration).
 
-Now supported i18n langs: en, zh-hans, zh-hant, ja, nl, pt-pt. Check the i18n folder to add more languages.
+Supported languages: `cs`, `en`, `ja`, `nl`, `pt-pt`, `zh-hans`, `zh-hant`. Check the i18n folder to add more languages.
 
 ## 📑 Table of contents
 
