@@ -112,6 +112,7 @@ In-post APlayer supported, you can set these variables in post's front matter:
 
 You can write LaTeX directly in markdown with escape characters:
 
+<!-- prettier-ignore -->
 ```txt
 $$
 \begin{matrix}
@@ -122,6 +123,7 @@ $$
 
 Or use the short code, display style:
 
+<!-- prettier-ignore -->
 ```txt
 {{< math >}}
 \begin{matrix}
@@ -133,6 +135,7 @@ Or use the short code, display style:
 
 Inline style:
 
+<!-- prettier-ignore -->
 ```txt
 {{< math "inline" >}}
 \begin{matrix}
@@ -154,23 +157,27 @@ Zoomable, not lazyloaded:
 
 Zoomable, lazyloaded:
 
+<!-- prettier-ignore -->
 ```html
-{{< img-lazy "Alt text" "test/example.png" >}} {{< img-lazy "row" "Alt text" "test/example.png" >}} {{< img-lazy "col"
-"Alt text" "test/example.png" >}}
+{{< img-lazy "Alt text" "test/example.png" >}}
+{{< img-lazy "row" "Alt text" "test/example.png" >}}
+{{< img-lazy "col" "Alt text" "test/example.png" >}}
 ```
 
 Not zoomable, not lazyloaded, optional ext link:
 
+<!-- prettier-ignore -->
 ```html
-{{< img-nz "Alt text" "test/example.png" ["https://example.com"] >}}
+{{< img-nz "Alt text" "test/example.png" "https://example.com" >}}
 ```
 
 Not zoomable, lazyloaded, optional ext link:
 
+<!-- prettier-ignore -->
 ```html
-{{< img-nz-lazy "Alt text" "test/example.png" ["https://example.com"] >}} {{< img-nz-lazy "row" "Alt text"
-"test/example.png" ["https://example.com"] >}} {{< img-nz-lazy "col" "Alt text" "test/example.png"
-["https://example.com"] >}}
+{{< img-nz-lazy "Alt text" "test/example.png" "https://example.com" >}}
+{{< img-nz-lazy "row" "Alt text" "test/example.png" "https://example.com" >}}
+{{< img-nz-lazy "col" "Alt text" "test/example.png" "https://example.com" >}}
 ```
 
 `img-lazy` will show a 16x9 placeholder before image is loaded, so `img-lazy-row` will show a 32x9 placeholder and `img-lazy-col` will show a 8x9 placeholder. You can choose different aspect ratios you want for different images. The placeholder image can be set in site's `config.toml`.
@@ -181,6 +188,7 @@ You can create the files below in your site to adjust the markdown render hook, 
 
 You can use `[SITEROOT]/layouts/_default/_markup/render-link.html` to decide whether or not links in the markdown content will open in new tab:
 
+<!-- prettier-ignore -->
 ```html
 <a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank"{{ end }}>{{ .Text | safeHTML }}</a>
 ```
@@ -206,8 +214,9 @@ useHugoPipes = true
 This will make the theme use Hugo Pipes provided by Hugo Extended Vesion to compile the SCSS, then you can cover theme's internal SCSS with your own. Then create `[SITEROOT]/assets/scss/_custom.scss` cover variables in SCSS:
 
 ```scss
-$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC',
-  'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica',
+  'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC',
+  'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
 $mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $body-font;
 $title-font: 'Product Sans', $body-font;
 $body-font-size: 16px;

@@ -110,6 +110,7 @@ showComments = false # 对这篇文章关闭评论
 
 You can write LaTeX directly in markdown with escape characters:
 
+<!-- prettier-ignore -->
 ```txt
 $$
 \begin{matrix}
@@ -120,6 +121,7 @@ $$
 
 Or use the short code, display style:
 
+<!-- prettier-ignore -->
 ```txt
 {{< math >}}
 \begin{matrix}
@@ -131,6 +133,7 @@ Or use the short code, display style:
 
 Inline style:
 
+<!-- prettier-ignore -->
 ```txt
 {{< math "inline" >}}
 \begin{matrix}
@@ -152,23 +155,27 @@ Don't forget to add `math = true` in your front matter or `config.toml`.
 
 可放大，lazyload：
 
+<!-- prettier-ignore -->
 ```html
-{{< img-lazy "Alt text" "test/example.png" >}} {{< img-lazy "row" "Alt text" "test/example.png" >}} {{< img-lazy "col"
-"Alt text" "test/example.png" >}}
+{{< img-lazy "Alt text" "test/example.png" >}}
+{{< img-lazy "row" "Alt text" "test/example.png" >}}
+{{< img-lazy "col" "Alt text" "test/example.png" >}}
 ```
 
 不可放大，非 lazyload，可选外链：
 
+<!-- prettier-ignore -->
 ```html
-{{< img-nz "Alt text" "test/example.png" ["https://example.com"] >}}
+{{< img-nz "Alt text" "test/example.png" "https://example.com" >}}
 ```
 
 不可放大，lazyload，可选外链：
 
+<!-- prettier-ignore -->
 ```html
-{{< img-nz-lazy "Alt text" "test/example.png" ["https://example.com"] >}} {{< img-nz-lazy "row" "Alt text"
-"test/example.png" ["https://example.com"] >}} {{< img-nz-lazy "col" "Alt text" "test/example.png"
-["https://example.com"] >}}
+{{< img-nz-lazy "Alt text" "test/example.png" "https://example.com" >}}
+{{< img-nz-lazy "row" "Alt text" "test/example.png" "https://example.com" >}}
+{{< img-nz-lazy "col" "Alt text" "test/example.png" "https://example.com" >}}
 ```
 
 `img-lazy` 提供 16:9 的占位 svg，`img-lazy-row` 提供 32:9 的占位 svg，`img-lazy-col` 提供 8:9 的占位 svg。你也可以在 `config.toml` 里面自定义想要的占位图片和比例。
@@ -179,6 +186,7 @@ Don't forget to add `math = true` in your front matter or `config.toml`.
 
 比如你可以用 `[SITEROOT]/layouts/_default/_markup/render-link.html` 来修改文章里的链接是否在新页面打开：
 
+<!-- prettier-ignore -->
 ```html
 <a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank"{{ end }}>{{ .Text | safeHTML }}</a>
 ```
@@ -204,8 +212,9 @@ useHugoPipes = true
 这将让 Hugo 使用 Hugo Pipes 来编译 SCSS，注意需要 Extended Version，然后就可以自己覆盖主题内的 SCSS 变量了。创建 `[SITEROOT]/assets/scss/_custom.scss`，可选项如下：
 
 ```scss
-$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC',
-  'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica',
+  'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC',
+  'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
 $mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $body-font;
 $title-font: 'Product Sans', $body-font;
 $body-font-size: 16px;
