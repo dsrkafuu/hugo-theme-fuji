@@ -31,7 +31,7 @@
 
 ## 💻 在线 Demo
 
-[**在线 Demo (英文)**](https://hugo-theme-fuji-demo.now.sh/) | [我的博客 (中文)](https://blog.amzrk2.cc/)
+[**Live Demo (gohugo.io)**](https://themes.gohugo.io/theme/hugo-theme-fuji/)
 
 ![Fuji 截图](https://raw.githubusercontent.com/amzrk2/hugo-theme-fuji/master/images/screenshot.png)
 

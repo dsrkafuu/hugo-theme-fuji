@@ -31,7 +31,7 @@ Supported languages: `cs`, `en`, `ja`, `nl`, `pt-pt`, `zh-hans`, `zh-hant`. Chec
 
 ## 💻 Live demos
 
-[**Live Demo (en)**](https://hugo-theme-fuji-demo.now.sh/) | [My Blog (zh-Hans)](https://blog.amzrk2.cc/)
+[**Live Demo (gohugo.io)**](https://themes.gohugo.io/theme/hugo-theme-fuji/)
 
 ![Screenshot of Fuji](https://raw.githubusercontent.com/amzrk2/hugo-theme-fuji/master/images/screenshot.png)
 
