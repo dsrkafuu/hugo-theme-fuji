@@ -128,7 +128,7 @@ Or use the short code, display style:
   a & b \\
   c & d
 \end{matrix}
-{{</ math >}}
+{{< /math >}}
 ```
 
 Inline style:
@@ -140,7 +140,7 @@ Inline style:
   a & b \\
   c & d
 \end{matrix}
-{{</ math >}}
+{{< /math >}}
 ```
 
 Don't forget to add `math = true` in your front matter or `config.toml`.
