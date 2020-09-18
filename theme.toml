@@ -8,7 +8,7 @@ description = "A minimal Hugo theme with nice theme color."
 homepage = "https://github.com/amzrk2/hugo-theme-fuji/"
 tags = ["blog", "minimal", "responsive", "dark mode"]
 features = ["blog", "minimal", "responsive", "dark mode"]
-min_version = "0.73.0"
+min_version = "0.74.0"
 
 [author]
   name = "DSRKafuU"
