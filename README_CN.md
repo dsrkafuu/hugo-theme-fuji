@@ -1,4 +1,4 @@
-# Fuji
+# 🍥 Fuji 🍥
 
 简单的 Hugo 主题，支持夜间模式，Markdown 样式来自 GitHub Primer。
 
@@ -6,7 +6,9 @@
 
 [English](https://github.com/amzrk2/hugo-theme-fuji#readme) | [简体中文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
 
-**v2 发布之后关于 lazyload 这一块可能会有较大的改动**，现在这样确实有些麻烦了。如果想修改主题配色的话，可以参考 [🔧 其他高级修改](#-其他高级修改)。
+> 图片懒加载使用的 shortcode 近期将会大改，可以为懒加载的图片设置**不同的长宽比**，主题将会根据设置的属性生成对应的占位来防止页面跳动。这个功能完成之后主题将会进入维护阶段，将不会再添加新 feature，只进行对应 Hugo 版本更新的适配和维护。
+
+> 最近我正在为我的个人站点构建一个全新的 Hugo 主题，并且正在计划把新主题移植为通用的博客主题，你可以在 <https://amzrk2.cc> 预览新的主题。如果你喜欢这个主题的话，请给 [**新主题的 repo**](https://github.com/amzrk2/amzrk2-ng) 加颗星，我会尽力加快新主题的开发。
 
 支持的 i18n 语言：`cs`, `en`, `ja`, `nl`, `pt-pt`, `zh-hans`, `zh-hant`。i18n 文件夹内为所有语言文件。
 
@@ -24,7 +26,7 @@
   - [📷 图片放大的设置和 lazyload](#-图片放大的设置和-lazyload)
   - [⚓ Markdown 钩子](#-markdown-钩子)
   - [📨 评论区](#-评论区)
-  - [🔧 其他高级修改](#-其他高级修改)
+  - [🔧 自定义 CSS](#-自定义-css)
 - [👓 批判一番和贡献代码](#-批判一番和贡献代码)
 - [📝 License](#-license)
 - [🤝 Annotations](#-annotations)
@@ -147,6 +149,8 @@ Don't forget to add `math = true` in your front matter or `config.toml`.
 
 ### 📷 图片放大的设置和 lazyload
 
+> 图片懒加载使用的 shortcode 近期将会大改，可以为懒加载的图片设置**不同的长宽比**，主题将会根据设置的属性生成对应的占位来防止页面跳动。这个功能完成之后主题将会进入维护阶段，将不会再添加新 feature，只进行对应 Hugo 版本更新的适配和维护。
+
 可放大，非 lazyload：
 
 ```markdown
@@ -199,22 +203,15 @@ Don't forget to add `math = true` in your front matter or `config.toml`.
 
 使用 `[SITEROOT]/layouts/partials/comment-*.html` 来覆盖 `themes/fuji/layouts/partials/comment-*.html`。可在此文件内自定义指定的 url 和 identifier，或者为 DisqusJS 设置多个 api key 抑或是添加更多设置。注意如果使用 DisqusJS，将 `config.toml` 内的 `disqusJSApi` 解除注释来加载 CSS。
 
-### 🔧 其他高级修改
+### 🔧 自定义 CSS
 
-见[批判一番和贡献代码](#批判一番和贡献代码)。
+> 需要 Hugo Extended Version。
 
-如果只是想修改主题色或者字体的话，在 `config.toml` 以下设置：
-
-```toml
-useHugoPipes = true
-```
-
-这将让 Hugo 使用 Hugo Pipes 来编译 SCSS，注意需要 Extended Version，然后就可以自己覆盖主题内的 SCSS 变量了。创建 `[SITEROOT]/assets/scss/_custom.scss`，可选项如下：
+你可以自己覆盖主题内的 SCSS 变量。创建 `[SITEROOT]/assets/scss/_custom.scss`，可选项如下：
 
 ```scss
-$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica',
-  'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC',
-  'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC',
+  'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
 $mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $body-font;
 $title-font: 'Product Sans', $body-font;
 $body-font-size: 16px;
@@ -241,24 +238,6 @@ $dark-color-codebg: #414449; // GitHub
 ## 👓 批判一番和贡献代码
 
 [Issue](https://github.com/amzrk2/hugo-theme-fuji/issues)。主题本身只在 Firefox 上完整测试过，因此要是遇到了什么问题也可以随便批判。
-
-进入主题目录，运行：
-
-```bash
-npm install
-```
-
-开发用：
-
-```bash
-npm run serve
-```
-
-最终发布用：
-
-```bash
-npm run build
-```
 
 ## 📝 License
 

@@ -6,7 +6,9 @@ Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markd
 
 [English](https://github.com/amzrk2/hugo-theme-fuji#readme) | [简体中文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
 
-After the release of v2, **there may be major changes in the image lazyload shortcode** to make it easier to use. If you want to change the color scheme, please check [🔧 Advanced configuration](#-advanced-configuration).
+> Note that there will be major changes in the image lazyload shortcode, meaning that you can set **different aspect ratios** for images to generate lazyload placeholders. Once this feature is complete, this theme will enter the **maintenance stage**, and no new features will be added. Future support for the new Hugo version will still be available.
+
+> I am currently working on my new Hugo site with **a brand new theme**, and are planning to port the theme to a similar blog theme, you can preview it at <https://amzrk2.cc>. If you like this new theme, please give the [**theme repository**](https://github.com/amzrk2/amzrk2-ng) a star and I'll do my best to speed up the development process.
 
 Supported languages: `cs`, `en`, `ja`, `nl`, `pt-pt`, `zh-hans`, `zh-hant`. Check the i18n folder to add more languages.
 
@@ -24,7 +26,7 @@ Supported languages: `cs`, `en`, `ja`, `nl`, `pt-pt`, `zh-hans`, `zh-hant`. Chec
   - [📷 Image zoom and lazyload settings](#-image-zoom-and-lazyload-settings)
   - [⚓ Markdown render hook](#-markdown-render-hook)
   - [📨 Comments area](#-comments-area)
-  - [🔧 Advanced configuration](#-advanced-configuration)
+  - [🔧 Custom stylesheet configuration](#-custom-stylesheet-configuration)
 - [✏️ Issue und contributing](#%EF%B8%8F-issue-und-contributing)
 - [📝 License](#-license)
 - [🤝 Annotations](#-annotations)
@@ -149,6 +151,8 @@ Don't forget to add `math = true` in your front matter or `config.toml`.
 
 ### 📷 Image zoom and lazyload settings
 
+> Note that there will be major changes in the image lazyload shortcode, meaning that you can set **different aspect ratios** for images to generate lazyload placeholders. Once this feature is complete, this theme will enter the **maintenance stage**, and no new features will be added.
+
 Zoomable, not lazyloaded:
 
 ```markdown
@@ -201,22 +205,17 @@ by default, disqus uses `{{ .Permalink }}` as `url`, `{{ .File.ContentBaseName }
 
 Use the `[SITEROOT]/layouts/partials/comment-*.html` to cover `themes/fuji/layouts/partials/comment-*.html`. Then you can customize the url and identifier, or set multiple api key, add more settings for using DisqusJS. If you want to use DisqusJS, please remember to set `disqusJSApi` to anything in your `config.toml` to load CSS.
 
-### 🔧 Advanced configuration
+### 🔧 Custom stylesheet configuration
 
-See [Report und contributing](#report-und-contributing).
+> Hugo extended version needed.
 
-If you just simply want to change the color scheme, set this in your `config.toml`:
+You can cover theme's internal SCSS variables with your own. Create `[SITEROOT]/assets/scss/_custom.scss` to cover variables in SCSS.
 
-```toml
-useHugoPipes = true
-```
-
-This will make the theme use Hugo Pipes provided by Hugo Extended Vesion to compile the SCSS, then you can cover theme's internal SCSS with your own. Then create `[SITEROOT]/assets/scss/_custom.scss` cover variables in SCSS:
+Varibales available:
 
 ```scss
-$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica',
-  'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC',
-  'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC',
+  'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
 $mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $body-font;
 $title-font: 'Product Sans', $body-font;
 $body-font-size: 16px;
@@ -243,24 +242,6 @@ $dark-color-codebg: #414449; // GitHub
 ## ✏️ Issue und contributing
 
 Feel free to use the [issue tracker](https://github.com/amzrk2/hugo-theme-fuji/issues). The theme has only been fully tested on Firefox, so if there are some problems when accessing with Chrome or others please also report an issue.
-
-Inside the folder of theme root run:
-
-```bash
-npm install
-```
-
-Dev:
-
-```bash
-npm run serve
-```
-
-Build:
-
-```bash
-npm run build
-```
 
 ## 📝 License
 
