@@ -5,15 +5,15 @@
 @import '_global';
 
 // primer
-@import '_primer/support/index.scss'; // support
-@import '_primer/base/index.scss'; // base
-@import '_primer/layout/container.scss'; // containers
-@import '_primer/layout/grid.scss'; // grid system
-@import '_primer/markdown/index.scss'; // markdown parsing system
-@import '_primer/utilities/layout.scss'; // float and clearfix
+@import '_primer/support'; // support
+@import '_primer/base'; // base
+@import '_primer/layout/container'; // containers
+@import '_primer/layout/grid'; // grid system
+@import '_primer/markdown'; // markdown parsing system
+@import '_primer/utilities/layout'; // float and clearfix
 
 // iconfont
-@import 'iconfont.css';
+@import '_iconfont';
 
 // style
 @import '_fuji-style/_header';
