@@ -21,9 +21,9 @@
             <a href="<%= $data[i].item.permalink %>">{{ "<%= $data[i].item.title %>" | safeHTML }}</a>
         </h3>
         <div class="post-item post-meta-archive">
-            <span><ion-icon name="today"></ion-icon>&nbsp;{{- "<%= $data[i].item.date %>" | safeHTML -}}</span>
+            <span><i class="iconfont icon-today-sharp"></i>&nbsp;{{- "<%= $data[i].item.date %>" | safeHTML -}}</span>
             <span>
-                <ion-icon name="pricetags"></ion-icon>&nbsp;
+                <i class="iconfont icon-pricetags-sharp"></i>&nbsp;
                 {{- "<% if ($data[i].item.tags && $data[i].item.tags.length > 0) { %>" | safeHTML -}}
                     {{- "<% for(var j = 0; j < $data[i].item.tags.length; j++){ %>" | safeHTML -}}
                         {{- "<%= $data[i].item.tags[j] %>&nbsp;" | safeHTML -}}
