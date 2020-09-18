@@ -87,9 +87,6 @@ paginate = 10
   # 8:9
   lazyPlaceholderCol = "/assets/lazyload/dsrca_loading_480x540.svg"
 
-  # Use Hugo Pipes in Hugo Extended Version to compile SCSS
-  # useHugoPipes = true
-
   # Let images display in full brightness under dark mode
   # disableDarkImage = true
 
