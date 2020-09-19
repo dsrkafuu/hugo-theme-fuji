@@ -1,0 +1,52 @@
+.image-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background-color: var(--color-divider);
+  border-radius: 3px;
+  max-width: 98%;
+  margin: 0 0.25rem 0.5rem 0.25rem;
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+}
+
+// common aspect ratios
+// 32x9  -  28.125%
+// 21x9  -  42.85714286%
+// 18x9  -  50%
+// 16x9  -  56.25%
+// 16x10 -  62.5%
+// 3x2   -  66.66666667%
+// 4x3   -  75%
+// 1x1   -  100%
+$ratios: (
+  '40x9': 9 / 40 * 100%,
+  '32x9': 9 / 32 * 100%,
+  '21x9': 9 / 21 * 100%,
+  '18x9': 9 / 18 * 100%,
+  '16x9': 9 / 16 * 100%,
+  '16x10': 10 / 16 * 100%,
+  '3x2': 2 / 3 * 100%,
+  '4x3': 3 / 4 * 100%,
+  '1x1': 100%,
+  '3x4': 4 / 3 * 100%,
+  '2x3': 3 / 2 * 100%,
+  '10x16': 16 / 10 * 100%,
+  '9x16': 16 / 9 * 100%,
+  '9x18': 18 / 9 * 100%,
+  '9x21': 21 / 9 * 100%,
+  '9x32': 32 / 9 * 100%,
+);
+@each $key, $value in $ratios {
+  .ratio-#{$key} {
+    padding-bottom: $value;
+  }
+}

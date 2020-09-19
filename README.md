@@ -6,8 +6,6 @@ Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markd
 
 [English](https://github.com/amzrk2/hugo-theme-fuji#readme) | [简体中文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
 
-> Note that there will be major changes in the image lazyload shortcode, meaning that you can set **different aspect ratios** for images to generate lazyload placeholders. Once this feature is complete, this theme will enter the **maintenance stage**, and no new features will be added. Future support for the new Hugo version will still be available.
-
 > I am currently working on my new Hugo site with **a brand new theme**, and are planning to port the theme to a similar blog theme, you can preview it at <https://amzrk2.cc>. If you like this new theme, please give the [**theme repository**](https://github.com/amzrk2/amzrk2-ng) a star and I'll do my best to speed up the development process.
 
 Supported languages: `cs`, `en`, `ja`, `nl`, `pt-pt`, `zh-hans`, `zh-hant`. Check the i18n folder to add more languages.
@@ -151,8 +149,6 @@ Don't forget to add `math = true` in your front matter or `config.toml`.
 
 ### 📷 Image zoom and lazyload settings
 
-> Note that there will be major changes in the image lazyload shortcode, meaning that you can set **different aspect ratios** for images to generate lazyload placeholders. Once this feature is complete, this theme will enter the **maintenance stage**, and no new features will be added.
-
 Zoomable, not lazyloaded:
 
 ```markdown
@@ -163,28 +159,41 @@ Zoomable, lazyloaded:
 
 <!-- prettier-ignore -->
 ```html
-{{< img-lazy "Alt text" "test/example.png" >}}
-{{< img-lazy "row" "Alt text" "test/example.png" >}}
-{{< img-lazy "col" "Alt text" "test/example.png" >}}
+{{< img-lazy "16x9" "Alt text here" "test/example.png" >}}
 ```
 
 Not zoomable, not lazyloaded, optional ext link:
 
 <!-- prettier-ignore -->
 ```html
-{{< img-nz "Alt text" "test/example.png" "https://example.com" >}}
+{{< img-nz "Alt text here" "test/example.png" >}}
 ```
 
 Not zoomable, lazyloaded, optional ext link:
 
 <!-- prettier-ignore -->
 ```html
-{{< img-nz-lazy "Alt text" "test/example.png" "https://example.com" >}}
-{{< img-nz-lazy "row" "Alt text" "test/example.png" "https://example.com" >}}
-{{< img-nz-lazy "col" "Alt text" "test/example.png" "https://example.com" >}}
+{{< img-nz-lazy "16x9" "Alt text here" "test/example.png" >}}
 ```
 
-`img-lazy` will show a 16x9 placeholder before image is loaded, so `img-lazy-row` will show a 32x9 placeholder and `img-lazy-col` will show a 8x9 placeholder. You can choose different aspect ratios you want for different images. The placeholder image can be set in site's `config.toml`.
+Available image aspect ratios:
+
+- 40x9
+- 32x9
+- 21x9
+- 18x9
+- 16x9
+- 16x10
+- 3x2
+- 4x3
+- 1x1
+- 3x4
+- 2x3
+- 10x16
+- 9x16
+- 9x18
+- 9x21
+- 9x32
 
 ### ⚓ Markdown render hook
 

@@ -6,8 +6,6 @@
 
 [English](https://github.com/amzrk2/hugo-theme-fuji#readme) | [简体中文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
 
-> 图片懒加载使用的 shortcode 近期将会大改，可以为懒加载的图片设置**不同的长宽比**，主题将会根据设置的属性生成对应的占位来防止页面跳动。这个功能完成之后主题将会进入维护阶段，将不会再添加新 feature，只进行对应 Hugo 版本更新的适配和维护。
-
 > 最近我正在为我的个人站点构建一个全新的 Hugo 主题，并且正在计划把新主题移植为通用的博客主题，你可以在 <https://amzrk2.cc> 预览新的主题。如果你喜欢这个主题的话，请给 [**新主题的 repo**](https://github.com/amzrk2/amzrk2-ng) 加颗星，我会尽力加快新主题的开发。
 
 支持的 i18n 语言：`cs`, `en`, `ja`, `nl`, `pt-pt`, `zh-hans`, `zh-hant`。i18n 文件夹内为所有语言文件。
@@ -149,8 +147,6 @@ Don't forget to add `math = true` in your front matter or `config.toml`.
 
 ### 📷 图片放大的设置和 lazyload
 
-> 图片懒加载使用的 shortcode 近期将会大改，可以为懒加载的图片设置**不同的长宽比**，主题将会根据设置的属性生成对应的占位来防止页面跳动。这个功能完成之后主题将会进入维护阶段，将不会再添加新 feature，只进行对应 Hugo 版本更新的适配和维护。
-
 可放大，非 lazyload：
 
 ```markdown
@@ -161,28 +157,41 @@ Don't forget to add `math = true` in your front matter or `config.toml`.
 
 <!-- prettier-ignore -->
 ```html
-{{< img-lazy "Alt text" "test/example.png" >}}
-{{< img-lazy "row" "Alt text" "test/example.png" >}}
-{{< img-lazy "col" "Alt text" "test/example.png" >}}
+{{< img-lazy "16x9" "Alt text here" "test/example.png" >}}
 ```
 
 不可放大，非 lazyload，可选外链：
 
 <!-- prettier-ignore -->
 ```html
-{{< img-nz "Alt text" "test/example.png" "https://example.com" >}}
+{{< img-nz "Alt text here" "test/example.png" >}}
 ```
 
 不可放大，lazyload，可选外链：
 
 <!-- prettier-ignore -->
 ```html
-{{< img-nz-lazy "Alt text" "test/example.png" "https://example.com" >}}
-{{< img-nz-lazy "row" "Alt text" "test/example.png" "https://example.com" >}}
-{{< img-nz-lazy "col" "Alt text" "test/example.png" "https://example.com" >}}
+{{< img-nz-lazy "16x9" "Alt text here" "test/example.png" >}}
 ```
 
-`img-lazy` 提供 16:9 的占位 svg，`img-lazy-row` 提供 32:9 的占位 svg，`img-lazy-col` 提供 8:9 的占位 svg。你也可以在 `config.toml` 里面自定义想要的占位图片和比例。
+可用的占位符比例:
+
+- 40x9
+- 32x9
+- 21x9
+- 18x9
+- 16x9
+- 16x10
+- 3x2
+- 4x3
+- 1x1
+- 3x4
+- 2x3
+- 10x16
+- 9x16
+- 9x18
+- 9x21
+- 9x32
 
 ### ⚓ Markdown 钩子
 
