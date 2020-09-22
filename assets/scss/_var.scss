@@ -10,9 +10,12 @@ $font-weight-bold: 600;
 $font-weight-semibold: 600;
 $font-weight-normal: 400;
 $font-weight-light: 400;
-$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC',
-  'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif !default;
-$mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $body-font !default;
+$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'Arial', 'Helvetica Neue', 'Helvetica',
+  'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei',
+  'WenQuanYi Micro Hei', sans-serif !default;
+$mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', -apple-system, BlinkMacSystemFont, 'SF Pro Text',
+  'Segoe UI', 'Arial', 'Helvetica Neue', 'Helvetica', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN',
+  'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', monospace !default;
 $title-font: 'Product Sans', $body-font !default;
 $body-font-size: 16px !default;
 
