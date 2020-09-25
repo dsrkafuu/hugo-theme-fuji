@@ -1,5 +1,3 @@
-@import '_custom';
-
 // var & global
 @import '_var';
 @import '_global';
@@ -28,3 +26,6 @@
 
 // lazy image placeholder
 @import '_image';
+
+// let the user override the theme
+@import '_custom';
