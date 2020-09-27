@@ -1,5 +1,6 @@
 // var & global
 @import '_var';
+@import '_custom_var';
 @import '_global';
 
 // primer
@@ -28,4 +29,4 @@
 @import '_image';
 
 // let the user override the theme
-@import '_custom';
+@import '_custom_rules';

@@ -218,9 +218,9 @@ Use the `[SITEROOT]/layouts/partials/comment-*.html` to cover `themes/fuji/layou
 
 > Hugo extended version needed.
 
-You can cover theme's internal SCSS variables with your own. Create `[SITEROOT]/assets/scss/_custom.scss` to cover variables in SCSS.
+You can override theme's internal SCSS variables with your own. Create `[SITEROOT]/assets/scss/_custom_var.scss` to cover variables in SCSS.
 
-Varibales available:
+Variables available:
 
 ```scss
 $body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC',
@@ -247,6 +247,9 @@ $dark-color-divider: #4d5158; // Discord
 $dark-color-bg: #2f3136; // Discord
 $dark-color-codebg: #414449; // GitHub
 ```
+
+To override SCSS rules, create `[SITEROOT]/assets/scss/_custom_rules.scss`. This file will have priority over anything regarding CSS rules, but is useless for changing variables that are used elsewhere in the theme.
+
 
 ## ✏️ Issue und contributing
 
