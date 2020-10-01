@@ -23,8 +23,8 @@
     other = "Kein Tag"
 
 [postMetaWordCount]
-    one = "{{.Count}} word"
-    other = "{{.Count}} words"
+    one = "{{.Count}} Wort"
+    other = "{{.Count}} Wörter"
 
 [postMetaReadingTime]
     one = "{{.Count}} Minute"
