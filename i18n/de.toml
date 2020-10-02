@@ -1,0 +1,55 @@
+[sidebarToc]
+    other = "Inhalt"
+
+[sidebarPages]
+    other = "Seiten"
+
+[sidebarTags]
+    other = "Tags"
+
+[sidebarLinks]
+    other = "Links"
+
+[sidebarBangumiChart]
+    other = "Bangumi"
+
+[footerPoweredFront]
+    other = "Powered by "
+
+[footerPoweredEnd]
+    other = " "
+
+[postMetaNoTag]
+    other = "Kein Tag"
+
+[postMetaWordCount]
+    one = "{{.Count}} Wort"
+    other = "{{.Count}} Wörter"
+
+[postMetaReadingTime]
+    one = "{{.Count}} Minute"
+    other = "{{.Count}} Minuten"
+
+[postCopyrightFront]
+    other = "Falls nicht anders angegeben, ist der Inhalt dieser Seite lizensiert unter "
+
+[postCopyrightEnd]
+    other = "."
+
+[postComment]
+    other = "Lade Kommentare"
+
+[archivesTotalPages]
+    other = "Beiträge insgesamt: "
+
+[tagsCurrentTag]
+    other = "Beiträge mit dem Tag {{ .Title }}: "
+
+[searchSuccess]
+    other = "[NUM] Resultate ([TIME] ms)"
+
+[searchNotFound]
+    other = "Keine Übereinstimmung"
+
+[searchFailed]
+    other = "Laden des Index fehlgeschlagen!"
