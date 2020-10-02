@@ -6,3 +6,56 @@
         <i class="iconfont icon-chevron-up-circle-sharp"></i>
     </div>
 </div>
+<aside class="sidebar-mobile" style="display: none;">
+    <!-- pages -->
+    <div class="sidebar-item sidebar-pages">
+        <h3>{{ i18n "sidebarPages" }}</h3>
+        <ul>
+            {{ range .Site.Menus.nav }}
+            <li>
+                <a href="{{ .URL }}">{{ .Name }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+    <!-- links -->
+    <div class="sidebar-item sidebar-links">
+        <h3>{{ i18n "sidebarLinks" }}</h3>
+        <ul>
+            {{ range .Site.Menus.link }}
+            <li>
+                <a href="{{ .URL }}" target="_blank"><span>{{ .Name }}</span></a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+    <!-- tags -->
+    <div class="sidebar-item sidebar-tags">
+        <h3>{{ i18n "sidebarTags" }}</h3>
+        <div>
+            {{ range .Site.Taxonomies.tags }}
+            <span>
+                <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+            </span>
+            {{ end }}
+        </div>
+    </div>
+    <!-- in-post toc -->
+    {{ if in .Site.Params.mainSections .Type }}
+    {{ if and (or .Site.Params.showToc .Params.showToc) (ne .Params.showToc false) }}
+    <div class="sidebar-item sidebar-toc">
+        <h3>{{ i18n "sidebarToc" }}</h3>
+        {{ .TableOfContents }}
+    </div>
+    {{ end }}
+    {{ else }}
+    {{ with .Site.Params.bgmImageChart }}
+    <!-- bgm.tv image chart -->
+    <div class="sidebar-item sidebar-bgm">
+        <h3>{{ i18n "sidebarBangumiChart" }}</h3>
+        <img class="lazyload" src="{{ $.Site.Params.lazyPlaceholder | relURL }}"
+             data-src="https://bgm.tv/chart/img/{{ . }}" alt="Bangumi 图像榜单" />
+    </div>
+    {{ end }}
+    {{ end }}
+</aside>

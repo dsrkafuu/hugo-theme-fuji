@@ -30,31 +30,43 @@
 
 @media screen and (max-width: $width-md) {
   .sidebar {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: $width-md) {
+  .sidebar-mobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0%;
+    background-color: var(--color-codebg);
     padding: 1.5rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-  }
+    z-index: 50;
 
-  .sidebar-item {
-    width: 40%; // max 2 modules per line
+    .sidebar-item {
+      width: 40%; // max 2 modules per line
 
-    // space only at first 2 modules
-    .sidebar-pages,
-    .sidebar-tags {
-      margin-bottom: 1rem;
-    }
+      // space only at first 2 modules
+      .sidebar-pages,
+      .sidebar-tags {
+        margin-bottom: 1rem;
+      }
 
-    .sidebar-links,
-    .sidebar-bgm {
-      margin-bottom: 0;
-    }
+      .sidebar-links,
+      .sidebar-bgm {
+        margin-bottom: 0;
+      }
 
-    & > img {
-      margin: 0.5rem 0.25rem 0 0.25rem;
-      width: 75%;
-      border-radius: 0.25rem;
+      & > img {
+        margin: 0.5rem 0.25rem 0 0.25rem;
+        width: 75%;
+        border-radius: 0.25rem;
+      }
     }
   }
 }
@@ -69,4 +81,10 @@
 
   position: sticky;
   top: 1rem;
+
+  #TableOfContents {
+    max-height: 32rem;
+    overflow: auto;
+    scrollbar-width: thin;
+  }
 }
