@@ -20,6 +20,9 @@ Created by iconfont
   />
     <missing-glyph />
     
+    <glyph glyph-name="grid-sharp" unicode="&#58898;" d="M480 416H64V832h416zM960 416H544V832h416zM480-64H64V352h416zM960-64H544V352h416z"  horiz-adv-x="1024" />
+
+    
     <glyph glyph-name="search-circle-sharp" unicode="&#58892;" d="M512 768C300.26 768 128 595.74 128 384s172.26-384 384-384 384 172.26 384 384S723.74 768 512 768z m160-589.26l-108.3 108.3a176.16 176.16 0 1 0 45.26 45.26L717.26 224zM464 432m-112 0a112 112 0 1 1 224 0 112 112 0 1 1-224 0Z"  horiz-adv-x="1024" />
 
     

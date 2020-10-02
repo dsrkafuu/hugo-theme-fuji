@@ -3,7 +3,6 @@
   right: 1.5rem;
   bottom: 1.5rem;
   width: 2.5rem;
-  height: 5rem;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -17,16 +16,26 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    font-size: 1.25rem;
 
     &:first-child {
       border-radius: 0.25rem 0.25rem 0 0;
-      font-size: 1.25rem;
+      font-size: 1.125rem;
     }
 
     &:last-child {
       border-radius: 0 0 0.25rem 0.25rem;
-      font-size: 1.3125rem;
+      font-size: 1.325rem;
     }
+  }
+}
+
+@media screen and (min-width: $width-md) {
+  .btn div:first-child {
+    display: none;
+  }
+  .btn div:nth-child(2) {
+    border-radius: 0.25rem 0.25rem 0 0;
   }
 }
 
