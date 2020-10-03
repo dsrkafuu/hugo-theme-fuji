@@ -16,12 +16,12 @@
     margin: 0 0.1rem; // little space
   }
 
-  &>div,
-  &>nav {
+  & > div,
+  & > nav {
     margin: 0 0.1rem; // little space
   }
 
-  &>img {
+  & > img {
     margin: 0.5rem 0.25rem 0 0.25rem;
     width: 100%;
     border-radius: 2px;
@@ -42,51 +42,48 @@
     right: 0;
     bottom: 0%;
     background-color: var(--color-codebg);
-    padding: 1.5rem 4.5rem 1.5rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-around;
     z-index: 50;
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+
+    .sidebar-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      margin: 1.5rem 4.25rem 1.5rem 1.5rem;
+    }
 
     .sidebar-item {
       width: 90%; // max 1 module per line
       text-align: right;
 
-      // space only at first 2 modules
-      .sidebar-pages,
-      .sidebar-tags {
-        margin-bottom: 1rem;
-      }
-
-      .sidebar-links,
-      .sidebar-bgm {
-        margin-bottom: 0;
-      }
-
-      &>img {
-        margin: 0.5rem 0.25rem 0 0.25rem;
-        width: 75%;
-        border-radius: 0.25rem;
+      // space only at not first modules
+      margin-top: 1rem;
+      &:last-child {
+        margin-top: 0;
       }
     }
   }
 }
 
-// single page part
-.sidebar-toc {
-  ul ul {
-    font-size: 0.875rem;
-    padding-left: 0.5rem;
-    margin-bottom: 0.25rem;
-  }
+@media screen and (min-width: $width-md) {
+  // single page part
+  .sidebar-toc {
+    ul ul {
+      font-size: 0.875rem;
+      padding-left: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
 
-  position: sticky;
-  top: 1rem;
+    position: sticky;
+    top: 1rem;
 
-  #TableOfContents {
-    max-height: 32rem;
-    overflow: auto;
-    scrollbar-width: thin;
+    #TableOfContents {
+      max-height: 32rem;
+      overflow: auto;
+      scrollbar-width: thin;
+    }
   }
 }
