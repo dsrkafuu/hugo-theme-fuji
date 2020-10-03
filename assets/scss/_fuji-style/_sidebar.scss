@@ -16,12 +16,12 @@
     margin: 0 0.1rem; // little space
   }
 
-  & > div,
-  & > nav {
+  &>div,
+  &>nav {
     margin: 0 0.1rem; // little space
   }
 
-  & > img {
+  &>img {
     margin: 0.5rem 0.25rem 0 0.25rem;
     width: 100%;
     border-radius: 2px;
@@ -36,20 +36,22 @@
 
 @media screen and (max-width: $width-md) {
   .sidebar-mobile {
+    width: 70%;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0%;
     background-color: var(--color-codebg);
-    padding: 1.5rem;
+    padding: 1.5rem 4.5rem 1.5rem 1.5rem;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: space-around;
     z-index: 50;
 
     .sidebar-item {
-      width: 40%; // max 2 modules per line
+      width: 90%; // max 1 module per line
+      text-align: right;
 
       // space only at first 2 modules
       .sidebar-pages,
@@ -62,7 +64,7 @@
         margin-bottom: 0;
       }
 
-      & > img {
+      &>img {
         margin: 0.5rem 0.25rem 0 0.25rem;
         width: 75%;
         border-radius: 0.25rem;
