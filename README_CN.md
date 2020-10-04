@@ -216,11 +216,14 @@ Don't forget to add `math = true` in your front matter or `config.toml`.
 
 > 需要 Hugo Extended Version。
 
-你可以自己覆盖主题内的 SCSS 变量。创建 `[SITEROOT]/assets/scss/_custom.scss`，可选项如下：
+You can override theme's internal SCSS variables with your own. Create `[SITEROOT]/assets/scss/_custom_var.scss` to cover variables in SCSS.
+
+Variables available:
 
 ```scss
-$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang SC',
-  'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+$body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', 'Helvetica',
+  'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC',
+  'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
 $mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', $body-font;
 $title-font: 'Product Sans', $body-font;
 $body-font-size: 16px;
@@ -243,6 +246,8 @@ $dark-color-divider: #4d5158; // Discord
 $dark-color-bg: #2f3136; // Discord
 $dark-color-codebg: #414449; // GitHub
 ```
+
+To override SCSS rules, create `[SITEROOT]/assets/scss/_custom_rules.scss`. This file will have priority over anything regarding CSS rules, but is useless for changing variables that are used elsewhere in the theme.
 
 ## 👓 批判一番和贡献代码
 
