@@ -11,7 +11,7 @@
     "theme",
     "fuji"
   ],
-  "author": "DSRKafuU <mail@amzrk2.cc> (https://amzrk2.cc/)",
+  "author": "DSRKafuU <amzrk2@outlook.com> (https://amzrk2.cc/)",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/amzrk2/hugo-theme-fuji/issues"
@@ -19,12 +19,5 @@
   "homepage": "https://github.com/amzrk2/hugo-theme-fuji#readme",
   "dependencies": {
     "@primer/css": "15.1.0"
-  },
-  "devDependencies": {
-    "cross-env": "^7.0.2"
-  },
-  "scripts": {
-    "build": "cross-env NODE_ENV=production npm run compile",
-    "start": "cross-env NODE_ENV=development npm-run-all -p dev preview"
   }
 }
