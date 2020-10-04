@@ -2,7 +2,7 @@
 // stylelint-disable selector-max-type
 .markdown-body {
   // Tables
-  table {
+  table:not(.highlight) {
     display: block;
     width: 100%; // keep for backwards compatibility
     width: max-content;

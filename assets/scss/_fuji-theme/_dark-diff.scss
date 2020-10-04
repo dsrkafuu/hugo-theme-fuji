@@ -1,4 +1,4 @@
-table {
+table:not(.highlight) {
   th,
   td {
     border-color: var(--color-font);
