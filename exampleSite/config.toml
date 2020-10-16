@@ -34,6 +34,9 @@ paginate = 10
   author = "DSRKafuU" # You can also set author in post front matter individually
   subTitle = "A minimal Hugo theme."
 
+  # Source URL of the website, will appear in the footer
+  sourceURL = "https://github.com/itsme/my_blog"
+
   # Use CloudFlare Workers to accelerate the Google Analytics
   # If you are using this please comment the googleAnalytics above
   # Check https://github.com/SukkaW/cloudflare-workers-async-google-analytics for more details
@@ -48,9 +51,15 @@ paginate = 10
   showWordCounter = true
   showReadTime = false
 
+  # License in the footer
+  showLicenseInFooter = false
+
   # License at the end of each post
   showLicense = true
   showToc = true
+
+  # Copyright
+  copyrightStartYear = "2020"
 
   # Open Graph & Twitter Card variables
   # You can also set description and images in post front matter individually
