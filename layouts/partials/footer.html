@@ -1,10 +1,18 @@
 <footer>
     <div class="container-lg clearfix">
         <div class="col-12 footer">
-            <span>&copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Params.author }}</a> |
-                {{ i18n "footerPoweredFront" }}<a href="https://github.com/amzrk2/hugo-theme-fuji/"
-                   target="_blank">Fuji-v2</a> & <a href="https://gohugo.io/"
-                   target="_blank">Hugo</a>{{ i18n "footerPoweredEnd" }}</span>
+            {{ if .Site.Params.showLicenseInFooter }}
+            <p>
+                {{ i18n "postCopyrightFront" }}<a rel="license" href="{{ .Site.Params.licenseLink }}" target="_blank">{{ .Site.Params.license }}</a>{{ i18n "postCopyrightEnd" }}
+            </p>
+            {{ end }}
+            <span>&copy; {{ with .Site.Params.copyrightStartYear }}{{ . }}-{{ end }}{{ now.Format "2006" }}
+                <a href="{{ .Site.BaseURL }}">{{ .Site.Params.author }}</a>
+                {{ with .Site.Params.sourceURL }} | <a href="{{ . }}">source code</a> {{ end }}
+                | {{ i18n "footerPoweredFront" }}<a href="https://github.com/amzrk2/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
+                                                    target="_blank">Hugo</a>{{ i18n "footerPoweredEnd" }}
+            </span>
         </div>
     </div>
 </footer>
