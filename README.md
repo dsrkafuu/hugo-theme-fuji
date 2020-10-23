@@ -259,6 +259,8 @@ Feel free to use the [issue tracker](https://github.com/amzrk2/hugo-theme-fuji/i
 
 ## 📝 License
 
+<img align="right" alt="FOSSA Status" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Famzrk2%2Fhugo-theme-fuji.svg?type=large" />
+
 The theme is released under the `Apache License 2.0`, for more information read the [License](https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE).
 
 - [Primer CSS - MIT](https://github.com/primer/css/blob/master/LICENSE)
@@ -270,7 +272,7 @@ The theme is released under the `Apache License 2.0`, for more information read 
 - [cloudflare-workers-async-google-analytics - MIT](https://github.com/SukkaW/cloudflare-workers-async-google-analytics/blob/master/LICENSE)
 - [art-template - MIT](https://github.com/aui/art-template/blob/master/LICENSE)
 
-> © 2020 DSRKafuU(amzrk2) [Twitter @amzrk2](https://twitter.com/amzrk2) [GitHub @amzrk2](https://github.com/amzrk2)
+**© 2020 DSRKafuU(amzrk2) [Twitter @amzrk2](https://twitter.com/amzrk2) [GitHub @amzrk2](https://github.com/amzrk2)**
 
 ## 🤝 Annotations
 
