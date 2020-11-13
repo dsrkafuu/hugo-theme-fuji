@@ -2,7 +2,9 @@
 
 Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markdown style.
 
-![RELEASE](https://img.shields.io/github/v/release/amzrk2/hugo-theme-fuji?style=flat-square) ![BUILD STATUS](https://img.shields.io/github/workflow/status/amzrk2/hugo-theme-fuji/Build%20Test?style=flat-square) ![CODE SIZE](https://img.shields.io/github/languages/code-size/amzrk2/hugo-theme-fuji?style=flat-square) ![LICENSE](https://img.shields.io/github/license/amzrk2/hugo-theme-fuji?style=flat-square)
+![GitHub release](https://img.shields.io/github/v/release/amzrk2/hugo-theme-fuji)
+![GitHub build status](https://img.shields.io/github/workflow/status/amzrk2/hugo-theme-fuji/Build%20Test)
+![GitHub license](https://img.shields.io/github/license/amzrk2/hugo-theme-fuji)
 
 [English](https://github.com/amzrk2/hugo-theme-fuji#readme) | [简体中文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
 
@@ -259,7 +261,7 @@ Feel free to use the [issue tracker](https://github.com/amzrk2/hugo-theme-fuji/i
 
 ## 📝 License
 
-<img align="right" alt="FOSSA Status" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Famzrk2%2Fhugo-theme-fuji.svg?type=large" />
+<img align="right" alt="FOSSA" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Famzrk2%2Fhugo-theme-fuji.svg?type=large" />
 
 The theme is released under the `Apache License 2.0`, for more information read the [License](https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE).
 
@@ -272,7 +274,7 @@ The theme is released under the `Apache License 2.0`, for more information read 
 - [cloudflare-workers-async-google-analytics - MIT](https://github.com/SukkaW/cloudflare-workers-async-google-analytics/blob/master/LICENSE)
 - [art-template - MIT](https://github.com/aui/art-template/blob/master/LICENSE)
 
-**© 2020 DSRKafuU(amzrk2) [Twitter @amzrk2](https://twitter.com/amzrk2) [GitHub @amzrk2](https://github.com/amzrk2)**
+**Copyright © 2020-present DSRKafuU <https://amzrk2.cc/>**
 
 ## 🤝 Annotations
 
