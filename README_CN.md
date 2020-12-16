@@ -10,7 +10,7 @@
 
 > 我为略有经验的前端开发者们构建了一个名为 [Aofuji](https://github.com/amzrk2/hugo-template-aofuji) 的全新 Hugo 主题。它**不是一个功能完整的主题**而更像是个模板，它有继承于 Fuji 的优秀整体配色、现代卡片式设计以及完善的深色模式支持。
 
-> 你可以在这里预览并 fork 它：[hugo-template-aofuji](https://github.com/amzrk2/hugo-template-aofuji)，以及这是我基于这个模板开发的全新个人站点，可以作为示例：[amzrk2-ng](https://github.com/amzrk2/amzrk2-ng)。
+> 你可以在这里预览并 fork 它：[hugo-template-aofuji](https://github.com/amzrk2/hugo-template-aofuji)，以及这是我基于这个模板开发的全新个人站点，可以作为示例：[DSRCA](https://github.com/amzrk2/dsr-ca)。
 
 支持的 i18n 语言：`cs`, `en`, `ja`, `nl`, `pt-pt`, `zh-hans`, `zh-hant`。i18n 文件夹内为所有语言文件。
 
