@@ -10,7 +10,7 @@ Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markd
 
 > I've built a brand new Hugo theme called [Aofuji](https://github.com/amzrk2/hugo-template-aofuji) for somewhat more experienced front end developers. It's **not a fully featured** theme but more like a template, and has a nice color palette inherited from Fuji and a modern card design, with a well-developed dark mode and a very detailed visual design.
 
-> You can preview and fork it here: [hugo-template-aofuji](https://github.com/amzrk2/hugo-template-aofuji), and here is an example of using this template on my new personal site: [amzrk2-ng](https://github.com/amzrk2/amzrk2-ng).
+> You can preview and fork it here: [hugo-template-aofuji](https://github.com/amzrk2/hugo-template-aofuji), and here is an example of using this template on my new personal site: [DSRCA](https://github.com/amzrk2/dsr-ca).
 
 Supported languages: `cs`, `en`, `ja`, `nl`, `pt-pt`, `zh-hans`, `zh-hant`. Check the i18n folder to add more languages.
 
