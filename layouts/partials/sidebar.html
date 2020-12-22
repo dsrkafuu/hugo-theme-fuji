@@ -33,13 +33,15 @@
         </div>
     </div>
     <!-- in-post toc -->
-    {{ if .IsPage }}
-    {{ if and (ne .Site.Params.showToc false) (ne .Params.showToc false) }}
+    {{- if .IsPage -}}
+    {{- $pageShowToc := .Params.showToc -}}
+    {{- $siteShowToc := .Site.Params.showToc -}}
+    {{- if or ($pageShowToc) (and (ne $pageShowToc false) (ne $siteShowToc false)) -}}
     <div class="sidebar-item sidebar-toc">
         <h3>{{ i18n "sidebarToc" }}</h3>
-        {{ .TableOfContents }}
+        {{- .TableOfContents -}}
     </div>
-    {{ end }}
+    {{- end -}}
     {{ else }}
     {{ with .Site.Params.bgmImageChart }}
     <!-- bgm.tv image chart -->
