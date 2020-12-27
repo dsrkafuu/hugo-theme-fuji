@@ -64,7 +64,7 @@ paginate = 10
   # Open Graph & Twitter Card variables
   # You can also set description and images in post front matter individually
   description = "A minimal Hugo theme with nice theme color."
-  images = ["img/og.png"] # This will use the image called og.png in static/img folder
+  og = "/img/og.png" # This will use the image called og.png in static/img folder
 
   # Posts shown in homepage
   mainSections = ["post"]
