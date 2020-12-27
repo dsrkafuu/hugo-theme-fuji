@@ -1,0 +1,45 @@
+<meta property="og:title" content="{{ .Title }}" />
+<meta name="twitter:title" content="{{ .Title }}" />
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+
+{{- if .Description -}}
+<meta property="og:description" content="{{ .Description }}" />
+<meta name="twitter:description" content="{{ .Description }}" />
+{{- else if .Params.description -}}
+<meta property="og:description" content="{{ .Params.description }}" />
+<meta name="twitter:description" content="{{ .Params.description }}" />
+{{- else -}}
+{{- if .IsPage -}}
+<meta property="og:description" content="{{ .Summary }}" />
+<meta name="twitter:description" content="{{ .Summary }}" />
+{{- end -}}
+{{- end -}}
+
+{{- if .Params.image -}}
+<meta property="og:image" content="{{ .Params.image | absURL }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="{{ .Params.image | absURL }}" />
+{{- else if .Site.Params.og -}}
+<meta property="og:image" content="{{ .Site.Params.og | absURL }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="{{ .Site.Params.og | absURL }}" />
+{{- else -}}
+<meta name="twitter:card" content="summary" />
+{{- end -}}
+
+{{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+{{- if .IsPage -}}
+{{- if not .PublishDate.IsZero -}}
+<meta property="article:published_time" {{ .PublishDate.Format $iso8601 | printf "content=%q" | safeHTMLAttr }} />
+{{- else if not .Date.IsZero -}}
+<meta property="article:published_time" {{ .Date.Format $iso8601 | printf "content=%q" | safeHTMLAttr }} />
+{{- end -}}
+{{- if not .Lastmod.IsZero -}}
+<meta property="article:modified_time" {{ .Lastmod.Format $iso8601 | printf "content=%q" | safeHTMLAttr }} />
+{{- end -}}
+{{- else -}}
+{{- if not .Date.IsZero -}}
+<meta property="og:updated_time" {{ .Lastmod.Format $iso8601 | printf "content=%q" | safeHTMLAttr }} />
+{{- end -}}
+{{- end -}}
