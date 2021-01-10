@@ -39,7 +39,13 @@
   }
 }
 
-#post-aplayer {
-  margin: 0 0.125rem 1.25rem 0.125rem;
-  font-family: inherit;
+.post-player-wrapper {
+  margin: 0.25rem 0.125rem 1rem 0.125rem !important;
+  font-family: inherit !important;
+}
+.post-player {
+  font-family: inherit !important;
+}
+.post-summary .post-player-wrapper {
+  display: none;
 }

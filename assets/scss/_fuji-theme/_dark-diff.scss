@@ -14,8 +14,8 @@ table:not(.highlight) {
   }
 }
 
-#post-aplayer {
-  background-color: var(--color-divider);
+.post-aplayer {
+  background-color: var(--color-divider) !important;
 }
 
 .aplayer .aplayer-info .aplayer-music .aplayer-author {

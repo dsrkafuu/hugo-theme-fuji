@@ -1,0 +1,9 @@
+<div class="post-player-wrapper">
+  <div
+    class="post-aplayer"
+    data-urls="{{- .Get "urls" | relURL -}}"
+    data-names="{{- .Get "names" -}}"
+    {{ with .Get "artists" -}}data-artists="{{- . -}}"{{- end }}
+    {{ with .Get "covers" -}}data-covers="{{- . | relURL -}}"{{- end }}
+  ></div>
+</div>

@@ -7,9 +7,6 @@
     <div class="post-item post-meta">
         {{ partial "post-meta.html" . }}
     </div>
-    {{ with .Params.player }}
-    <div id="post-aplayer"></div>
-    {{ end }}
     <!-- post main content -->
     <div class="post-content markdown-body">
         {{ .Content }}
