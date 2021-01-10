@@ -24,8 +24,10 @@ Music files are all downloaded from [Free Music Archive](https://freemusicarchiv
 You can open the playlist to check other musics.
 
 {{< aplayer
-    urls="/aplayer/berlin.mp3,/aplayer/fluid.mp3,/aplayer/morning.mp3"
-    names="Berlin,Fluid,Morning"
-    artists="Crowander,Crowander,Crowander"
-    covers="/aplayer/crowander.jpg,/aplayer/crowander.jpg,/aplayer/crowander.jpg"
+    urls="/aplayer/berlin.mp3, /aplayer/fluid.mp3, /aplayer/morning.mp3"
+    names="Berlin, Fluid, Morning"
+    artists="Crowander, Crowander, Crowander"
+    covers="/aplayer/crowander.jpg, /aplayer/crowander.jpg, /aplayer/crowander.jpg"
 >}}
+
+Spaces between multiple items can be omited.

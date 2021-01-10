@@ -95,20 +95,13 @@ showComments = false # Do not show comments in this post
 
 ### 🎵 APlayer
 
-In-post APlayer supported, you can set these variables in post's front matter:
+In-post APlayer supported, you use the `aplayer` shortcode:
 
-```toml
-[[player]]
-  playerName = "..." # Audio title or name
-  playerArtist = "..." # Audio artist
-  playerURL = "..." # Audio URL, support aac, mp3, wav and ogg
-  playerCover = "..." # Audio cover
-[[player]]
-  playerName = "..."
-  playerArtist = "..."
-  playerURL = "..."
-  playerCover = "..."
+```txt
+{{< aplayer urls="/aplayer/fluid.mp3" names="Fluid" artists="Crowander" covers="/aplayer/crowander.jpg" >}}
 ```
+
+Checkout the `exampleSite/content/post/aplayer-test.md` for more example usage such as using multiple files.
 
 ### 📐 Render LaTeX with KaTex
 

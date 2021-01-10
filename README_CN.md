@@ -93,20 +93,13 @@ showComments = false # 对这篇文章关闭评论
 
 ### 🎵 文章音乐
 
-支持给文章单独添加 APlayer，在 front matter 里加上这些:
+In-post APlayer supported, you use the `aplayer` shortcode:
 
-```toml
-[[player]]
-  playerName = "..." # 标题
-  playerArtist = "..." # 作者
-  playerURL = "..." # URL
-  playerCover = "..." # 封面
-[[player]]
-  playerName = "..."
-  playerArtist = "..."
-  playerURL = "..."
-  playerCover = "..."
+```txt
+{{< aplayer urls="/aplayer/fluid.mp3" names="Fluid" artists="Crowander" covers="/aplayer/crowander.jpg" >}}
 ```
+
+Checkout the `exampleSite/content/post/aplayer-test.md` for more example usage such as using multiple files.
 
 ### 📐 LaTeX 渲染
 
