@@ -137,11 +137,11 @@ paginate = 10
 
   [[menu.link]]
     name = "GitHub"
-    url = "https://github.com/amzrk2"
+    url = "https://github.com/dsrkafuu"
     weight = 1
   [[menu.link]]
     name = "Twitter"
-    url = "https://twitter.com/amzrk2"
+    url = "https://twitter.com/dsrkafuu"
     weight = 2
   [[menu.link]]
     name = "bilibili"
