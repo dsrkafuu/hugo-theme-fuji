@@ -3,13 +3,13 @@
 
 name = "Fuji"
 license = "Apache-2.0"
-licenselink = "https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE"
+licenselink = "https://github.com/dsrkafuu/hugo-theme-fuji/blob/master/LICENSE"
 description = "A minimal Hugo theme with nice theme color."
-homepage = "https://github.com/amzrk2/hugo-theme-fuji/"
+homepage = "https://github.com/dsrkafuu/hugo-theme-fuji/"
 tags = ["blog", "minimal", "responsive", "dark mode"]
 features = ["blog", "minimal", "responsive", "dark mode"]
 min_version = "0.74.0"
 
 [author]
   name = "DSRKafuU"
-  homepage = "https://amzrk2.cc/"
+  homepage = "https://dsrkafuu.co/"

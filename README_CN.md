@@ -2,13 +2,13 @@
 
 简单的 Hugo 主题，支持夜间模式，Markdown 样式来自 GitHub Primer。
 
-![GitHub release](https://img.shields.io/github/v/release/amzrk2/hugo-theme-fuji)
-![GitHub build status](https://img.shields.io/github/workflow/status/amzrk2/hugo-theme-fuji/build-test)
-![GitHub license](https://img.shields.io/github/license/amzrk2/hugo-theme-fuji)
+![GitHub release](https://img.shields.io/github/v/release/dsrkafuu/hugo-theme-fuji)
+![GitHub build status](https://img.shields.io/github/workflow/status/dsrkafuu/hugo-theme-fuji/build-test)
+![GitHub license](https://img.shields.io/github/license/dsrkafuu/hugo-theme-fuji)
 
-[English](https://github.com/amzrk2/hugo-theme-fuji#readme) | [简体中文](https://github.com/amzrk2/hugo-theme-fuji/blob/master/README_CN.md)
+[English](https://github.com/dsrkafuu/hugo-theme-fuji#readme) | [简体中文](https://github.com/dsrkafuu/hugo-theme-fuji/blob/master/README_CN.md)
 
-> 介绍一个全新的亮色 VSCode 主题 [Aofuji Light Theme](https://github.com/amzrk2/vscode-theme-aofuji)，它的配色方案继承自 [Aofuji](https://github.com/amzrk2/hugo-template-aofuji)！
+> 介绍一个全新的亮色 VSCode 主题 [Aofuji Light Theme](https://github.com/dsrkafuu/vscode-theme-aofuji)，它的配色方案继承自 [Aofuji](https://github.com/amzrk2/hugo-template-aofuji)！
 
 支持的 i18n 语言：`cs`, `en`, `ja`, `nl`, `pt-pt`, `zh-hans`, `zh-hant`。i18n 文件夹内为所有语言文件。
 
@@ -35,7 +35,7 @@
 
 [**Live Demo (gohugo.io)**](https://themes.gohugo.io/theme/hugo-theme-fuji/)
 
-![Fuji 截图](https://raw.githubusercontent.com/amzrk2/hugo-theme-fuji/master/images/screenshot.png)
+![Fuji 截图](https://raw.githubusercontent.com/dsrkafuu/hugo-theme-fuji/master/images/screenshot.png)
 
 ## ❗ 注意事项
 
@@ -246,13 +246,13 @@ To override SCSS rules, create `[SITEROOT]/assets/scss/_custom_rules.scss`. This
 
 ## 👓 批判一番和贡献代码
 
-[Issue](https://github.com/amzrk2/hugo-theme-fuji/issues)。主题本身只在 Firefox 上完整测试过，因此要是遇到了什么问题也可以随便批判。
+[Issue](https://github.com/dsrkafuu/hugo-theme-fuji/issues)。主题本身只在 Firefox 上完整测试过，因此要是遇到了什么问题也可以随便批判。
 
 ## 📝 License
 
-<img align="right" alt="FOSSA" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Famzrk2%2Fhugo-theme-fuji.svg?type=large" />
+<a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fdsrkafuu%2Fhugo-theme-fuji?ref=badge_large" alt="FOSSA Status"><img align="right" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdsrkafuu%2Fhugo-theme-fuji.svg?type=large"/></a>
 
-The theme is released under the `Apache License 2.0`, for more information read the [License](https://github.com/amzrk2/hugo-theme-fuji/blob/master/LICENSE).
+The theme is released under the `Apache License 2.0`, for more information read the [License](https://github.com/dsrkafuu/hugo-theme-fuji/blob/master/LICENSE).
 
 - [Primer CSS - MIT](https://github.com/primer/css/blob/master/LICENSE)
 - [APlayer - MIT](https://github.com/MoePlayer/APlayer/blob/master/LICENSE)
@@ -263,10 +263,10 @@ The theme is released under the `Apache License 2.0`, for more information read 
 - [cloudflare-workers-async-google-analytics - MIT](https://github.com/SukkaW/cloudflare-workers-async-google-analytics/blob/master/LICENSE)
 - [art-template - MIT](https://github.com/aui/art-template/blob/master/LICENSE)
 
-**Copyright © 2020-present DSRKafuU <https://amzrk2.cc/>**
+**Copyright © 2019-present DSRKafuU <https://dsrkafuu.co/>**
 
 ## 🤝 Annotations
 
-Thanks to [community contributors](https://github.com/amzrk2/hugo-theme-fuji/graphs/contributors) for great help.
+Thanks to [community contributors](https://github.com/dsrkafuu/hugo-theme-fuji/graphs/contributors) for great help.
 
 Learned a lot in [Sukka's Blog](https://blog.skk.moe/).
