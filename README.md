@@ -265,7 +265,7 @@ The theme is released under the `Apache License 2.0`, for more information read 
 - [cloudflare-workers-async-google-analytics - MIT](https://github.com/SukkaW/cloudflare-workers-async-google-analytics/blob/master/LICENSE)
 - [art-template - MIT](https://github.com/aui/art-template/blob/master/LICENSE)
 
-**Copyright © 2019-present DSRKafuU <https://dsrkafuu.co/>**
+**Copyright © 2019-present DSRKafuU <https://dsrkafuu.su/>**
 
 ## 🤝 Annotations
 
