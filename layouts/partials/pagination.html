@@ -1,0 +1,56 @@
+{{- $paginator := .pagi -}}
+{{- $scratch := newScratch -}}
+<!-- custom smart pagination -->
+{{- $offsetLinks := 2 -}}
+{{- $maxLinks := (add (mul $offsetLinks 2) 1) -}}
+{{- $lowerLimit := (add $offsetLinks 1) -}}
+{{- $upperLimit := (sub $paginator.TotalPages $offsetLinks) -}}
+{{- if gt $paginator.TotalPages 1 -}}
+<div class="pagination">
+  {{- if ne $paginator.PageNumber 1 -}}
+  <div class="pag-first">
+    <a href="{{ $paginator.First.URL }}"><i class="iconfont icon-caret-back-circle-sharp"></i></a>
+  </div>
+  {{- end -}}
+  {{- if $paginator.HasPrev -}}
+  <div class="pag-previous">
+    <a href="{{ $paginator.Prev.URL }}"><i class="iconfont icon-chevron-back-circle-sharp"></i></a>
+  </div>
+  {{- end -}}
+  {{- range $paginator.Pagers -}}
+  {{- $scratch.Set "pageNumFlag" false -}}
+  {{- if gt $paginator.TotalPages $maxLinks -}}
+  {{- if le $paginator.PageNumber $lowerLimit -}}
+  {{- if le .PageNumber $maxLinks -}}
+  {{- $scratch.Set "pageNumFlag" true -}}
+  {{- end -}}
+  {{- else if ge $paginator.PageNumber $upperLimit -}}
+  {{- if gt .PageNumber (sub $paginator.TotalPages $maxLinks) -}}
+  {{- $scratch.Set "pageNumFlag" true -}}
+  {{- end -}}
+  {{- else -}}
+  {{- if and ( ge .PageNumber (sub $paginator.PageNumber $offsetLinks) ) ( le .PageNumber (add $paginator.PageNumber $offsetLinks) ) -}}
+  {{- $scratch.Set "pageNumFlag" true -}}
+  {{- end -}}
+  {{- end -}}
+  {{- else -}}
+  {{- $scratch.Set "pageNumFlag" true -}}
+  {{- end -}}
+  {{- if eq ($scratch.Get "pageNumFlag") true -}}
+  <div class="pag-item{{ if eq . $paginator }} pag-current{{ end }}">
+    <a href="{{ .URL }}">{{- .PageNumber -}}</a>
+  </div>
+  {{- end -}}
+  {{- end -}}
+  {{- if $paginator.HasNext -}}
+  <div class="pag-next">
+    <a href="{{ $paginator.Next.URL }}"><i class="iconfont icon-chevron-forward-circle-sharp"></i></a>
+  </div>
+  {{- end -}}
+  {{- if ne $paginator.PageNumber $paginator.TotalPages -}}
+  <div class="pag-last">
+    <a href="{{ $paginator.Last.URL }}"><i class="iconfont icon-caret-forward-circle-sharp"></i></a>
+  </div>
+  {{- end -}}
+</div>
+{{- end -}}
