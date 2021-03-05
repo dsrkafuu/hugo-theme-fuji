@@ -1,0 +1,55 @@
+[sidebarToc]
+    other = "Table des matières"
+
+[sidebarPages]
+    other = "Pages"
+
+[sidebarTags]
+    other = "Étiquettes"
+
+[sidebarLinks]
+    other = "Liens"
+
+[sidebarBangumiChart]
+    other = "Bangumi"
+
+[footerPoweredFront]
+    other = "Propulsé par "
+
+[footerPoweredEnd]
+    other = " "
+
+[postMetaNoTag]
+    other = "Aucune étiquette"
+
+[postMetaWordCount]
+    one = "{{.Count}} mot"
+    other = "{{.Count}} mots"
+
+[postMetaReadingTime]
+    one = "{{.Count}} minute"
+    other = "{{.Count}} minutes"
+
+[postCopyrightFront]
+    other = "Sauf indication contraire, le contenu de ce site est mis à disposition selon les termes de la Licence "
+
+[postCopyrightEnd]
+    other = "."
+
+[postComment]
+    other = "Télécharger les commentaires"
+
+[archivesTotalPages]
+    other = "Posts totaux: "
+
+[tagsCurrentTag]
+    other = "Posts avec l'étiquette {{ .Title }}: "
+
+[searchSuccess]
+    other = "[NUM] résultats ([TIME] ms)"
+
+[searchNotFound]
+    other = "Résultats non trouvés"
+
+[searchFailed]
+    other = "Échec du chargement du fichier d'index"
