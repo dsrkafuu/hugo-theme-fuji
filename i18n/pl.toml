@@ -1,0 +1,55 @@
+[sidebarToc]
+    other = "Spis Treści"
+
+[sidebarPages]
+    other = "Strony"
+
+[sidebarTags]
+    other = "Tagi"
+
+[sidebarLinks]
+    other = "Linki"
+
+[sidebarBangumiChart]
+    other = "Bangumi"
+
+[footerPoweredFront]
+    other = "Wspierane Przez "
+
+[footerPoweredEnd]
+    other = " "
+
+[postMetaNoTag]
+    other = "Bez Tagu"
+
+[postMetaWordCount]
+    one = "{{.Count}} słowo"
+    other = "{{.Count}} słowa"
+
+[postMetaReadingTime]
+    one = "{{.Count}} minuta"
+    other = "{{.Count}} minut"
+
+[postCopyrightFront]
+    other = "O ile nie zaznaczono inaczej, zawartość tej witryny jest objęta licencją "
+
+[postCopyrightEnd]
+    other = "."
+
+[postComment]
+    other = "wczytaj komentarze"
+
+[archivesTotalPages]
+    other = "Wszystkie posty: "
+
+[tagsCurrentTag]
+    other = "Posty z tagiem {{ .Title }}: "
+
+[searchSuccess]
+    other = "[NUM] wyników ([TIME] milisekund)"
+
+[searchNotFound]
+    other = "Nieznaleziono wyników"
+
+[searchFailed]
+    other = "Nieudało się znaleźć pliku index"
