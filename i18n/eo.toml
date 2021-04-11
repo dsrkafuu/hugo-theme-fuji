@@ -1,0 +1,55 @@
+[sidebarToc]
+  other = "Enhavindekso"
+
+[sidebarPages]
+  other = "Paĝoj"
+
+[sidebarTags]
+  other = "Etikedoj"
+
+[sidebarLinks]
+  other = "Ligoj"
+
+[sidebarBangumiChart]
+  other = "Bangumi"
+
+[footerPoweredFront]
+  other = "Ebliga per "
+
+[footerPoweredEnd]
+  other = " "
+
+[postMetaNoTag]
+  other = "Senetikeda"
+
+[postMetaWordCount]
+  one = "{{.Count}} vorto"
+  other = "{{.Count}} vortoj"
+
+[postMetaReadingTime]
+  one = "{{.Count}} minuto"
+  other = "{{.Count}} minutoj"
+
+[postCopyrightFront]
+  other = "Escepte kiam menciite, la enhavo de tiu ĉi retejo licenciitas laŭ "
+
+[postCopyrightEnd]
+  other = "."
+
+[postComment]
+  other = "Ŝargi komentojn"
+
+[archivesTotalPages]
+  other = "Entutaj afiŝoj: "
+
+[tagsCurrentTag]
+  other = "Afiŝoj kun etikedo {{ .Title }}: "
+
+[searchSuccess]
+  other = "[NUM] rezultoj je ([TIME] ms)"
+
+[searchNotFound]
+  other = "Rezultoj ne trovitaj"
+
+[searchFailed]
+  other = "Ne eblis ŝargi indeksdosiero"
