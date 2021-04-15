@@ -1,0 +1,55 @@
+[sidebarToc]
+    other = "Sommario"
+
+[sidebarPages]
+    other = "Pagine"
+
+[sidebarTags]
+    other = "Tag"
+
+[sidebarLinks]
+    other = "Link"
+
+[sidebarBangumiChart]
+    other = "Bangumi"
+
+[footerPoweredFront]
+    other = "Basato su "
+
+[footerPoweredEnd]
+    other = " "
+
+[postMetaNoTag]
+    other = "Nessun tag"
+
+[postMetaWordCount]
+    one = "{{.Count}} parola"
+    other = "{{.Count}} parole"
+
+[postMetaReadingTime]
+    one = "{{.Count}} minuto"
+    other = "{{.Count}} minuti"
+
+[postCopyrightFront]
+    other = "Laddove non espressamente specificato, il contenuto di questo sito è protetto da licenza "
+
+[postCopyrightEnd]
+    other = "."
+
+[postComment]
+    other = "Carica i commenti"
+
+[archivesTotalPages]
+    other = "Articoli in totale: "
+
+[tagsCurrentTag]
+    other = "Articoli che contengono il tag {{ .Title }}: "
+
+[searchSuccess]
+    other = "[NUM] risultati ([TIME] ms)"
+
+[searchNotFound]
+    other = "Nessun risultato trovato"
+
+[searchFailed]
+    other = "Impossibile caricare il file di indice"
