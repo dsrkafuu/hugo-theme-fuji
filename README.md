@@ -10,7 +10,7 @@ Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markd
 
 > Checkout the brand new [VSCode Aofuji Light Theme](https://github.com/dsrkafuu/vscode-theme-aofuji) which has similar color scheme to [Aofuji](https://github.com/dsrkafuu/hugo-template-aofuji)!
 
-Supported languages: `cs`, `en`, `ja`, `nl`, `pt-pt`, `zh-hans`, `zh-hant`. Check the i18n folder to add more languages.
+Supported languages: `cs`, `de`, `en`, `eo`, `fr`, `ja`, `nl`, `pl`, `pt-pt`, `zh-hans`, `zh-hant`. Check the i18n folder to add more languages.
 
 ## 📑 Table of contents
 
@@ -251,8 +251,6 @@ To override SCSS rules, create `[SITEROOT]/assets/scss/_custom_rules.scss`. This
 Feel free to use the [issue tracker](https://github.com/dsrkafuu/hugo-theme-fuji/issues). The theme has only been fully tested on Firefox, so if there are some problems when accessing with Chrome or others please also report an issue.
 
 ## 📝 License
-
-<a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fdsrkafuu%2Fhugo-theme-fuji?ref=badge_large" alt="FOSSA Status"><img align="right" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdsrkafuu%2Fhugo-theme-fuji.svg?type=large"/></a>
 
 The theme is released under the `Apache License 2.0`, for more information read the [License](https://github.com/dsrkafuu/hugo-theme-fuji/blob/master/LICENSE).
 

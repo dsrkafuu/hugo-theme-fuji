@@ -10,7 +10,7 @@
 
 > 介绍一个全新的亮色 VSCode 主题 [Aofuji Light Theme](https://github.com/dsrkafuu/vscode-theme-aofuji)，它的配色方案继承自 [Aofuji](https://github.com/amzrk2/hugo-template-aofuji)！
 
-支持的 i18n 语言：`cs`, `en`, `ja`, `nl`, `pt-pt`, `zh-hans`, `zh-hant`。i18n 文件夹内为所有语言文件。
+支持的 i18n 语言：`cs`, `de`, `en`, `eo`, `fr`, `ja`, `nl`, `pl`, `pt-pt`, `zh-hans`, `zh-hant`。i18n 文件夹内为所有语言文件。
 
 ## 目录
 
@@ -249,8 +249,6 @@ To override SCSS rules, create `[SITEROOT]/assets/scss/_custom_rules.scss`. This
 [Issue](https://github.com/dsrkafuu/hugo-theme-fuji/issues)。主题本身只在 Firefox 上完整测试过，因此要是遇到了什么问题也可以随便批判。
 
 ## 📝 License
-
-<a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fdsrkafuu%2Fhugo-theme-fuji?ref=badge_large" alt="FOSSA Status"><img align="right" src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdsrkafuu%2Fhugo-theme-fuji.svg?type=large"/></a>
 
 The theme is released under the `Apache License 2.0`, for more information read the [License](https://github.com/dsrkafuu/hugo-theme-fuji/blob/master/LICENSE).
 
