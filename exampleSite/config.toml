@@ -35,7 +35,7 @@ paginate = 10
   subTitle = "A minimal Hugo theme."
 
   # Source URL of the website, will appear in the footer
-  sourceURL = "https://github.com/itsme/my_blog"
+  sourceURL = "https://github.com/dsrkafuu/hugo-theme-fuji"
 
   # Use CloudFlare Workers to accelerate the Google Analytics
   # If you are using this please comment the googleAnalytics above
