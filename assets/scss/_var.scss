@@ -13,11 +13,10 @@ $font-weight-light: 400;
 $body-font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'Arial', 'Helvetica Neue',
   'Helvetica', 'PingFang SC', 'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC',
   'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif !default;
-$mono-font: 'Cascadia Code', 'SF Mono', 'Fira Code', 'Consolas', -apple-system, BlinkMacSystemFont,
-  'SF Pro Text', 'Segoe UI', 'Arial', 'Helvetica Neue', 'Helvetica', 'PingFang SC',
-  'Hiragino Sans GB', 'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei',
-  'WenQuanYi Micro Hei', monospace !default;
-$title-font: 'Product Sans', $body-font !default;
+$mono-font: 'SF Mono', 'Fira Code', 'Consolas', -apple-system, BlinkMacSystemFont, 'SF Pro Text',
+  'Segoe UI', 'Arial', 'Helvetica Neue', 'Helvetica', 'PingFang SC', 'Hiragino Sans GB',
+  'Source Han Sans CN', 'Source Han Sans SC', 'Microsoft YaHei', 'WenQuanYi Micro Hei', monospace !default;
+$title-font: 'Product Sans', sans-serif !default;
 $body-font-size: 16px !default;
 
 $width-md: 768px;
@@ -43,18 +42,17 @@ $dark-color-codebg: #414449 !default; // kai GitHub
 @font-face {
   font-family: 'Product Sans';
   font-style: normal;
-  font-weight: 700;
   font-display: swap;
-  src: local('Product Sans Bold'), local('ProductSans-Bold'),
-    url('https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@2/product-sans/product-sans-bold.woff2')
-      format('woff2');
+  font-weight: 700;
+  src: url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/product_sans/product_sans_700.woff2')
+    format('woff2');
 }
 
 @font-face {
-  font-family: 'Cascadia Code';
+  font-family: 'Fira Code';
   font-style: normal;
   font-display: swap;
-  src: local('Cascadia Code Regular'),
-    url('https://cdn.jsdelivr.net/gh/amzrk2/web-font-archive@2/cascadia-code/cascadia-code.woff2')
-      format('woff2');
+  font-weight: 400;
+  src: url('https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/fonts/fira_code/fira_code_400.woff2')
+    format('woff2');
 }
