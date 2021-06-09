@@ -33,6 +33,7 @@ paginate = 10
 [params]
   author = "DSRKafuU" # You can also set author in post front matter individually
   subTitle = "A minimal Hugo theme."
+  defaultTheme = "auto" # default theme when first visit (auto|dark|light)
 
   # Source URL of the website, will appear in the footer
   sourceURL = "https://github.com/dsrkafuu/hugo-theme-fuji"

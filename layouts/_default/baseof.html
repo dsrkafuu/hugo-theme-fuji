@@ -5,7 +5,10 @@
     {{ partial "head.html" . }}
 </head>
 
-<body data-theme="auto">
+<body
+  data-theme="{{- if .Site.Params.defaultTheme -}}{{ .Site.Params.defaultTheme }}{{- else -}}auto{{- end -}}"
+  data-theme-auto='{{- if ne .Site.Params.defaultTheme "auto" -}}false{{- else -}}true{{- end -}}'
+  >
     {{ partial "scripts-front.html" . }}
     {{ partial "header.html" . }}
 

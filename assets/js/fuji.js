@@ -58,6 +58,7 @@ function updateUtterancesTheme(utterancesFrame) {
 document.querySelector('.btn .btn-toggle-mode').addEventListener('click', () => {
   let nowTheme = getNowTheme();
   let domTheme = document.body.getAttribute('data-theme');
+  const needAuto = document.body.getAttribute('data-theme-auto') === 'true';
   let systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
   if (domTheme === 'auto') {
@@ -65,15 +66,13 @@ document.querySelector('.btn .btn-toggle-mode').addEventListener('click', () => 
     document.body.setAttribute('data-theme', nowTheme === 'light' ? 'dark' : 'light');
     localStorage.setItem('fuji_data-theme', nowTheme === 'light' ? 'dark' : 'light');
   } else if (domTheme === 'light') {
-    // if now in user mode and light mode
-    document.body.setAttribute('data-theme', 'dark');
-    // if the theme want to switch is system theme
-    localStorage.setItem('fuji_data-theme', systemTheme === 'dark' ? 'auto' : 'dark');
+    const tar = systemTheme === 'dark' ? (needAuto ? 'auto' : 'dark') : 'dark';
+    document.body.setAttribute('data-theme', tar);
+    localStorage.setItem('fuji_data-theme', tar);
   } else {
-    // if now in user mode and dark mode
-    document.body.setAttribute('data-theme', 'light');
-    // if the theme want to switch is system theme
-    localStorage.setItem('fuji_data-theme', systemTheme === 'light' ? 'auto' : 'light');
+    const tar = systemTheme === 'light' ? (needAuto ? 'auto' : 'light') : 'light';
+    document.body.setAttribute('data-theme', tar);
+    localStorage.setItem('fuji_data-theme', tar);
   }
 
   // switch comment area theme
