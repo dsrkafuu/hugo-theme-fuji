@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/dsrkafuu/hugo-theme-fuji#readme",
   "dependencies": {
-    "@primer/css": "15.1.0"
+    "@primer/css": "17.2.1"
   }
 }
