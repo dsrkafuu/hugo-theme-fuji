@@ -8,6 +8,24 @@
   --color-divider: #{$light-color-divider};
   --color-bg: #{$light-color-bg};
   --color-codebg: #{$light-color-codebg};
+
+  // primer variable fix
+  --color-text-primary: #{$light-color-font};
+  --color-text-tertiary: #{$light-color-font};
+  --color-text-link: #{$light-color-primary};
+  --color-text-danger: #{$light-color-primary};
+  --color-bg-primary: #{$light-color-bg};
+  --color-bg-secondary: #{$light-color-codebg};
+  --color-bg-tertiary: #{$light-color-bg};
+  --color-bg-canvas: #{$light-color-bg};
+  --color-markdown-code-bg: #{$light-color-codebg};
+  --color-markdown-frame-border: #{$light-color-divider};
+  --color-markdown-blockquote-border: #{$light-color-divider};
+  --color-markdown-table-border: #{$light-color-divider};
+  --color-markdown-table-tr-border: #{$light-color-divider};
+  --color-border-primary: #{$light-color-divider};
+  --color-border-secondary: #{$light-color-divider};
+  --color-border-tertiary: #{$light-color-divider};
 }
 
 @mixin dark {
@@ -20,6 +38,24 @@
   --color-divider: #{$dark-color-divider};
   --color-bg: #{$dark-color-bg};
   --color-codebg: #{$dark-color-codebg};
+
+  // primer variable fix
+  --color-text-primary: #{$dark-color-font};
+  --color-text-tertiary: #{$dark-color-font};
+  --color-text-link: #{$dark-color-primary};
+  --color-text-danger: #{$dark-color-primary};
+  --color-bg-primary: #{$dark-color-bg};
+  --color-bg-secondary: #{$dark-color-codebg};
+  --color-bg-tertiary: #{$dark-color-bg};
+  --color-bg-canvas: #{$dark-color-bg};
+  --color-markdown-code-bg: #{$dark-color-codebg};
+  --color-markdown-frame-border: #{$dark-color-divider};
+  --color-markdown-blockquote-border: #{$dark-color-divider};
+  --color-markdown-table-border: #{$dark-color-divider};
+  --color-markdown-table-tr-border: #{$dark-color-divider};
+  --color-border-primary: #{$dark-color-divider};
+  --color-border-secondary: #{$dark-color-divider};
+  --color-border-tertiary: #{$dark-color-divider};
 }
 
 body[data-theme='auto'] {
