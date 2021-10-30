@@ -1,5 +1,9 @@
 {{ define "main" }}
 <!-- page info section e.g. current tag & total archive pages -->
+<div class="post-content markdown-body">
+  {{ .Content }}
+  <p></p>
+</div>
 <div class="page-info">
   <span>{{ i18n "tagsCurrentTag" . }}</span>
 </div>
