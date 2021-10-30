@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>application on Edward Xu</title>
+    <link>https://edxu96.github.io/tags/application/</link>
+    <description>Recent content in application on Edward Xu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 26 Nov 2017 00:00:00 +0100</lastBuildDate><atom:link href="https://edxu96.github.io/tags/application/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Personal Statement for MSc at DTU</title>
+      <link>https://edxu96.github.io/post/ps/</link>
+      <pubDate>Sun, 26 Nov 2017 00:00:00 +0100</pubDate>
+      
+      <guid>https://edxu96.github.io/post/ps/</guid>
+      <description>&lt;p&gt;&lt;em&gt;This is the personal statement I wrote, when I applied for MSc in Sustainable
+Energy - Energy System Analysis at Technical University of Denmark (DTU).&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

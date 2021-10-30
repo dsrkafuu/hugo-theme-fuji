@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>network-infrastructure on Edward Xu</title>
+    <link>https://edxu96.github.io/tags/network-infrastructure/</link>
+    <description>Recent content in network-infrastructure on Edward Xu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 15 Aug 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://edxu96.github.io/tags/network-infrastructure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Model steady flow in conduits</title>
+      <link>https://edxu96.github.io/post/conduits/</link>
+      <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://edxu96.github.io/post/conduits/</guid>
+      <description>&lt;p&gt;The infrastructure like transmission grids, distribution grids, district
+heating, gas transportation, and &lt;a href=&#34;https://en.wikipedia.org/wiki/Thermodynamic_cycle&#34; target=&#34;_blank&#34;&gt;thermodynamic
+cycle&lt;/a&gt; can be modelled in a
+similar way, at least when they are in steady state. A special type of
+bipartite consisting two types of buses is brought up here.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Snapshots for a Graph in Database</title>
+      <link>https://edxu96.github.io/post/snapshots/</link>
+      <pubDate>Mon, 05 Apr 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://edxu96.github.io/post/snapshots/</guid>
+      <description>&lt;p&gt;A data structure to store, modify, query temporal evolutions and subgraphs of
+some graph is proposed in this post, in order to handle issues discussed in the
+previous post, &lt;a href=&#34;https://edxu96.github.io/post/relational-db/&#34; target=&#34;_blank&#34;&gt;relational database not for power
+grids&lt;/a&gt;. There are more benefits.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Relational Database not for Power Grids</title>
+      <link>https://edxu96.github.io/post/relational-db/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://edxu96.github.io/post/relational-db/</guid>
+      <description>&lt;p&gt;After my 5-month part-time job at Utiligize, I begin to understand the problems
+in incumbent open-sourced tools for power system analysis.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Power Grid as Multilayer Network</title>
+      <link>https://edxu96.github.io/post/power-fow/</link>
+      <pubDate>Sun, 14 Feb 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://edxu96.github.io/post/power-fow/</guid>
+      <description>&lt;p&gt;A power grid with multiple voltage levels can be modelled using a multilayer
+network. A graph in each layer represents all the cables at the same voltage
+level. A directed bipartite for a pair of adjacent layers consists of
+transformers connecting two voltage levels.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

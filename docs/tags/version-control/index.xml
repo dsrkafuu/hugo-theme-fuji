@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>version-control on Edward Xu</title>
+    <link>https://edxu96.github.io/tags/version-control/</link>
+    <description>Recent content in version-control on Edward Xu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 05 Apr 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://edxu96.github.io/tags/version-control/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Snapshots for a Graph in Database</title>
+      <link>https://edxu96.github.io/post/snapshots/</link>
+      <pubDate>Mon, 05 Apr 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://edxu96.github.io/post/snapshots/</guid>
+      <description>&lt;p&gt;A data structure to store, modify, query temporal evolutions and subgraphs of
+some graph is proposed in this post, in order to handle issues discussed in the
+previous post, &lt;a href=&#34;https://edxu96.github.io/post/relational-db/&#34; target=&#34;_blank&#34;&gt;relational database not for power
+grids&lt;/a&gt;. There are more benefits.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

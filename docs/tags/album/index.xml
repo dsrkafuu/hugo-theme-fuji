@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>album on Edward Xu</title>
+    <link>https://edxu96.github.io/tags/album/</link>
+    <description>Recent content in album on Edward Xu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 15 Mar 2021 00:00:00 +0100</lastBuildDate><atom:link href="https://edxu96.github.io/tags/album/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring 2021</title>
+      <link>https://edxu96.github.io/post/21spring/</link>
+      <pubDate>Mon, 15 Mar 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://edxu96.github.io/post/21spring/</guid>
+      <description>&lt;p&gt;Here are some photos I took in spring in Copenhagen (CPH), Denmark and Essen,
+Germany.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Lyngby, Winter 2021</title>
+      <link>https://edxu96.github.io/post/21winter/</link>
+      <pubDate>Sat, 30 Jan 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://edxu96.github.io/post/21winter/</guid>
+      <description>&lt;p&gt;Here are some photos I took in winter in Lyngby, Denmark.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

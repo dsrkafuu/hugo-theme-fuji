@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="generator" content="Hugo 0.82.1" />
+
+
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrca.ico" />
+
+
+
+<title>Relational Database not for Power Grids - Edward Xu</title>
+
+
+<meta name="author" content="Edward Xu" />
+
+
+<meta name="description" content="Edward&#39;s personal website." />
+
+
+<meta name="keywords" content="network-infrastructure, database" />
+
+
+<meta property="og:title" content="Relational Database not for Power Grids" />
+<meta name="twitter:title" content="Relational Database not for Power Grids" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://edxu96.github.io/post/relational-db/" /><meta property="og:description" content="After my 5-month part-time job at Utiligize, I begin to understand the problems
+in incumbent open-sourced tools for power system analysis." />
+<meta name="twitter:description" content="After my 5-month part-time job at Utiligize, I begin to understand the problems
+in incumbent open-sourced tools for power system analysis." /><meta property="og:image" content="https://edxu96.github.io/img/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://edxu96.github.io/img/og.png" /><meta property="article:published_time" content="2021-03-13T00:00:00+01:00" /><meta property="article:modified_time" content="2021-03-13T00:00:00+01:00" />
+
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        body[data-theme='auto'] img {
+            filter: brightness(60%);
+        }
+    }
+
+    body[data-theme='dark'] img {
+        filter: brightness(60%);
+    }
+</style>
+
+
+
+
+<link rel="stylesheet" href="https://edxu96.github.io/assets/css/fuji.min.css" />
+
+
+
+
+
+
+
+
+</head>
+
+<body
+  data-theme="auto"
+  data-theme-auto='false'
+  >
+    <script data-cfasync="false">
+  
+  var fujiThemeData = localStorage.getItem('fuji_data-theme');
+  
+  if (!fujiThemeData) {
+    localStorage.setItem('fuji_data-theme', 'auto');
+  } else {
+    
+    if (fujiThemeData !== 'auto') {
+      document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
+    }
+  }
+</script>
+
+    <header>
+    <div class="container-lg clearfix">
+        <div class="col-12 header">
+            <a class="title-main" href="https://edxu96.github.io/">Edward Xu</a>
+            
+            <span class="title-sub">a software engineer in Essen, Germany</span>
+            
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container-lg clearfix">
+            
+            <div class="col-12 col-md-9 float-left content">
+                
+<article>
+    
+    <h2 class="post-item post-title">
+        <a href="https://edxu96.github.io/post/relational-db/">Relational Database not for Power Grids</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-03-13</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;1580 words</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/network-infrastructure">network-infrastructure</a>&nbsp;<a href="/tags/database">database</a>&nbsp;</span>
+
+    </div>
+    
+    <div class="post-content markdown-body">
+        <p>After my 5-month part-time job at Utiligize, I begin to understand the problems
+in incumbent open-sourced tools for power system analysis.</p>
+<p>Take <code>pandapower</code> for example, an empty network object is essentially an empty
+relational database with a pre-defined schema. There are three major flaws in
+terms of relational model for power grids, which are discussed in detail. The
+last two sections mention document-based databases and snapshots briefly.</p>
+<p>I am assuming we are on the same page in terms of:</p>
+<ul>
+<li>Some Python packages, like <code>pandapower</code>, <code>PyPSA</code>, <code>networkx</code>, and
+<code>matplotlib</code>.</li>
+<li>Relational database, like <a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a>.</li>
+<li>Object-oriented programming. For example, <a href="https://docs.python.org/3/tutorial/classes.html" target="_blank">classes in Python,
+docs.python.org</a>.</li>
+<li>Graph theory. [<a href="#references">bondy2008graph</a>]</li>
+<li>Concepts like buses, elements, snapshots, etc discussed in the <a href="https://edxu96.github.io/post/power-fow/" target="_blank">Power Grid as
+Multilayer Network</a> post.</li>
+<li>Basics of graph databases, like <a href="https://neo4j.com/" target="_blank">Neo4j</a>, and
+document-based databases, like <a href="https://www.mongodb.com/" target="_blank">MongoDB</a>.</li>
+</ul>
+<p>For those behind, the links mentioned above are good starting points. The last
+page should be:</p>
+<ul>
+<li>Why I dislike incumbent open-sourced tools for power system analysis.</li>
+<li>Why relational model should not be used to model power grids.</li>
+</ul>
+<h2 id="many-to-many-relation">Many-to-Many Relation</h2>
+<p>The only normalised column in the schema of <code>pandapower</code> is for buses. Usually,
+all the tables, except that for buses used the key for buses as the only
+foreign key. In particular, tables for delivery elements like cables and
+transformers have two columns for buses, because they have two and only two
+terminals. Actually, such relation is many-to-many, but there is no
+intermediary table to model it. As discussed above, the purpose is to reduce
+the number of tables. However, it becomes very hard to query associated
+elements given a bus.</p>
+<h2 id="in-memory-operations">In-Memory Operations</h2>
+<p>Lots of graph-related operations are required. For example, the return of the
+corresponding subgraph for a particular voltage level is very important. It
+<a href="https://pandapower.readthedocs.io/en/stable/topology.html" target="_blank">can be done using in
+<code>pandapower</code></a>, but
+an <code>networkx</code> object must be built first. Such idea is actually required before
+building a <code>pandapower</code> object, which is discussed in the following subsection.
+In contrast, it&rsquo;s easier (and maybe more efficient) to do that with a graph
+database like <a href="https://neo4j.com/" target="_blank">Neo4j</a>.</p>
+<p>Also, to store some query results is a good idea, so that to execute the query
+multiple times is avoided. However, there are some pitfalls, if, for example,
+they are dumped in CSV files:</p>
+<ul>
+<li>It takes too much space.</li>
+<li>Hard to keep track of such files, especially when multiple files result from
+one query.</li>
+<li>New queries to read such files are required.</li>
+<li>Hard to update the result if the original grid is modified.</li>
+</ul>
+<p>Another motivation is that to read the whole grid and plot (even part of) it in
+a map using packages like <code>matplotlib</code> requires too much computing resource.
+Furthermore, as far as I know, there is no package in Python that can handle
+the interactive view of a large grid in a map. To inspect the grid
+interactively helps a lot in debugging and preparing queries.</p>
+<h2 id="different-schemas">Different Schemas</h2>
+<p>The biggest challenge we face at Utiligize was that the schema used in our
+clients' database was different from that in <code>pandapower</code> and other tools. In
+particular, transformers should be associated with two buses, but were
+represented as a point from the geographical perspective. We stored tables from
+our clients in one database. My colleagues maintained two sets of tables for
+two schemas manually. There is no built-in tools in incumbent packages, so they
+had to write their own queries. From time to time, some clients modified their
+data by sending new excel files. Then, my colleagues updated the tables
+involved. Though it seems that the transformation (by modifying strings) to the
+schema of <code>pandapower</code> is not hard, I found a major bug around October, 2020.
+It&rsquo;s hard to take all kinds of situations into consideration in string
+modification.</p>
+<p>Since then, I had never been sure about that transformation, so I wrote
+<a href="https://github.com/edxu96/mgrid/releases/tag/v0.2.0" target="_blank">edxu96/mgrid (v0.2.0)</a>,
+which builds a <code>networkx</code> direct graph and then do an operation call vertex
+splitting. There is only one situation (to categorise associated edges into two
+layers), so some unit tests are enough. Furthermore, a concept called
+multilayer network can be used to handle such issues in general.
+[<a href="#references">bianconi2018multilayer</a>] It&rsquo;s discussed in another post, <a href="https://edxu96.github.io/post/power-fow/" target="_blank">Power
+Grid as Multilayer Network</a>, in
+detail. Though the process was slowed down a bit, I didn&rsquo;t have to worry about
+updating tables in the second schema.</p>
+<h2 id="object-relational-mismatch">Object-Relational Mismatch</h2>
+<p>Another big problem is inherent in <code>pandapower</code>, <code>PyPSA</code>, and <code>matpower</code>, etc.
+All of them are initially designed for power flow calculation (PF) and optimal
+power flow optimisation (OPF) of transmission grids. As mentioned before, how
+parameters are stored is similar to a relational database. However, there are
+two reasons why this way is problematic.</p>
+<p>Firstly, the sets of parameters used in PF, in OPF and for different devices
+are quite different. Such issue is resolved in two ways for the time being, as
+far as I know. Firstly, there are tables corresponding to different types of
+electrical devices. Most of the tables are not involved because, in reality,
+nodal injections are usually given in PF, so the most important tables are for
+buses, cables, transformers, loads, and generators. Then, the second way is to
+generalise such tables, because it is more confusing to have a table for loads
+in PF, one for loads in unbalanced PF, one for loads in OPF, etc. However, such
+generalisation results in lots of NaN values, because only a small portion of
+columns are involved in PF.</p>
+<p>Furthermore, pre-defined functions (imagine SQL queries) to insert and modify
+records are very confusing because of too many optional arguments. Even worse,
+there is only <a href="https://pypsa.readthedocs.io/en/latest/api_reference.html#pypsa.Network.add" target="_blank">one method <code>add</code> in <code>Network</code>
+class</a>
+in <code>PyPSA</code>. The user has to memorise combinations of keyword arguments
+themselves.</p>
+<p>The second reason is resulted from the fact that models for transmission grids
+are different from those for distribution grids (for example, 400 V). With
+further penetration of electric vehicles and solar panels, constraints on
+voltages and loadings of low-voltage distribution grids are more likely to be
+violated. The features for distribution grids have been gradually introduced.
+However, the set of parameters required for the same type of electric devices
+can be quite different from that in transmission grids. For example, to support
+unbalanced PF in <code>pandapower</code>, <a href="https://pandapower.readthedocs.io/en/stable/elements/line.html#result-parameters" target="_blank">two tables, <code>res_line</code> and
+<code>res_line_3ph</code></a>,
+are required for storing results. When PF and unbalanced PF are required for
+two parts in the same grid, two <code>pandapower</code> objects are required. There is no
+tool capable of handling balanced and unbalanced grids at the same time.</p>
+<p>I believe, this shortcoming is largely resulted from the object-relational
+mismatch in relational database and object-oriented programming (OOP), which is
+discussed in the second chapter of [<a href="#references">kleppmann2017designing</a>].
+Additionally, it is impossible to store a network model in one (CSV) file. This
+shortcoming seems to be the main motivation behind document model for power
+system models, and it is discussed in the following section.</p>
+<h2 id="document-based-database">Document-Based Database</h2>
+<p>Actually, OOP can help a lot when modelling power grids, and document model has
+been proposed. For example, see
+<a href="https://lanl-ansi.github.io/PowerModels.jl/stable/" target="_blank"><code>PowerModels.jl</code></a> and
+<a href="https://www.nrel.gov/analysis/siip.html" target="_blank"><code>PowerSystems.jl</code></a>. It is very easy
+to dump a model in one JSON file. However, one the hardest part, to transform
+data in another database schema, is never mentioned, and there is no function
+to insert element.</p>
+<p>Furthermore, the many-to-many relationship and graph-related operations are
+still not fully supported. The whole grid has to be read in memory first. These
+are among the inherent disadvantages of document-based databases.</p>
+<h2 id="snapshot">Snapshot</h2>
+<p>Though it is easy to store time series in relational model, PF for multiple
+snapshots is very problematic in tools discussed above. For example, in
+<code>pandapower</code>, which time series to be stored must be specified and results can
+only be stored in CSV files.</p>
+<p>The concept of snapshot is vital in PF and OPF. To use voltage results from the
+consecutive snapshot can largely reduce the number of iterations. For example,
+voltage magnitude results can be passed as <a href="https://pandapower.readthedocs.io/en/stable/powerflow/ac.html" target="_blank"><code>init_vm_pu</code> argument in
+<code>pandapower</code></a>.
+However, at least in <code>pandapower</code>, values are updated in different snapshot,
+based on <a href="https://pandapower.readthedocs.io/en/stable/timeseries.html" target="_blank">specified data and
+&ldquo;controller&rdquo;</a>,
+which I think is really confusing and hard to be used.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>There are issues in different levels when storing power grid models in
+relational databases. The most obvious one is that the many-to-many
+relationship between buses and electric devices is usually missing. Then lots
+of operations, like to select part of the grid, must be done by reading the
+grid in memory first and relying on other graph theoretic packages, which is
+very inefficient and fallible. The biggest issue is probably to transform the
+raw data in a different schema in the first place. Moreover, raw datasets are
+usually updated from time to time.</p>
+<p>The inherent issue is the mismatch between object-oriented programming and
+relational databases. A compromise used to be worked out, but there are more
+and more classes for electric devices involved. This issue must be dealt with
+by introducing document models. However, document databases are still
+unable to cope with the first three issues for the moment.</p>
+<h2 id="references">References</h2>
+<ul>
+<li>Bianconi, G. (2018). Multilayer networks: structure and function. Oxford
+university press.</li>
+<li>Kleppmann, M. (2017). Designing data-intensive applications: The big ideas
+behind reliable, scalable, and maintainable systems. &quot; O&rsquo;Reilly Media, Inc.&quot;.</li>
+<li>Bondy, J. A., &amp; Murty, U. S. R. (2008). Graph Theory. Springer.</li>
+</ul>
+<hr>
+<ul>
+<li>On Mar 14, 2021, prerequisites and expectations were added in the beginning.</li>
+<li>On April 16, 2021, the sequence of sentences in the <a href="#different-schemas">Different
+Schemas</a> section was updated.</li>
+<li>On April 18, 2021, a new section, <a href="#conclusion">Conclusion</a>, was added, and
+the sequence of other sections was modified.</li>
+<li>On April 19, 2021, the section <a href="#in-memory-operations">In-Memory Operations</a>
+was finished for the first time.</li>
+</ul>
+    </div>
+</article>
+
+
+<div class="license markdown-body">
+    <blockquote>
+        <p>Unless otherwise noted, the content of this site is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+               target="_blank">CC BY-NC-SA 4.0</a>.</p>
+    </blockquote>
+</div>
+
+
+<div class="post-comment" data-comment="disqus">
+    <span class="post-comment-notloaded">
+        <i class="iconfont icon-chatbox-ellipses-sharp"></i>&nbsp;Load comments
+    </span>
+    <div id="disqus_thread" style="display: none;"></div>
+    <script>
+        function loadComment() {
+            var commentArea = document.querySelector('.post-comment');
+            var disqus_config = function () {
+                this.page.url = 'https:\/\/edxu96.github.io\/post\/relational-db\/';
+                this.page.identifier = 'relational-db';
+            };
+            var s = document.createElement('script');
+            s.src = 'https://' + 'edxu96' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            document.querySelector('#disqus_thread').removeAttribute('style');
+            (document.body || document.head).appendChild(s);
+            document.querySelector('span.post-comment-notloaded').setAttribute('style', 'display: none;');
+        }
+    </script>
+</div>
+
+
+
+            </div>
+            <aside class="col-12 col-md-3 float-left sidebar">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Pages</h3>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+            <li>
+                <a href="/index.xml">RSS</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Links</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/edxu96" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+            <li>
+                <a href="https://rpubs.com/edxu96" target="_blank"><span>RPubs</span></a>
+            </li>
+            
+            <li>
+                <a href="/files/resume.pdf" target="_blank"><span>resume</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Tags</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/album/">album</a>
+            </span>
+            
+            <span>
+                <a href="/tags/application/">application</a>
+            </span>
+            
+            <span>
+                <a href="/tags/cmdict/">cmdict</a>
+            </span>
+            
+            <span>
+                <a href="/tags/data-structure/">data-structure</a>
+            </span>
+            
+            <span>
+                <a href="/tags/database/">database</a>
+            </span>
+            
+            <span>
+                <a href="/tags/graph-theory/">graph-theory</a>
+            </span>
+            
+            <span>
+                <a href="/tags/journal/">journal</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linguistics/">linguistics</a>
+            </span>
+            
+            <span>
+                <a href="/tags/network-infrastructure/">network-infrastructure</a>
+            </span>
+            
+            <span>
+                <a href="/tags/translation/">translation</a>
+            </span>
+            
+            <span>
+                <a href="/tags/version-control/">version-control</a>
+            </span>
+            
+            <span>
+                <a href="/tags/view/">view</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E4%B8%AD%E6%96%87/">中文</a>
+            </span>
+            
+        </div>
+    </div>
+    <div class="sidebar-item sidebar-toc">
+        <h3>Table of Contents</h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#many-to-many-relation">Many-to-Many Relation</a></li>
+    <li><a href="#in-memory-operations">In-Memory Operations</a></li>
+    <li><a href="#different-schemas">Different Schemas</a></li>
+    <li><a href="#object-relational-mismatch">Object-Relational Mismatch</a></li>
+    <li><a href="#document-based-database">Document-Based Database</a></li>
+    <li><a href="#snapshot">Snapshot</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav></div>
+</aside>
+
+        </div>
+        <div class="btn">
+    <div class="btn-menu" id="btn-menu">
+        <i class="iconfont icon-grid-sharp"></i>
+    </div>
+    <div class="btn-toggle-mode">
+        <i class="iconfont icon-contrast-sharp"></i>
+    </div>
+    <div class="btn-scroll-top">
+        <i class="iconfont icon-chevron-up-circle-sharp"></i>
+    </div>
+</div>
+<aside class="sidebar-mobile" style="display: none;">
+  <div class="sidebar-wrapper">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Pages</h3>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+            <li>
+                <a href="/index.xml">RSS</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Links</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/edxu96" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+            <li>
+                <a href="https://rpubs.com/edxu96" target="_blank"><span>RPubs</span></a>
+            </li>
+            
+            <li>
+                <a href="/files/resume.pdf" target="_blank"><span>resume</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Tags</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/album/">album</a>
+            </span>
+            
+            <span>
+                <a href="/tags/application/">application</a>
+            </span>
+            
+            <span>
+                <a href="/tags/cmdict/">cmdict</a>
+            </span>
+            
+            <span>
+                <a href="/tags/data-structure/">data-structure</a>
+            </span>
+            
+            <span>
+                <a href="/tags/database/">database</a>
+            </span>
+            
+            <span>
+                <a href="/tags/graph-theory/">graph-theory</a>
+            </span>
+            
+            <span>
+                <a href="/tags/journal/">journal</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linguistics/">linguistics</a>
+            </span>
+            
+            <span>
+                <a href="/tags/network-infrastructure/">network-infrastructure</a>
+            </span>
+            
+            <span>
+                <a href="/tags/translation/">translation</a>
+            </span>
+            
+            <span>
+                <a href="/tags/version-control/">version-control</a>
+            </span>
+            
+            <span>
+                <a href="/tags/view/">view</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E4%B8%AD%E6%96%87/">中文</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    
+    
+    <div class="sidebar-item sidebar-toc">
+        <h3>Table of Contents</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#many-to-many-relation">Many-to-Many Relation</a></li>
+    <li><a href="#in-memory-operations">In-Memory Operations</a></li>
+    <li><a href="#different-schemas">Different Schemas</a></li>
+    <li><a href="#object-relational-mismatch">Object-Relational Mismatch</a></li>
+    <li><a href="#document-based-database">Document-Based Database</a></li>
+    <li><a href="#snapshot">Snapshot</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+    
+    
+  </div>
+</aside>
+    </main>
+
+    <footer>
+    <div class="container-lg clearfix">
+        <div class="col-12 footer">
+            
+            <span>&copy; 2017-2021
+                | Made with <span style="color: #e25555;">&hearts;</span> by Edward Xu
+                
+                | Powered by <a href="https://github.com/amzrk2/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
+                                                    target="_blank">Hugo</a> 
+            </span>
+        </div>
+    </div>
+</footer>
+
+    
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+
+<script defer src="/assets/js/fuji.min.js"></script>
+
+
+
+</body>
+
+</html>

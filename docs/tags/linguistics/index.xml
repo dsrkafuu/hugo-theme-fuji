@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linguistics on Edward Xu</title>
+    <link>https://edxu96.github.io/tags/linguistics/</link>
+    <description>Recent content in linguistics on Edward Xu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 03 Jun 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://edxu96.github.io/tags/linguistics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>&#34;cmdict&#34; for German vocabulary</title>
+      <link>https://edxu96.github.io/post/german/</link>
+      <pubDate>Thu, 03 Jun 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://edxu96.github.io/post/german/</guid>
+      <description>&lt;p&gt;Most of the content for German vocabulary is crawled online.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

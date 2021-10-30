@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="generator" content="Hugo 0.82.1" />
+
+
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrca.ico" />
+
+
+
+<title>Power Grid as Multilayer Network - Edward Xu</title>
+
+
+<meta name="author" content="Edward Xu" />
+
+
+<meta name="description" content="Edward&#39;s personal website." />
+
+
+<meta name="keywords" content="network-infrastructure, graph-theory" />
+
+
+<meta property="og:title" content="Power Grid as Multilayer Network" />
+<meta name="twitter:title" content="Power Grid as Multilayer Network" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://edxu96.github.io/post/power-fow/" /><meta property="og:description" content="A power grid with multiple voltage levels can be modelled using a multilayer
+network. A graph in each layer represents all the cables at the same voltage
+level. A directed bipartite for a pair of adjacent layers consists of
+transformers connecting two voltage levels." />
+<meta name="twitter:description" content="A power grid with multiple voltage levels can be modelled using a multilayer
+network. A graph in each layer represents all the cables at the same voltage
+level. A directed bipartite for a pair of adjacent layers consists of
+transformers connecting two voltage levels." /><meta property="og:image" content="https://edxu96.github.io/img/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://edxu96.github.io/img/og.png" /><meta property="article:published_time" content="2021-02-14T00:00:00+01:00" /><meta property="article:modified_time" content="2021-02-14T00:00:00+01:00" />
+
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        body[data-theme='auto'] img {
+            filter: brightness(60%);
+        }
+    }
+
+    body[data-theme='dark'] img {
+        filter: brightness(60%);
+    }
+</style>
+
+
+
+
+<link rel="stylesheet" href="https://edxu96.github.io/assets/css/fuji.min.css" />
+
+
+
+
+
+
+
+
+</head>
+
+<body
+  data-theme="auto"
+  data-theme-auto='false'
+  >
+    <script data-cfasync="false">
+  
+  var fujiThemeData = localStorage.getItem('fuji_data-theme');
+  
+  if (!fujiThemeData) {
+    localStorage.setItem('fuji_data-theme', 'auto');
+  } else {
+    
+    if (fujiThemeData !== 'auto') {
+      document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
+    }
+  }
+</script>
+
+    <header>
+    <div class="container-lg clearfix">
+        <div class="col-12 header">
+            <a class="title-main" href="https://edxu96.github.io/">Edward Xu</a>
+            
+            <span class="title-sub">a software engineer in Essen, Germany</span>
+            
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container-lg clearfix">
+            
+            <div class="col-12 col-md-9 float-left content">
+                
+<article>
+    
+    <h2 class="post-item post-title">
+        <a href="https://edxu96.github.io/post/power-fow/">Power Grid as Multilayer Network</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-02-14</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;1050 words</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/network-infrastructure">network-infrastructure</a>&nbsp;<a href="/tags/graph-theory">graph-theory</a>&nbsp;</span>
+
+    </div>
+    
+    <div class="post-content markdown-body">
+        <p>A power grid with multiple voltage levels can be modelled using a multilayer
+network. A graph in each layer represents all the cables at the same voltage
+level. A directed bipartite for a pair of adjacent layers consists of
+transformers connecting two voltage levels.</p>
+<p><code>mgrid</code> provides an interface for modelling power grids and conduct power
+system analysis using <code>pandapower</code> and <code>PyPSA</code>. Though the way to build models
+(define buses, and connect them with transformers &amp; cables, &hellip;) is similar,
+syntax is very different.</p>
+<p>I have wrapped up my 5 months work at Utiligize, and build a package, <code>mgrid</code>,
+for power system analysis.</p>
+<h2 id="topology-element-snapshot">Topology, Element, Snapshot</h2>
+<p>Here, information for power system analysis is separated into three parts. The
+most basic part about a power grid is topology, how buses are connected. A
+class based on directed graph model in <code>networkx</code> package is used to store such
+information. This way, many existing methods and functions in <code>networkx</code> can be
+utilised directly. Bus is an imaginary concept to enforce Kirchhoff&rsquo;s law.
+There is no power loss within any bus. It is not necessary to distinguish buses
+as PQ, PV, or slack.</p>
+<p>The OpenDSS software (<a href="#reference">EPRI2021penDSS</a>) divides electrical devices
+in power grids into two categories. The most basic one, called delivery
+element, has two terminals and moves electricity from one bus to another.
+Cables and transformers fit into this category. Any edge in topology
+corresponds to one and only one delivery element, and vice versa. The second
+category is conversion element, which converts electricity from or to another
+energy form. Such devices have only one terminal and must be connected to a
+bus. Such categorisation method is applied here.</p>
+<p>In <code>pandapower</code> or <code>PyPSA</code>, different models for cables, for example, are built
+using one function (method). There are many optional arguments in such
+functions, which can be confusing. In <code>mgrid</code>, any element model can be
+modelled by a Python class. For example, one-line equivalent model for
+poly-phase cables is <code>mgrid.power_flow.delivery.Cable</code>, while detailed version
+for 3-phase cables is <code>mgrid.power_flow.delivery.Cable3Phase</code>. The number of
+optional arguments is largely reduced. Though classes are different, for
+delivery or conversion elements, methods to add them to a grid are the same.
+For example, <code>Cable.update_pandapower</code>, <code>Cable3Phase.update_pandapower</code>, and
+<code>TransformerStd.update_pandapower</code> both take a <code>pandapower</code> network and two
+terminals as arguments. Moreover, how to add element is entirely specified in
+<code>update_pandapower</code>. This feature makes it easier for users to define their own
+class. The function to build a <code>pandapower</code> network in <code>mgrid</code> will always use
+<code>update_pandapower</code> to add the element.</p>
+<p>The last part takes time-variance into account. One snapshot consists of one
+set of nodal injections and one set of voltages. It is assumed that the grid
+remains steady state during the period which the snapshot specifies. At least
+in power flow calculation, adjacent snapshots do not have an impact. However,
+in terms of multiple snapshots, it is beneficial to consider snapshots
+together because voltage results from the previous snapshot can be used as
+the initial guess, which reduces the number of iterations. Data-frames with
+multi-level indices are used to store such information in <code>mgrid</code>. That way,
+any snapshot or series of results for any bus can be easily cross-sectioned
+using
+<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.xs.html" target="_blank"><code>pandas.DataFrame.xs</code></a>.</p>
+<h2 id="multilayer-network">Multilayer Network</h2>
+<p>There are two kinds of edges in a multilayer network. Any intra-edge can only
+exist in a single layer and correspond to cables. Inter-edges connect layers
+and correspond to transformers in terms of power grids. Such two kinds of edges
+and the correspondence between voltage levels and layers are the two most
+useful features.</p>
+<p>A multilayer network can be represented in three ways. The first one, with
+multiple graphs for different layers and directed bipartites for inter-edges,
+is mentioned in the introduction. Then, as introduced in
+<a href="#reference">bianconi2018multilayer</a>, supra graph integrates intra-edges in
+different layers and inter-edges in one graph. This format is used when
+modelling power grids using dedicated power system analysis software. The last
+one is called planar graph here, and it contracts inter-edges in the supra
+graph. That way, inter-edges, representing transformers, become inter-nodes.
+Datasets for power grids are usually structured in this manner because
+transformers look like points geographically.</p>
+<p>Usually, nodes are replicated in different layers.
+<a href="#reference">bianconi2018multilayer</a> However, here, all the intra-nodes are
+unique, and inter-node pairs are distinguished by suffixes, which makes the
+supra graph format easier to be derived. This assumption reflects the reality
+that buses tend to locate in different geographical points. The disadvantage is
+that some algorithms designed for multilayer networks might be inapplicable.</p>
+<h2 id="distributed-external-grids">Distributed External Grids</h2>
+<p>There are multiple 150-60 kV transformers in some subcomponents, connecting to
+external grids. Though their RPIs can be known from DC OPF, one or a set of
+them must be chosen as slack bus(es) in AC power flow.</p>
+<p><a href="https://pypsa.readthedocs.io/en/latest/power_flow.html#non-linear-power-flow-for-ac-networks-with-distributed-slack" target="_blank">AC power flow for with distributed
+slack</a>
+has been implemented in <code>PyPSA</code> only. To use <code>pandapower</code>, one and only one
+150-60 kV transformer should be chosen as the slack bus. Participation factors
+resulted from automatic generation control (AGC) can be used as weights for a
+set of buses with generators.</p>
+<h2 id="what-if-divergence">What if Divergence</h2>
+<p>For power flow calculation, it is hard to know the reason when the iteration
+diverges. To debug, we can divide the grid into smaller parts and calculate
+power flow individually. After detecting the part(s) which result(s) in the
+divergence, it can be excluded in the original grid. Conversion elements can be
+attached to the bus, which represents the excluded part. That way, the
+calculation for the grid will converge, and the error is merely the loss along
+cables and transformers in the excluded part.</p>
+<h2 id="voltage-drop">Voltage Drop</h2>
+<p>The direct impedance method can be easily used for radial distribution feeders
+(RDF) to calculate voltage drops. Then, with the voltage at root known after
+power flow for higher voltage levels, voltages can be calculated accordingly.</p>
+<p>The nonlinear relationship between complex voltages 
+\(\overline{\boldsymbol{V}} \)
+
+ and PRIs 
+\(\overline{\boldsymbol{I}} \)
+
+ can be expressed using bus impedance
+matrix:
+
+$$ \begin{aligned}
+  \overline{\boldsymbol{V}}
+  = \overline{\boldsymbol{Z}} \overline{\boldsymbol{I}}
+  &#43; \overline{\boldsymbol{V}}_\text{zero}
+\end{aligned} $$
+
+
+where vector 
+\( \overline{\boldsymbol{V}}_\text{zero}\)
+
+ is for zero-load snapshot.</p>
+<p>It might be problematic to apply the direct impedance method for high-voltage
+lines, because they should be modelled using one-line equivalent Pi models.
+The current loss must be taken into account.</p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li>[bianconi2018multilayer] Bianconi, G. (2018). Multilayer networks: structure
+and function. Oxford university press.</li>
+<li>[EPRI2021penDSS] Electric Power Research Institute (2021). OpenDSS: The Open
+Distribution System Simulator. <a href="https://sourceforge.net/projects/electricdss/">https://sourceforge.net/projects/electricdss/</a></li>
+</ul>
+    </div>
+</article>
+
+
+<div class="license markdown-body">
+    <blockquote>
+        <p>Unless otherwise noted, the content of this site is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+               target="_blank">CC BY-NC-SA 4.0</a>.</p>
+    </blockquote>
+</div>
+
+
+<div class="post-comment" data-comment="disqus">
+    <span class="post-comment-notloaded">
+        <i class="iconfont icon-chatbox-ellipses-sharp"></i>&nbsp;Load comments
+    </span>
+    <div id="disqus_thread" style="display: none;"></div>
+    <script>
+        function loadComment() {
+            var commentArea = document.querySelector('.post-comment');
+            var disqus_config = function () {
+                this.page.url = 'https:\/\/edxu96.github.io\/post\/power-fow\/';
+                this.page.identifier = 'power-fow';
+            };
+            var s = document.createElement('script');
+            s.src = 'https://' + 'edxu96' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            document.querySelector('#disqus_thread').removeAttribute('style');
+            (document.body || document.head).appendChild(s);
+            document.querySelector('span.post-comment-notloaded').setAttribute('style', 'display: none;');
+        }
+    </script>
+</div>
+
+
+
+            </div>
+            <aside class="col-12 col-md-3 float-left sidebar">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Pages</h3>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+            <li>
+                <a href="/index.xml">RSS</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Links</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/edxu96" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+            <li>
+                <a href="https://rpubs.com/edxu96" target="_blank"><span>RPubs</span></a>
+            </li>
+            
+            <li>
+                <a href="/files/resume.pdf" target="_blank"><span>resume</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Tags</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/album/">album</a>
+            </span>
+            
+            <span>
+                <a href="/tags/application/">application</a>
+            </span>
+            
+            <span>
+                <a href="/tags/cmdict/">cmdict</a>
+            </span>
+            
+            <span>
+                <a href="/tags/data-structure/">data-structure</a>
+            </span>
+            
+            <span>
+                <a href="/tags/database/">database</a>
+            </span>
+            
+            <span>
+                <a href="/tags/graph-theory/">graph-theory</a>
+            </span>
+            
+            <span>
+                <a href="/tags/journal/">journal</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linguistics/">linguistics</a>
+            </span>
+            
+            <span>
+                <a href="/tags/network-infrastructure/">network-infrastructure</a>
+            </span>
+            
+            <span>
+                <a href="/tags/translation/">translation</a>
+            </span>
+            
+            <span>
+                <a href="/tags/version-control/">version-control</a>
+            </span>
+            
+            <span>
+                <a href="/tags/view/">view</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E4%B8%AD%E6%96%87/">中文</a>
+            </span>
+            
+        </div>
+    </div>
+    <div class="sidebar-item sidebar-toc">
+        <h3>Table of Contents</h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#topology-element-snapshot">Topology, Element, Snapshot</a></li>
+    <li><a href="#multilayer-network">Multilayer Network</a></li>
+    <li><a href="#distributed-external-grids">Distributed External Grids</a></li>
+    <li><a href="#what-if-divergence">What if Divergence</a></li>
+    <li><a href="#voltage-drop">Voltage Drop</a></li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav></div>
+</aside>
+
+        </div>
+        <div class="btn">
+    <div class="btn-menu" id="btn-menu">
+        <i class="iconfont icon-grid-sharp"></i>
+    </div>
+    <div class="btn-toggle-mode">
+        <i class="iconfont icon-contrast-sharp"></i>
+    </div>
+    <div class="btn-scroll-top">
+        <i class="iconfont icon-chevron-up-circle-sharp"></i>
+    </div>
+</div>
+<aside class="sidebar-mobile" style="display: none;">
+  <div class="sidebar-wrapper">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Pages</h3>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+            <li>
+                <a href="/index.xml">RSS</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Links</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/edxu96" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+            <li>
+                <a href="https://rpubs.com/edxu96" target="_blank"><span>RPubs</span></a>
+            </li>
+            
+            <li>
+                <a href="/files/resume.pdf" target="_blank"><span>resume</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Tags</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/album/">album</a>
+            </span>
+            
+            <span>
+                <a href="/tags/application/">application</a>
+            </span>
+            
+            <span>
+                <a href="/tags/cmdict/">cmdict</a>
+            </span>
+            
+            <span>
+                <a href="/tags/data-structure/">data-structure</a>
+            </span>
+            
+            <span>
+                <a href="/tags/database/">database</a>
+            </span>
+            
+            <span>
+                <a href="/tags/graph-theory/">graph-theory</a>
+            </span>
+            
+            <span>
+                <a href="/tags/journal/">journal</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linguistics/">linguistics</a>
+            </span>
+            
+            <span>
+                <a href="/tags/network-infrastructure/">network-infrastructure</a>
+            </span>
+            
+            <span>
+                <a href="/tags/translation/">translation</a>
+            </span>
+            
+            <span>
+                <a href="/tags/version-control/">version-control</a>
+            </span>
+            
+            <span>
+                <a href="/tags/view/">view</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E4%B8%AD%E6%96%87/">中文</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    
+    
+    <div class="sidebar-item sidebar-toc">
+        <h3>Table of Contents</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#topology-element-snapshot">Topology, Element, Snapshot</a></li>
+    <li><a href="#multilayer-network">Multilayer Network</a></li>
+    <li><a href="#distributed-external-grids">Distributed External Grids</a></li>
+    <li><a href="#what-if-divergence">What if Divergence</a></li>
+    <li><a href="#voltage-drop">Voltage Drop</a></li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav>
+    </div>
+    
+    
+  </div>
+</aside>
+    </main>
+
+    <footer>
+    <div class="container-lg clearfix">
+        <div class="col-12 footer">
+            
+            <span>&copy; 2017-2021
+                | Made with <span style="color: #e25555;">&hearts;</span> by Edward Xu
+                
+                | Powered by <a href="https://github.com/amzrk2/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
+                                                    target="_blank">Hugo</a> 
+            </span>
+        </div>
+    </div>
+</footer>
+
+    
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+
+<script defer src="/assets/js/fuji.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" />
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body);"
+></script>
+
+
+
+
+</body>
+
+</html>

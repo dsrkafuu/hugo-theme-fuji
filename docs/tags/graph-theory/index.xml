@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>graph-theory on Edward Xu</title>
+    <link>https://edxu96.github.io/tags/graph-theory/</link>
+    <description>Recent content in graph-theory on Edward Xu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 23 Apr 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://edxu96.github.io/tags/graph-theory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notes for Spanning Arborescence</title>
+      <link>https://edxu96.github.io/post/arborescence/</link>
+      <pubDate>Fri, 23 Apr 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://edxu96.github.io/post/arborescence/</guid>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Here are the notes for three algorithms of spanning arborescences of some
+directed graph.&lt;/p&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Power Grid as Multilayer Network</title>
+      <link>https://edxu96.github.io/post/power-fow/</link>
+      <pubDate>Sun, 14 Feb 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://edxu96.github.io/post/power-fow/</guid>
+      <description>&lt;p&gt;A power grid with multiple voltage levels can be modelled using a multilayer
+network. A graph in each layer represents all the cables at the same voltage
+level. A directed bipartite for a pair of adjacent layers consists of
+transformers connecting two voltage levels.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

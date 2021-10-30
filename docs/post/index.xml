@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Edward Xu</title>
+    <link>https://edxu96.github.io/post/</link>
+    <description>Recent content in Posts on Edward Xu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 15 Aug 2021 00:00:00 +0200</lastBuildDate><atom:link href="https://edxu96.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Model steady flow in conduits</title>
+      <link>https://edxu96.github.io/post/conduits/</link>
+      <pubDate>Sun, 15 Aug 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://edxu96.github.io/post/conduits/</guid>
+      <description>&lt;p&gt;The infrastructure like transmission grids, distribution grids, district
+heating, gas transportation, and &lt;a href=&#34;https://en.wikipedia.org/wiki/Thermodynamic_cycle&#34; target=&#34;_blank&#34;&gt;thermodynamic
+cycle&lt;/a&gt; can be modelled in a
+similar way, at least when they are in steady state. A special type of
+bipartite consisting two types of buses is brought up here.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>&#34;cmdict&#34; for German vocabulary</title>
+      <link>https://edxu96.github.io/post/german/</link>
+      <pubDate>Thu, 03 Jun 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://edxu96.github.io/post/german/</guid>
+      <description>&lt;p&gt;Most of the content for German vocabulary is crawled online.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Notes for Spanning Arborescence</title>
+      <link>https://edxu96.github.io/post/arborescence/</link>
+      <pubDate>Fri, 23 Apr 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://edxu96.github.io/post/arborescence/</guid>
+      <description>&lt;div class=&#34;paragraph&#34;&gt;
+&lt;p&gt;Here are the notes for three algorithms of spanning arborescences of some
+directed graph.&lt;/p&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Snapshots for a Graph in Database</title>
+      <link>https://edxu96.github.io/post/snapshots/</link>
+      <pubDate>Mon, 05 Apr 2021 00:00:00 +0200</pubDate>
+      
+      <guid>https://edxu96.github.io/post/snapshots/</guid>
+      <description>&lt;p&gt;A data structure to store, modify, query temporal evolutions and subgraphs of
+some graph is proposed in this post, in order to handle issues discussed in the
+previous post, &lt;a href=&#34;https://edxu96.github.io/post/relational-db/&#34; target=&#34;_blank&#34;&gt;relational database not for power
+grids&lt;/a&gt;. There are more benefits.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Spring 2021</title>
+      <link>https://edxu96.github.io/post/21spring/</link>
+      <pubDate>Mon, 15 Mar 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://edxu96.github.io/post/21spring/</guid>
+      <description>&lt;p&gt;Here are some photos I took in spring in Copenhagen (CPH), Denmark and Essen,
+Germany.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Relational Database not for Power Grids</title>
+      <link>https://edxu96.github.io/post/relational-db/</link>
+      <pubDate>Sat, 13 Mar 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://edxu96.github.io/post/relational-db/</guid>
+      <description>&lt;p&gt;After my 5-month part-time job at Utiligize, I begin to understand the problems
+in incumbent open-sourced tools for power system analysis.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Resume and Cover Letter</title>
+      <link>https://edxu96.github.io/post/resume-cover/</link>
+      <pubDate>Thu, 11 Mar 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://edxu96.github.io/post/resume-cover/</guid>
+      <description>&lt;p&gt;The resume played an important role in my last year at the university, because
+it forces me to think about what I can do and want. The best way to improve it
+is to receive feedback from others. In addition, there are some key points that
+I want to talk about. Some advice on cover letter writing is given in the last
+section.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>2.5 Years at DTU</title>
+      <link>https://edxu96.github.io/post/study/</link>
+      <pubDate>Sat, 06 Mar 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://edxu96.github.io/post/study/</guid>
+      <description>&lt;p&gt;I have graduated from DTU with a MSc in Engineering. Here are some points that
+worth mentioning.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Power Grid as Multilayer Network</title>
+      <link>https://edxu96.github.io/post/power-fow/</link>
+      <pubDate>Sun, 14 Feb 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://edxu96.github.io/post/power-fow/</guid>
+      <description>&lt;p&gt;A power grid with multiple voltage levels can be modelled using a multilayer
+network. A graph in each layer represents all the cables at the same voltage
+level. A directed bipartite for a pair of adjacent layers consists of
+transformers connecting two voltage levels.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Lyngby, Winter 2021</title>
+      <link>https://edxu96.github.io/post/21winter/</link>
+      <pubDate>Sat, 30 Jan 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://edxu96.github.io/post/21winter/</guid>
+      <description>&lt;p&gt;Here are some photos I took in winter in Lyngby, Denmark.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Teaching Assistant for Stochastic Simulation</title>
+      <link>https://edxu96.github.io/post/ta/</link>
+      <pubDate>Sun, 21 Jun 2020 00:00:00 +0200</pubDate>
+      
+      <guid>https://edxu96.github.io/post/ta/</guid>
+      <description>&lt;p&gt;In June, 2020, I worked as teaching assistant (TA) for stochastic simulation at
+Technical University of Denmark. The course consists of 6 lecture days (3 hours
+lecture and 4 hours exercise per day) and a group project. Because of the
+COVID-19 pandemic, everything has to be done online, which made it harder for
+everyone.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>英译中：阿波罗岩石样本引发了对月球形成的激烈讨论</title>
+      <link>https://edxu96.github.io/post/moon-formation/</link>
+      <pubDate>Tue, 31 Mar 2020 00:00:00 +0200</pubDate>
+      
+      <guid>https://edxu96.github.io/post/moon-formation/</guid>
+      <description>&lt;p&gt;一项新的研究表明，地球和月球在成分上存在明显差异，这有助于解释月球的形成。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>我和丹麦的那些故事（五十七）</title>
+      <link>https://edxu96.github.io/post/dtu2/</link>
+      <pubDate>Fri, 21 Feb 2020 00:00:00 +0100</pubDate>
+      
+      <guid>https://edxu96.github.io/post/dtu2/</guid>
+      <description>&lt;p&gt;构思了一年多的硕士毕设提案终于通过了开题审核，接下来的任务就是把它变成现实。从一次睡觉前的灵感爆棚，到现在的 12 页开题报告，这一年多在丹麦的学习生活很不容易。每天入睡前都要思考两个问题，想法可不可行，有没有类似的想法。但只靠想是不够的，更需要阅读和写作，以及朋友的帮助。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>择校课程、产业现状和研究团队最重要</title>
+      <link>https://edxu96.github.io/post/dtu/</link>
+      <pubDate>Fri, 04 Jan 2019 00:00:00 +0800</pubDate>
+      
+      <guid>https://edxu96.github.io/post/dtu/</guid>
+      <description>&lt;p&gt;新能源是一个跨学科的领域，我在本科期间没有很明确的研究对象，所以研究生择校和专业选择的时候有很多选项，经过半学期 DIY 的摸索，我个人认为对于择校和专业选择来说，课程、产业现状和研究团队是最重要的。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>生涯人物故事：“认识自己”最重要</title>
+      <link>https://edxu96.github.io/post/cqu/</link>
+      <pubDate>Fri, 15 Jun 2018 00:00:00 +0200</pubDate>
+      
+      <guid>https://edxu96.github.io/post/cqu/</guid>
+      <description>&lt;p&gt;本科毕业时的一篇总结文章。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Personal Statement for MSc at DTU</title>
+      <link>https://edxu96.github.io/post/ps/</link>
+      <pubDate>Sun, 26 Nov 2017 00:00:00 +0100</pubDate>
+      
+      <guid>https://edxu96.github.io/post/ps/</guid>
+      <description>&lt;p&gt;&lt;em&gt;This is the personal statement I wrote, when I applied for MSc in Sustainable
+Energy - Energy System Analysis at Technical University of Denmark (DTU).&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

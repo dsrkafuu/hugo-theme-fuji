@@ -1,0 +1,3 @@
+User-agent: *
+
+Sitemap: https://edxu96.github.io/sitemap.xml

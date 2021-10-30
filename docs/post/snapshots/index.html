@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="generator" content="Hugo 0.82.1" />
+
+
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrca.ico" />
+
+
+
+<title>Snapshots for a Graph in Database - Edward Xu</title>
+
+
+<meta name="author" content="Edward Xu" />
+
+
+<meta name="description" content="Edward&#39;s personal website." />
+
+
+<meta name="keywords" content="data-structure, network-infrastructure, version-control" />
+
+
+<meta property="og:title" content="Snapshots for a Graph in Database" />
+<meta name="twitter:title" content="Snapshots for a Graph in Database" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://edxu96.github.io/post/snapshots/" /><meta property="og:description" content="A data structure to store, modify, query temporal evolutions and subgraphs of
+some graph is proposed in this post, in order to handle issues discussed in the
+previous post, relational database not for power
+grids. There are more benefits." />
+<meta name="twitter:description" content="A data structure to store, modify, query temporal evolutions and subgraphs of
+some graph is proposed in this post, in order to handle issues discussed in the
+previous post, relational database not for power
+grids. There are more benefits." /><meta property="og:image" content="https://edxu96.github.io/img/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://edxu96.github.io/img/og.png" /><meta property="article:published_time" content="2021-04-05T00:00:00+02:00" /><meta property="article:modified_time" content="2021-04-05T00:00:00+02:00" />
+
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        body[data-theme='auto'] img {
+            filter: brightness(60%);
+        }
+    }
+
+    body[data-theme='dark'] img {
+        filter: brightness(60%);
+    }
+</style>
+
+
+
+
+<link rel="stylesheet" href="https://edxu96.github.io/assets/css/fuji.min.css" />
+
+
+
+
+
+
+
+
+</head>
+
+<body
+  data-theme="auto"
+  data-theme-auto='false'
+  >
+    <script data-cfasync="false">
+  
+  var fujiThemeData = localStorage.getItem('fuji_data-theme');
+  
+  if (!fujiThemeData) {
+    localStorage.setItem('fuji_data-theme', 'auto');
+  } else {
+    
+    if (fujiThemeData !== 'auto') {
+      document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
+    }
+  }
+</script>
+
+    <header>
+    <div class="container-lg clearfix">
+        <div class="col-12 header">
+            <a class="title-main" href="https://edxu96.github.io/">Edward Xu</a>
+            
+            <span class="title-sub">a software engineer in Essen, Germany</span>
+            
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container-lg clearfix">
+            
+            <div class="col-12 col-md-9 float-left content">
+                
+<article>
+    
+    <h2 class="post-item post-title">
+        <a href="https://edxu96.github.io/post/snapshots/">Snapshots for a Graph in Database</a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-04-05</span>
+
+<span><i class="iconfont icon-file-tray-sharp"></i>&nbsp;1756 words</span>
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;<a href="/tags/data-structure">data-structure</a>&nbsp;<a href="/tags/network-infrastructure">network-infrastructure</a>&nbsp;<a href="/tags/version-control">version-control</a>&nbsp;</span>
+
+    </div>
+    
+    <div class="post-content markdown-body">
+        <p>A data structure to store, modify, query temporal evolutions and subgraphs of
+some graph is proposed in this post, in order to handle issues discussed in the
+previous post, <a href="https://edxu96.github.io/post/relational-db/" target="_blank">relational database not for power
+grids</a>. There are more benefits.</p>
+<p>The core ingredient, snapshot, is discussed in detail first, and how multiple
+snapshots for one graph are store is introduced in two sections,
+<a href="#increment">increment</a> and <a href="#meta-graph">meta-graph</a>. The modification of the
+graph can be based on transactions, which is discussed in section
+<a href="#transaction">transaction</a>. A better place to store such data values is a
+database, and how a relational database design might look like is discussed.
+Lastly, a new concept, secondary snapshot, is brought up to generalise the idea
+for attributes of edges and nodes.</p>
+<p>I am assuming we are on the same page in terms of:</p>
+<ul>
+<li>Basic concepts in graph theory, like simple graph, bipartite, tree.
+[<a href="#references">bondy2008graph</a>]</li>
+<li>Basic knowledge about relational databases.
+[<a href="#references">postgresql2021documentation</a>]</li>
+<li>Basic knowledge about data abstraction. [section 1.2 in
+<a href="#references">sedgewick2014algorithms</a>]</li>
+<li>Basic knowledge about version control. [section 1.1 in
+<a href="#references">chacon2014pro</a>]</li>
+</ul>
+<p>For those behind, the links mentioned above are good starting points. The last
+page should be:</p>
+<ul>
+<li>How to store changes of a simple graph in an incremental manner.</li>
+<li>How the snapshot concept contributes to storage, version control, query, etc
+of graphs.</li>
+</ul>
+<p>Note that all the graphs discussed here are simple graphs without any node or
+edge attribute. Furthermore, the node is not the primary concern.</p>
+<h2 id="snapshot">Snapshot</h2>
+<p>At Utiligize, we stored the topology of power grids in a relational database. I
+found some queries were very popular:</p>
+<ul>
+<li>Query the whole graph.</li>
+<li>Query the whole graph and calculate a subgraph.</li>
+<li>Query the whole graph and modify it.</li>
+<li>Modify the graph.</li>
+</ul>
+<p>Most representations assume that there is no further update. For example, in
+<code>pandapower</code>, values can only be found via indices and updated accordingly. A
+data structure is discussed here, so the modification is a first class
+passenger as well. Besides, to represent the temporal evolution of some graph
+as a series of snapshots [section 4.1.2 in <a href="#references">masuda2021guide</a>] is
+one of the many applications of the snapshot concept. There are at least two
+other applications:</p>
+<ul>
+<li>A snapshot can store a subgraph from some query.</li>
+<li>A set of snapshots can represents some neighbours of the graph in terms of
+topology.</li>
+</ul>
+<p>That is, the snapshot concept can not only be used in version control, but also
+served as the core in storing, modification, and query. The program should
+revolve around a set of associated snapshots.</p>
+<h2 id="increment">Increment</h2>
+<p>To store snapshots as individual graphs requires lots of memory space. For
+example, to treat snapshots as different layers and connect related layers with
+bipartites. [section 5.2 in <a href="#references">bianconi2018multilayer</a>]. Instead,
+given a graph and its differences between another unknown graph, the unknown
+can be computed accordingly, so the space required can be largely reduced,
+especially when such two graphs are similar. Those differences can be wrapped
+in one concept, <strong>increment</strong>. A way to store and utilise increments for
+snapshots of graphs is discussed here.</p>
+<h3 id="event">Event</h3>
+<p>As discussed before, the graph can always be seen as a set of two-entry tuples
+(edge-list), when no isolated node is present. Then, any modification to a
+graph can be seen as some state change(s) of some edge(s), and it can also be
+represented by a two-entry tuple, indicating which edge is modified. In
+particular, the only two fundamental modification is to add an edge or to
+delete an edge. Such modification can be seen as an <strong>event</strong>. Thus, a graph, a
+snapshot or an increment can be seen as a set of events.</p>
+<p>The concept of event can be interpreted as follows. It is assumed that there
+are two possible states, <code>on</code> and <code>off</code>, for any edge. The default state is
+<code>off</code>. An event associated with snapshot <code>s</code> in terms of edge <code>(u, v)</code> can be
+represented by a three-entry tuple,  <code>(u, v, s)</code>. Note that the definition here
+is different from that in <a href="#references">masuda2021guide</a>.</p>
+<h3 id="link">Link</h3>
+<p>Which snapshot the increment is based on must be specified, though the
+relationship can be modified later. This relationship will be called <strong>link</strong>
+here. For example, if there are three graphs represented by <code>a</code>, <code>b</code> and <code>c</code>,
+<code>a</code> can be derived from its increment linked to <code>b</code> or its increment linked to
+<code>c</code>. The derivation must be based on the linked graph, of course, as discussed
+before.</p>
+<p>Multiple links are allowed, because the size of some increment might be reduced
+further. To follow the previous example, <code>a</code> can be linked to <code>b</code> and <code>c</code>, and
+the size of the corresponding increment might be reduced further.</p>
+<h3 id="symmetric-difference">Symmetric Difference</h3>
+<p>The only mathematical operation required for calculating increments and
+recovering snapshots is symmetric difference. From
+<a href="#references">wikipedia2021symmetric</a>:</p>
+<blockquote>
+<p>In mathematics, the symmetric difference of two sets, also known as the
+disjunctive union, is the set of elements which are in either of the sets,
+but not in their intersection.</p>
+</blockquote>
+<p>For example:</p>
+<pre><code>{a, b} △ {b, c} = {a, c}
+{a, b} △ {b, c} △ {c, d} = {a, d}
+</code></pre>
+<p>The second example indicates that the operation can be generalised to
+successive symmetric differences of a series of sets. The sequence of such sets
+does not matter. This generalised version can be applied when such sets are
+found via a concept brought up in the section.</p>
+<h2 id="meta-graph">Meta-Graph</h2>
+<p>Several snapshots and corresponding links compose a directed graph when
+snapshots and links are considered as nodes and edges respectively. That graph
+will be called meta-graph. The directions of links do not matter, as long as
+they are consistent. For example, to direct out of the snapshot. Then,
+according to the definition above, meta-graph is a directed acyclic graph (a
+directed graph without <strong>directed cycle</strong>).</p>
+<p>The definition of directed cycle follows that in
+<a href="#references">sedgewick2020algorithms</a>:</p>
+<blockquote>
+<p>A directed path in a digraph is a sequence of vertices in which there is a
+(directed) edge pointing from each vertex in the sequence to its successor in
+the sequence, with no repeated edges. A directed cycle is a directed path
+(with at least one edge) whose first and last vertices are the same.</p>
+</blockquote>
+<p>Such concept is similar to that in version control
+[<a href="#references">wikipedia2021version</a>] when commits and merges are considered as
+nodes.</p>
+<h3 id="recover-snapshot">Recover Snapshot</h3>
+<p>The increments of all the parents of a given snapshot compose those sets for
+symmetric difference.</p>
+<h3 id="power-flow-timeline">Power Flow Timeline</h3>
+<p>A power flow timeline is an <strong>undirected path</strong> of the meta-graph and a
+starting snapshot, which must be one of the two terminals of the path. The
+power flow calculation starts with the starting snapshot and use the voltage
+result of the precedent snapshot as the initial guess, which can speed up the
+calculation to a large extent.</p>
+<p>Dedicated statements can be designed to build a timeline in a higher
+abstraction level.</p>
+<h3 id="automated-debug-in-pf">Automated Debug in PF</h3>
+<p>The algorithms for power flow are very sensitive to errors in the grid model.
+The software can provide some procedure modifying the timeline automatically,
+in order to debug such errors.</p>
+<h2 id="transaction">Transaction</h2>
+<p>Being immutable is a main feature of snapshots. A mechanism should be designed
+to allow modifications before the snapshot becomes immutable. The idea of
+transaction comes from relational database. The beginning of a transaction is
+to provide a graph object that the user can work on.</p>
+<p>Though this mechanism based on transactions is similar to that in most
+relational databases, the terminologies do not correspond.</p>
+<h3 id="pending-snapshot">Pending Snapshot</h3>
+<p>All the events in the increment for the pending snapshot can be previewed. Note
+that any modification is made to a snapshot, but the snapshot is stored in the
+form of increment.</p>
+<p>It&rsquo;s possible to have multiple pending snapshots. Then any user or several
+users can work on multiple pending snapshots at the same time. When it comes to
+storage, pending snapshots are written in the database as well, but still
+mutable.</p>
+<p>Multiple (committed) snapshots can be specified when a pending snapshot is
+initiated. However, the initiated snapshot is calculated via successive
+symmetric differences of associated increments.</p>
+<p>While other pending snapshots are invisible, committed snapshots resulted from
+other transactions are visible immediately in the current transaction. This
+setting is adopted in most relational database systems like <code>PostgreSQL</code>
+[<a href="#references">postgresql2021transactions</a>] (Note that terminologies are
+different, while the idea is shared, as discussed before).</p>
+<h3 id="commit">Commit</h3>
+<p>The link can only be associated with committed snapshots. The link(s) can be
+modified later, in order to, for example, reduce the size of the increment.
+Whenever a snapshot is to be deleted, no other snapshot should be based on it.</p>
+<h3 id="replacement">Replacement</h3>
+<p>There are many algorithms designed for graphs. For example, a pending snapshot
+can be converted to an <code>networkx</code> object and modified via algorithms in
+<code>networkx</code>. That is, it is more convenient not to write snapshot using
+traditional SQL queries. After some modifications, the pending snapshot can be
+replaced entirely by the <code>networks</code> object.</p>
+<p>The prototypical workflow of an transaction can be summarised as follows:</p>
+<ol>
+<li>Obtain an <code>networkx</code> object representing a pending snapshot by specifying
+linked snapshots.</li>
+<li>Modify the pending snapshot using functions in <code>networkx</code>.</li>
+<li>Replace the pending snapshot in the database with the modified one.</li>
+<li>Commit the snapshot.</li>
+</ol>
+<p>Also, because multiple pending snapshots are allowed. The steps 1-3 can be done
+simultaneously for different pending snapshots, and one user can work on
+different pending snapshots simultaneously. Furthermore, as discussed in
+<a href="#link">subsection link</a>, links can be modified later as long as they point to
+committed snapshots.</p>
+<h2 id="secondary-snapshot">Secondary Snapshot</h2>
+<p>Second snapshots is a concept to store evolutions of attributes of edges and
+nodes, and its topology remains unchanged. It is recommended that attributes
+associated with some edge are stored in one object. For node attributes, they
+can be stored in objects attached to the node. The advantages have been
+discussed in another post, <a href="https://edxu96.github.io/post/relational-db/#object-relational-mismatch" target="_blank">relational database not for power
+girds</a>.
+Detailed discussion about objects when modelling power grids can be found in
+post, <a href="https://edxu96.github.io/post/power-flow/#object-relational-mismatch/#topology-element-snapshot" target="_blank">power grid as multilayer
+network</a>.</p>
+<p>The concept of power flow timelines can be generalised for secondary snapshots.</p>
+<h2 id="references">References</h2>
+<ul>
+<li>Bianconi, G. (2018). Multilayer networks: structure and function. Oxford
+university press.</li>
+<li>Bondy, J. A., &amp; Murty, U. S. R. (2008). Graph Theory. Springer.</li>
+<li>Chacon, S., &amp; Straub, B. (2014). Pro Git. Retrieved 10:16, April 2, 2021,
+from <a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a></li>
+<li>Masuda, N., &amp; Lambiotte, R. (2021). A Guide To Temporal Networks. World
+Scientific.</li>
+<li>PostgreSQL. (2021). Documentation. Retrieved 09:14, April 5, 2021, from
+<a href="https://www.postgresql.org/docs/current/tutorial-transactions.html">https://www.postgresql.org/docs/current/tutorial-transactions.html</a></li>
+<li>PostgreSQL. (2021). Transactions, Documentation. Retrieved 09:14, April 5,
+2021, from <a href="https://www.postgresql.org/docs/current/tutorial-transactions.html">https://www.postgresql.org/docs/current/tutorial-transactions.html</a></li>
+<li>Sedgewick, R., &amp; Wayne, K. (2014). Algorithms. Princeton University.
+<a href="https://algs4.cs.princeton.edu/home/">https://algs4.cs.princeton.edu/home/</a></li>
+<li>Wikipedia contributors. (2021, March 20). Symmetric difference. In Wikipedia,
+The Free Encyclopedia. Retrieved 15:46, April 2, 2021, from
+<a href="https://en.wikipedia.org/w/index.php?title=Symmetric_difference&amp;oldid=1013286130">https://en.wikipedia.org/w/index.php?title=Symmetric_difference&amp;oldid=1013286130</a></li>
+<li>Wikipedia contributors. (2021). Version control. In Wikipedia, The Free
+Encyclopedia. Retrieved 18:23, March 30, 2021, from
+<a href="https://en.wikipedia.org/w/index.php?title=Version_control&amp;oldid=1014843465">https://en.wikipedia.org/w/index.php?title=Version_control&amp;oldid=1014843465</a></li>
+</ul>
+    </div>
+</article>
+
+
+<div class="license markdown-body">
+    <blockquote>
+        <p>Unless otherwise noted, the content of this site is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+               target="_blank">CC BY-NC-SA 4.0</a>.</p>
+    </blockquote>
+</div>
+
+
+<div class="post-comment" data-comment="disqus">
+    <span class="post-comment-notloaded">
+        <i class="iconfont icon-chatbox-ellipses-sharp"></i>&nbsp;Load comments
+    </span>
+    <div id="disqus_thread" style="display: none;"></div>
+    <script>
+        function loadComment() {
+            var commentArea = document.querySelector('.post-comment');
+            var disqus_config = function () {
+                this.page.url = 'https:\/\/edxu96.github.io\/post\/snapshots\/';
+                this.page.identifier = 'snapshots';
+            };
+            var s = document.createElement('script');
+            s.src = 'https://' + 'edxu96' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            document.querySelector('#disqus_thread').removeAttribute('style');
+            (document.body || document.head).appendChild(s);
+            document.querySelector('span.post-comment-notloaded').setAttribute('style', 'display: none;');
+        }
+    </script>
+</div>
+
+
+
+            </div>
+            <aside class="col-12 col-md-3 float-left sidebar">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Pages</h3>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+            <li>
+                <a href="/index.xml">RSS</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Links</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/edxu96" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+            <li>
+                <a href="https://rpubs.com/edxu96" target="_blank"><span>RPubs</span></a>
+            </li>
+            
+            <li>
+                <a href="/files/resume.pdf" target="_blank"><span>resume</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Tags</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/album/">album</a>
+            </span>
+            
+            <span>
+                <a href="/tags/application/">application</a>
+            </span>
+            
+            <span>
+                <a href="/tags/cmdict/">cmdict</a>
+            </span>
+            
+            <span>
+                <a href="/tags/data-structure/">data-structure</a>
+            </span>
+            
+            <span>
+                <a href="/tags/database/">database</a>
+            </span>
+            
+            <span>
+                <a href="/tags/graph-theory/">graph-theory</a>
+            </span>
+            
+            <span>
+                <a href="/tags/journal/">journal</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linguistics/">linguistics</a>
+            </span>
+            
+            <span>
+                <a href="/tags/network-infrastructure/">network-infrastructure</a>
+            </span>
+            
+            <span>
+                <a href="/tags/translation/">translation</a>
+            </span>
+            
+            <span>
+                <a href="/tags/version-control/">version-control</a>
+            </span>
+            
+            <span>
+                <a href="/tags/view/">view</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E4%B8%AD%E6%96%87/">中文</a>
+            </span>
+            
+        </div>
+    </div>
+    <div class="sidebar-item sidebar-toc">
+        <h3>Table of Contents</h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#snapshot">Snapshot</a></li>
+    <li><a href="#increment">Increment</a>
+      <ul>
+        <li><a href="#event">Event</a></li>
+        <li><a href="#link">Link</a></li>
+        <li><a href="#symmetric-difference">Symmetric Difference</a></li>
+      </ul>
+    </li>
+    <li><a href="#meta-graph">Meta-Graph</a>
+      <ul>
+        <li><a href="#recover-snapshot">Recover Snapshot</a></li>
+        <li><a href="#power-flow-timeline">Power Flow Timeline</a></li>
+        <li><a href="#automated-debug-in-pf">Automated Debug in PF</a></li>
+      </ul>
+    </li>
+    <li><a href="#transaction">Transaction</a>
+      <ul>
+        <li><a href="#pending-snapshot">Pending Snapshot</a></li>
+        <li><a href="#commit">Commit</a></li>
+        <li><a href="#replacement">Replacement</a></li>
+      </ul>
+    </li>
+    <li><a href="#secondary-snapshot">Secondary Snapshot</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav></div>
+</aside>
+
+        </div>
+        <div class="btn">
+    <div class="btn-menu" id="btn-menu">
+        <i class="iconfont icon-grid-sharp"></i>
+    </div>
+    <div class="btn-toggle-mode">
+        <i class="iconfont icon-contrast-sharp"></i>
+    </div>
+    <div class="btn-scroll-top">
+        <i class="iconfont icon-chevron-up-circle-sharp"></i>
+    </div>
+</div>
+<aside class="sidebar-mobile" style="display: none;">
+  <div class="sidebar-wrapper">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Pages</h3>
+        <ul>
+            
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/about/">About</a>
+            </li>
+            
+            <li>
+                <a href="/index.xml">RSS</a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Links</h3>
+        <ul>
+            
+            <li>
+                <a href="https://github.com/edxu96" target="_blank"><span>GitHub</span></a>
+            </li>
+            
+            <li>
+                <a href="https://rpubs.com/edxu96" target="_blank"><span>RPubs</span></a>
+            </li>
+            
+            <li>
+                <a href="/files/resume.pdf" target="_blank"><span>resume</span></a>
+            </li>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Tags</h3>
+        <div>
+            
+            <span>
+                <a href="/tags/album/">album</a>
+            </span>
+            
+            <span>
+                <a href="/tags/application/">application</a>
+            </span>
+            
+            <span>
+                <a href="/tags/cmdict/">cmdict</a>
+            </span>
+            
+            <span>
+                <a href="/tags/data-structure/">data-structure</a>
+            </span>
+            
+            <span>
+                <a href="/tags/database/">database</a>
+            </span>
+            
+            <span>
+                <a href="/tags/graph-theory/">graph-theory</a>
+            </span>
+            
+            <span>
+                <a href="/tags/journal/">journal</a>
+            </span>
+            
+            <span>
+                <a href="/tags/linguistics/">linguistics</a>
+            </span>
+            
+            <span>
+                <a href="/tags/network-infrastructure/">network-infrastructure</a>
+            </span>
+            
+            <span>
+                <a href="/tags/translation/">translation</a>
+            </span>
+            
+            <span>
+                <a href="/tags/version-control/">version-control</a>
+            </span>
+            
+            <span>
+                <a href="/tags/view/">view</a>
+            </span>
+            
+            <span>
+                <a href="/tags/%E4%B8%AD%E6%96%87/">中文</a>
+            </span>
+            
+        </div>
+    </div>
+    
+    
+    
+    <div class="sidebar-item sidebar-toc">
+        <h3>Table of Contents</h3>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#snapshot">Snapshot</a></li>
+    <li><a href="#increment">Increment</a>
+      <ul>
+        <li><a href="#event">Event</a></li>
+        <li><a href="#link">Link</a></li>
+        <li><a href="#symmetric-difference">Symmetric Difference</a></li>
+      </ul>
+    </li>
+    <li><a href="#meta-graph">Meta-Graph</a>
+      <ul>
+        <li><a href="#recover-snapshot">Recover Snapshot</a></li>
+        <li><a href="#power-flow-timeline">Power Flow Timeline</a></li>
+        <li><a href="#automated-debug-in-pf">Automated Debug in PF</a></li>
+      </ul>
+    </li>
+    <li><a href="#transaction">Transaction</a>
+      <ul>
+        <li><a href="#pending-snapshot">Pending Snapshot</a></li>
+        <li><a href="#commit">Commit</a></li>
+        <li><a href="#replacement">Replacement</a></li>
+      </ul>
+    </li>
+    <li><a href="#secondary-snapshot">Secondary Snapshot</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+    
+    
+  </div>
+</aside>
+    </main>
+
+    <footer>
+    <div class="container-lg clearfix">
+        <div class="col-12 footer">
+            
+            <span>&copy; 2017-2021
+                | Made with <span style="color: #e25555;">&hearts;</span> by Edward Xu
+                
+                | Powered by <a href="https://github.com/amzrk2/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
+                                                    target="_blank">Hugo</a> 
+            </span>
+        </div>
+    </div>
+</footer>
+
+    
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+
+<script defer src="/assets/js/fuji.min.js"></script>
+
+
+
+</body>
+
+</html>
