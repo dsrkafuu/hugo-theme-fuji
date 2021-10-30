@@ -1,0 +1,29 @@
++++
+title = "Notes for Spanning Arborescence"
+date = 2021-04-23
+tags = ["graph-theory"]
+showToc = true
+math = true
++++
+
+Here are the notes for three algorithms of spanning arborescences of some
+directed graph.
+
+<!--more-->
+
+The topology and edge attributes are stored in three incidence functions
+(dictionaries in Python).
+
+There are efficient ranking algorithms for other settings.
+
+## Notes for Authors' Writings
+
+- A "loop" refers a self-looped edge, whose two terminals are the same node.
+
+
+## Max Spanning Arborescence
+
+## Rank Spanning Arborescence
+
+
+## Count Spanning Arborescence

@@ -1,0 +1,67 @@
++++
+title = "Exercises in Chapter 14"
+date = 2021-04-13
+tags = ["exercise"]
+draft = true
+math = true
+showToc = false
++++
+
+The best way to read a book is to finish all the exercises.
+But, focus on analytical exercises only, in order to save time.
+
+<!--more-->
+
+== 1. Existence of latexmath:[Q^{\star}_s] under Wholesale Price Contract
+
+Prove that, under the wholesale price contract, latexmath:[\pi_{s}(Q, w)] is:
+
+* strictly decreasing in latexmath:[Q], if latexmath:[w<c_{s}-p_{s}]
+* first increasing and then decreasing in latexmath:[Q],
+  if latexmath:[c_{s}-p_{s}<w<c_{s}]
+* strictly increasing in latexmath:[Q], if latexmath:[w>c_{s}]
+
+The expression for latexmath:[\pi_{s}(Q, w)]
+and its partial difference with respect to latexmath:[Q] are:
+
+latexmath:[\begin{aligned}
+\pi_{s}(Q, w) &= p_{s} S(Q) + \left(w-c_{s}\right) Q-p_{s} \mu \\
+\frac{\partial \pi_{s}}{\partial Q} &= p_s (1 - F(Q)) + w - c_s \\
+&= w - \left[c_s - p_s (1 - F(Q)) \right\]
+\end{aligned}]
+
+Because the value of latexmath:[1 - F(Q)] is between 0 and 1.
+
+== 2. Wholesale Price Contract for Breach of Contract
+
+A new novel, the legal thriller _Breach of Contract_,
+will begin to be sold at your local bookstore next month.
+The bookstore must decide how many copies of the book to order,
+and it cannot reorder again after the initial order.
+The book will be sold for a certain duration (say, 6 months),
+after which all copies will be removed from the shelves
+and sold to a paper-recycling company as scrap.
+
+_Breach of Contract_ will be sold to consumers for $18.99 (latexmath:[r]) per copy.
+The publisher charges the bookstore a wholesale price of $11 (latexmath:[w]) per copy.
+For each copy purchased by the bookstore,
+the publisher incurs raw-material costs of $3.75,
+and the bookstore incurs shipping and handling costs of $1.20.
+(This is not paid to the publisher.)
+The total demand for the book during the selling season is expected to be normally distributed
+with a mean of 1200 and a standard deviation of 340.
+Unmet demands are lost,
+incurring loss-of-goodwill costs estimated at $9.00 for the bookstore and $4.00 for the publisher.
+Unsold books are sold to the recycling company for $0.65 each.
+
+* What is the bookstore's optimal order quantity?
+* What is the order quantity that maximizes the total expected profit for the supply chain,
+  and what is the optimal total expected profit?
+* What is each company’s expected profit,
+  and what is the total expected profit for the supply chain?
+  What is the efficiency of the contract?
+* Suppose the publisher can choose any wholesale price it wishes.
+  What wholesale price will it choose?
+  What order quantity will the bookstore choose as a result?
+  What will be the resulting profits?
+  What will be the efficiency of the contract?
