@@ -1,7 +1,7 @@
 baseURL = "https://edxu96.github.io/"
 title = "Edward Xu"
 
-theme = "fuji"
+# theme = "fuji"
 hasCJKLanguage = true
 enableEmoji = true
 enableRobotsTXT = true
@@ -137,5 +137,5 @@ paginate = 10
     weight = 2
   [[menu.link]]
     name = "resume"
-    url = "https://edxu96.github.io/files/resume.pdf"
+    url = "/files/resume.pdf"
     weight = 3
