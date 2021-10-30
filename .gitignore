@@ -5,4 +5,9 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
+
+### macOS ###
+# General
 .DS_Store
+.AppleDouble
+.LSOverride
