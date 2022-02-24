@@ -33,7 +33,7 @@ Supported languages: `cs`, `de`, `en`, `eo`, `fr`, `ja`, `nl`, `pl`, `pt-pt`, `z
 
 ## 💻 Live demos
 
-[**Live Demo (gohugo.io)**](https://themes.gohugo.io/theme/hugo-theme-fuji/)
+[**Live Demo (GitHub Pages)**](https://github.dsrkafuu.net/hugo-theme-fuji/)
 
 ![Screenshot of Fuji](https://raw.githubusercontent.com/dsrkafuu/hugo-theme-fuji/master/images/screenshot.png)
 
