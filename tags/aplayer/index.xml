@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>aplayer on Hugo Theme Fuji</title>
+    <link>https://github.dsrkafuu.net/hugo-theme-fuji/tags/aplayer/</link>
+    <description>Recent content in aplayer on Hugo Theme Fuji</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 10 Jan 2021 00:00:00 +0800</lastBuildDate><atom:link href="https://github.dsrkafuu.net/hugo-theme-fuji/tags/aplayer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>In-post APlayer Test</title>
+      <link>https://github.dsrkafuu.net/hugo-theme-fuji/post/aplayer-test/</link>
+      <pubDate>Sun, 10 Jan 2021 00:00:00 +0800</pubDate>
+      
+      <guid>https://github.dsrkafuu.net/hugo-theme-fuji/post/aplayer-test/</guid>
+      <description>&lt;div class=&#34;post-player-wrapper&#34;&gt;
+  &lt;div
+    class=&#34;post-aplayer&#34;
+    data-base=&#34;https://github.dsrkafuu.net/hugo-theme-fuji/&#34;
+    data-urls=&#34;/aplayer/berlin.mp3&#34;
+    data-names=&#34;Berlin&#34;
+    data-artists=&#34;Crowander&#34;
+    data-covers=&#34;/aplayer/crowander.jpg&#34;
+  &gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This post is for in-post APlayer test, above is previous post-player.&lt;/p&gt;
+&lt;p&gt;Music files are all downloaded from &lt;a href=&#34;https://freemusicarchive.org&#34; target=&#34;_blank&#34;&gt;Free Music Archive&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

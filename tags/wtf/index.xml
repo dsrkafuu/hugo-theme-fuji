@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wtf on Hugo Theme Fuji</title>
+    <link>https://github.dsrkafuu.net/hugo-theme-fuji/tags/wtf/</link>
+    <description>Recent content in wtf on Hugo Theme Fuji</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 01 Apr 2017 00:00:00 +0800</lastBuildDate><atom:link href="https://github.dsrkafuu.net/hugo-theme-fuji/tags/wtf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>纯简体中文测试文章</title>
+      <link>https://github.dsrkafuu.net/hugo-theme-fuji/post/wtf-article/</link>
+      <pubDate>Sat, 01 Apr 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://github.dsrkafuu.net/hugo-theme-fuji/post/wtf-article/</guid>
+      <description>&lt;p&gt;本文内容无实际意义，由狗屁不通文章生成器自动生成，不代表作者本人观点。&lt;/p&gt;
+&lt;p&gt;可是，即使是这样，一段代码写一天的出现仍然代表了一定的意义。一段代码写一天，到底应该如何实现。马克思在不经意间这样说过，一切节省，归根到底都归结为时间的节省。这不禁令我深思。马克思曾经说过，一切节省，归根到底都归结为时间的节省。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
