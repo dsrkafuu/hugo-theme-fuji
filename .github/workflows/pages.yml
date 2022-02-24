@@ -3,7 +3,7 @@ name: pages
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
 
 jobs:
@@ -24,13 +24,10 @@ jobs:
           mkdir themes
           ln -s ../.. themes/fuji
           hugo
-          cd ..
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
-        run: |
-          cd exampleSite
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
