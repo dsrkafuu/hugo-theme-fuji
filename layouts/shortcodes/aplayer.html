@@ -1,6 +1,7 @@
 <div class="post-player-wrapper">
   <div
     class="post-aplayer"
+    data-base="{{- .Site.BaseURL -}}"
     data-urls="{{- .Get "urls" -}}"
     data-names="{{- .Get "names" -}}"
     {{ with .Get "artists" -}}data-artists="{{- . -}}"{{- end }}
