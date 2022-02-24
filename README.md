@@ -20,14 +20,14 @@ Supported languages: `cs`, `de`, `en`, `eo`, `fr`, `ja`, `nl`, `pl`, `pt-pt`, `z
 - [🆕 Update the theme](#-update-the-theme)
 - [⚙️ Configuration](#%EF%B8%8F-configuration)
   - [🎨 Favicon](#-favicon)
-  - [❌ License, toc und comments](#-license-toc-und-comments)
+  - [❌ License, toc and comments](#-license-toc-and-comments)
   - [🎵 APlayer](#-aplayer)
   - [📐 Render LaTeX with KaTex](#-render-latex-with-katex)
   - [📷 Image zoom and lazyload settings](#-image-zoom-and-lazyload-settings)
   - [⚓ Markdown render hook](#-markdown-render-hook)
   - [📨 Comments area](#-comments-area)
   - [🔧 Custom stylesheet configuration](#-custom-stylesheet-configuration)
-- [✏️ Issue und contributing](#%EF%B8%8F-issue-und-contributing)
+- [✏️ Issue and contributing](#%EF%B8%8F-issue-and-contributing)
 - [📝 License](#-license)
 - [🤝 Annotations](#-annotations)
 
@@ -71,7 +71,7 @@ Create `[SITEROOT]/layouts/partials/favicon.html` to cover theme's favicon.
 
 You can generate your favicons in [realfavicongenerator.net](https://realfavicongenerator.net/).
 
-### ❌ License, toc und comments
+### ❌ License, toc and comments
 
 Globally in `config.toml`:
 
@@ -246,7 +246,7 @@ $dark-color-codebg: #414449; // GitHub
 
 To override SCSS rules, create `[SITEROOT]/assets/scss/_custom_rules.scss`. This file will have priority over anything regarding CSS rules, but is useless for changing variables that are used elsewhere in the theme.
 
-## ✏️ Issue und contributing
+## ✏️ Issue and contributing
 
 Feel free to use the [issue tracker](https://github.com/dsrkafuu/hugo-theme-fuji/issues). The theme has only been fully tested on Firefox, so if there are some problems when accessing with Chrome or others please also report an issue.
 
