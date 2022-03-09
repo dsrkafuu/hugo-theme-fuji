@@ -46,7 +46,7 @@ Remember to add [summary divider](https://gohugo.io/content-management/summaries
 Inside the folder of your Hugo site run:
 
 ```bash
-git submodule add https://github.com/amzrk2/hugo-theme-fuji.git themes/fuji
+git submodule add https://github.com/dsrkafuu/hugo-theme-fuji.git themes/fuji
 ```
 
 For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.
@@ -263,7 +263,7 @@ The theme is released under the `Apache License 2.0`, for more information read 
 - [cloudflare-workers-async-google-analytics - MIT](https://github.com/SukkaW/cloudflare-workers-async-google-analytics/blob/master/LICENSE)
 - [art-template - MIT](https://github.com/aui/art-template/blob/master/LICENSE)
 
-**Copyright © 2019-present DSRKafuU <https://dsrkafuu.su/>**
+**Copyright © 2019-present DSRKafuU <https://dsrkafuu.net/>**
 
 ## 🤝 Annotations
 

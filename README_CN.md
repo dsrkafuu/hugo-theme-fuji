@@ -8,7 +8,7 @@
 
 [English](https://github.com/dsrkafuu/hugo-theme-fuji#readme) | [简体中文](https://github.com/dsrkafuu/hugo-theme-fuji/blob/master/README_CN.md)
 
-> 介绍一个全新的亮色 VSCode 主题 [Aofuji Light Theme](https://github.com/dsrkafuu/vscode-theme-aofuji)，它的配色方案继承自 [Aofuji](https://github.com/amzrk2/hugo-template-aofuji)！
+> 介绍一个全新的亮色 VSCode 主题 [Aofuji Light Theme](https://github.com/dsrkafuu/vscode-theme-aofuji)，它的配色方案继承自 [Aofuji](https://github.com/dsrkafuu/hugo-template-aofuji)！
 
 支持的 i18n 语言：`cs`, `de`, `en`, `eo`, `fr`, `ja`, `nl`, `pl`, `pt-pt`, `zh-hans`, `zh-hant`。i18n 文件夹内为所有语言文件。
 
@@ -46,7 +46,7 @@
 添加主题：
 
 ```bash
-git submodule add https://github.com/amzrk2/hugo-theme-fuji.git themes/fuji
+git submodule add https://github.com/dsrkafuu/hugo-theme-fuji.git themes/fuji
 ```
 
 其他的可以看[官方指南](https://gohugo.io/overview/installing/)。
@@ -261,7 +261,7 @@ The theme is released under the `Apache License 2.0`, for more information read 
 - [cloudflare-workers-async-google-analytics - MIT](https://github.com/SukkaW/cloudflare-workers-async-google-analytics/blob/master/LICENSE)
 - [art-template - MIT](https://github.com/aui/art-template/blob/master/LICENSE)
 
-**Copyright © 2019-present DSRKafuU <https://dsrkafuu.su/>**
+**Copyright © 2019-present DSRKafuU <https://dsrkafuu.net/>**
 
 ## 🤝 Annotations
 
