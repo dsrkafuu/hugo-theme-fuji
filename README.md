@@ -31,6 +31,19 @@ Supported languages: `cs`, `de`, `en`, `eo`, `fr`, `ja`, `nl`, `pl`, `pt-pt`, `z
 - [📝 License](#-license)
 - [🤝 Annotations](#-annotations)
 
+
+
+## [Add hugo contact form](https://fabform.io/a/hugo-contact-form)
+
+```
+<form action="https://fabform.io/f/{form-id}" method="post">
+ <label for="email">Your Email</label>
+ <input name="email" type="email">
+ <button type="submit">Submit</button> 
+</form>
+```
+
+
 ## 💻 Live demos
 
 [**Live Demo (GitHub Pages)**](https://github.dsrkafuu.net/hugo-theme-fuji/)
