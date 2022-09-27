@@ -1,2 +1,37 @@
-// Override variables with that file
-@import '_custom'; // Keep that for back-compatibility. This shouldn't be used anymore.
+$body-font: -apple-system,
+BlinkMacSystemFont,
+'SF Pro Text',
+'Helvetica Neue',
+'Helvetica',
+'Arial',
+'PingFang SC',
+'Hiragino Sans GB',
+'Source Han Sans CN',
+'Source Han Sans SC',
+'Microsoft YaHei',
+'WenQuanYi Micro Hei',
+sans-serif;
+$mono-font: 'Cascadia Code',
+'SF Mono',
+'Fira Code',
+'Consolas',
+$body-font;
+$title-font: 'Product Sans',
+$body-font;
+$body-font-size: 16px;
+$light-color-primary: #061993;
+$light-color-secondary: #9bbff2;
+$light-color-focus: #135cc5;
+$light-color-mute: #9ea1a3;
+$light-color-font: #3f4551;
+$light-color-divider: #e5e2e4;
+$light-color-bg: #fffffd;
+$light-color-codebg: #f6f8fa;
+$dark-color-primary: #9bbff2;
+$dark-color-secondary: #135cc5;
+$dark-color-focus: #e6e6e6;
+$dark-color-mute: #9ea1a3;
+$dark-color-font: #c0c0c0;
+$dark-color-divider: #4d5158;
+$dark-color-bg: #2f3136;
+$dark-color-codebg: #414449;
