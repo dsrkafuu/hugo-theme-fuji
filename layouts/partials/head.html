@@ -34,8 +34,8 @@
 <!-- dep -->
 {{ partial "styles.html" . }}
 {{ $options := (dict "targetPath" "assets/css/fuji.min.css" "outputStyle" "compressed") }}
-{{ $style := resources.Get "scss/fuji.scss" | resources.ToCSS $options }}
-<link rel="stylesheet" href="{{ $style.Permalink }}" />
+{{ $style := resources.Get "scss/fuji.scss" | resources.ToCSS $options | resources.Fingerprint "sha512" }}
+<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}" />
 {{ with .Site.Params.googleAdsense }}
 <script async data-ad-client="ca-pub-{{ . }}" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 {{ end}}
