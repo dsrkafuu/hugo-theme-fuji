@@ -40,10 +40,10 @@
 <script async data-ad-client="ca-pub-{{ . }}" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 {{ end}}
 {{ if .Params.aplayer }}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" integrity="sha512-CIYsJUa3pr1eoXlZFroEI0mq0UIMUqNouNinjpCkSWo3Bx5NRlQ0OuC6DtEB/bDqUWnzXc1gs2X/g52l36N5iw==" crossorigin="anonymous">
 {{ end }}
 {{ if .Site.Params.useDisqusJS }}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/disqusjs.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@1.3.0/dist/disqusjs.css" integrity="sha512-ETZaCUD/oKDyXhm065Kgi1WXukzv7EWek8RgqpI/RAniGf8eKo1XVP8tXe7AlGsiPf+m7M2wiq+C6vIGRdP40Q==" crossorigin="anonymous">
 {{ end }}
 {{ partial "analytic-gtag.html" . }}
 {{ partial "analytic-cfga.html" . }}
