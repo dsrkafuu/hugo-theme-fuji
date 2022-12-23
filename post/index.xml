@@ -106,5 +106,14 @@ lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.&lt;/p&gt;<
 &lt;p&gt;可是，即使是这样，一段代码写一天的出现仍然代表了一定的意义。一段代码写一天，到底应该如何实现。马克思在不经意间这样说过，一切节省，归根到底都归结为时间的节省。这不禁令我深思。马克思曾经说过，一切节省，归根到底都归结为时间的节省。&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Post-Meta Test with Lots of Tags</title>
+      <link>https://github.dsrkafuu.net/hugo-theme-fuji/post/post-meta-test/</link>
+      <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.dsrkafuu.net/hugo-theme-fuji/post/post-meta-test/</guid>
+      <description>The tags should wrap and not make a horizontal scroll bar appear. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+    </item>
+    
   </channel>
 </rss>

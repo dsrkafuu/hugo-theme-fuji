@@ -47,7 +47,7 @@
       <guid>https://github.dsrkafuu.net/hugo-theme-fuji/about/</guid>
       <description>Written in Go, Hugo is an open source static site generator available under the Apache Licence 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
 Hugo makes use of a variety of open source projects including:
- https://github.com/yuin/goldmark https://github.com/alecthomas/chroma https://github.com/muesli/smartcrop https://github.com/spf13/cobra https://github.com/spf13/viper  Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
+https://github.com/yuin/goldmark https://github.com/alecthomas/chroma https://github.com/muesli/smartcrop https://github.com/spf13/cobra https://github.com/spf13/viper Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
 Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.</description>
     </item>
     
@@ -116,6 +116,15 @@ lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.&lt;/p&gt;<
       <guid>https://github.dsrkafuu.net/hugo-theme-fuji/post/wtf-article/</guid>
       <description>&lt;p&gt;本文内容无实际意义，由狗屁不通文章生成器自动生成，不代表作者本人观点。&lt;/p&gt;
 &lt;p&gt;可是，即使是这样，一段代码写一天的出现仍然代表了一定的意义。一段代码写一天，到底应该如何实现。马克思在不经意间这样说过，一切节省，归根到底都归结为时间的节省。这不禁令我深思。马克思曾经说过，一切节省，归根到底都归结为时间的节省。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Post-Meta Test with Lots of Tags</title>
+      <link>https://github.dsrkafuu.net/hugo-theme-fuji/post/post-meta-test/</link>
+      <pubDate>Wed, 21 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://github.dsrkafuu.net/hugo-theme-fuji/post/post-meta-test/</guid>
+      <description>The tags should wrap and not make a horizontal scroll bar appear. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
     </item>
     
   </channel>
