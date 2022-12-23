@@ -3,7 +3,7 @@
 Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markdown style.
 
 ![GitHub release](https://img.shields.io/github/v/release/dsrkafuu/hugo-theme-fuji)
-![GitHub build status](https://img.shields.io/github/workflow/status/dsrkafuu/hugo-theme-fuji/build-test)
+![GitHub build status](https://img.shields.io/github/workflow/status/dsrkafuu/hugo-theme-fuji/pages)
 ![GitHub license](https://img.shields.io/github/license/dsrkafuu/hugo-theme-fuji)
 
 [English](https://github.com/dsrkafuu/hugo-theme-fuji#readme) | [简体中文](https://github.com/dsrkafuu/hugo-theme-fuji/blob/master/README_CN.md)

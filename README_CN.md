@@ -3,7 +3,7 @@
 简单的 Hugo 主题，支持夜间模式，Markdown 样式来自 GitHub Primer。
 
 ![GitHub release](https://img.shields.io/github/v/release/dsrkafuu/hugo-theme-fuji)
-![GitHub build status](https://img.shields.io/github/workflow/status/dsrkafuu/hugo-theme-fuji/build-test)
+![GitHub build status](https://img.shields.io/github/workflow/status/dsrkafuu/hugo-theme-fuji/pages)
 ![GitHub license](https://img.shields.io/github/license/dsrkafuu/hugo-theme-fuji)
 
 [English](https://github.com/dsrkafuu/hugo-theme-fuji#readme) | [简体中文](https://github.com/dsrkafuu/hugo-theme-fuji/blob/master/README_CN.md)
