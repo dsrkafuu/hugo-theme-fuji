@@ -13,7 +13,7 @@ header {
   .title-sub {
     margin: 0 0.1rem;
     display: block;
-    white-space: nowrap;
+    white-space: normal;
 
     &::-webkit-scrollbar {
       display: none; // WebKit
