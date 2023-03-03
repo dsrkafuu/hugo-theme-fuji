@@ -10,7 +10,7 @@
 
 > 介绍一个全新的亮色 VSCode 主题 [Aofuji Light Theme](https://github.com/dsrkafuu/vscode-theme-aofuji)，它的配色方案继承自 [Aofuji](https://github.com/dsrkafuu/hugo-template-aofuji)！
 
-支持的 i18n 语言：`cs`, `de`, `en`, `eo`, `fr`, `ja`, `nl`, `pl`, `pt-pt`, `zh-hans`, `zh-hant`。i18n 文件夹内为所有语言文件。
+支持的 i18n 语言：`cs`, `de`, `en`, `eo`, `es`, `fr`, `ja`, `nl`, `pl`, `pt-pt`, `zh-hans`, `zh-hant`。i18n 文件夹内为所有语言文件。
 
 ## 目录
 

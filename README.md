@@ -10,7 +10,7 @@ Fuji is a minimal Hugo theme with full dark mode support and GitHub Primer markd
 
 > Checkout the brand new [VSCode Aofuji Light Theme](https://github.com/dsrkafuu/vscode-theme-aofuji) which has similar color scheme to [Aofuji](https://github.com/dsrkafuu/hugo-template-aofuji)!
 
-Supported languages: `cs`, `de`, `en`, `eo`, `fr`, `ja`, `nl`, `pl`, `pt-pt`, `zh-hans`, `zh-hant`. Check the i18n folder to add more languages.
+Supported languages: `cs`, `de`, `en`, `eo`, `es`, `fr`, `ja`, `nl`, `pl`, `pt-pt`, `zh-hans`, `zh-hant`. Check the i18n folder to add more languages.
 
 ## 📑 Table of contents
 
