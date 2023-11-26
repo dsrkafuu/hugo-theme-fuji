@@ -1,13 +1,14 @@
 {{ if ne .Site.Params.disableDarkImage true }}
+{{ $darkImageLevel := default "60%" .Site.Params.darkImageLevel }}
 <style>
     @media (prefers-color-scheme: dark) {
         body[data-theme='auto'] img {
-            filter: brightness(60%);
+            filter: brightness({{ $darkImageLevel }});
         }
     }
 
     body[data-theme='dark'] img {
-        filter: brightness(60%);
+        filter: brightness({{ $darkImageLevel }});
     }
 </style>
 {{ end }}

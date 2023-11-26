@@ -101,6 +101,9 @@ lazyPlaceholderCol = "/assets/lazyload/dsrca_loading_480x540.svg"
 # Let images display in full brightness under dark mode
 # disableDarkImage = true
 
+# Specify image brightness in dark mode
+# darkImageLevel = "85%"
+
 [markup]
 [markup.goldmark]
 [markup.goldmark.renderer]
